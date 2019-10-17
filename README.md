@@ -4,4 +4,4 @@ Trip planning and sharing
 
 ### `ERD`
 
-![ERD diagram](\ERD\TripBlazr - Trip Planning ERD.png)
+![ERD diagram](tripblazr-erd.png)
