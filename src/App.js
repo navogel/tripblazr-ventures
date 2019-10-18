@@ -39,19 +39,12 @@ class App extends Component {
 				{this.state.user ? (
 					<>
 						<Nav
-							isAuthenticated={this.isAuthenticated}
 							clearUser={this.clearUser}
-							getUser={this.getUser}
-							setUser={this.setUser}
 							user={this.state.user}
 							{...this.props}
 							activeUser={this.state.activeUser}
 						/>
 						<ApplicationViews
-							isAuthenticated={this.isAuthenticated}
-							clearUser={this.clearUser}
-							getUser={this.getUser}
-							setUser={this.setUser}
 							user={this.state.user}
 							{...this.props}
 							activeUser={this.state.activeUser}
@@ -59,8 +52,6 @@ class App extends Component {
 					</>
 				) : (
 					<Login
-						isAuthenticated={this.isAuthenticated}
-						clearUser={this.clearUser}
 						getUser={this.getUser}
 						setUser={this.setUser}
 						user={this.state.user}
