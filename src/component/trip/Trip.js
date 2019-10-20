@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Map from '../map/L-Map';
+import Mapper from '../map/Map';
 
 class Trip extends Component {
 	render() {
@@ -7,7 +7,7 @@ class Trip extends Component {
 			<>
 				<div>This is a tripView</div>
 				<div className='mapWrapper'>
-					<Map />
+					<Mapper />
 				</div>
 			</>
 		);

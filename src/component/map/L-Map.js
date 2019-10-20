@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import L from 'leaflet';
 import Token from '../../Token';
 
-class Map extends Component {
+class Mapper extends Component {
 	map = null;
 
 	//{accessToken}
@@ -49,4 +49,4 @@ class Map extends Component {
 	}
 }
 
-export default Map;
+export default Mapper;

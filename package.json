@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "leaflet": "^1.5.1",
+    "mapbox-gl": "^1.4.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-map-gl": "^5.0.12",
+    "react-mapbox-gl": "^4.7.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0"
   },
