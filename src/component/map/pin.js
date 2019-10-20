@@ -1,20 +1,21 @@
 import React, { PureComponent } from 'react';
 
-const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,4.5,2,10c0,2,0.6,3.9,1.6,5.4c0,0.1,0.1,0.2,0.2,0.3
-  c0,0,0.1,0.1,0.1,0.2c0.2,0.3,0.4,0.6,0.7,0.9c2.6,3.1,7.4,7.6,7.4,7.6s4.8-4.5,7.4-7.5c0.2-0.3,0.5-0.6,0.7-0.9
-  C20.1,15.8,20.2,15.8,20.2,15.7z`;
-
+const ICON = `M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z`;
+//filled version
+//const ICON =
+//	'M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16.125c-3.383 0-6.125-2.742-6.125-6.125s2.742-6.125 6.125-6.125 6.125 2.742 6.125 6.125-2.742 6.125-6.125 6.125zM12.125 10c0-2.14 1.735-3.875 3.875-3.875s3.875 1.735 3.875 3.875c0 2.14-1.735 3.875-3.875 3.875s-3.875-1.735-3.875-3.875z';
 const pinStyle = {
 	fill: '#d00',
-	stroke: 'none'
+	stroke: 'none',
+	filter: 'drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.4))'
 };
 
 export default class Pin extends PureComponent {
 	render() {
-		const { size = 20 } = this.props;
+		const { size = 40 } = this.props;
 
 		return (
-			<svg height={size} viewBox='0 0 24 24' style={pinStyle}>
+			<svg height={size} viewBox='0 0 35 35' style={pinStyle}>
 				<path d={ICON} />
 			</svg>
 		);
