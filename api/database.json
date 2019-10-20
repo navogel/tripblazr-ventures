@@ -21,5 +21,29 @@
 			"password": "pass",
 			"email": "sue@sue.com"
 		}
+	],
+
+	"locations": [
+		{
+			"id": 1,
+			"long": "-86.782",
+			"lat": "36.169",
+			"name": "someplace1",
+			"tripId": 1
+		},
+		{
+			"id": 2,
+			"long": "-86.789",
+			"lat": "36.169",
+			"name": "someplace2",
+			"tripId": 1
+		},
+		{
+			"id": 3,
+			"long": "-86.786",
+			"lat": "36.169",
+			"name": "someplace3",
+			"tripId": 2
+		}
 	]
 }
