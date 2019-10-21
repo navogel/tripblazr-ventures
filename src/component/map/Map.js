@@ -15,24 +15,31 @@ const Map = ReactMapboxGl({
 	pitchWithRotate: false
 });
 
-// clusterMarker = coordinates => (
-// 	<Marker coordinates={coordinates}>
-// 		<Pin />
-// 	</Marker>
-// );
-
 export default class Mapper extends Component {
 	state = {
-		locations: []
+		popup: false,
+		coordinates: []
 	};
 
-	// static getDerivedStateFromProps(props) {
-	// 	this.setState({ locations: props });
-	// 	console.log(this.state);
-	// }
+	clusterMarker = coordinates => (
+		<Marker coordinates={coordinates}>
+			<Pin />
+		</Marker>
+	);
+
+	onMarkerClick = e => {
+		console.log('event info', e);
+		let coords = [e.long, e.lat];
+		this.setState({
+			popup: true,
+			coordinates: coords
+		});
+	};
 
 	render() {
-		console.log('props from list', this.props.props);
+		console.log('state', this.state);
+		const popups = this.state.popup;
+
 		return (
 			<>
 				<Map
@@ -46,26 +53,47 @@ export default class Mapper extends Component {
 					zoom={[13]}
 					showCompass='true'
 				>
-					{/* <Cluster ClusterMarkerFactory={this.clusterMarker}>
-						{this.props.props.map((location, key) => (
+					<Cluster
+						ClusterMarkerFactory={this.clusterMarker}
+						zoomOnClick='true'
+						zoomOnClickPadding={200}
+					>
+						{this.props.props.map(location => (
 							<Marker
-								key={key}
-								coordinates={location}
+								key={location.id}
+								coordinates={[location.long, location.lat]}
+								anchor='bottom'
 								onClick={this.onMarkerClick.bind(this, location)}
 							>
 								<Pin />
 							</Marker>
 						))}
-					</Cluster> */}
-					{this.props.props.map(location => (
-						<Marker
-							key={location.id}
-							coordinates={[location.long, location.lat]}
-							anchor='bottom'
+					</Cluster>
+					{/* {this.props.props.map(location => (
+						<>
+							<Marker
+								key={location.id}
+								coordinates={[location.long, location.lat]}
+								anchor='bottom'
+								onClick={this.onMarkerClick.bind(this, location)}
+							>
+								<Pin />
+							</Marker>
+						</>
+					))} */}
+					{popups && (
+						<Popup
+							coordinates={this.state.coordinates}
+							offset={{
+								'bottom-left': [12, -38],
+								bottom: [0, -38],
+								'bottom-right': [-12, -38]
+							}}
 						>
-							<Pin />
-						</Marker>
-					))}
+							<h1>Popup</h1>
+						</Popup>
+					)}
+
 					{/* <Layer
 						type='symbol'
 						id='marker'

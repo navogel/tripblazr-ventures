@@ -22,7 +22,7 @@ class Trip extends Component {
 			this.setState({
 				locations: locations
 			});
-			console.log('state', this.state.locations);
+			// console.log('state', this.state.locations);
 		});
 	}
 
