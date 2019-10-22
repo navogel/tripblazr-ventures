@@ -35,9 +35,15 @@
 }
 
 .map {
-	height: 400px;
+	height: 500px;
 	width: 500px;
 	overflow: hidden;
+}
+
+.mapWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .control-panel {
@@ -58,11 +64,18 @@
 
 .marker-cluster-custom {
 	background: #9370db;
-	border: 3px solid #ededed;
+	border: 2px solid #ededed;
 	border-radius: 50%;
 	color: #ededed;
-	height: 40px;
-	line-height: 37px;
+	height: 30px !important;
+	line-height: 27px;
 	text-align: center;
-	width: 40px;
+	width: 30px !important;
 }
+
+/* .specMarker {
+	width: 19px !important;
+	height: 32px !important;
+	margin-left: -8px !important;
+	margin-top: -34px !important;
+} */

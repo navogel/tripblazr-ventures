@@ -55,10 +55,11 @@ export default class Mapper extends Component {
 		return (
 			<>
 				<Map
+					className='map'
 					style='mapbox://styles/jerodis/cjp0kox4g0c6s2rnzvnpdorq3'
 					containerStyle={{
-						height: '100vh',
-						width: '100vw'
+						height: '500px',
+						width: '500px'
 					}}
 					pitch={[60]}
 					center={this.state.center}
