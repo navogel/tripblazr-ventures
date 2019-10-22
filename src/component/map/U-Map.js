@@ -28,6 +28,15 @@ export default class Mapper extends Component {
 	// 	console.log('mounting', e.target.getBounds());
 	// };
 
+	getCoord = e => {
+		const lat = e.latlng.lat;
+		const lng = e.latlng.lng;
+		// L.marker([lat, lng])
+		// 	.bindPopup('this is a smashing place')
+		// 	.addTo(this.map);
+		console.log(lat, lng);
+	};
+
 	render() {
 		const Atoken = `https://api.mapbox.com/styles/v1/jerodis/cjslgf0z045tb1fqdutmd3q71/tiles/256/{z}/{x}/{y}@2x?access_token=${Token}`;
 		const position = [this.state.lat, this.state.lng];
@@ -36,8 +45,8 @@ export default class Mapper extends Component {
 			let coord = [obj.lat, obj.long];
 			markers.push(coord);
 		});
-		console.log('mapref', this.refs.map);
-		console.log('markers', markers);
+		console.log('Umapref', this.refs.map);
+		console.log('Umarkers', markers);
 		if (this.refs.map && this.refs.map.leafletElement) {
 			this.refs.map.leafletElement.fitBounds(markers);
 		}
@@ -48,9 +57,10 @@ export default class Mapper extends Component {
 				<Map
 					center={position}
 					zoom={this.state.zoom}
-					maxZoom={16}
+					maxZoom={15}
 					className='map'
 					ref='map'
+					onClick={this.getCoord}
 				>
 					<TileLayer
 						attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

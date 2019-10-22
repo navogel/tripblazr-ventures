@@ -43,6 +43,13 @@
 			"long": "-86.786",
 			"lat": "36.169",
 			"name": "someplace3",
+			"tripId": 1
+		},
+		{
+			"id": 4,
+			"long": "-86.789",
+			"lat": "36.169",
+			"name": "someplace3",
 			"tripId": 2
 		}
 	]
