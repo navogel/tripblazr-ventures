@@ -11,8 +11,8 @@ const TOKEN = Token; // Set your mapbox token here
 
 const Map = ReactMapboxGl({
 	accessToken: TOKEN,
-	attributionControl: false,
-	pitchWithRotate: false
+	attributionControl: false
+	// pitchWithRotate: false
 });
 
 export default class Mapper2 extends Component {
