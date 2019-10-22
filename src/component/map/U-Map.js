@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet';
 import Token from '../../Token';
+import L from 'leaflet';
 
 import MarkerClusterGroup from 'react-leaflet-markercluster';
+
+const createClusterCustomIcon = function(cluster) {
+	return L.divIcon({
+		html: `<span>${cluster.getChildCount()}</span>`,
+		className: 'marker-cluster-custom',
+		iconSize: L.point(40, 40, true)
+	});
+};
 
 export default class Mapper extends Component {
 	state = {
@@ -25,7 +34,10 @@ export default class Mapper extends Component {
 					attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 					url={Atoken}
 				/>
-				<MarkerClusterGroup>
+				<MarkerClusterGroup
+					showCoverageOnHover={true}
+					iconCreateFunction={createClusterCustomIcon}
+				>
 					{this.props.props.map(location => (
 						<Marker
 							key={location.id}
