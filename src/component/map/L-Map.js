@@ -4,7 +4,7 @@ import Token from '../../Token';
 
 class Mapper extends Component {
 	map = null;
-
+	layerGroup = null;
 	//{accessToken}
 
 	componentDidMount() {
@@ -36,11 +36,24 @@ class Mapper extends Component {
 		this.map.on('click', event => {
 			const lat = event.latlng.lat;
 			const lng = event.latlng.lng;
+			// L.marker([lat, lng])
+			// 	.bindPopup('this is a smashing place')
+			// 	.addTo(this.map);
 			console.log(lat, lng);
 		});
 	}
 
 	render() {
+		let markers = this.props.props;
+		this.layerGroup = L.layerGroup().addTo(this.map);
+		layerGroup.clearLayers();
+		markers.forEach(location => {
+			let shmarker = L.marker([location.lat, location.long]).bindPopup(
+				location.name
+			);
+			this.layerGroup.addLayer(shmarker);
+		});
+
 		return (
 			<React.Fragment>
 				<div id='map'></div>

@@ -18,7 +18,10 @@ const Map = ReactMapboxGl({
 export default class Mapper extends Component {
 	state = {
 		popup: false,
-		coordinates: []
+		coordinates: [],
+		name: '',
+		center: [-86.7816, 36.1627],
+		zoom: [13]
 	};
 
 	clusterMarker = coordinates => (
@@ -32,7 +35,16 @@ export default class Mapper extends Component {
 		let coords = [e.long, e.lat];
 		this.setState({
 			popup: true,
+			name: e.name,
 			coordinates: coords
+		});
+	};
+
+	onMarkerLeave = e => {
+		this.setState({
+			popup: false,
+			coordinates: [],
+			name: ''
 		});
 	};
 
@@ -49,9 +61,9 @@ export default class Mapper extends Component {
 						width: '100vw'
 					}}
 					pitch={[60]}
-					center={[-86.7816, 36.1627]}
-					zoom={[13]}
-					showCompass='true'
+					center={this.state.center}
+					zoom={this.state.zoom}
+					onMove={this.onMove}
 				>
 					<Cluster
 						ClusterMarkerFactory={this.clusterMarker}
@@ -63,7 +75,8 @@ export default class Mapper extends Component {
 								key={location.id}
 								coordinates={[location.long, location.lat]}
 								anchor='bottom'
-								onClick={this.onMarkerClick.bind(this, location)}
+								onMouseEnter={this.onMarkerClick.bind(this, location)}
+								onMouseLeave={this.onMarkerLeave}
 							>
 								<Pin />
 							</Marker>
@@ -86,11 +99,11 @@ export default class Mapper extends Component {
 							coordinates={this.state.coordinates}
 							offset={{
 								'bottom-left': [12, -38],
-								bottom: [0, -38],
+								bottom: [0, -50],
 								'bottom-right': [-12, -38]
 							}}
 						>
-							<h1>Popup</h1>
+							<h1>{this.state.name}</h1>
 						</Popup>
 					)}
 

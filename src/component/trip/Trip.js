@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Mapper from '../map/Map';
+import Mapper from '../map/U-Map';
 import TripManager from '../../modules/TripManager';
 
 class Trip extends Component {
@@ -22,7 +22,6 @@ class Trip extends Component {
 			this.setState({
 				locations: locations
 			});
-			// console.log('state', this.state.locations);
 		});
 	}
 
