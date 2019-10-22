@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, Marker, Tooltip, FeatureGroup } from 'react-leaflet';
+import {
+	Map,
+	TileLayer,
+	Marker,
+	Tooltip,
+	FeatureGroup,
+	MapControl
+} from 'react-leaflet';
 import Token from '../../Token';
 import L from 'leaflet';
 
@@ -16,12 +23,38 @@ const createClusterCustomIcon = function(cluster) {
 export default class Mapper extends Component {
 	state = {
 		lat: 36.505,
-		lng: -86.09,
+		lng: -8.09,
 		zoom: 13
 	};
 
 	// componentDidMount() {
-	// 	console.log('mounting', this.refs.map.leafletElement.getBounds);
+
+	// 	const map = this.leafletMap.leafletElement;
+	// 	const geocoder = L.Control.Geocoder.nominatim();
+	// 	let marker;
+
+	// 	map.on('click', e => {
+	// 		geocoder.reverse(
+	// 			e.latlng,
+	// 			map.options.crs.scale(map.getZoom()),
+	// 			results => {
+	// 				var r = results[0];
+	// 				if (r) {
+	// 					if (marker) {
+	// 						marker
+	// 							.setLatLng(r.center)
+	// 							.setPopupContent(r.html || r.name)
+	// 							.openPopup();
+	// 					} else {
+	// 						marker = L.marker(r.center)
+	// 							.bindPopup(r.name)
+	// 							.addTo(map)
+	// 							.openPopup();
+	// 					}
+	// 				}
+	// 			}
+	// 		);
+	// 	});
 	// }
 
 	// onFeatureGroupAdd = e => {
@@ -45,27 +78,34 @@ export default class Mapper extends Component {
 			let coord = [obj.lat, obj.long];
 			markers.push(coord);
 		});
-		console.log('Umapref', this.refs.map);
-		console.log('Umarkers', markers);
-		if (this.refs.map && this.refs.map.leafletElement) {
-			this.refs.map.leafletElement.fitBounds(markers);
+
+		if (this.leafletMap && this.leafletMap.leafletElement) {
+			this.leafletMap.leafletElement.fitBounds(markers);
+			console.log(this.leafletMap.leafletElement);
+			// console.log(this.refs.geocode);
 		}
 
 		return (
 			<>
 				{/* <button onClick={this.handleClick}>Zoom</button> */}
+
 				<Map
 					center={position}
+					doubleClickZoom={true}
 					zoom={this.state.zoom}
-					maxZoom={15}
+					maxZoom={16}
 					className='map'
-					ref='map'
+					ref={m => {
+						this.leafletMap = m;
+					}}
 					onClick={this.getCoord}
+					// fitBounds={markers}
 				>
 					<TileLayer
 						attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 						url={Atoken}
 					/>
+
 					<FeatureGroup ref='features' onAdd={this.onFeatureGroupAdd}>
 						<MarkerClusterGroup
 							showCoverageOnHover={true}

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "leaflet": "^1.5.1",
+    "leaflet-control-geocoder": "^1.10.0",
     "leaflet.markercluster": "^1.4.1",
     "mapbox-gl": "^1.4.1",
     "prop-types": "^15.7.2",
@@ -12,6 +13,7 @@
     "react-leaflet": "^2.5.0",
     "react-leaflet-markercluster": "^2.0.0-rc3",
     "react-map-gl": "^5.0.12",
+    "react-map-gl-geocoder": "^2.0.11",
     "react-mapbox-gl": "^4.7.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0"

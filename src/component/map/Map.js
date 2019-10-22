@@ -6,12 +6,14 @@ import { Marker } from 'react-mapbox-gl';
 import { Cluster } from 'react-mapbox-gl';
 import Pin from './pin';
 import { Popup } from 'react-mapbox-gl';
+// import Geocoder from 'react-map-gl-geocoder';
 
 const TOKEN = Token; // Set your mapbox token here
 
 const Map = ReactMapboxGl({
 	accessToken: TOKEN,
 	attributionControl: false
+
 	// pitchWithRotate: false
 });
 
