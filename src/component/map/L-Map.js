@@ -51,6 +51,7 @@ class Mapper extends Component {
 			let shmarker = L.marker([location.lat, location.long]).bindPopup(
 				location.name
 			);
+			7;
 			this.layerGroup.addLayer(shmarker);
 		});
 

@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import {
-	Map,
-	TileLayer,
-	Marker,
-	Tooltip,
-	FeatureGroup,
-	MapControl
-} from 'react-leaflet';
+import { Map, TileLayer, Marker, Tooltip, FeatureGroup } from 'react-leaflet';
 import Token from '../../Token';
 import L from 'leaflet';
+import GeoSearch from './GeoSearch';
 
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 
@@ -27,35 +21,34 @@ export default class Mapper extends Component {
 		zoom: 13
 	};
 
-	// componentDidMount() {
+	componentDidMount() {
+		const map = this.leafletMap.leafletElement;
+		const geocoder = L.Control.Geocoder.nominatim();
+		let marker;
 
-	// 	const map = this.leafletMap.leafletElement;
-	// 	const geocoder = L.Control.Geocoder.nominatim();
-	// 	let marker;
-
-	// 	map.on('click', e => {
-	// 		geocoder.reverse(
-	// 			e.latlng,
-	// 			map.options.crs.scale(map.getZoom()),
-	// 			results => {
-	// 				var r = results[0];
-	// 				if (r) {
-	// 					if (marker) {
-	// 						marker
-	// 							.setLatLng(r.center)
-	// 							.setPopupContent(r.html || r.name)
-	// 							.openPopup();
-	// 					} else {
-	// 						marker = L.marker(r.center)
-	// 							.bindPopup(r.name)
-	// 							.addTo(map)
-	// 							.openPopup();
-	// 					}
-	// 				}
-	// 			}
-	// 		);
-	// 	});
-	// }
+		map.on('click', e => {
+			geocoder.reverse(
+				e.latlng,
+				map.options.crs.scale(map.getZoom()),
+				results => {
+					var r = results[0];
+					if (r) {
+						if (marker) {
+							marker
+								.setLatLng(r.center)
+								.setPopupContent(r.html || r.name)
+								.openPopup();
+						} else {
+							marker = L.marker(r.center)
+								.bindPopup(r.name)
+								.addTo(map)
+								.openPopup();
+						}
+					}
+				}
+			);
+		});
+	}
 
 	// onFeatureGroupAdd = e => {
 	// 	console.log('mounting', e.target.getBounds());
@@ -101,6 +94,7 @@ export default class Mapper extends Component {
 					onClick={this.getCoord}
 					// fitBounds={markers}
 				>
+					<GeoSearch />
 					<TileLayer
 						attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 						url={Atoken}
