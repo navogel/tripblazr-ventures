@@ -9,10 +9,26 @@ class GeoSearch extends MapControl {
 
 	componentDidMount() {
 		const searchBox = L.Control.geocoder({
-			geocoder: new L.Control.Geocoder.Mapbox(Token)
+			geocoder: new L.Control.Geocoder.Mapbox(
+				Token,
+				{ options: { geocodingQueryParams: { proximity: [36, -86] } } }
+				//trying to add params for search bias
+			),
+			collapsed: false,
+			showResultIcons: true
 		});
 		this.leafletElement = searchBox;
 		searchBox.addTo(this.props.leaflet.map);
+
+		//trying to console log results
+
+		// searchBox.markGeocode = function(result) {
+		// 	console.log('georesult', result);
+		// };
+
+		// searchBox.on('markGeocode', function(e) {
+		// 	console.log('georesult', e);
+		// });
 	}
 }
 

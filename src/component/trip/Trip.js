@@ -33,7 +33,7 @@ class Trip extends Component {
 				<div>This is a tripView</div>
 				<div className='mapWrapper'>
 					<Mapper className='mapWrapper' props={this.state.locations} />
-					<Mapper2 className='mapWrapper' props={this.state.locations} />
+					{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 				</div>
 			</>
 		);

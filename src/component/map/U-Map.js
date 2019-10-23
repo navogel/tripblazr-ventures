@@ -14,6 +14,16 @@ const createClusterCustomIcon = function(cluster) {
 	});
 };
 
+// let myIcon1 = L.icon({
+// 	iconUrl: './public/images/markers/icon3.png',
+// 	iconSize: [38, 95],
+// 	iconAnchor: [22, 94],
+// 	popupAnchor: [-3, -76],
+// 	shadowUrl: 'my-icon-shadow.png',
+// 	shadowSize: [68, 95],
+// 	shadowAnchor: [22, 94]
+// });
+
 export default class Mapper extends Component {
 	state = {
 		lat: 36.505,
@@ -21,9 +31,13 @@ export default class Mapper extends Component {
 		zoom: 13
 	};
 
+	// Geo.markGeocode = function(result) {
+	// 	console.log('georesult', result);
+	// };
+
 	componentDidMount() {
 		const map = this.leafletMap.leafletElement;
-		const geocoder = L.Control.Geocoder.nominatim();
+		const geocoder = L.Control.Geocoder.mapbox(Token);
 		let marker;
 
 		map.on('click', e => {
@@ -32,6 +46,7 @@ export default class Mapper extends Component {
 				map.options.crs.scale(map.getZoom()),
 				results => {
 					var r = results[0];
+					console.log('reverse geocode results', r);
 					if (r) {
 						if (marker) {
 							marker
@@ -63,19 +78,33 @@ export default class Mapper extends Component {
 		console.log(lat, lng);
 	};
 
+	recordCoords = e => {
+		console.log(e);
+	};
+
 	render() {
 		const Atoken = `https://api.mapbox.com/styles/v1/jerodis/cjslgf0z045tb1fqdutmd3q71/tiles/256/{z}/{x}/{y}@2x?access_token=${Token}`;
 		const position = [this.state.lat, this.state.lng];
+		//create an array to hold location coords, with state passed fomr tip.js
 		const markers = [];
+		//take trips array of object and create an array of coordinates.
 		this.props.props.forEach(obj => {
 			let coord = [obj.lat, obj.long];
 			markers.push(coord);
 		});
-
+		//if leaflet has loaded, pass marker array for bounds
 		if (this.leafletMap && this.leafletMap.leafletElement) {
 			this.leafletMap.leafletElement.fitBounds(markers);
 			console.log(this.leafletMap.leafletElement);
-			// console.log(this.refs.geocode);
+
+			//consolelog geocoder element
+			console.log('geo', this.leafletGeo);
+
+			//trying to console log geocoder results
+
+			this.leafletGeo.leafletElement.markGeocode = function(results) {
+				console.log('geo results', results);
+			};
 		}
 
 		return (
@@ -94,7 +123,11 @@ export default class Mapper extends Component {
 					onClick={this.getCoord}
 					// fitBounds={markers}
 				>
-					<GeoSearch />
+					<GeoSearch
+						ref={m => {
+							this.leafletGeo = m;
+						}}
+					/>
 					<TileLayer
 						attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 						url={Atoken}
@@ -107,7 +140,8 @@ export default class Mapper extends Component {
 						>
 							{this.props.props.map(location => (
 								<Marker
-									className='specMarker'
+									// icon={myIcon1}
+									className='location'
 									key={location.id}
 									position={[location.lat, location.long]}
 									anchor='bottom'
