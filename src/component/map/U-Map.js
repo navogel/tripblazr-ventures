@@ -15,8 +15,8 @@ const createClusterCustomIcon = function(cluster) {
 };
 
 // let myIcon1 = L.icon({
-// 	iconUrl: './public/images/markers/icon3.png',
-// 	iconSize: [38, 95],
+// 	iconUrl: require('../../icon1.png'),
+// 	iconSize: [38, 38],
 // 	iconAnchor: [22, 94],
 // 	popupAnchor: [-3, -76],
 // 	shadowUrl: 'my-icon-shadow.png',
@@ -78,9 +78,9 @@ export default class Mapper extends Component {
 		console.log(lat, lng);
 	};
 
-	recordCoords = e => {
-		console.log(e);
-	};
+	// recordCoords = e => {
+	// 	console.log(e);
+	// };
 
 	render() {
 		const Atoken = `https://api.mapbox.com/styles/v1/jerodis/cjslgf0z045tb1fqdutmd3q71/tiles/256/{z}/{x}/{y}@2x?access_token=${Token}`;
@@ -102,9 +102,9 @@ export default class Mapper extends Component {
 
 			//trying to console log geocoder results
 
-			this.leafletGeo.leafletElement.markGeocode = function(results) {
-				console.log('geo results', results);
-			};
+			// this.leafletGeo.leafletElement.markGeocode().then(results => {
+			// 	console.log('geo results', results);
+			// });
 		}
 
 		return (
