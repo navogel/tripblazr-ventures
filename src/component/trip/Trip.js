@@ -32,7 +32,7 @@ class Trip extends Component {
 				<button onClick={this.switchTrip}>switch trips</button>
 				<div>This is a tripView</div>
 				<div className='mapWrapper'>
-					<Mapper className='mapWrapper' props={this.state.locations} />
+					<Mapper className='mapWrapper' locations={this.state.locations} />
 					{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 				</div>
 			</>

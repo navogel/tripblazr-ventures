@@ -14,26 +14,23 @@ const createClusterCustomIcon = function(cluster) {
 	});
 };
 
-// let myIcon1 = L.icon({
-// 	iconUrl: require('../../icon1.png'),
-// 	iconSize: [38, 38],
-// 	iconAnchor: [22, 94],
-// 	popupAnchor: [-3, -76],
-// 	shadowUrl: 'my-icon-shadow.png',
-// 	shadowSize: [68, 95],
-// 	shadowAnchor: [22, 94]
-// });
-
 export default class Mapper extends Component {
 	state = {
-		lat: 36.505,
-		lng: -8.09,
+		lat: '',
+		lng: '',
 		zoom: 13
 	};
 
-	// Geo.markGeocode = function(result) {
-	// 	console.log('georesult', result);
-	// };
+	//function for storing click events on geosearch and click to add markers
+	storeGeocode = (e, obj) => {
+		console.log('yaya got dem O-B-Js', obj);
+	};
+
+	//function to storing click events on main map
+
+	markerFocus = (e, obj) => {
+		console.log('got the deets', obj);
+	};
 
 	componentDidMount() {
 		const map = this.leafletMap.leafletElement;
@@ -49,25 +46,20 @@ export default class Mapper extends Component {
 					console.log('reverse geocode results', r);
 					if (r) {
 						if (marker) {
-							marker
-								.setLatLng(r.center)
-								.setPopupContent(r.html || r.name)
-								.openPopup();
+							marker.setLatLng(r.center).setPopupContent(r.html || r.name);
+							// .openPopup();
 						} else {
 							marker = L.marker(r.center)
-								.bindPopup(r.name)
+								.bindTooltip(r.name)
 								.addTo(map)
-								.openPopup();
+								.on('click', e => this.storeGeocode(e, r));
+							// .openPopup();
 						}
 					}
 				}
 			);
 		});
 	}
-
-	// onFeatureGroupAdd = e => {
-	// 	console.log('mounting', e.target.getBounds());
-	// };
 
 	getCoord = e => {
 		const lat = e.latlng.lat;
@@ -78,27 +70,22 @@ export default class Mapper extends Component {
 		console.log(lat, lng);
 	};
 
-	// recordCoords = e => {
-	// 	console.log(e);
-	// };
-
 	render() {
 		const Atoken = `https://api.mapbox.com/styles/v1/jerodis/cjslgf0z045tb1fqdutmd3q71/tiles/256/{z}/{x}/{y}@2x?access_token=${Token}`;
 		const position = [this.state.lat, this.state.lng];
 		//create an array to hold location coords, with state passed fomr tip.js
 		const markers = [];
 		//take trips array of object and create an array of coordinates.
-		this.props.props.forEach(obj => {
+		this.props.locations.forEach(obj => {
 			let coord = [obj.lat, obj.long];
 			markers.push(coord);
 		});
 		//if leaflet has loaded, pass marker array for bounds
 		if (this.leafletMap && this.leafletMap.leafletElement) {
 			this.leafletMap.leafletElement.fitBounds(markers);
-			console.log(this.leafletMap.leafletElement);
 
 			//consolelog geocoder element
-			console.log('geo', this.leafletGeo);
+			console.log('props from trip', this.props);
 
 			//trying to console log geocoder results
 
@@ -127,26 +114,30 @@ export default class Mapper extends Component {
 						ref={m => {
 							this.leafletGeo = m;
 						}}
+						storeGeocode={this.storeGeocode}
 					/>
 					<TileLayer
 						attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 						url={Atoken}
 					/>
 
-					<FeatureGroup ref='features' onAdd={this.onFeatureGroupAdd}>
+					<FeatureGroup
+						ref='features'
+						onAdd={this.onFeatureGroupAdd}
+						// onClick={e => this.storeGeocode(e)}
+					>
 						<MarkerClusterGroup
 							showCoverageOnHover={true}
 							iconCreateFunction={createClusterCustomIcon}
 						>
-							{this.props.props.map(location => (
+							{this.props.locations.map(location => (
 								<Marker
 									// icon={myIcon1}
 									className='location'
 									key={location.id}
 									position={[location.lat, location.long]}
 									anchor='bottom'
-									// onMouseEnter={this.onMarkerClick.bind(this, location)}
-									// onMouseLeave={this.onMarkerLeave}
+									onClick={e => this.markerFocus(e, location)}
 								>
 									<Tooltip>{location.name}</Tooltip>
 								</Marker>
