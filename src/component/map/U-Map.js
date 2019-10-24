@@ -104,6 +104,16 @@ export default class Mapper extends Component {
 		});
 	}
 
+	configMyIcon = id => {
+		if (id === 1) {
+			return myIcon1;
+		} else if (id === 2) {
+			return myIcon2;
+		} else if (id === 3) {
+			return myIcon3;
+		}
+	};
+
 	getCoord = e => {
 		const lat = e.latlng.lat;
 		const lng = e.latlng.lng;
@@ -171,13 +181,12 @@ export default class Mapper extends Component {
 						>
 							{this.props.locations.map(location => (
 								<Marker
-									// icon={myIcon1}
 									className='location'
 									key={location.id}
 									position={[location.lat, location.long]}
 									anchor='bottom'
 									onClick={e => this.markerFocus(e, location)}
-									icon={myIcon3}
+									icon={this.configMyIcon(location.locationType)}
 								>
 									<Tooltip>{location.name}</Tooltip>
 								</Marker>
