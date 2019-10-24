@@ -80,3 +80,9 @@
 	margin-left: -8px !important;
 	margin-top: -34px !important;
 } */
+
+.toolTip {
+	position: relative;
+	top: -25px;
+	left: -15px;
+}

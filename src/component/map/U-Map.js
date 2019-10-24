@@ -3,6 +3,8 @@ import { Map, TileLayer, Marker, Tooltip, FeatureGroup } from 'react-leaflet';
 import Token from '../../Token';
 import L from 'leaflet';
 import GeoSearch from './GeoSearch';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { divIcon } from 'leaflet';
 
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 
@@ -13,6 +15,46 @@ const createClusterCustomIcon = function(cluster) {
 		iconSize: L.point(40, 40, true)
 	});
 };
+
+var myIcon1 = L.icon({
+	iconUrl: '/images/markers/icon1.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [150, 140],
+	shadowUrl: '/images/markers/shadow.png',
+	shadowSize: [30, 41],
+	shadowAnchor: [9, 41]
+});
+
+var myIcon2 = L.icon({
+	iconUrl: '/images/markers/icon2.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [150, 140],
+	shadowUrl: '/images/markers/shadow.png',
+	shadowSize: [30, 41],
+	shadowAnchor: [9, 41]
+});
+
+var myIcon3 = L.icon({
+	iconUrl: '/images/markers/icon3.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	tooltipAnchor: [150, 140],
+	shadowUrl: '/images/markers/shadow.png',
+	shadowSize: [30, 41],
+	shadowAnchor: [9, 41]
+});
+
+var myIcon4 = L.icon({
+	iconUrl: '/images/markers/icon4.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [150, 140],
+	shadowUrl: '/images/markers/shadow.png',
+	shadowSize: [30, 41],
+	shadowAnchor: [9, 41]
+});
 
 export default class Mapper extends Component {
 	state = {
@@ -49,8 +91,8 @@ export default class Mapper extends Component {
 							marker.setLatLng(r.center).setPopupContent(r.html || r.name);
 							// .openPopup();
 						} else {
-							marker = L.marker(r.center)
-								.bindTooltip(r.name)
+							marker = L.marker(r.center, { icon: myIcon4 })
+								.bindTooltip(r.name, { className: 'toolTip' })
 								.addTo(map)
 								.on('click', e => this.storeGeocode(e, r));
 							// .openPopup();
@@ -138,6 +180,7 @@ export default class Mapper extends Component {
 									position={[location.lat, location.long]}
 									anchor='bottom'
 									onClick={e => this.markerFocus(e, location)}
+									// icon={myIcon}
 								>
 									<Tooltip>{location.name}</Tooltip>
 								</Marker>

@@ -1,27 +1,27 @@
 import { MapControl, withLeaflet } from 'react-leaflet';
 import L from 'leaflet';
 import Token from '../../Token';
+import { divIcon } from 'leaflet';
 
 class GeoSearch extends MapControl {
 	createLeafletElement(props) {}
 
 	componentDidMount() {
-		// let myIcon1 = L.icon({
-		// 	iconUrl: '../../icon1.png',
-		// 	iconSize: [20, 20],
-		// 	iconAnchor: [22, 94],
-		// 	popupAnchor: [-3, -76],
-		// 	shadowUrl: 'my-icon-shadow.png',
-		// 	shadowSize: [68, 95],
-		// 	shadowAnchor: [22, 94]
-		// });
-
+		var myIcon4 = L.icon({
+			iconUrl: '/images/markers/icon4.png',
+			iconSize: [25, 41],
+			iconAnchor: [12, 41],
+			popupAnchor: [0, 0],
+			shadowUrl: '/images/markers/shadow.png',
+			shadowSize: [30, 41],
+			shadowAnchor: [9, 41]
+		});
 		const searchBox = L.Control.geocoder({
 			geocoder: new L.Control.Geocoder.Mapbox(Token, {
 				geocodingQueryParams: { proximity: { lat: 36, lng: -86 } }
 			}),
 			collapsed: false,
-			showResultIcons: true,
+			// showResultIcons: true,
 			defaultMarkGeocode: false
 		}).on('markgeocode', result => {
 			// let printResult = this.props.storeGeocode(result);
@@ -33,8 +33,8 @@ class GeoSearch extends MapControl {
 				this.props.leaflet.map.removeLayer(this._geocodeMarker);
 			}
 
-			this._geocodeMarker = new L.Marker(result.center)
-				.bindTooltip(result.html || result.name)
+			this._geocodeMarker = new L.Marker(result.center, { icon: myIcon4 })
+				.bindTooltip(result.html || result.name, { className: 'toolTip' })
 				.addTo(this.props.leaflet.map)
 				.on('click', e => this.props.storeGeocode(e, result));
 
