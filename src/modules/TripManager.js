@@ -7,6 +7,11 @@ export default {
 			result.json()
 		);
 	},
+	getTripByType(id, typeId) {
+		return fetch(
+			`${remoteURL}/locations?tripId=${id}&locationType=${typeId}`
+		).then(result => result.json());
+	},
 	createUser(user) {
 		return fetch(`${remoteURL}/users/`, {
 			method: 'POST',

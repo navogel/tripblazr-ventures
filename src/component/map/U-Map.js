@@ -16,7 +16,7 @@ const createClusterCustomIcon = function(cluster) {
 	});
 };
 
-var myIcon1 = L.icon({
+const myIcon1 = L.icon({
 	iconUrl: '/images/markers/icon1.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
@@ -26,7 +26,7 @@ var myIcon1 = L.icon({
 	shadowAnchor: [9, 41]
 });
 
-var myIcon2 = L.icon({
+const myIcon2 = L.icon({
 	iconUrl: '/images/markers/icon2.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
@@ -36,7 +36,7 @@ var myIcon2 = L.icon({
 	shadowAnchor: [9, 41]
 });
 
-var myIcon3 = L.icon({
+const myIcon3 = L.icon({
 	iconUrl: '/images/markers/icon3.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
@@ -47,7 +47,7 @@ var myIcon3 = L.icon({
 	// className: 'toolTip'
 });
 
-var myIcon4 = L.icon({
+const myIcon4 = L.icon({
 	iconUrl: '/images/markers/icon4.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
@@ -117,9 +117,6 @@ export default class Mapper extends Component {
 	getCoord = e => {
 		const lat = e.latlng.lat;
 		const lng = e.latlng.lng;
-		// L.marker([lat, lng])
-		// 	.bindPopup('this is a smashing place')
-		// 	.addTo(this.map);
 		console.log(lat, lng);
 	};
 
@@ -136,21 +133,11 @@ export default class Mapper extends Component {
 		//if leaflet has loaded, pass marker array for bounds
 		if (this.leafletMap && this.leafletMap.leafletElement) {
 			this.leafletMap.leafletElement.fitBounds(markers);
-
-			//consolelog geocoder element
 			console.log('props from trip', this.props);
-
-			//trying to console log geocoder results
-
-			// this.leafletGeo.leafletElement.markGeocode().then(results => {
-			// 	console.log('geo results', results);
-			// });
 		}
 
 		return (
 			<>
-				{/* <button onClick={this.handleClick}>Zoom</button> */}
-
 				<Map
 					center={position}
 					doubleClickZoom={true}
@@ -161,7 +148,6 @@ export default class Mapper extends Component {
 						this.leafletMap = m;
 					}}
 					onClick={this.getCoord}
-					// fitBounds={markers}
 				>
 					<GeoSearch
 						ref={m => {
@@ -178,6 +164,7 @@ export default class Mapper extends Component {
 						<MarkerClusterGroup
 							showCoverageOnHover={true}
 							iconCreateFunction={createClusterCustomIcon}
+							maxClusterRadius={50}
 						>
 							{this.props.locations.map(location => (
 								<Marker
