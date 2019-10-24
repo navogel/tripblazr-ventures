@@ -11,7 +11,7 @@ class GeoSearch extends MapControl {
 			iconUrl: '/images/markers/icon4.png',
 			iconSize: [25, 41],
 			iconAnchor: [12, 41],
-			popupAnchor: [0, 0],
+			tooltipAnchor: [15, -30],
 			shadowUrl: '/images/markers/shadow.png',
 			shadowSize: [30, 41],
 			shadowAnchor: [9, 41]

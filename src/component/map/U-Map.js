@@ -20,7 +20,7 @@ var myIcon1 = L.icon({
 	iconUrl: '/images/markers/icon1.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
-	popupAnchor: [150, 140],
+	tooltipAnchor: [15, -30],
 	shadowUrl: '/images/markers/shadow.png',
 	shadowSize: [30, 41],
 	shadowAnchor: [9, 41]
@@ -30,7 +30,7 @@ var myIcon2 = L.icon({
 	iconUrl: '/images/markers/icon2.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
-	popupAnchor: [150, 140],
+	tooltipAnchor: [15, -30],
 	shadowUrl: '/images/markers/shadow.png',
 	shadowSize: [30, 41],
 	shadowAnchor: [9, 41]
@@ -40,17 +40,18 @@ var myIcon3 = L.icon({
 	iconUrl: '/images/markers/icon3.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
-	tooltipAnchor: [150, 140],
+	tooltipAnchor: [15, -30],
 	shadowUrl: '/images/markers/shadow.png',
 	shadowSize: [30, 41],
 	shadowAnchor: [9, 41]
+	// className: 'toolTip'
 });
 
 var myIcon4 = L.icon({
 	iconUrl: '/images/markers/icon4.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
-	popupAnchor: [150, 140],
+	tooltipAnchor: [15, -30],
 	shadowUrl: '/images/markers/shadow.png',
 	shadowSize: [30, 41],
 	shadowAnchor: [9, 41]
@@ -163,11 +164,7 @@ export default class Mapper extends Component {
 						url={Atoken}
 					/>
 
-					<FeatureGroup
-						ref='features'
-						onAdd={this.onFeatureGroupAdd}
-						// onClick={e => this.storeGeocode(e)}
-					>
+					<FeatureGroup ref='features' onAdd={this.onFeatureGroupAdd}>
 						<MarkerClusterGroup
 							showCoverageOnHover={true}
 							iconCreateFunction={createClusterCustomIcon}
@@ -180,7 +177,7 @@ export default class Mapper extends Component {
 									position={[location.lat, location.long]}
 									anchor='bottom'
 									onClick={e => this.markerFocus(e, location)}
-									// icon={myIcon}
+									icon={myIcon3}
 								>
 									<Tooltip>{location.name}</Tooltip>
 								</Marker>
