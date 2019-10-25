@@ -17,7 +17,7 @@ class GeoSearch extends MapControl {
 			shadowAnchor: [9, 41]
 		});
 		const searchBox = L.Control.geocoder({
-			geocoder: new L.Control.Geocoder.Mapbox(Token, {
+			geocoder: new L.Control.Geocoder.Mapbox(Token.MB, {
 				geocodingQueryParams: { proximity: { lat: 36, lng: -86 } }
 			}),
 			collapsed: false,

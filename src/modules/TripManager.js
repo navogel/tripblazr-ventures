@@ -11,17 +11,5 @@ export default {
 		return fetch(
 			`${remoteURL}/locations?tripId=${id}&locationType=${typeId}`
 		).then(result => result.json());
-	},
-	createUser(user) {
-		return fetch(`${remoteURL}/users/`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(user)
-		}).then(Response => Response.json());
-	},
-	getUserById(id) {
-		return fetch(`${remoteURL}/users/${id}`).then(result => result.json());
 	}
 };
