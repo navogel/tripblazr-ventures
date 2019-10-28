@@ -22,16 +22,16 @@ class Trip extends Component {
 	};
 
 	getData = () => {
-		TripManager.getTripDetails(this.props.tripId)
-			.then(details => {
+		TripManager.getTrip(this.props.tripId)
+			.then(locations => {
 				this.setState({
-					tripDetails: details
+					locations: locations
 				});
 			})
 			.then(() => {
-				TripManager.getTrip(this.props.tripId).then(locations => {
+				TripManager.getTripDetails(this.props.tripId).then(details => {
 					this.setState({
-						locations: locations
+						tripDetails: details
 					});
 				});
 			});

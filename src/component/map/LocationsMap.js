@@ -170,6 +170,8 @@ export default class Mapper extends Component {
 
 	//drop marker on click and record coords and address
 	componentDidMount() {
+		console.log('trip deets from trip at didmount', this.props.tripDetails);
+
 		const map = this.leafletMap.leafletElement;
 		const geocoder = L.Control.Geocoder.mapbox(Token);
 		let marker;
@@ -224,6 +226,7 @@ export default class Mapper extends Component {
 	//mapbox://styles/jerodis/ck24x2b5a12ro1cnzdopvyw08 light
 	//mapbox://styles/jerodis/ck24wv71g15vb1cp90thseofp dark
 	render() {
+		console.log('trip deets from trip at render', this.props.tripDetails);
 		let Atoken;
 		if (this.state.light === true) {
 			Atoken = `https://api.mapbox.com/styles/v1/jerodis/ck24x2b5a12ro1cnzdopvyw08/tiles/256/{z}/{x}/{y}@2x?access_token=${Token.MB}`;
@@ -278,7 +281,11 @@ export default class Mapper extends Component {
 						<Control position='topright'>
 							<input id='searchTerm'></input>
 							<button onClick={this.fetchFbData}>search!</button>
-							<select id='stars' onClick={this.handleFieldChange}>
+							<select
+								id='stars'
+								value={this.state.stars}
+								onChange={this.handleFieldChange}
+							>
 								<option value='0'>AnyStar</option>
 								<option value='1'>1+Star</option>
 								<option value='2'>2+Star</option>
