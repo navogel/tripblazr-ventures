@@ -5,6 +5,7 @@ import TripList from './trip/TripList';
 
 export default class ApplicationViews extends Component {
 	render() {
+		//console.log('app view user', this.props.activeUser);
 		return (
 			<React.Fragment>
 				{/* <Route

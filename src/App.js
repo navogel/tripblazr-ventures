@@ -8,7 +8,7 @@ import Login from './component/auth/Login';
 class App extends Component {
 	state = {
 		user: sessionStorage.getItem('activeUser') !== null,
-		activeUser: ''
+		activeUser: this.getUser()
 	};
 
 	isAuthenticated = () => sessionStorage.getItem('activeUser') !== null;
@@ -34,6 +34,7 @@ class App extends Component {
 	};
 
 	render() {
+		// console.log('app.js user', this.state.activeUser);
 		return (
 			<div className='App'>
 				{this.state.user ? (

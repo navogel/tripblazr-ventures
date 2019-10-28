@@ -12,6 +12,10 @@ export default {
 			result.json()
 		);
 	},
+	getTripDetails(id) {
+		return fetch(`${remoteURL}/trips/${id}`).then(result => result.json());
+	},
+
 	getTripByType(id, typeId) {
 		return fetch(
 			`${remoteURL}/locations?tripId=${id}&locationType=${typeId}`

@@ -53,13 +53,13 @@
 		{
 			"id": 2,
 			"name": "Re-contextualized composite knowledge base",
-			"userId": 4,
+			"userId": 1,
 			"summary": null,
 			"communication": null,
 			"money": null,
 			"published": false,
-			"long": -86.69137,
-			"lat": 36.17325,
+			"long": -56.69137,
+			"lat": 45.17325,
 			"likes": null
 		},
 		{
@@ -82,20 +82,20 @@
 			"communication": null,
 			"money": null,
 			"published": false,
-			"long": -86.71032,
+			"long": 70.71032,
 			"lat": 36.17387,
 			"likes": 13
 		},
 		{
 			"id": 5,
 			"name": "Face to face intermediate paradigm",
-			"userId": 5,
+			"userId": 1,
 			"summary": null,
 			"communication": null,
 			"money": null,
 			"published": true,
-			"long": -86.71399,
-			"lat": 36.08775,
+			"long": -45.71399,
+			"lat": 17.08775,
 			"likes": 5
 		},
 		{

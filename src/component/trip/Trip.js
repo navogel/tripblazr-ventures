@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-import Mapper from '../map/U-Map';
+import Mapper from '../map/LocationsMap';
 import TripManager from '../../modules/TripManager';
+import { withRouter } from 'react-router-dom';
 
 class Trip extends Component {
 	state = {
 		locations: [],
-		lat: '',
-		lng: ''
+		tripDetails: {}
 	};
 
 	switchTrip = () => {
-		TripManager.getTrip(this.props.tripId).then(locations => {
-			this.setState({
-				locations: locations
-			});
-		});
+		this.props.history.push(`/mytrips`);
 	};
 
 	filterType = id => {
@@ -26,11 +22,19 @@ class Trip extends Component {
 	};
 
 	getData = () => {
-		TripManager.getTrip(this.props.tripId).then(locations => {
-			this.setState({
-				locations: locations
+		TripManager.getTripDetails(this.props.tripId)
+			.then(details => {
+				this.setState({
+					tripDetails: details
+				});
+			})
+			.then(() => {
+				TripManager.getTrip(this.props.tripId).then(locations => {
+					this.setState({
+						locations: locations
+					});
+				});
 			});
-		});
 	};
 
 	componentDidMount() {
@@ -41,7 +45,7 @@ class Trip extends Component {
 	render() {
 		return (
 			<>
-				{/* <button onClick={this.switchTrip}>switch trips</button> */}
+				<button onClick={this.switchTrip}>back to trips</button>
 				<button onClick={e => this.filterType(1)}>Hotels</button>
 				<button onClick={e => this.filterType(2)}>Activities</button>
 				<button onClick={e => this.filterType(3)}>Food</button>
@@ -52,8 +56,7 @@ class Trip extends Component {
 					<Mapper
 						className='mapWrapper'
 						locations={this.state.locations}
-						lat={this.state.lat}
-						lng={this.state.lng}
+						tripDetails={this.state.tripDetails}
 					/>
 					{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 				</div>
@@ -62,4 +65,4 @@ class Trip extends Component {
 	}
 }
 
-export default Trip;
+export default withRouter(Trip);
