@@ -89,4 +89,10 @@
 
 .slidecontainer {
 	background: white;
+	float: right;
+	padding: 0.5em;
+}
+
+.slidecontainer p {
+	margin: 0.2em;
 }

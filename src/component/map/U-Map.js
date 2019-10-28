@@ -68,14 +68,15 @@ const myIcon5 = L.icon({
 
 export default class Mapper extends Component {
 	state = {
-		lat: '36.174465',
-		lng: '-86.767960',
-		zoom: 13,
+		lat: '',
+		lng: '',
+		zoom: 14,
 		light: true,
 		searchResults: [],
 		tripView: true,
 		searchTerm: '',
-		searchRange: 1000
+		searchRange: 2000,
+		stars: '3'
 	};
 
 	//function for storing click events on geosearch and click to add markers
@@ -125,32 +126,42 @@ export default class Mapper extends Component {
 	//fetch FB places
 
 	fetchFbData = () => {
-		let searchTerm = document.querySelector('#searchTerm').value;
+		if (this.state.lat === '') {
+			alert('drop a pin so we know where to search!');
+		} else {
+			let searchTerm = document.querySelector('#searchTerm').value;
 
-		SearchManager.FbSearch(
-			searchTerm,
-			this.state.lat,
-			this.state.lng,
-			this.state.searchRange
-		).then(results => {
-			let searchResults = results.data;
-			let filteredResults = [];
+			SearchManager.FbSearch(
+				searchTerm,
+				this.state.lat,
+				this.state.lng,
+				this.state.searchRange
+			).then(results => {
+				let searchResults = results.data;
+				let filteredResults = [];
 
-			searchResults.forEach(obj => {
-				console.log(document.querySelector('#stars').value);
-				if (document.querySelector('#stars').value < 1) {
-					filteredResults.push(obj);
-				} else if (
-					obj.overall_star_rating >= document.querySelector('#stars').value
-				) {
-					filteredResults.push(obj);
-				}
+				searchResults.forEach(obj => {
+					console.log(document.querySelector('#stars').value);
+					if (document.querySelector('#stars').value < 1) {
+						filteredResults.push(obj);
+					} else if (
+						obj.overall_star_rating >= document.querySelector('#stars').value
+					) {
+						filteredResults.push(obj);
+					}
+				});
+				this.setState({
+					searchResults: filteredResults
+				});
+				console.log(this.state.searchResults);
 			});
-			this.setState({
-				searchResults: filteredResults
-			});
-			console.log(this.state.searchResults);
-		});
+		}
+	};
+
+	handleFieldChange = evt => {
+		const stateToChange = {};
+		stateToChange[evt.target.id] = evt.target.value;
+		this.setState(stateToChange);
 	};
 
 	handleChange = e => {
@@ -229,7 +240,12 @@ export default class Mapper extends Component {
 			markers.push(coord);
 		});
 		//if leaflet has loaded, pass marker array for bounds
-		if (this.leafletMap && this.leafletMap.leafletElement) {
+		if (
+			this.leafletMap &&
+			this.leafletMap.leafletElement &&
+			this.state.tripView &&
+			this.state.lat === ''
+		) {
 			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
 		}
 
@@ -262,13 +278,22 @@ export default class Mapper extends Component {
 						<Control position='topright'>
 							<input id='searchTerm'></input>
 							<button onClick={this.fetchFbData}>search!</button>
-							<select id='stars' onChange={this.filterByStars}>
+							<select id='stars' onClick={this.handleFieldChange}>
 								<option value='0'>AnyStar</option>
 								<option value='1'>1+Star</option>
 								<option value='2'>2+Star</option>
 								<option value='3'>3+Star</option>
 								<option value='4'>4+Star</option>
 							</select>
+							{/* <select id='cats'>
+								<option value=''>All Types</option>
+								<option value='[FOOD_BEVERAGE]'>Food n Bev</option>
+								<option value='[ARTS_ENTERTAINMENT]'>Arts n Farts</option>
+								<option value='[FITNESS_RECREATION],'>Fit Recs</option>
+								<option value='[HOTEL_LODGING]'>Stay</option>
+								<option value='[SHOPPING_RETAIL]'>Shop</option>
+								<option value='[TRAVEL_TRANSPORTATION]'>Transpo</option>
+							</select> */}
 							<div className='slidecontainer'>
 								<p>0 to 25 miles from your marker</p>
 								<input
@@ -279,7 +304,7 @@ export default class Mapper extends Component {
 									value={this.state.searchRange}
 									id='myRange'
 								/>
-								<p>current settings: {this.state.searchRange / 1600} miles</p>
+								<p>current settings: {this.state.searchRange / 1600}</p>
 							</div>
 						</Control>
 					)}
