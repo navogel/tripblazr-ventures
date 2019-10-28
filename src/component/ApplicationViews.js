@@ -1,10 +1,56 @@
+import { Route, Redirect } from 'react-router-dom';
 import React, { Component } from 'react';
-import Trip from '../component/trip/Trip';
+import Trip from './trip/Trip';
+import TripList from './trip/TripList';
 
-class ApplicationViews extends Component {
+export default class ApplicationViews extends Component {
 	render() {
-		return <Trip />;
+		return (
+			<React.Fragment>
+				{/* <Route
+					exact
+					path='/mytriplist'
+					render={props => {
+						return (
+							<ArticlesList
+								{...props}
+								// getUser={this.props.getUser}
+								activeUser={this.props.activeUser}
+							/>
+						);
+					}}
+				/> */}
+
+				<Route
+					exact
+					path='/mytrips'
+					render={props => {
+						if (this.props.user) {
+							return <TripList {...props} activeUser={this.props.activeUser} />;
+						} else {
+							return <Redirect to='/login' />;
+						}
+					}}
+				/>
+
+				<Route
+					exact
+					path='/mytrips/:tripId(\d+)'
+					render={props => {
+						if (this.props.user) {
+							return (
+								<Trip
+									tripId={parseInt(props.match.params.tripId)}
+									activeUser={this.props.activeUser}
+									{...props}
+								/>
+							);
+						} else {
+							return <Redirect to='/login' />;
+						}
+					}}
+				/>
+			</React.Fragment>
+		);
 	}
 }
-
-export default ApplicationViews;

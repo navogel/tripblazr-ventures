@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import Mapper from '../map/U-Map';
-import Mapper2 from '../map/Map';
 import TripManager from '../../modules/TripManager';
 
 class Trip extends Component {
 	state = {
-		tripId: 1,
-		locations: []
+		locations: [],
+		lat: '',
+		lng: ''
 	};
 
 	switchTrip = () => {
-		TripManager.getTrip(2).then(locations => {
+		TripManager.getTrip(this.props.tripId).then(locations => {
 			this.setState({
 				locations: locations
 			});
@@ -18,7 +18,7 @@ class Trip extends Component {
 	};
 
 	filterType = id => {
-		TripManager.getTripByType(this.state.tripId, id).then(locations => {
+		TripManager.getTripByType(this.props.tripId, id).then(locations => {
 			this.setState({
 				locations: locations
 			});
@@ -26,7 +26,7 @@ class Trip extends Component {
 	};
 
 	getData = () => {
-		TripManager.getTrip(this.state.tripId).then(locations => {
+		TripManager.getTrip(this.props.tripId).then(locations => {
 			this.setState({
 				locations: locations
 			});
@@ -41,7 +41,7 @@ class Trip extends Component {
 	render() {
 		return (
 			<>
-				<button onClick={this.switchTrip}>switch trips</button>
+				{/* <button onClick={this.switchTrip}>switch trips</button> */}
 				<button onClick={e => this.filterType(1)}>Hotels</button>
 				<button onClick={e => this.filterType(2)}>Activities</button>
 				<button onClick={e => this.filterType(3)}>Food</button>
@@ -49,7 +49,12 @@ class Trip extends Component {
 
 				<div>This is a tripView</div>
 				<div className='mapWrapper'>
-					<Mapper className='mapWrapper' locations={this.state.locations} />
+					<Mapper
+						className='mapWrapper'
+						locations={this.state.locations}
+						lat={this.state.lat}
+						lng={this.state.lng}
+					/>
 					{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 				</div>
 			</>
