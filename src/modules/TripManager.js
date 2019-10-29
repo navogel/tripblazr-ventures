@@ -18,7 +18,7 @@ export default {
 
 	getTripByType(id, typeId) {
 		return fetch(
-			`${remoteURL}/locations?tripId=${id}&locationType=${typeId}&_expand=locationType`
+			`${remoteURL}/locations?tripId=${id}&locationTypeId=${typeId}&_expand=locationType`
 		).then(result => result.json());
 	},
 	deleteTrip(id) {

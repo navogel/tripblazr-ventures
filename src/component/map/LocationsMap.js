@@ -76,9 +76,7 @@ export default class Mapper extends Component {
 		tripView: true,
 		searchTerm: '',
 		searchRange: 2000,
-		stars: '3',
-		clickedLat: '',
-		clickedLng: ''
+		stars: '3'
 	};
 
 	//function for storing click events on geosearch and click to add markers
@@ -180,6 +178,7 @@ export default class Mapper extends Component {
 		let marker;
 
 		map.on('click', e => {
+			this.props.dropPin();
 			geocoder.reverse(
 				e.latlng,
 				map.options.crs.scale(map.getZoom()),
@@ -190,7 +189,7 @@ export default class Mapper extends Component {
 						lat: r.center.lat,
 						lng: r.center.lng
 					});
-					console.log(this.state.lat, this.state.lng);
+
 					if (r) {
 						if (marker) {
 							map.removeLayer(marker);
@@ -253,10 +252,16 @@ export default class Mapper extends Component {
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
 			this.state.tripView &&
-			this.props.clickedCoords.length === 0
+			this.props.clickedCoords.length === 0 &&
+			this.props.droppedPin === false
 		) {
 			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
-		} else if (this.leafletMap && this.leafletMap.leafletElement) {
+		} else if (
+			this.leafletMap &&
+			this.leafletMap.leafletElement &&
+			this.state.tripView &&
+			this.props.droppedPin === false
+		) {
 			//console.log('cicked coords', this.props.clickedCoords);
 			//console.log('marker coords', markers);
 			//if not first load, and link has been clicked, zoom to marker
@@ -348,7 +353,7 @@ export default class Mapper extends Component {
 										]}
 										anchor='bottom'
 										onClick={e => this.markerFocus(e, location)}
-										icon={this.configMyIcon(location.locationType)}
+										// icon={this.configMyIcon(location.locationTypeId)}
 									>
 										<Tooltip>
 											{location.name}
@@ -372,7 +377,7 @@ export default class Mapper extends Component {
 									key={location.id}
 									position={[location.lat, location.long]}
 									onMouseMove={e => this.markerFocus(e, location)}
-									icon={this.configMyIcon(location.locationType)}
+									icon={this.configMyIcon(location.locationTypeId)}
 								>
 									<Tooltip>{location.name}</Tooltip>
 									{/* <Popup

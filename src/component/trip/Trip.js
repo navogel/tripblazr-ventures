@@ -9,7 +9,8 @@ class Trip extends Component {
 	state = {
 		locations: [],
 		tripDetails: {},
-		clickedCoords: []
+		clickedCoords: [],
+		droppedPin: false
 	};
 
 	switchTrip = () => {
@@ -20,9 +21,18 @@ class Trip extends Component {
 		TripManager.getTripByType(this.props.tripId, id).then(locations => {
 			this.setState({
 				locations: locations,
-				clickedCoords: []
+				clickedCoords: [],
+				droppedPin: false
 			});
 		});
+	};
+
+	clearCoords = () => {
+		this.setState({ clickedCoords: [] });
+	};
+
+	dropPin = () => {
+		this.setState({ droppedPin: true, clickedCoords: [] });
 	};
 
 	scrollTo = id => {
@@ -36,7 +46,8 @@ class Trip extends Component {
 
 	FocusMarker = obj => {
 		this.setState({
-			clickedCoords: [obj.lat, obj.long]
+			clickedCoords: [obj.lat, obj.long],
+			droppedPin: false
 		});
 	};
 
@@ -77,7 +88,6 @@ class Trip extends Component {
 						<button onClick={e => this.filterType(2)}>Activities</button>
 						<button onClick={e => this.filterType(3)}>Food</button>
 						<button onClick={e => this.getData()}>All</button>
-						<button onClick={e => this.scrollTo()}>Scrolly</button>
 
 						{this.state.locations.map(location => (
 							<LocationCard
@@ -97,6 +107,9 @@ class Trip extends Component {
 							tripDetails={this.state.tripDetails}
 							scrollTo={this.scrollTo}
 							clickedCoords={this.state.clickedCoords}
+							clearCoords={this.clearCoords}
+							dropPin={this.dropPin}
+							droppedPin={this.state.droppedPin}
 						/>
 						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 					</div>
