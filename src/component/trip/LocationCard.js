@@ -20,7 +20,8 @@ class LocationCard extends Component {
 		console.log('Locationcard props', this.props.location);
 		return (
 			<>
-				<Card className='tripCard'>
+				<Card className={'tripCard'}>
+					<div className={'scroll' + this.props.location.id}></div>
 					<CardActionArea className='cardActionArea'>
 						{/* <Link to={`/mytrips/${this.props.location.id}`}> */}
 						{/* <CardMedia

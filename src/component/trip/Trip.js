@@ -4,6 +4,7 @@ import TripManager from '../../modules/TripManager';
 import { withRouter } from 'react-router-dom';
 import LocationCard from './LocationCard';
 import ScrollIntoView from 'react-scroll-into-view';
+import animateScrollTo from 'animated-scroll-to';
 
 class Trip extends Component {
 	state = {
@@ -20,6 +21,14 @@ class Trip extends Component {
 			this.setState({
 				locations: locations
 			});
+		});
+	};
+
+	scrollTo = () => {
+		let scrollEl = document.querySelector('.scroll446');
+		console.log(scrollEl);
+		animateScrollTo(scrollEl, {
+			elementToScroll: document.querySelector('.listWrapper')
 		});
 	};
 
@@ -59,7 +68,7 @@ class Trip extends Component {
 						<button onClick={e => this.filterType(2)}>Activities</button>
 						<button onClick={e => this.filterType(3)}>Food</button>
 						<button onClick={e => this.getData()}>All</button>
-						<button onClick={this.toggleDrawer}>handle drawers</button>
+						<button onClick={e => this.scrollTo()}>Scrolly</button>
 
 						{this.state.locations.map(location => (
 							<LocationCard

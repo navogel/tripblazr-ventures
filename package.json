@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.5.2",
     "@material-ui/icons": "^4.5.1",
+    "animated-scroll-to": "^2.0.3",
     "leaflet": "^1.5.1",
     "leaflet-control-geocoder": "^1.10.0",
     "leaflet.markercluster": "^1.4.1",
