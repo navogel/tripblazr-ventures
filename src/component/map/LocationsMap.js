@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, Marker, Tooltip } from 'react-leaflet';
+import { Map, TileLayer, Marker, Tooltip, Popup } from 'react-leaflet';
 import Token from '../../Token';
 import L from 'leaflet';
 import GeoSearch from './GeoSearch';
@@ -88,6 +88,7 @@ export default class Mapper extends Component {
 
 	markerFocus = (e, obj) => {
 		console.log('got the deets', obj);
+		this.props.scrollTo(obj.id);
 	};
 
 	//light and dark mode on map
@@ -361,11 +362,16 @@ export default class Mapper extends Component {
 									className='location'
 									key={location.id}
 									position={[location.lat, location.long]}
-									anchor='bottom'
 									onClick={e => this.markerFocus(e, location)}
 									icon={this.configMyIcon(location.locationType)}
 								>
-									<Tooltip>{location.name}</Tooltip>
+									<Popup
+										coordinates={[location.lat, location.long]}
+										anchor='bottom'
+										offset={[0, -35]}
+									>
+										{location.name}
+									</Popup>
 								</Marker>
 							))}
 						</MarkerClusterGroup>

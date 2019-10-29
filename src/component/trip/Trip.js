@@ -24,8 +24,9 @@ class Trip extends Component {
 		});
 	};
 
-	scrollTo = () => {
-		let scrollEl = document.querySelector('.scroll446');
+	scrollTo = id => {
+		let newId = '.scroll' + id;
+		let scrollEl = document.querySelector(newId);
 		console.log(scrollEl);
 		animateScrollTo(scrollEl, {
 			elementToScroll: document.querySelector('.listWrapper')
@@ -85,6 +86,7 @@ class Trip extends Component {
 							className='mapper'
 							locations={this.state.locations}
 							tripDetails={this.state.tripDetails}
+							scrollTo={this.scrollTo}
 						/>
 						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 					</div>
