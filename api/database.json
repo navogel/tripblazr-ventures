@@ -2072,19 +2072,6 @@
       "name": "Jewelery"
     },
     {
-      "id": 174,
-      "tripId": 1,
-      "summary": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
-      "price": null,
-      "address": null,
-      "long": -86.71972,
-      "lat": 36.06106,
-      "visited": true,
-      "likes": 2,
-      "locationType": 2,
-      "name": "Grocery"
-    },
-    {
       "id": 175,
       "tripId": 10,
       "summary": null,
@@ -2499,6 +2486,19 @@
       "likes": 5,
       "locationType": 1,
       "name": "Industrial"
+    },
+    {
+      "id": 212,
+      "tripId": 1,
+      "summary": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+      "price": "$71.15",
+      "address": "05 Spaight Court",
+      "long": -86.78092,
+      "lat": 36.21516,
+      "visited": false,
+      "likes": 7,
+      "locationType": 3,
+      "name": "Tools"
     },
     {
       "id": 213,
@@ -3073,6 +3073,19 @@
       "name": "Industrial"
     },
     {
+      "id": 262,
+      "tripId": 1,
+      "summary": null,
+      "price": "$44.30",
+      "address": "843 Killdeer Way",
+      "long": -86.88056,
+      "lat": 36.12024,
+      "visited": true,
+      "likes": 0,
+      "locationType": 3,
+      "name": "Tools"
+    },
+    {
       "id": 263,
       "tripId": 5,
       "summary": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
@@ -3136,6 +3149,19 @@
       "likes": 20,
       "locationType": 1,
       "name": "Books"
+    },
+    {
+      "id": 269,
+      "tripId": 1,
+      "summary": null,
+      "price": null,
+      "address": null,
+      "long": -86.69309,
+      "lat": 36.12051,
+      "visited": false,
+      "likes": 0,
+      "locationType": 2,
+      "name": "Garden"
     },
     {
       "id": 270,
@@ -3461,6 +3487,19 @@
       "likes": 24,
       "locationType": 2,
       "name": "Movies"
+    },
+    {
+      "id": 296,
+      "tripId": 1,
+      "summary": null,
+      "price": "$14.82",
+      "address": "086 Michigan Point",
+      "long": -86.79031,
+      "lat": 36.19187,
+      "visited": true,
+      "likes": 1,
+      "locationType": 3,
+      "name": "Outdoors"
     },
     {
       "id": 297,
@@ -4295,6 +4334,19 @@
       "name": "Grocery"
     },
     {
+      "id": 366,
+      "tripId": 1,
+      "summary": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+      "price": "$15.59",
+      "address": "2 Graceland Pass",
+      "long": -86.60887,
+      "lat": 36.11809,
+      "visited": false,
+      "likes": 2,
+      "locationType": 2,
+      "name": "Grocery"
+    },
+    {
       "id": 367,
       "tripId": 2,
       "summary": null,
@@ -4319,6 +4371,19 @@
       "likes": 3,
       "locationType": 2,
       "name": "Books"
+    },
+    {
+      "id": 370,
+      "tripId": 1,
+      "summary": null,
+      "price": "$94.39",
+      "address": "64254 Union Crossing",
+      "long": -86.67876,
+      "lat": 36.2337,
+      "visited": true,
+      "likes": 21,
+      "locationType": 2,
+      "name": "Outdoors"
     },
     {
       "id": 371,
@@ -4724,6 +4789,19 @@
       "name": "Garden"
     },
     {
+      "id": 408,
+      "tripId": 1,
+      "summary": null,
+      "price": "$82.66",
+      "address": "3089 Riverside Hill",
+      "long": -86.83605,
+      "lat": 36.20398,
+      "visited": true,
+      "likes": 12,
+      "locationType": 1,
+      "name": "Shoes"
+    },
+    {
       "id": 409,
       "tripId": 5,
       "summary": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
@@ -4787,6 +4865,19 @@
       "likes": 14,
       "locationType": 3,
       "name": "Sports"
+    },
+    {
+      "id": 414,
+      "tripId": 1,
+      "summary": null,
+      "price": "$92.89",
+      "address": "7372 Mandrake Alley",
+      "long": -86.66835,
+      "lat": 36.17857,
+      "visited": true,
+      "likes": 17,
+      "locationType": 2,
+      "name": "Tools"
     },
     {
       "id": 415,

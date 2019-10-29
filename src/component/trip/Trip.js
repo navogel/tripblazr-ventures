@@ -9,7 +9,8 @@ import animateScrollTo from 'animated-scroll-to';
 class Trip extends Component {
 	state = {
 		locations: [],
-		tripDetails: {}
+		tripDetails: {},
+		clickedCoords: []
 	};
 
 	switchTrip = () => {
@@ -19,7 +20,8 @@ class Trip extends Component {
 	filterType = id => {
 		TripManager.getTripByType(this.props.tripId, id).then(locations => {
 			this.setState({
-				locations: locations
+				locations: locations,
+				clickedCoords: []
 			});
 		});
 	};
@@ -27,9 +29,15 @@ class Trip extends Component {
 	scrollTo = id => {
 		let newId = '.scroll' + id;
 		let scrollEl = document.querySelector(newId);
-		console.log(scrollEl);
+		//console.log(scrollEl);
 		animateScrollTo(scrollEl, {
 			elementToScroll: document.querySelector('.listWrapper')
+		});
+	};
+
+	FocusMarker = obj => {
+		this.setState({
+			clickedCoords: [obj.lat, obj.long]
 		});
 	};
 
@@ -37,7 +45,8 @@ class Trip extends Component {
 		TripManager.getTrip(this.props.tripId)
 			.then(locations => {
 				this.setState({
-					locations: locations
+					locations: locations,
+					clickedCoords: []
 				});
 			})
 			.then(() => {
@@ -55,11 +64,11 @@ class Trip extends Component {
 	}
 
 	render() {
-		console.log(
-			'locations array',
-			this.state.locations,
-			this.state.tripDetails
-		);
+		// console.log(
+		// 	'locations array',
+		// 	this.state.locations,
+		// 	this.state.tripDetails
+		// );
 		return (
 			<>
 				<div className='tripWrapper'>
@@ -76,6 +85,7 @@ class Trip extends Component {
 								key={location.id}
 								location={location}
 								getData={this.getData}
+								focusMarker={this.FocusMarker}
 								//{...this.props}
 							/>
 						))}
@@ -87,6 +97,7 @@ class Trip extends Component {
 							locations={this.state.locations}
 							tripDetails={this.state.tripDetails}
 							scrollTo={this.scrollTo}
+							clickedCoords={this.state.clickedCoords}
 						/>
 						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 					</div>

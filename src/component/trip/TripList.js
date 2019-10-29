@@ -6,7 +6,8 @@ import TripDrawer from './TripDrawer';
 
 class TripList extends Component {
 	state = {
-		trips: []
+		trips: [],
+		clickedCoords: []
 	};
 
 	getTrips = () => {
@@ -20,6 +21,13 @@ class TripList extends Component {
 	toggleDrawer = () => {
 		// Access the handleToggle function of the drawer reference
 		this.refs.drawer.openDrawer();
+	};
+
+	FocusMarker = obj => {
+		console.log('obj', obj.lat);
+		this.setState({
+			clickedCoords: [obj.lat, obj.long]
+		});
 	};
 
 	componentDidMount() {
@@ -44,9 +52,10 @@ class TripList extends Component {
 						{this.state.trips.map(trip => (
 							<TripCard
 								key={trip.id}
-								ref={[trip.id]}
+								// ref={[trip.id]}
 								trip={trip}
 								getTrips={this.getTrips}
+								focusMarker={this.FocusMarker}
 								// {...this.props}
 							/>
 						))}
@@ -57,7 +66,7 @@ class TripList extends Component {
 							trips={this.state.trips}
 							lat={this.state.lat}
 							lng={this.state.lng}
-							handleClick={this.handleClick}
+							clickedCoords={this.state.clickedCoords}
 						/>
 						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 					</div>

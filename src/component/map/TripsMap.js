@@ -83,7 +83,7 @@ export default class TripMapper extends Component {
 
 	markerFocus = (e, obj) => {
 		console.log('got the deets', obj);
-		this.props.handleClick(obj.id);
+		//this.props.handleClick(obj.id);
 	};
 
 	//light and dark mode on map
@@ -170,8 +170,17 @@ export default class TripMapper extends Component {
 			markers.push(coord);
 		});
 		//if leaflet has loaded, pass marker array for bounds
-		if (this.leafletMap && this.leafletMap.leafletElement) {
+		if (
+			this.leafletMap &&
+			this.leafletMap.leafletElement &&
+			this.props.clickedCoords.length === 0
+		) {
 			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
+		} else if (this.leafletMap && this.leafletMap.leafletElement) {
+			console.log('cicked coords', this.props.clickedCoords);
+			console.log('marker coords', markers);
+			//if not first load, and link has been clicked, zoom to marker
+			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 10);
 		}
 
 		return (

@@ -76,7 +76,9 @@ export default class Mapper extends Component {
 		tripView: true,
 		searchTerm: '',
 		searchRange: 2000,
-		stars: '3'
+		stars: '3',
+		clickedLat: '',
+		clickedLng: ''
 	};
 
 	//function for storing click events on geosearch and click to add markers
@@ -84,10 +86,10 @@ export default class Mapper extends Component {
 		console.log('yaya got dem O-B-Js', obj);
 	};
 
-	//function to storing click events on main map
+	//function to storing click events on main map, using scroll to function
 
 	markerFocus = (e, obj) => {
-		console.log('got the deets', obj);
+		// console.log('got the deets', obj);
 		this.props.scrollTo(obj.id);
 	};
 
@@ -228,7 +230,7 @@ export default class Mapper extends Component {
 	//mapbox://styles/jerodis/ck24x2b5a12ro1cnzdopvyw08 light
 	//mapbox://styles/jerodis/ck24wv71g15vb1cp90thseofp dark
 	render() {
-		console.log('trip deets from trip at render', this.props.tripDetails);
+		//console.log('trip deets from trip at render', this.props.tripDetails);
 		let Atoken;
 		if (this.state.light === true) {
 			Atoken = `https://api.mapbox.com/styles/v1/jerodis/ck24x2b5a12ro1cnzdopvyw08/tiles/256/{z}/{x}/{y}@2x?access_token=${Token.MB}`;
@@ -239,19 +241,26 @@ export default class Mapper extends Component {
 		const position = [this.state.lat, this.state.lng];
 		//create an array to hold location coords, with state passed fomr tip.js
 		const markers = [];
+
 		//take trips array of object and create an array of coordinates.
 		this.props.locations.forEach(obj => {
 			let coord = [obj.lat, obj.long];
 			markers.push(coord);
 		});
+
 		//if leaflet has loaded, pass marker array for bounds
 		if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
 			this.state.tripView &&
-			this.state.lat === ''
+			this.props.clickedCoords.length === 0
 		) {
 			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
+		} else if (this.leafletMap && this.leafletMap.leafletElement) {
+			//console.log('cicked coords', this.props.clickedCoords);
+			//console.log('marker coords', markers);
+			//if not first load, and link has been clicked, zoom to marker
+			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 14);
 		}
 
 		return (
@@ -331,7 +340,7 @@ export default class Mapper extends Component {
 							>
 								{this.state.searchResults.map(location => (
 									<Marker
-										className='location'
+										className={'scroll' + location.id}
 										key={location.id}
 										position={[
 											location.location.latitude,
@@ -362,16 +371,17 @@ export default class Mapper extends Component {
 									className='location'
 									key={location.id}
 									position={[location.lat, location.long]}
-									onClick={e => this.markerFocus(e, location)}
+									onMouseMove={e => this.markerFocus(e, location)}
 									icon={this.configMyIcon(location.locationType)}
 								>
-									<Popup
+									<Tooltip>{location.name}</Tooltip>
+									{/* <Popup
 										coordinates={[location.lat, location.long]}
 										anchor='bottom'
 										offset={[0, -35]}
 									>
 										{location.name}
-									</Popup>
+									</Popup> */}
 								</Marker>
 							))}
 						</MarkerClusterGroup>

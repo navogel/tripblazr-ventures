@@ -17,7 +17,7 @@ class TripCard extends Component {
 		TripManager.deleteTrip(id).then(() => this.props.getTrips());
 	};
 	render() {
-		console.log('tripcard props', this.props.trip);
+		//console.log('tripcard props', this.props.trip);
 		return (
 			<>
 				<Card className='tripCard'>
@@ -47,6 +47,13 @@ class TripCard extends Component {
 							onClick={() => this.handleDelete(this.props.trip.id)}
 						>
 							Delete
+						</Button>
+						<Button
+							size='small'
+							color='primary'
+							onClick={() => this.props.focusMarker(this.props.trip)}
+						>
+							Zoom to Trip
 						</Button>
 						{/* <EditAnimalModal id={this.props.animal.id} {...this.props} /> */}
 						{/* <Link to={`/animals/${this.props.animal.id}`}>
