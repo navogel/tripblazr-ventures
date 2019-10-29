@@ -4,12 +4,18 @@ import './index.css';
 import App from './App';
 // import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/styles';
 import 'leaflet-control-geocoder/dist/Control.Geocoder.js';
+import theme from './theme';
 
 ReactDOM.render(
-	<Router>
-		<App />
-	</Router>,
+	<ThemeProvider theme={theme}>
+		<Router>
+			<CssBaseline />
+			<App />
+		</Router>
+	</ThemeProvider>,
 
 	document.getElementById('root')
 );

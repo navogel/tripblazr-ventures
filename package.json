@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.5.2",
+    "@material-ui/icons": "^4.5.1",
     "leaflet": "^1.5.1",
     "leaflet-control-geocoder": "^1.10.0",
     "leaflet.markercluster": "^1.4.1",
@@ -17,7 +19,8 @@
     "react-map-gl-geocoder": "^2.0.11",
     "react-mapbox-gl": "^4.7.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-scroll-into-view": "^1.5.3"
   },
   "scripts": {
     "start": "react-scripts start",

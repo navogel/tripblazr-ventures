@@ -255,15 +255,15 @@ export default class Mapper extends Component {
 
 		return (
 			<>
-				{this.leafletMap && this.leafletMap.leafletElement && (
+				{/* {this.leafletMap && this.leafletMap.leafletElement && (
 					<button onClick={this.getCenterCoords}>click for map obj</button>
-				)}
+				)} */}
 				<Map
 					center={position}
 					doubleClickZoom={true}
 					Zoom={this.state.zoom}
 					maxZoom={16}
-					className='map'
+					className='mapComponent'
 					ref={m => {
 						this.leafletMap = m;
 					}}

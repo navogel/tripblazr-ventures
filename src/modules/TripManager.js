@@ -20,5 +20,15 @@ export default {
 		return fetch(
 			`${remoteURL}/locations?tripId=${id}&locationType=${typeId}`
 		).then(result => result.json());
+	},
+	deleteTrip(id) {
+		return fetch(`${remoteURL}/trips/${id}`, {
+			method: 'DELETE'
+		}).then(result => result.json());
+	},
+	deleteLocation(id) {
+		return fetch(`${remoteURL}/locations/${id}`, {
+			method: 'DELETE'
+		}).then(result => result.json());
 	}
 };

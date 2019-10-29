@@ -83,6 +83,7 @@ export default class TripMapper extends Component {
 
 	markerFocus = (e, obj) => {
 		console.log('got the deets', obj);
+		this.props.handleClick(obj.id);
 	};
 
 	//light and dark mode on map
@@ -106,42 +107,43 @@ export default class TripMapper extends Component {
 	};
 
 	//drop marker on click and record coords and address
-	// componentDidMount() {
-	// 	const map = this.leafletMap.leafletElement;
-	// 	const geocoder = L.Control.Geocoder.mapbox(Token);
-	// 	let marker;
+	componentDidMount() {
+		const map = this.leafletMap.leafletElement;
+		const geocoder = L.Control.Geocoder.mapbox(Token);
+		let marker;
 
-	// 	map.on('click', e => {
-	// 		geocoder.reverse(
-	// 			e.latlng,
-	// 			map.options.crs.scale(map.getZoom()),
-	// 			results => {
-	// 				var r = results[0];
-	// 				console.log('reverse geocode results', r);
-	// 				this.setState({
-	// 					lat: r.center.lat,
-	// 					lng: r.center.lng
-	// 				});
-	// 				console.log(this.state.lat, this.state.lng);
-	// 				if (r) {
-	// 					if (marker) {
-	// 						marker
-	// 							.setLatLng(r.center)
-	// 							.bindTooltip(r.name, { className: 'toolTip' })
-	// 							.on('click', e => this.storeGeocode(e, r));
-	// 						// .openPopup();
-	// 					} else {
-	// 						marker = L.marker(r.center, { icon: myIcon4 })
-	// 							.bindTooltip(r.name, { className: 'toolTip' })
-	// 							.addTo(map)
-	// 							.on('click', e => this.storeGeocode(e, r));
-	// 						// .openPopup();
-	// 					}
-	// 				}
-	// 			}
-	// 		);
-	// 	});
-	// }
+		map.on('click', e => {
+			geocoder.reverse(
+				e.latlng,
+				map.options.crs.scale(map.getZoom()),
+				results => {
+					var r = results[0];
+					console.log('reverse geocode results', r);
+					this.setState({
+						lat: r.center.lat,
+						lng: r.center.lng
+					});
+					console.log(this.state.lat, this.state.lng);
+					if (r) {
+						if (marker) {
+							map.removeLayer(marker);
+							marker = L.marker(r.center, { icon: myIcon4 })
+								.bindTooltip(r.name, { className: 'toolTip' })
+								.addTo(map)
+								.on('click', e => this.storeGeocode(e, r));
+							// .openPopup();
+						} else {
+							marker = L.marker(r.center, { icon: myIcon4 })
+								.bindTooltip(r.name, { className: 'toolTip' })
+								.addTo(map)
+								.on('click', e => this.storeGeocode(e, r));
+							// .openPopup();
+						}
+					}
+				}
+			);
+		});
+	}
 
 	getCoord = e => {
 		const lat = e.latlng.lat;
@@ -174,15 +176,12 @@ export default class TripMapper extends Component {
 
 		return (
 			<>
-				{this.leafletMap && this.leafletMap.leafletElement && (
-					<button onClick={this.getCenterCoords}>click for map obj</button>
-				)}
 				<Map
 					center={position}
 					doubleClickZoom={true}
 					Zoom={this.state.zoom}
 					maxZoom={16}
-					className='map'
+					className='mapComponent'
 					ref={m => {
 						this.leafletMap = m;
 					}}

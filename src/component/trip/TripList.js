@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import TripManager from '../../modules/TripManager';
 import TripMapper from '../map/TripsMap';
+import TripCard from './TripCard';
+import TripDrawer from './TripDrawer';
 
 class TripList extends Component {
 	state = {
@@ -13,6 +15,11 @@ class TripList extends Component {
 				trips: newTrips
 			});
 		});
+	};
+
+	toggleDrawer = () => {
+		// Access the handleToggle function of the drawer reference
+		this.refs.drawer.openDrawer();
 	};
 
 	componentDidMount() {
@@ -29,16 +36,31 @@ class TripList extends Component {
 				<button onClick={e => this.filterType(2)}>Activities</button>
 				<button onClick={e => this.filterType(3)}>Food</button>
 				<button onClick={e => this.getData()}>All</button> */}
+				<TripDrawer ref='drawer' />
+				<div className='tripWrapper'>
+					<div className='listWrapper'>
+						<button onClick={this.toggleDrawer}>handle drawers</button>
 
-				<div>This is a tripList</div>
-				<div className='mapWrapper'>
-					<TripMapper
-						className='mapWrapper'
-						trips={this.state.trips}
-						lat={this.state.lat}
-						lng={this.state.lng}
-					/>
-					{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
+						{this.state.trips.map(trip => (
+							<TripCard
+								key={trip.id}
+								ref={[trip.id]}
+								trip={trip}
+								getTrips={this.getTrips}
+								// {...this.props}
+							/>
+						))}
+					</div>
+					<div className='mapWrapper'>
+						<TripMapper
+							className='mapper'
+							trips={this.state.trips}
+							lat={this.state.lat}
+							lng={this.state.lng}
+							handleClick={this.handleClick}
+						/>
+						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
+					</div>
 				</div>
 			</>
 		);

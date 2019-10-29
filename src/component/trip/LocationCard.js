@@ -12,39 +12,38 @@ import './tripCard.css';
 
 //table
 
-class TripCard extends Component {
+class LocationCard extends Component {
 	handleDelete = id => {
-		TripManager.deleteTrip(id).then(() => this.props.getTrips());
+		TripManager.deleteLocation(id).then(() => this.props.getData());
 	};
 	render() {
-		console.log('tripcard props', this.props.trip);
+		console.log('Locationcard props', this.props.location);
 		return (
 			<>
 				<Card className='tripCard'>
 					<CardActionArea className='cardActionArea'>
-						<Link to={`/mytrips/${this.props.trip.id}`}>
-							{/* <CardMedia
+						{/* <Link to={`/mytrips/${this.props.location.id}`}> */}
+						{/* <CardMedia
 								className='tripCardMedia'
 								image=
 								
 							/> */}
-							<CardContent className='cardContent'>
-								<h3>
-									Name:{' '}
-									<span className='card-tripname'>
-										{/* {firstLetterCase(this.props.trip.name)} */}
-										{this.props.trip.name}
-									</span>
-								</h3>
-								<p>Summary: {this.props.trip.summary}</p>
-							</CardContent>
-						</Link>
+						<CardContent className='cardContent'>
+							<h3>
+								Name:{' '}
+								<span className='card-tripname'>
+									{/* {firstLetterCase(this.props.location.name)} */}
+									{this.props.location.name}
+								</span>
+							</h3>
+							<p>Summary: {this.props.location.summary}</p>
+						</CardContent>
 					</CardActionArea>
 					<CardActions className='cardButtons'>
 						<Button
 							size='small'
 							color='primary'
-							onClick={() => this.handleDelete(this.props.trip.id)}
+							onClick={() => this.handleDelete(this.props.location.id)}
 						>
 							Delete
 						</Button>
@@ -61,4 +60,4 @@ class TripCard extends Component {
 	}
 }
 
-export default TripCard;
+export default LocationCard;

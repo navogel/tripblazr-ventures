@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Mapper from '../map/LocationsMap';
 import TripManager from '../../modules/TripManager';
 import { withRouter } from 'react-router-dom';
+import LocationCard from './LocationCard';
+import ScrollIntoView from 'react-scroll-into-view';
 
 class Trip extends Component {
 	state = {
@@ -43,22 +45,40 @@ class Trip extends Component {
 	}
 
 	render() {
+		console.log(
+			'locations array',
+			this.state.locations,
+			this.state.tripDetails
+		);
 		return (
 			<>
-				<button onClick={this.switchTrip}>back to trips</button>
-				<button onClick={e => this.filterType(1)}>Hotels</button>
-				<button onClick={e => this.filterType(2)}>Activities</button>
-				<button onClick={e => this.filterType(3)}>Food</button>
-				<button onClick={e => this.getData()}>All</button>
+				<div className='tripWrapper'>
+					<div className='listWrapper'>
+						<button onClick={this.switchTrip}>back to trips</button>
+						<button onClick={e => this.filterType(1)}>Hotels</button>
+						<button onClick={e => this.filterType(2)}>Activities</button>
+						<button onClick={e => this.filterType(3)}>Food</button>
+						<button onClick={e => this.getData()}>All</button>
+						<button onClick={this.toggleDrawer}>handle drawers</button>
 
-				<div>This is a tripView</div>
-				<div className='mapWrapper'>
-					<Mapper
-						className='mapWrapper'
-						locations={this.state.locations}
-						tripDetails={this.state.tripDetails}
-					/>
-					{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
+						{this.state.locations.map(location => (
+							<LocationCard
+								key={location.id}
+								location={location}
+								getData={this.getData}
+								//{...this.props}
+							/>
+						))}
+					</div>
+
+					<div className='mapWrapper'>
+						<Mapper
+							className='mapper'
+							locations={this.state.locations}
+							tripDetails={this.state.tripDetails}
+						/>
+						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
+					</div>
 				</div>
 			</>
 		);
