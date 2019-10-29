@@ -34,10 +34,10 @@ class LocationCard extends Component {
 							/> */}
 						<CardContent className='cardContent'>
 							<h3>
-								Name:{' '}
 								<span className='card-tripname'>
 									{/* {firstLetterCase(this.props.location.name)} */}
-									{this.props.location.name}
+									{this.props.location.name}{' '}
+									{this.props.location.locationType.locationType}
 								</span>
 							</h3>
 							<p>Summary: {this.props.location.summary}</p>

@@ -7,6 +7,7 @@ class GeoSearch extends MapControl {
 	createLeafletElement(props) {}
 
 	componentDidMount() {
+		console.log('props', this.props);
 		var myIcon4 = L.icon({
 			iconUrl: '/images/markers/icon4.png',
 			iconSize: [25, 41],
@@ -18,7 +19,10 @@ class GeoSearch extends MapControl {
 		});
 		const searchBox = L.Control.geocoder({
 			geocoder: new L.Control.Geocoder.Mapbox(Token.MB, {
-				geocodingQueryParams: { proximity: { lat: 36, lng: -86 } }
+				geocodingQueryParams: {
+					proximity: { lat: 36, lng: -86 },
+					language: 'en'
+				}
 			}),
 			collapsed: false,
 			// showResultIcons: true,

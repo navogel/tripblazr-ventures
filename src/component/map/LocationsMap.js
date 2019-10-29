@@ -75,8 +75,9 @@ export default class Mapper extends Component {
 		searchResults: [],
 		tripView: true,
 		searchTerm: '',
-		searchRange: 2000,
-		stars: '3'
+		searchRange: 8000,
+		stars: '3',
+		recievedTrip: false
 	};
 
 	//function for storing click events on geosearch and click to add markers
@@ -209,6 +210,9 @@ export default class Mapper extends Component {
 				}
 			);
 		});
+
+		//trying to set state in order to pass geosearch props but it breaks everything
+		//this.setState({ recievedTrip: true });
 	}
 
 	configMyIcon = id => {
@@ -265,7 +269,7 @@ export default class Mapper extends Component {
 			//console.log('cicked coords', this.props.clickedCoords);
 			//console.log('marker coords', markers);
 			//if not first load, and link has been clicked, zoom to marker
-			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 14);
+			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 13);
 		}
 
 		return (
@@ -291,6 +295,7 @@ export default class Mapper extends Component {
 								this.leafletGeo = m;
 							}}
 							storeGeocode={this.storeGeocode}
+							tripDetails={this.props.tripDetails}
 						/>
 					)}{' '}
 					{!this.state.tripView && (
