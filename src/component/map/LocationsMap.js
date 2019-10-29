@@ -190,9 +190,10 @@ export default class Mapper extends Component {
 					console.log(this.state.lat, this.state.lng);
 					if (r) {
 						if (marker) {
-							marker
-								.setLatLng(r.center)
+							map.removeLayer(marker);
+							marker = L.marker(r.center, { icon: myIcon4 })
 								.bindTooltip(r.name, { className: 'toolTip' })
+								.addTo(map)
 								.on('click', e => this.storeGeocode(e, r));
 							// .openPopup();
 						} else {
