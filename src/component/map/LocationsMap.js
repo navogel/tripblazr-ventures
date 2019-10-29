@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, Marker, Tooltip, Popup } from 'react-leaflet';
+import { Map, TileLayer, Marker, Tooltip } from 'react-leaflet';
 import Token from '../../Token';
 import L from 'leaflet';
 import GeoSearch from './GeoSearch';
@@ -89,7 +89,7 @@ export default class Mapper extends Component {
 	//function to storing click events on main map, using scroll to function
 
 	markerFocus = (e, obj) => {
-		// console.log('got the deets', obj);
+		//console.log('got the deets', obj);
 		this.props.scrollTo(obj.id);
 	};
 
@@ -173,7 +173,7 @@ export default class Mapper extends Component {
 
 	//drop marker on click and record coords and address
 	componentDidMount() {
-		console.log('trip deets from trip at didmount', this.props.tripDetails);
+		//console.log('trip deets from trip at didmount', this.props.tripDetails);
 
 		const map = this.leafletMap.leafletElement;
 		const geocoder = L.Control.Geocoder.mapbox(Token);

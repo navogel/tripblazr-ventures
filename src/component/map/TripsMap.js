@@ -5,7 +5,7 @@ import L from 'leaflet';
 import TripGeoSearch from './TripGeoSearch';
 import Control from 'react-leaflet-control';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
-import SearchManager from '../../modules/SearchManager';
+//import SearchManager from '../../modules/SearchManager';
 
 const createClusterCustomIcon = function(cluster) {
 	return L.divIcon({
@@ -15,49 +15,8 @@ const createClusterCustomIcon = function(cluster) {
 	});
 };
 
-const myIcon1 = L.icon({
-	iconUrl: '/images/markers/icon1.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	tooltipAnchor: [15, -30],
-	shadowUrl: '/images/markers/shadow.png',
-	shadowSize: [30, 41],
-	shadowAnchor: [9, 41]
-});
-
-const myIcon2 = L.icon({
-	iconUrl: '/images/markers/icon2.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	tooltipAnchor: [15, -30],
-	shadowUrl: '/images/markers/shadow.png',
-	shadowSize: [30, 41],
-	shadowAnchor: [9, 41]
-});
-
-const myIcon3 = L.icon({
-	iconUrl: '/images/markers/icon3.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	tooltipAnchor: [15, -30],
-	shadowUrl: '/images/markers/shadow.png',
-	shadowSize: [30, 41],
-	shadowAnchor: [9, 41]
-	// className: 'toolTip'
-});
-
 const myIcon4 = L.icon({
 	iconUrl: '/images/markers/icon4.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	tooltipAnchor: [15, -30],
-	shadowUrl: '/images/markers/shadow.png',
-	shadowSize: [30, 41],
-	shadowAnchor: [9, 41]
-});
-
-const myIcon5 = L.icon({
-	iconUrl: '/images/markers/icon5.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
 	tooltipAnchor: [15, -30],

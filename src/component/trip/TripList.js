@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 import TripManager from '../../modules/TripManager';
 import TripMapper from '../map/TripsMap';
 import TripCard from './TripCard';

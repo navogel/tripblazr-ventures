@@ -8,9 +8,9 @@ export default {
 		);
 	},
 	getTrip(id) {
-		return fetch(`${remoteURL}/locations?tripId=${id}`).then(result =>
-			result.json()
-		);
+		return fetch(
+			`${remoteURL}/locations?tripId=${id}&_expand=locationType`
+		).then(result => result.json());
 	},
 	getTripDetails(id) {
 		return fetch(`${remoteURL}/trips/${id}`).then(result => result.json());
@@ -18,7 +18,7 @@ export default {
 
 	getTripByType(id, typeId) {
 		return fetch(
-			`${remoteURL}/locations?tripId=${id}&locationType=${typeId}`
+			`${remoteURL}/locations?tripId=${id}&locationType=${typeId}&_expand=locationType`
 		).then(result => result.json());
 	},
 	deleteTrip(id) {

@@ -3,7 +3,6 @@ import Mapper from '../map/LocationsMap';
 import TripManager from '../../modules/TripManager';
 import { withRouter } from 'react-router-dom';
 import LocationCard from './LocationCard';
-import ScrollIntoView from 'react-scroll-into-view';
 import animateScrollTo from 'animated-scroll-to';
 
 class Trip extends Component {
