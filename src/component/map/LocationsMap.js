@@ -361,8 +361,7 @@ export default class Mapper extends Component {
 										// icon={this.configMyIcon(location.locationTypeId)}
 									>
 										<Tooltip>
-											{location.name}
-											{location.overall_star_rating}
+											{location.name} {location.overall_star_rating}
 										</Tooltip>
 									</Marker>
 								))}
