@@ -63,9 +63,18 @@
 	flex: 1;
 }
 
+/* TripList */
+
 .listWrapper {
 	height: 80vh;
 	overflow: auto;
+}
+
+.listHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .listWrapper::-webkit-scrollbar {

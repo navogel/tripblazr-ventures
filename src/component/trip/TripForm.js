@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import TripManager from '../../modules/TripManager';
 import PropTypes from 'prop-types';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 //import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -37,6 +39,9 @@ class TripForm extends Component {
 		lng: '',
 		communication: '',
 		money: '',
+		likes: '',
+		published: false,
+		userId: 1,
 		loadingStatus: false
 		// imageLink: ''
 	};
@@ -62,7 +67,10 @@ class TripForm extends Component {
 				lat: this.state.lat,
 				lng: this.state.lng,
 				communication: this.state.communication,
-				money: this.state.money
+				money: this.state.money,
+				likes: this.state.likes,
+				published: false,
+				userId: this.state.userId
 			};
 
 			// Create the animal and redirect user to animal list
@@ -79,19 +87,11 @@ class TripForm extends Component {
 			<>
 				<form className={classes.container} noValidate autoComplete='off'>
 					<div className='formWrapper'>
+						<DialogTitle className='modalTitle'>
+							{'Lets get this trip started.'}
+						</DialogTitle>
 						<div className='inputWrapper'>
 							<div className='nameCity'>
-								<TextField
-									id='tripName'
-									label='Name'
-									className={classes.textField}
-									value={this.state.name}
-									onChange={this.handleFieldChange}
-									margin='dense'
-									variant='outlined'
-									placeholder='Name your Trip!'
-								/>
-
 								<TextField
 									id='city'
 									label='Destination'
@@ -101,6 +101,16 @@ class TripForm extends Component {
 									margin='dense'
 									variant='outlined'
 									placeholder='Where ya going?'
+								/>
+								<TextField
+									id='tripName'
+									label='Name'
+									className={classes.textField}
+									value={this.state.name}
+									onChange={this.handleFieldChange}
+									margin='dense'
+									variant='outlined'
+									placeholder='Name your Trip!'
 								/>
 							</div>
 							{/* <div className='tripDescription'>
@@ -160,7 +170,7 @@ class TripForm extends Component {
 								aria-label='submit'
 								className={classes.margin}
 								disabled={this.state.loadingStatus}
-								onClick={e => this.constructNewTrip}
+								onClick={this.constructNewTrip}
 							>
 								<AddIcon className={classes.extendedIcon} />
 								Submit

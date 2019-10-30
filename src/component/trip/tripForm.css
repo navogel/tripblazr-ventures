@@ -1,7 +1,7 @@
 .formWrapper {
 	display: flex;
 	flex-direction: column;
-	padding: 1em;
+	padding: 3em 5em;
 	flex-grow: 1;
 }
 
@@ -13,7 +13,7 @@
 
 .nameCity {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
 }
 
@@ -31,4 +31,14 @@
 
 .formSubmit {
 	margin: 1em;
+	align-self: flex-end;
+	padding-top: 1em;
+	margin-bottom: 0em;
+	color: white;
+}
+
+.modalTitle {
+	margin-top: 5em !important;
+	margin-bottom: 5em !important;
+	text-align: center;
 }
