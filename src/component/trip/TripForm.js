@@ -33,10 +33,10 @@ const styles = theme => ({
 class TripForm extends Component {
 	state = {
 		tripName: '',
-		city: '',
+		city: this.props.newName,
 		summary: '',
-		lat: '',
-		lng: '',
+		lat: this.props.newLat,
+		lng: this.props.newLng,
 		communication: '',
 		money: '',
 		likes: '',
@@ -61,7 +61,7 @@ class TripForm extends Component {
 		} else {
 			this.setState({ loadingStatus: true });
 			const trip = {
-				tripName: this.state.tripName,
+				name: this.state.tripName,
 				city: this.state.city,
 				summary: this.state.summary,
 				lat: this.state.lat,
@@ -74,6 +74,7 @@ class TripForm extends Component {
 			};
 
 			// Create the animal and redirect user to animal list
+			this.props.handleClose();
 			TripManager.postTrip(trip).then(() => {
 				console.log('addform props', this.props);
 				this.props.getTrips();

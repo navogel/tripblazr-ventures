@@ -247,7 +247,7 @@ export default class Mapper extends Component {
 
 		//take trips array of object and create an array of coordinates.
 		this.props.locations.forEach(obj => {
-			let coord = [obj.lat, obj.long];
+			let coord = [obj.lat, obj.lng];
 			markers.push(coord);
 		});
 
@@ -354,7 +354,7 @@ export default class Mapper extends Component {
 										key={location.id}
 										position={[
 											location.location.latitude,
-											location.location.longitude
+											location.location.lngitude
 										]}
 										anchor='bottom'
 										onClick={e => this.markerFocus(e, location)}
@@ -379,13 +379,13 @@ export default class Mapper extends Component {
 								<Marker
 									className='location'
 									key={location.id}
-									position={[location.lat, location.long]}
+									position={[location.lat, location.lng]}
 									onMouseMove={e => this.markerFocus(e, location)}
 									icon={this.configMyIcon(location.locationTypeId)}
 								>
 									<Tooltip>{location.name}</Tooltip>
 									{/* <Popup
-										coordinates={[location.lat, location.long]}
+										coordinates={[location.lat, location.lng]}
 										anchor='bottom'
 										offset={[0, -35]}
 									>

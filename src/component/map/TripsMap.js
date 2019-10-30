@@ -29,20 +29,23 @@ export default class TripMapper extends Component {
 	state = {
 		lat: '',
 		lng: '',
-		zoom: 14,
-		light: true
+		zoom: 13,
+		light: true,
+		geocoded: false
 	};
 
 	//function for storing click events on geosearch and click to add markers
-	storeGeocode = (e, obj) => {
+	storeGeocode = obj => {
 		console.log('yaya got dem O-B-Js', obj);
+		this.setState({ geocoded: true });
+		this.props.addMarker(obj);
 	};
 
 	//function to storing click events on main map
 
 	markerFocus = (e, obj) => {
-		console.log('got the deets', obj);
-		//this.props.handleClick(obj.id);
+		//console.log('got the deets', obj);
+		this.props.scrollTo(obj.id);
 	};
 
 	//light and dark mode on map
@@ -67,42 +70,48 @@ export default class TripMapper extends Component {
 
 	//drop marker on click and record coords and address
 	componentDidMount() {
-		const map = this.leafletMap.leafletElement;
-		const geocoder = L.Control.Geocoder.mapbox(Token);
-		let marker;
-
-		map.on('click', e => {
-			geocoder.reverse(
-				e.latlng,
-				map.options.crs.scale(map.getZoom()),
-				results => {
-					var r = results[0];
-					console.log('reverse geocode results', r);
-					this.setState({
-						lat: r.center.lat,
-						lng: r.center.lng
-					});
-					console.log(this.state.lat, this.state.lng);
-					if (r) {
-						if (marker) {
-							map.removeLayer(marker);
-							marker = L.marker(r.center, { icon: myIcon4 })
-								.bindTooltip(r.name, { className: 'toolTip' })
-								.addTo(map)
-								.on('click', e => this.storeGeocode(e, r));
-							// .openPopup();
-						} else {
-							marker = L.marker(r.center, { icon: myIcon4 })
-								.bindTooltip(r.name, { className: 'toolTip' })
-								.addTo(map)
-								.on('click', e => this.storeGeocode(e, r));
-							// .openPopup();
-						}
-					}
-				}
-			);
-		});
+		//commenting marker dropping for TripList view so geocoding search is the only way to add trips
+		// 	const map = this.leafletMap.leafletElement;
+		// 	const geocoder = L.Control.Geocoder.mapbox(Token);
+		// 	let marker;
+		// 	map.on('click', e => {
+		// 		geocoder.reverse(
+		// 			e.latlng,
+		// 			map.options.crs.scale(map.getZoom()),
+		// 			results => {
+		// 				var r = results[0];
+		// 				//console.log('reverse geocode results', r);
+		// 				this.setState({
+		// 					lat: r.center.lat,
+		// 					lng: r.center.lng
+		// 				});
+		// 				this.props.addMarker(r);
+		// 				//console.log(this.state.lat, this.state.lng);
+		// 				if (r) {
+		// 					if (marker) {
+		// 						map.removeLayer(marker);
+		// 						marker = L.marker(r.center, { icon: myIcon4 })
+		// 							.bindTooltip(r.name, { className: 'toolTip' })
+		// 							.addTo(map)
+		// 							.on('click', e => this.storeGeocode(e, r));
+		// 					} else {
+		// 						marker = L.marker(r.center, { icon: myIcon4 })
+		// 							.bindTooltip(r.name, { className: 'toolTip' })
+		// 							.addTo(map)
+		// 							.on('click', e => this.storeGeocode(e, r));
+		// 						// .openPopup();
+		// 					}
+		// 				}
+		// 			}
+		// 		);
+		// 	});
 	}
+
+	resetView = e => {
+		this.leafletMap.leafletElement.setView([40, 34], 2);
+		this.props.clearClickedCoords();
+		this.setState({ geocoded: false });
+	};
 
 	getCoord = e => {
 		const lat = e.latlng.lat;
@@ -112,7 +121,7 @@ export default class TripMapper extends Component {
 	//mapbox://styles/jerodis/ck24x2b5a12ro1cnzdopvyw08 light
 	//mapbox://styles/jerodis/ck24wv71g15vb1cp90thseofp dark
 	render() {
-		console.log('map trips', this.props.trips);
+		//console.log('map trips', this.props.trips);
 		let Atoken;
 		if (this.state.light === true) {
 			Atoken = `https://api.mapbox.com/styles/v1/jerodis/ck24x2b5a12ro1cnzdopvyw08/tiles/256/{z}/{x}/{y}@2x?access_token=${Token.MB}`;
@@ -125,21 +134,36 @@ export default class TripMapper extends Component {
 		const markers = [];
 		//take trips array of object and create an array of coordinates.
 		this.props.trips.forEach(obj => {
-			let coord = [obj.lat, obj.long];
+			let coord = [obj.lat, obj.lng];
 			markers.push(coord);
 		});
 		//if leaflet has loaded, pass marker array for bounds
 		if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
-			this.props.clickedCoords.length === 0
+			this.props.clickedCoords.length === 0 &&
+			markers.length > 10
 		) {
-			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
-		} else if (this.leafletMap && this.leafletMap.leafletElement) {
-			console.log('cicked coords', this.props.clickedCoords);
-			console.log('marker coords', markers);
+			this.leafletMap.leafletElement.fitBounds(markers, {
+				padding: [100, 100]
+			});
+			console.log('fit to bounds');
+		} else if (
+			this.leafletMap &&
+			this.leafletMap.leafletElement &&
+			this.props.clickedCoords.length > 0
+		) {
+			console.log('clicked coords zoom', this.props.clickedCoords);
+			//console.log('marker coords', markers);
 			//if not first load, and link has been clicked, zoom to marker
 			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 10);
+		} else if (
+			this.leafletMap &&
+			this.leafletMap.leafletElement &&
+			this.state.geocoded === false
+		) {
+			this.leafletMap.leafletElement.setView([40, 34], 2);
+			console.log('world View', this.state.geocoded);
 		}
 
 		return (
@@ -161,6 +185,8 @@ export default class TripMapper extends Component {
 							this.leafletGeo = m;
 						}}
 						storeGeocode={this.storeGeocode}
+						addMarker={this.props.addMarker}
+						clearClickedCoords={this.props.clearClickedCoords}
 					/>
 
 					<TileLayer
@@ -178,9 +204,10 @@ export default class TripMapper extends Component {
 							<Marker
 								className='location'
 								key={trip.id}
-								position={[trip.lat, trip.long]}
+								position={[trip.lat, trip.lng]}
 								anchor='bottom'
-								onClick={e => this.markerFocus(e, trip)}
+								onMouseMove={e => this.markerFocus(e, trip)}
+								//onClick={e => this.markerFocus(e, trip)}
 								// icon={this.configMyIcon(location.locationType)}
 							>
 								<Tooltip>{trip.name}</Tooltip>
@@ -190,6 +217,7 @@ export default class TripMapper extends Component {
 
 					<Control position='bottomright'>
 						<button onClick={this.mapToggle}>SWITCH MAP Stylie</button>
+						<button onClick={this.resetView}>World View</button>
 					</Control>
 				</Map>
 			</>

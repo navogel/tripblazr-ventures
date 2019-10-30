@@ -135,3 +135,7 @@
 .slidecontainer p {
 	margin: 0.2em;
 }
+
+.MuiSnackbarContent-root {
+	background: orange !important;
+}

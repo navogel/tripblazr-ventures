@@ -24,6 +24,8 @@ class TripGeoSearch extends MapControl {
 			// showResultIcons: true,
 			defaultMarkGeocode: false
 		}).on('markgeocode', result => {
+			this.props.clearClickedCoords();
+			this.props.storeGeocode(result);
 			console.log('georeuslt', result);
 			// let printResult = this.props.storeGeocode(result);
 			result = result.geocode || result;
@@ -36,8 +38,9 @@ class TripGeoSearch extends MapControl {
 
 			this._geocodeMarker = new L.Marker(result.center, { icon: myIcon4 })
 				.bindTooltip(result.html || result.name, { className: 'toolTip' })
-				.addTo(this.props.leaflet.map)
-				.on('click', e => this.props.storeGeocode(e, result));
+				.addTo(this.props.leaflet.map);
+			//later add to trip on click
+			//.on('click', e => this.props.storeGeocode(e, result));
 
 			return this;
 		});

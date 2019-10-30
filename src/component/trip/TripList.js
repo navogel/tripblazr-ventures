@@ -9,16 +9,46 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { withStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import animateScrollTo from 'animated-scroll-to';
+import ErrorIcon from '@material-ui/icons/Error';
 
 class TripList extends Component {
 	state = {
 		trips: [],
 		clickedCoords: [],
-		open: false
+		open: false,
+		newLat: '',
+		newLng: '',
+		newName: '',
+		snackOpen: false
 	};
 
+	//drop a pin alert
+
+	handleSnackClick = () => {
+		this.setState({ snackOpen: true });
+		console.log('snackery');
+	};
+
+	handleSnackClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return;
+		}
+
+		this.setState({ snackOpen: false });
+	};
+
+	//modal open
+
 	handleClickOpen = () => {
-		this.setState({ open: true });
+		if (this.state.newLat === '') {
+			this.handleSnackClick();
+		} else {
+			this.setState({ open: true });
+		}
 	};
 
 	handleClose = () => {
@@ -28,8 +58,18 @@ class TripList extends Component {
 	getTrips = () => {
 		TripManager.getAllTrips(this.props.activeUser).then(newTrips => {
 			this.setState({
-				trips: newTrips
+				trips: newTrips,
+				clickedCoords: []
 			});
+		});
+	};
+	//scrolle to hovered marker
+	scrollTo = id => {
+		let newId = '.scroll' + id;
+		let scrollEl = document.querySelector(newId);
+		//console.log(scrollEl);
+		animateScrollTo(scrollEl, {
+			elementToScroll: document.querySelector('.listWrapper')
 		});
 	};
 
@@ -38,21 +78,39 @@ class TripList extends Component {
 		this.refs.drawer.openDrawer();
 	};
 
+	//allows user to click a trip and zoom to its location on the map
 	FocusMarker = obj => {
 		console.log('obj', obj.lat);
 		this.setState({
-			clickedCoords: [obj.lat, obj.long]
+			clickedCoords: [obj.lat, obj.lng]
+		});
+	};
+
+	//clear the trip coordinates
+	clearClickedCoords = () => {
+		this.setState({ clickedCoords: [] });
+	};
+
+	//store a marker info for adding to map
+
+	addMarker = obj => {
+		console.log('obj from add marker', obj);
+		this.setState({
+			newName: obj.geocode.name,
+			newLat: obj.geocode.center.lat,
+			newLng: obj.geocode.center.lng
 		});
 	};
 
 	componentDidMount() {
 		this.getTrips();
-		console.log('trippin', this.state.trips);
+		//console.log('trippin', this.state.trips);
 	}
 
 	render() {
 		// const { classes } = this.props;
-		console.log('state trippin', this.state.trips);
+		//console.log('clicked cords', this.state.clickedCoords);
+		//console.log('new lat', this.state.newLat);
 		return (
 			<>
 				<TripDrawer ref='drawer' />
@@ -85,6 +143,9 @@ class TripList extends Component {
 							lat={this.state.lat}
 							lng={this.state.lng}
 							clickedCoords={this.state.clickedCoords}
+							addMarker={this.addMarker}
+							clearClickedCoords={this.clearClickedCoords}
+							scrollTo={this.scrollTo}
 						/>
 						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 					</div>
@@ -95,8 +156,46 @@ class TripList extends Component {
 					onClose={this.handleClose}
 					aria-labelledby='form-dialog-title'
 				>
-					<TripForm getTrips={this.getTrips} />
+					<TripForm
+						getTrips={this.getTrips}
+						newLat={this.state.newLat}
+						newLng={this.state.newLng}
+						newName={this.state.newName}
+						handleClose={this.handleClose}
+					/>
 				</Dialog>
+				<Snackbar
+					anchorOrigin={{
+						vertical: 'top',
+						horizontal: 'left'
+					}}
+					open={this.state.snackOpen}
+					autoHideDuration={5000}
+					onClose={this.handleSnackClose}
+					ContentProps={{
+						'aria-describedby': 'message-id'
+					}}
+					className='snackWarning'
+					message={
+						<span id='message-id'>
+							<IconButton key='close' aria-label='Close' color='inherit'>
+								<ErrorIcon />
+							</IconButton>
+							Type in a location to drop a Pin!
+						</span>
+					}
+					action={[
+						<IconButton
+							key='close'
+							aria-label='Close'
+							color='inherit'
+							//className={classes.close}
+							onClick={this.handleSnackClose}
+						>
+							<CloseIcon />
+						</IconButton>
+					]}
+				/>
 			</>
 		);
 	}

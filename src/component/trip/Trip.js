@@ -46,7 +46,7 @@ class Trip extends Component {
 
 	FocusMarker = obj => {
 		this.setState({
-			clickedCoords: [obj.lat, obj.long],
+			clickedCoords: [obj.lat, obj.lng],
 			droppedPin: false
 		});
 	};

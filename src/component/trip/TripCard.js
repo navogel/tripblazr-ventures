@@ -21,6 +21,7 @@ class TripCard extends Component {
 		return (
 			<>
 				<Card className='tripCard'>
+					<div className={'scroll' + this.props.trip.id}></div>
 					<CardActionArea className='cardActionArea'>
 						<Link to={`/mytrips/${this.props.trip.id}`}>
 							{/* <CardMedia
@@ -30,13 +31,12 @@ class TripCard extends Component {
 							/> */}
 							<CardContent className='cardContent'>
 								<h3>
-									Name:{' '}
 									<span className='card-tripname'>
 										{/* {firstLetterCase(this.props.trip.name)} */}
 										{this.props.trip.name}
 									</span>
 								</h3>
-								<p>Summary: {this.props.trip.summary}</p>
+								<p>Destination: {this.props.trip.city}</p>
 							</CardContent>
 						</Link>
 					</CardActionArea>
