@@ -1,7 +1,33 @@
 import React, { Component } from 'react';
-import './AnimalForm.css';
 import TripManager from '../../modules/TripManager';
+import PropTypes from 'prop-types';
+//import classNames from 'classnames';
+import { withStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import './tripForm.css';
 
+const styles = theme => ({
+	container: {
+		display: 'flex',
+		flexWrap: 'wrap'
+	},
+	textField: {
+		marginLeft: theme.spacing(1),
+		marginRight: theme.spacing(1)
+	},
+	dense: {
+		marginTop: 16
+	},
+	menu: {
+		width: 200
+	},
+	extendedIcon: {
+		marginRight: theme.spacing(1)
+	}
+});
 class TripForm extends Component {
 	state = {
 		tripName: '',
@@ -12,6 +38,7 @@ class TripForm extends Component {
 		communication: '',
 		money: '',
 		loadingStatus: false
+		// imageLink: ''
 	};
 
 	handleFieldChange = evt => {
@@ -39,82 +66,111 @@ class TripForm extends Component {
 			};
 
 			// Create the animal and redirect user to animal list
-			TripManager.post(animal).then(() => {
+			TripManager.postTrip(trip).then(() => {
 				console.log('addform props', this.props);
-				this.props.props.getData();
-				this.props.onClose();
-				// this.props.props.history.push('/animals');
+				this.props.getTrips();
 			});
 		}
 	};
 
-	componentDidMount() {
-		EmployeeManager.getAll().then(allEmployees => {
-			this.setState({
-				employees: allEmployees
-			});
-		});
-	}
-
 	render() {
+		const { classes } = this.props;
 		return (
 			<>
-				{/* <ButtonAppBar {...this.props} page='Onboard a new Animal' /> */}
-				<form className='modalContainer'>
-					<fieldset>
-						<div className='formgrid'>
-							<input
-								type='text'
-								required
-								onChange={this.handleFieldChange}
-								id='animalName'
-								placeholder='Animal name'
-							/>
-							<label htmlFor='animalName'>Name</label>
-							<input
-								type='text'
-								required
-								onChange={this.handleFieldChange}
-								id='breed'
-								placeholder='Breed'
-							/>
-							<label htmlFor='breed'>Breed</label>
-							<input
-								type='text'
-								required
-								onChange={this.handleFieldChange}
-								id='image'
-								placeholder='image'
-							/>
-							<label htmlFor='image'>Image</label>
+				<form className={classes.container} noValidate autoComplete='off'>
+					<div className='formWrapper'>
+						<div className='inputWrapper'>
+							<div className='nameCity'>
+								<TextField
+									id='tripName'
+									label='Name'
+									className={classes.textField}
+									value={this.state.name}
+									onChange={this.handleFieldChange}
+									margin='dense'
+									variant='outlined'
+									placeholder='Name your Trip!'
+								/>
+
+								<TextField
+									id='city'
+									label='Destination'
+									className={classes.textField}
+									value={this.state.city}
+									onChange={this.handleFieldChange}
+									margin='dense'
+									variant='outlined'
+									placeholder='Where ya going?'
+								/>
+							</div>
+							{/* <div className='tripDescription'>
+								<TextField
+									id='summary'
+									label='Description'
+									className={classes.textField}
+									value={this.state.summary}
+									onChange={this.handleFieldChange}
+									margin='dense'
+									variant='outlined'
+									placeholder='Whats going on there?'
+									multiline
+									rows=''
+								/>
+							</div> */}
+							{/* <div className='tripNotes'>
+								<TextField
+									id='communication'
+									label='Communication Notes'
+									className={classes.textField}
+									value={this.state.communication}
+									onChange={this.handleFieldChange}
+									margin='dense'
+									variant='outlined'
+									placeholder='Will your phone work?'
+									multiline
+									rows='2'
+								/>
+								<TextField
+									id='money'
+									label='Money Notes'
+									className={classes.textField}
+									value={this.state.money}
+									onChange={this.handleFieldChange}
+									margin='dense'
+									variant='outlined'
+									placeholder='Do you need to exchange money?'
+									multiline
+									rows='2'
+								/>
+							</div> */}
 						</div>
-						<div className='alignRight'>
-							<select
-								className='form-control'
-								id='employeeId'
-								value={this.state.employeeId}
-								onChange={this.handleFieldChange}
-							>
-								<option>Employee</option>
-								{this.state.employees.map(employee => (
-									<option key={employee.id} value={employee.id}>
-										{employee.name}
-									</option>
-								))}
-							</select>
-							<button
-								type='button'
+
+						{/* <button
+						type='button'
+						disabled={this.state.loadingStatus}
+						onClick={this.constructNewTrip}
+					>
+						Submit
+                    </button> */}
+						<div className='formSubmit'>
+							<Fab
+								variant='extended'
+								size='small'
+								color='primary'
+								aria-label='submit'
+								className={classes.margin}
 								disabled={this.state.loadingStatus}
-								onClick={this.constructNewAnimal}
+								onClick={e => this.constructNewTrip}
 							>
+								<AddIcon className={classes.extendedIcon} />
 								Submit
-							</button>
+							</Fab>
 						</div>
-					</fieldset>
+					</div>
 				</form>
 			</>
 		);
 	}
 }
 
-export default TripForm;
+export default withStyles(styles)(TripForm);

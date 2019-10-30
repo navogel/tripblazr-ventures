@@ -3,6 +3,7 @@ import TripManager from '../../modules/TripManager';
 import TripMapper from '../map/TripsMap';
 import TripCard from './TripCard';
 import TripDrawer from './TripDrawer';
+import TripForm from './TripForm';
 
 class TripList extends Component {
 	state = {
@@ -71,6 +72,7 @@ class TripList extends Component {
 						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 					</div>
 				</div>
+				<TripForm />
 			</>
 		);
 	}
