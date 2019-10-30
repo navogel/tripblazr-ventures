@@ -30,5 +30,41 @@ export default {
 		return fetch(`${remoteURL}/locations/${id}`, {
 			method: 'DELETE'
 		}).then(result => result.json());
+	},
+	postTrip(newTrip) {
+		return fetch(`${remoteURL}/trips`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(newTrip)
+		}).then(data => data.json());
+	},
+	updateTrip(editedTrip) {
+		return fetch(`${remoteURL}/trips/${editedTrip.id}`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(editedTrip)
+		}).then(data => data.json());
+	},
+	postLocation(newLocation) {
+		return fetch(`${remoteURL}/trips`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(newLocation)
+		}).then(data => data.json());
+	},
+	updateLocation(editedLocation) {
+		return fetch(`${remoteURL}/trips/${editedLocation.id}`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(editedLocation)
+		}).then(data => data.json());
 	}
 };

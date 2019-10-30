@@ -61,7 +61,8 @@
 			"published": false,
 			"long": -86.58756,
 			"lat": 36.13986,
-			"likes": null
+			"likes": null,
+			"city": "place"
 		},
 		{
 			"id": 2,
@@ -73,7 +74,8 @@
 			"published": false,
 			"long": -56.69137,
 			"lat": 45.17325,
-			"likes": null
+			"likes": null,
+			"city": "place"
 		},
 		{
 			"id": 3,
@@ -85,7 +87,8 @@
 			"published": false,
 			"long": -86.58573,
 			"lat": 36.06853,
-			"likes": 24
+			"likes": 24,
+			"city": "place"
 		},
 		{
 			"id": 4,
@@ -97,7 +100,8 @@
 			"published": false,
 			"long": 70.71032,
 			"lat": 36.17387,
-			"likes": 13
+			"likes": 13,
+			"city": "place"
 		},
 		{
 			"id": 5,
@@ -109,7 +113,8 @@
 			"published": true,
 			"long": -45.71399,
 			"lat": 17.08775,
-			"likes": 5
+			"likes": 5,
+			"city": "place"
 		},
 		{
 			"id": 7,
@@ -121,7 +126,8 @@
 			"published": false,
 			"long": -86.83471,
 			"lat": 36.0966,
-			"likes": 36
+			"likes": 36,
+			"city": "place"
 		},
 		{
 			"id": 8,
@@ -133,7 +139,8 @@
 			"published": false,
 			"long": -86.61055,
 			"lat": 36.13521,
-			"likes": 9
+			"likes": 9,
+			"city": "place"
 		},
 		{
 			"id": 9,
@@ -145,7 +152,8 @@
 			"published": true,
 			"long": -86.88385,
 			"lat": 36.13373,
-			"likes": 43
+			"likes": 43,
+			"city": "place"
 		},
 		{
 			"id": 10,
@@ -157,7 +165,8 @@
 			"published": false,
 			"long": -86.6842,
 			"lat": 36.08047,
-			"likes": 43
+			"likes": 43,
+			"city": "place"
 		}
 	],
 	"locations": [
