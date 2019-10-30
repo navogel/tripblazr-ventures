@@ -37,6 +37,7 @@ class App extends Component {
 		// console.log('app.js user', this.state.activeUser);
 		return (
 			<div className='App'>
+				{/* <div className='darkMode'></div> */}
 				{this.state.user ? (
 					<>
 						<Nav

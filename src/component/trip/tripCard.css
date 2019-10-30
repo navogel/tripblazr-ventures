@@ -17,13 +17,39 @@ a {
 	}
 } */
 
-.tripCard {
+.tripCard,
+.tripCard1,
+.tripCard2,
+.tripCard3 {
 	max-width: 345px;
 	margin: 1em;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
 	flex-grow: 1;
+	animation: 1s;
+}
+
+.tripCard1:hover {
+	box-shadow: 0px 2px 4px rgba(47, 108, 240, 0.411) !important;
+	/* transform: scale(1.05); */
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-delay: 0s;
+}
+.tripCard2:hover {
+	box-shadow: 0px 2px 4px rgba(248, 186, 70, 0.651) !important;
+	/* transform: scale(1.05); */
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-delay: 0s;
+}
+.tripCard3:hover {
+	box-shadow: 0px 2px 4px rgba(226, 132, 211, 0.411) !important;
+	/* transform: scale(1.05); */
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-delay: 0s;
 }
 
 .tripCardMedia {
@@ -64,6 +90,11 @@ a {
 	align-items: inherit !important;
 	flex-grow: 1 !important;
 	flex-direction: column !important;
+}
+
+.cardActionArea:focus,
+.MuiCardActionArea-focusHighlight {
+	background: white !important;
 }
 
 .cardButtons {

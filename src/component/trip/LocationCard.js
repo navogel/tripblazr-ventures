@@ -20,7 +20,7 @@ class LocationCard extends Component {
 		//console.log('Locationcard props', this.props.location);
 		return (
 			<>
-				<Card className={'tripCard'}>
+				<Card className={'tripCard' + this.props.location.locationTypeId}>
 					<div className={'scroll' + this.props.location.id}></div>
 					<CardActionArea
 						onClick={() => this.props.focusMarker(this.props.location)}
