@@ -115,7 +115,7 @@ class TripList extends Component {
 			<>
 				<TripDrawer ref='drawer' />
 				<div className='tripWrapper'>
-					<div className='listWrapper'>
+					<div className='leftColumn'>
 						<div className='listHeader'>
 							<h1>Your Trips</h1>
 							<Fab color='primary' size='small' onClick={this.handleClickOpen}>
@@ -123,18 +123,20 @@ class TripList extends Component {
 							</Fab>
 						</div>
 						<Divider />
-						{/* <button onClick={this.toggleDrawer}>handle drawers</button> */}
+						<div className='listWrapper'>
+							{/* <button onClick={this.toggleDrawer}>handle drawers</button> */}
 
-						{this.state.trips.map(trip => (
-							<TripCard
-								key={trip.id}
-								// ref={[trip.id]}
-								trip={trip}
-								getTrips={this.getTrips}
-								focusMarker={this.FocusMarker}
-								// {...this.props}
-							/>
-						))}
+							{this.state.trips.map(trip => (
+								<TripCard
+									key={trip.id}
+									// ref={[trip.id]}
+									trip={trip}
+									getTrips={this.getTrips}
+									focusMarker={this.FocusMarker}
+									// {...this.props}
+								/>
+							))}
+						</div>
 					</div>
 					<div className='mapWrapper'>
 						<TripMapper

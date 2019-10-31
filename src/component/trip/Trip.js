@@ -79,22 +79,25 @@ class Trip extends Component {
 		return (
 			<>
 				<div className='tripWrapper'>
-					<div className='listWrapper'>
-						<button onClick={this.switchTrip}>back to trips</button>
-						<button onClick={e => this.filterType(1)}>Hotels</button>
-						<button onClick={e => this.filterType(2)}>Activities</button>
-						<button onClick={e => this.filterType(3)}>Food</button>
-						<button onClick={e => this.getData()}>All</button>
-
-						{this.state.locations.map(location => (
-							<LocationCard
-								key={location.id}
-								location={location}
-								getData={this.getData}
-								focusMarker={this.FocusMarker}
-								//{...this.props}
-							/>
-						))}
+					<div className='leftColumn'>
+						<div className='listHeader'>
+							<button onClick={this.switchTrip}>back to trips</button>
+							<button onClick={e => this.filterType(1)}>Hotels</button>
+							<button onClick={e => this.filterType(2)}>Activities</button>
+							<button onClick={e => this.filterType(3)}>Food</button>
+							<button onClick={e => this.getData()}>All</button>
+						</div>
+						<div className='listWrapper'>
+							{this.state.locations.map(location => (
+								<LocationCard
+									key={location.id}
+									location={location}
+									getData={this.getData}
+									focusMarker={this.FocusMarker}
+									//{...this.props}
+								/>
+							))}
+						</div>
 					</div>
 					{this.state.tripDetails && (
 						<div className='mapWrapper'>
