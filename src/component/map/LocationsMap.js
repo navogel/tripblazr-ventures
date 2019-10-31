@@ -236,6 +236,23 @@ export default class Mapper extends Component {
 		const lng = e.latlng.lng;
 		console.log(lat, lng);
 	};
+
+	componentDidUpdate(prevProps) {
+		// Typical usage (don't forget to compare props):
+		if (this.props.tripDetails !== prevProps.tripDetails) {
+			const tripCoords = [
+				this.props.tripDetails.lat,
+				this.props.tripDetails.lng
+			];
+			if (this.props.locations.length === 0) {
+				this.leafletMap.leafletElement.setView(tripCoords, 13);
+			}
+			// L.marker(tripCoords, { icon: myIcon4 })
+			// 	.bindTooltip(this.props.tripDetails.name, { className: 'toolTip' })
+			// 	.addTo(this.leafletMap.leafletElement);
+		}
+	}
+
 	//mapbox://styles/jerodis/ck24x2b5a12ro1cnzdopvyw08 light
 	//mapbox://styles/jerodis/ck24wv71g15vb1cp90thseofp dark
 	render() {
