@@ -23,7 +23,8 @@ class Trip extends Component {
 		droppedPin: false,
 		hovered: '',
 		open: false,
-		snackOpen: false
+		snackOpen: false,
+		geoMarker: {}
 	};
 
 	//drop a pin alert via snacktime
@@ -55,9 +56,13 @@ class Trip extends Component {
 		this.setState({ open: false });
 	};
 
+	//go back to my trips
+
 	switchTrip = () => {
 		this.props.history.push(`/mytrips`);
 	};
+
+	//filter by type
 
 	filterType = id => {
 		TripManager.getTripByType(this.props.tripId, id).then(locations => {
@@ -69,13 +74,19 @@ class Trip extends Component {
 		});
 	};
 
+	//clear clicked coordinates
+
 	clearCoords = () => {
 		this.setState({ clickedCoords: [] });
 	};
 
+	//drop a pin on the map
+
 	dropPin = () => {
 		this.setState({ droppedPin: true, clickedCoords: [] });
 	};
+
+	//scroll to hovered marker
 
 	scrollTo = id => {
 		let newId = '.scroll' + id;
@@ -91,9 +102,13 @@ class Trip extends Component {
 		}
 	};
 
+	//deprecated (speed slowdown) function to remove class on mouseout
+
 	hoverRemoveFocus = () => {
 		this.setState({ hovered: '' });
 	};
+
+	//zoom to marker when clicking on a location list item
 
 	FocusMarker = obj => {
 		this.setState({
@@ -101,6 +116,8 @@ class Trip extends Component {
 			droppedPin: false
 		});
 	};
+
+	//fetch trip locations and trip details
 
 	getData = () => {
 		TripManager.getTrip(this.props.tripId)
@@ -124,6 +141,16 @@ class Trip extends Component {
 
 		this.getData();
 	}
+
+	//when marker is clicked add obj to state
+
+	addGeoSearchMarker = obj => {
+		console.log('obj from add marker', obj);
+		this.setState({
+			GeoMarker: obj
+		});
+		this.handleClickOpen;
+	};
 
 	render() {
 		//console.log('trip deets in state at trip render', this.state.tripDetails);
@@ -178,10 +205,8 @@ class Trip extends Component {
 					aria-labelledby='form-dialog-title'
 				>
 					<LocationForm
-						getTrips={this.getTrips}
-						newLat={this.state.newLat}
-						newLng={this.state.newLng}
-						newName={this.state.newName}
+						getData={this.getData}
+						geoMarker={this.state.geoMarker}
 						handleClose={this.handleClose}
 						activeUser={this.props.activeUser}
 					/>

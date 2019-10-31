@@ -33,15 +33,15 @@ const styles = theme => ({
 class LocationForm extends Component {
 	state = {
 		tripId: '',
-		city: this.props.newName,
 		summary: '',
-		lat: this.props.newLat,
+		lat: '',
 		lng: this.props.newLng,
 		address: '',
 		price: '',
 		likes: '',
 		locationTypeId: '',
 		name: '',
+		visited: false,
 		loadingStatus: false
 		// imageLink: ''
 	};
