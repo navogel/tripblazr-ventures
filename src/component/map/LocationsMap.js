@@ -392,10 +392,10 @@ export default class Mapper extends Component {
 										key={location.id}
 										position={[
 											location.location.latitude,
-											location.location.lngitude
+											location.location.longitude
 										]}
 										anchor='bottom'
-										onClick={e => this.markerFocus(e, location)}
+										//onClick={e => this.markerFocus(e, location)}
 										// icon={this.configMyIcon(location.locationTypeId)}
 									>
 										<Tooltip>
