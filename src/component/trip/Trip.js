@@ -134,6 +134,9 @@ class Trip extends Component {
 					});
 				});
 			});
+		this.setState({
+			geoMarker: {}
+		});
 	};
 
 	componentDidMount() {
@@ -147,13 +150,13 @@ class Trip extends Component {
 	addGeoSearchMarker = obj => {
 		console.log('obj from add marker', obj);
 		this.setState({
-			GeoMarker: obj
+			geoMarker: obj
 		});
-		this.handleClickOpen;
+		this.handleClickOpen();
 	};
 
 	render() {
-		//console.log('trip deets in state at trip render', this.state.tripDetails);
+		console.log('trip geo searhc marker', this.state.geoMarker);
 		return (
 			<>
 				<div className='tripWrapper'>
@@ -194,6 +197,7 @@ class Trip extends Component {
 								droppedPin={this.state.droppedPin}
 								hovered={this.state.hovered}
 								hoverRemoveFocus={this.hoverRemoveFocus}
+								addGeoSearchMarker={this.addGeoSearchMarker}
 							/>
 							{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 						</div>
@@ -209,6 +213,7 @@ class Trip extends Component {
 						geoMarker={this.state.geoMarker}
 						handleClose={this.handleClose}
 						activeUser={this.props.activeUser}
+						tripDetails={this.state.tripDetails}
 					/>
 				</Dialog>
 				<Snackbar

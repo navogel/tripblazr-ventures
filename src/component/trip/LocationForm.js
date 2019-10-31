@@ -32,15 +32,15 @@ const styles = theme => ({
 });
 class LocationForm extends Component {
 	state = {
-		tripId: '',
+		tripId: this.props.tripDetails.id,
 		summary: '',
-		lat: '',
-		lng: '',
-		address: '',
+		lat: this.props.geoMarker.center.lat,
+		lng: this.props.geoMarker.center.lng,
+		address: this.props.geoMarker.name.split(/,(.+)/)[1],
 		price: '',
 		likes: '',
 		locationTypeId: '',
-		name: '',
+		name: this.props.geoMarker.properties.text,
 		visited: false,
 		loadingStatus: false
 		// imageLink: ''
@@ -61,16 +61,16 @@ class LocationForm extends Component {
 		} else {
 			this.setState({ loadingStatus: true });
 			const trip = {
-				name: this.state.tripName,
-				city: this.state.city,
-				summary: this.state.summary,
-				lat: this.state.lat,
-				lng: this.state.lng,
-				communication: this.state.communication,
-				money: this.state.money,
-				likes: this.state.likes,
-				published: false,
-				userId: this.state.userId
+				tripId: '',
+				summary: '',
+				lat: '',
+				lng: '',
+				address: '',
+				price: '',
+				likes: '',
+				locationTypeId: '',
+				name: '',
+				visited: false
 			};
 
 			// Create the animal and redirect user to animal list
@@ -84,6 +84,7 @@ class LocationForm extends Component {
 
 	render() {
 		const { classes } = this.props;
+		console.log('props location add', this.props);
 		return (
 			<>
 				<form className={classes.container} noValidate autoComplete='off'>
@@ -94,14 +95,14 @@ class LocationForm extends Component {
 						<div className='inputWrapper'>
 							<div className='nameCity'>
 								<TextField
-									id='city'
-									label='Destination'
+									id='address'
+									label='Address'
 									className={classes.textField}
-									value={this.state.city}
+									value={this.state.address}
 									onChange={this.handleFieldChange}
 									margin='dense'
 									variant='outlined'
-									placeholder='Where ya going?'
+									placeholder='Got an address?'
 								/>
 								<TextField
 									id='tripName'
@@ -111,7 +112,7 @@ class LocationForm extends Component {
 									onChange={this.handleFieldChange}
 									margin='dense'
 									variant='outlined'
-									placeholder='Name your Trip!'
+									placeholder='Enter the place name'
 								/>
 							</div>
 							{/* <div className='tripDescription'>
