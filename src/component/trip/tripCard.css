@@ -53,6 +53,11 @@ a {
 	animation-delay: 0s;
 }
 
+.cardActionArea:focus,
+.MuiCardActionArea-focusHighlight {
+	background: rgba(175, 218, 235, 0) !important;
+}
+
 .tripCardHover {
 	background-color: rgb(175, 218, 235) !important;
 }
@@ -95,11 +100,6 @@ a {
 	align-items: inherit !important;
 	flex-grow: 1 !important;
 	flex-direction: column !important;
-}
-
-.cardActionArea:focus,
-.MuiCardActionArea-focusHighlight {
-	background: white !important;
 }
 
 .cardButtons {

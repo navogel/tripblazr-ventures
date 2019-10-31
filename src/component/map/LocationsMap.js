@@ -254,6 +254,8 @@ export default class Mapper extends Component {
 		}
 	}
 
+	//pass filter function through a local function in order to reset mapLoading state
+
 	//mapbox://styles/jerodis/ck24x2b5a12ro1cnzdopvyw08 light
 	//mapbox://styles/jerodis/ck24wv71g15vb1cp90thseofp dark
 	render() {

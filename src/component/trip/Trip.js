@@ -4,6 +4,16 @@ import TripManager from '../../modules/TripManager';
 import { withRouter } from 'react-router-dom';
 import LocationCard from './LocationCard';
 import animateScrollTo from 'animated-scroll-to';
+import Dialog from '@material-ui/core/Dialog';
+import Fab from '@material-ui/core/Fab';
+import { withStyles } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import ErrorIcon from '@material-ui/icons/Error';
+import LocationForm from '../trip/LocationForm';
+import AddIcon from '@material-ui/icons/Add';
 
 class Trip extends Component {
 	state = {
@@ -11,7 +21,38 @@ class Trip extends Component {
 		tripDetails: {},
 		clickedCoords: [],
 		droppedPin: false,
-		hovered: ''
+		hovered: '',
+		open: false,
+		snackOpen: false
+	};
+
+	//drop a pin alert via snacktime
+
+	handleSnackClick = () => {
+		this.setState({ snackOpen: true });
+		console.log('snackery');
+	};
+
+	handleSnackClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return;
+		}
+
+		this.setState({ snackOpen: false });
+	};
+
+	//modal open
+
+	handleClickOpen = () => {
+		if (this.state.newLat === '') {
+			this.handleSnackClick();
+		} else {
+			this.setState({ open: true });
+		}
+	};
+
+	handleClose = () => {
+		this.setState({ open: false });
 	};
 
 	switchTrip = () => {
@@ -96,6 +137,9 @@ class Trip extends Component {
 							<button onClick={e => this.filterType(2)}>Activities</button>
 							<button onClick={e => this.filterType(3)}>Food</button>
 							<button onClick={e => this.getData()}>All</button>
+							<Fab color='primary' size='small' onClick={this.handleClickOpen}>
+								<AddIcon />
+							</Fab>
 						</div>
 						<div className='listWrapper'>
 							{this.state.locations.map(location => (
@@ -128,6 +172,52 @@ class Trip extends Component {
 						</div>
 					)}
 				</div>
+				<Dialog
+					open={this.state.open}
+					onClose={this.handleClose}
+					aria-labelledby='form-dialog-title'
+				>
+					<LocationForm
+						getTrips={this.getTrips}
+						newLat={this.state.newLat}
+						newLng={this.state.newLng}
+						newName={this.state.newName}
+						handleClose={this.handleClose}
+						activeUser={this.props.activeUser}
+					/>
+				</Dialog>
+				<Snackbar
+					anchorOrigin={{
+						vertical: 'top',
+						horizontal: 'left'
+					}}
+					open={this.state.snackOpen}
+					autoHideDuration={5000}
+					onClose={this.handleSnackClose}
+					ContentProps={{
+						'aria-describedby': 'message-id'
+					}}
+					className='snackWarning'
+					message={
+						<span id='message-id'>
+							<IconButton key='close' aria-label='Close' color='inherit'>
+								<ErrorIcon />
+							</IconButton>
+							Type in a location to drop a Pin, or click on a pin!
+						</span>
+					}
+					action={[
+						<IconButton
+							key='close'
+							aria-label='Close'
+							color='inherit'
+							//className={classes.close}
+							onClick={this.handleSnackClose}
+						>
+							<CloseIcon />
+						</IconButton>
+					]}
+				/>
 			</>
 		);
 	}
