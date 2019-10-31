@@ -162,6 +162,7 @@ class TripList extends Component {
 						newLng={this.state.newLng}
 						newName={this.state.newName}
 						handleClose={this.handleClose}
+						activeUser={this.props.activeUser}
 					/>
 				</Dialog>
 				<Snackbar

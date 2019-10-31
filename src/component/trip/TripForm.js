@@ -41,7 +41,7 @@ class TripForm extends Component {
 		money: '',
 		likes: '',
 		published: false,
-		userId: 1,
+		userId: this.props.activeUser,
 		loadingStatus: false
 		// imageLink: ''
 	};

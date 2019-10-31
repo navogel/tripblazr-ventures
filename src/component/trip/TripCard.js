@@ -23,7 +23,7 @@ class TripCard extends Component {
 				<Card className='tripCard'>
 					<div className={'scroll' + this.props.trip.id}></div>
 					<CardActionArea className='cardActionArea'>
-						<Link to={`/mytrips/${this.props.trip.id}`}>
+						<Link to={`/mytrips/${this.props.trip.id}`} trip={this.props.trip}>
 							{/* <CardMedia
 								className='tripCardMedia'
 								image=

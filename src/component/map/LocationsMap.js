@@ -77,7 +77,8 @@ export default class Mapper extends Component {
 		searchTerm: '',
 		searchRange: 8000,
 		stars: '3',
-		recievedTrip: false
+		recievedTrip: false,
+		noResults: false
 	};
 
 	//function for storing click events on geosearch and click to add markers
@@ -172,7 +173,12 @@ export default class Mapper extends Component {
 
 	//drop marker on click and record coords and address
 	componentDidMount() {
-		//console.log('trip deets from trip at didmount', this.props.tripDetails);
+		// if (this.props.locations.length === 0) {
+		// 	this.setState({noResults: true})
+		// } else {
+		// 	this.setState({noResults: false})
+		// }
+		console.log('trip deets from trip at didmount', this.props.tripDetails);
 
 		const map = this.leafletMap.leafletElement;
 		const geocoder = L.Control.Geocoder.mapbox(Token);
@@ -244,7 +250,8 @@ export default class Mapper extends Component {
 		const position = [this.state.lat, this.state.lng];
 		//create an array to hold location coords, with state passed fomr tip.js
 		const markers = [];
-
+		//create array to hold tripDetails coords
+		const tripCoords = [this.props.tripDetails.lat, this.props.tripDetails.lng];
 		//take trips array of object and create an array of coordinates.
 		this.props.locations.forEach(obj => {
 			let coord = [obj.lat, obj.lng];
@@ -257,19 +264,33 @@ export default class Mapper extends Component {
 			this.leafletMap.leafletElement &&
 			this.state.tripView &&
 			this.props.clickedCoords.length === 0 &&
-			this.props.droppedPin === false
+			this.props.droppedPin === false &&
+			markers.length > 0
 		) {
+			console.log('fit bounds render');
 			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
 		} else if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
 			this.state.tripView &&
-			this.props.droppedPin === false
+			this.props.droppedPin === false &&
+			this.props.clickedCoords.length > 0
 		) {
 			//console.log('cicked coords', this.props.clickedCoords);
 			//console.log('marker coords', markers);
 			//if not first load, and link has been clicked, zoom to marker
+			console.log('clicked place from list render');
+
 			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 13);
+		} else if (
+			this.leafletMap &&
+			this.leafletMap.leafletElement &&
+			this.state.tripView &&
+			markers.length === 0 &&
+			this.props.tripDetails.length > 0
+		) {
+			console.log('no locations', tripCoords);
+			this.leafletMap.leafletElement.setView(tripCoords, 13);
 		}
 
 		return (

@@ -69,16 +69,13 @@ class Trip extends Component {
 	};
 
 	componentDidMount() {
-		//getAll from AnimalManager and hang on to that data; put it in state
+		// console.log('props from tripcard', this.props);
+
 		this.getData();
 	}
 
 	render() {
-		// console.log(
-		// 	'locations array',
-		// 	this.state.locations,
-		// 	this.state.tripDetails
-		// );
+		console.log('trip deets in state at trip render', this.state.tripDetails);
 		return (
 			<>
 				<div className='tripWrapper'>
@@ -99,20 +96,21 @@ class Trip extends Component {
 							/>
 						))}
 					</div>
-
-					<div className='mapWrapper'>
-						<Mapper
-							className='mapper'
-							locations={this.state.locations}
-							tripDetails={this.state.tripDetails}
-							scrollTo={this.scrollTo}
-							clickedCoords={this.state.clickedCoords}
-							clearCoords={this.clearCoords}
-							dropPin={this.dropPin}
-							droppedPin={this.state.droppedPin}
-						/>
-						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
-					</div>
+					{this.state.tripDetails && (
+						<div className='mapWrapper'>
+							<Mapper
+								className='mapper'
+								locations={this.state.locations}
+								tripDetails={this.state.tripDetails}
+								scrollTo={this.scrollTo}
+								clickedCoords={this.state.clickedCoords}
+								clearCoords={this.clearCoords}
+								dropPin={this.dropPin}
+								droppedPin={this.state.droppedPin}
+							/>
+							{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
+						</div>
+					)}
 				</div>
 			</>
 		);
