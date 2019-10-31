@@ -41,7 +41,9 @@ class GeoSearch extends MapControl {
 			}
 
 			this._geocodeMarker = new L.Marker(result.center, { icon: myIcon4 })
-				.bindTooltip(result.html || result.name, { className: 'toolTip' })
+				.bindTooltip(result.html || result.name.split(',')[0], {
+					className: 'toolTip'
+				})
 				.addTo(this.props.leaflet.map)
 				.on('click', e => this.props.storeGeocode(e, result));
 

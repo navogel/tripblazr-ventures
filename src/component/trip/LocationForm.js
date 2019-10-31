@@ -10,6 +10,10 @@ import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import './tripForm.css';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputLabel from '@material-ui/core/InputLabel';
 
 const styles = theme => ({
 	container: {
@@ -61,15 +65,15 @@ class LocationForm extends Component {
 		} else {
 			this.setState({ loadingStatus: true });
 			const trip = {
-				tripId: '',
-				summary: '',
-				lat: '',
-				lng: '',
-				address: '',
-				price: '',
-				likes: '',
-				locationTypeId: '',
-				name: '',
+				tripId: this.state.tripId,
+				summary: this.state.summary,
+				lat: this.state.lat,
+				lng: this.state.lng,
+				address: this.state.address,
+				price: this.state.price,
+				likes: this.state.likes,
+				locationTypeId: this.state.locationTypeId,
+				name: this.state.name,
 				visited: false
 			};
 
@@ -114,21 +118,48 @@ class LocationForm extends Component {
 									variant='outlined'
 									placeholder='Enter the place name'
 								/>
+
+								<div className='tripDescription'>
+									<TextField
+										id='summary'
+										label='Description'
+										className={classes.textField}
+										value={this.state.summary}
+										onChange={this.handleFieldChange}
+										margin='dense'
+										variant='outlined'
+										placeholder='What kind of place is this?'
+										multiline
+										rows=''
+									/>
+								</div>
+								<FormControl variant='outlined' className={classes.formControl}>
+									<InputLabel
+										ref={ref => {
+											this.InputLabelRef = ref;
+										}}
+										htmlFor='outlined-age-simple'
+									>
+										Age
+									</InputLabel>
+									<Select
+										value={this.state.age}
+										onChange={this.handleChange}
+										input={
+											<OutlinedInput
+												labelWidth={this.state.labelWidth}
+												name='Type'
+												id='outlined-age-simple'
+											/>
+										}
+									>
+										<MenuItem value={1}>Lodging</MenuItem>
+										<MenuItem value={2}>Activity</MenuItem>
+										<MenuItem value={3}>Food</MenuItem>
+										<MenuItem value={4}>Transpo</MenuItem>
+									</Select>
+								</FormControl>
 							</div>
-							{/* <div className='tripDescription'>
-								<TextField
-									id='summary'
-									label='Description'
-									className={classes.textField}
-									value={this.state.summary}
-									onChange={this.handleFieldChange}
-									margin='dense'
-									variant='outlined'
-									placeholder='Whats going on there?'
-									multiline
-									rows=''
-								/>
-							</div> */}
 							{/* <div className='tripNotes'>
 								<TextField
 									id='communication'
