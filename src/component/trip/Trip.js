@@ -10,7 +10,8 @@ class Trip extends Component {
 		locations: [],
 		tripDetails: {},
 		clickedCoords: [],
-		droppedPin: false
+		droppedPin: false,
+		hovered: ''
 	};
 
 	switchTrip = () => {
@@ -40,8 +41,17 @@ class Trip extends Component {
 		let scrollEl = document.querySelector(newId);
 		//console.log(scrollEl);
 		animateScrollTo(scrollEl, {
-			elementToScroll: document.querySelector('.listWrapper')
+			elementToScroll: document.querySelector('.listWrapper'),
+			verticalOffset: -20,
+			maxDuration: 2000
 		});
+		if (this.state.hovered !== id) {
+			this.setState({ hovered: id });
+		}
+	};
+
+	hoverRemoveFocus = () => {
+		this.setState({ hovered: '' });
 	};
 
 	FocusMarker = obj => {
@@ -75,7 +85,7 @@ class Trip extends Component {
 	}
 
 	render() {
-		console.log('trip deets in state at trip render', this.state.tripDetails);
+		//console.log('trip deets in state at trip render', this.state.tripDetails);
 		return (
 			<>
 				<div className='tripWrapper'>
@@ -94,6 +104,7 @@ class Trip extends Component {
 									location={location}
 									getData={this.getData}
 									focusMarker={this.FocusMarker}
+									hovered={this.state.hovered}
 									//{...this.props}
 								/>
 							))}
@@ -110,6 +121,8 @@ class Trip extends Component {
 								clearCoords={this.clearCoords}
 								dropPin={this.dropPin}
 								droppedPin={this.state.droppedPin}
+								hovered={this.state.hovered}
+								hoverRemoveFocus={this.hoverRemoveFocus}
 							/>
 							{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 						</div>

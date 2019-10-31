@@ -17,10 +17,16 @@ class LocationCard extends Component {
 		TripManager.deleteLocation(id).then(() => this.props.getData());
 	};
 	render() {
-		//console.log('Locationcard props', this.props.location);
+		let hoverCard;
+		if (this.props.hovered === this.props.location.id) {
+			hoverCard = 'tripCardHover';
+		} else {
+			hoverCard = 'tripCard' + this.props.location.locationTypeId;
+		}
+		//console.log('hovered props', this.props.hovered);
 		return (
 			<>
-				<Card className={'tripCard' + this.props.location.locationTypeId}>
+				<Card className={hoverCard}>
 					<div className={'scroll' + this.props.location.id}></div>
 					<CardActionArea
 						onClick={() => this.props.focusMarker(this.props.location)}

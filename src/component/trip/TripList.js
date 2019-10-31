@@ -23,10 +23,11 @@ class TripList extends Component {
 		newLat: '',
 		newLng: '',
 		newName: '',
-		snackOpen: false
+		snackOpen: false,
+		hovered: ''
 	};
 
-	//drop a pin alert
+	//drop a pin alert via snacktime
 
 	handleSnackClick = () => {
 		this.setState({ snackOpen: true });
@@ -55,6 +56,8 @@ class TripList extends Component {
 		this.setState({ open: false });
 	};
 
+	//get all trips
+
 	getTrips = () => {
 		TripManager.getAllTrips(this.props.activeUser).then(newTrips => {
 			this.setState({
@@ -63,14 +66,23 @@ class TripList extends Component {
 			});
 		});
 	};
-	//scrolle to hovered marker
+
+	//scroll to hovered marker, set state for classChange
+
 	scrollTo = id => {
 		let newId = '.scroll' + id;
 		let scrollEl = document.querySelector(newId);
-		//console.log(scrollEl);
 		animateScrollTo(scrollEl, {
-			elementToScroll: document.querySelector('.listWrapper')
+			elementToScroll: document.querySelector('.listWrapper'),
+			verticalOffset: -20
 		});
+		if (this.state.hovered !== id) {
+			this.setState({ hovered: id });
+		}
+	};
+
+	hoverRemoveFocus = () => {
+		this.setState({ hovered: '' });
 	};
 
 	toggleDrawer = () => {
@@ -106,6 +118,12 @@ class TripList extends Component {
 		this.getTrips();
 		//console.log('trippin', this.state.trips);
 	}
+	//add special class tripcard when its marker is hovered on the map
+
+	// hoverFocus = id => {
+	// 	this.setState({ hovered: id });
+	// 	console.log('triggered on focus');
+	// };
 
 	render() {
 		// const { classes } = this.props;
@@ -133,6 +151,7 @@ class TripList extends Component {
 									trip={trip}
 									getTrips={this.getTrips}
 									focusMarker={this.FocusMarker}
+									hovered={this.state.hovered}
 									// {...this.props}
 								/>
 							))}
@@ -148,6 +167,9 @@ class TripList extends Component {
 							addMarker={this.addMarker}
 							clearClickedCoords={this.clearClickedCoords}
 							scrollTo={this.scrollTo}
+							// hoverFocus={this.hoverFocus}
+							hovered={this.state.hovered}
+							hoverRemoveFocus={this.hoverRemoveFocus}
 						/>
 						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 					</div>

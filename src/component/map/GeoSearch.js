@@ -7,7 +7,7 @@ class GeoSearch extends MapControl {
 	createLeafletElement(props) {}
 
 	componentDidMount() {
-		console.log('props', this.props);
+		console.log('props geosearch', this.props.tripDetails.lng);
 		var myIcon4 = L.icon({
 			iconUrl: '/images/markers/icon4.png',
 			iconSize: [25, 41],

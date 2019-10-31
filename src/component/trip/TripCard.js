@@ -17,10 +17,17 @@ class TripCard extends Component {
 		TripManager.deleteTrip(id).then(() => this.props.getTrips());
 	};
 	render() {
+		let hoverCard;
+		if (this.props.hovered === this.props.trip.id) {
+			hoverCard = 'tripCardHover';
+		} else {
+			hoverCard = 'tripCard';
+		}
+
 		//console.log('tripcard props', this.props.trip);
 		return (
 			<>
-				<Card className='tripCard'>
+				<Card className={hoverCard}>
 					<div className={'scroll' + this.props.trip.id}></div>
 					<CardActionArea className='cardActionArea'>
 						<Link to={`/mytrips/${this.props.trip.id}`} trip={this.props.trip}>

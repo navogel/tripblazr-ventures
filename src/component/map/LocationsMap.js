@@ -77,7 +77,8 @@ export default class Mapper extends Component {
 		searchTerm: '',
 		searchRange: 8000,
 		stars: '3',
-		recievedTrip: false
+		recievedTrip: false,
+		mapLoaded: false
 	};
 
 	//function for storing click events on geosearch and click to add markers
@@ -90,6 +91,9 @@ export default class Mapper extends Component {
 	markerFocus = (e, obj) => {
 		//console.log('got the deets', obj);
 		this.props.scrollTo(obj.id);
+		if (this.state.mapLoaded === false) {
+			this.setState({ mapLoaded: true });
+		}
 	};
 
 	//light and dark mode on map
@@ -279,7 +283,8 @@ export default class Mapper extends Component {
 			this.state.tripView &&
 			this.props.clickedCoords.length === 0 &&
 			this.props.droppedPin === false &&
-			markers.length > 0
+			markers.length > 0 &&
+			this.state.mapLoaded === false
 		) {
 			console.log('fit bounds render');
 			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
@@ -301,7 +306,8 @@ export default class Mapper extends Component {
 			this.leafletMap.leafletElement &&
 			this.state.tripView &&
 			markers.length === 0 &&
-			this.props.tripDetails.length > 0
+			this.props.tripDetails.length > 0 &&
+			this.state.mapLoaded === false
 		) {
 			console.log('no locations', tripCoords);
 			this.leafletMap.leafletElement.setView(tripCoords, 13);
@@ -416,6 +422,7 @@ export default class Mapper extends Component {
 									key={location.id}
 									position={[location.lat, location.lng]}
 									onMouseMove={e => this.markerFocus(e, location)}
+									// onMouseOut={e => this.props.hoverRemoveFocus()}
 									icon={this.configMyIcon(location.locationTypeId)}
 								>
 									<Tooltip>{location.name}</Tooltip>

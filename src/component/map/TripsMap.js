@@ -31,7 +31,8 @@ export default class TripMapper extends Component {
 		lng: '',
 		zoom: 13,
 		light: true,
-		geocoded: false
+		geocoded: false,
+		mapLoaded: false
 	};
 
 	//function for storing click events on geosearch and click to add markers
@@ -41,11 +42,12 @@ export default class TripMapper extends Component {
 		this.props.addMarker(obj);
 	};
 
-	//function to storing click events on main map
-
-	markerFocus = (e, obj) => {
-		//console.log('got the deets', obj);
+	markerFocus = obj => {
+		console.log('got the deets', obj);
 		this.props.scrollTo(obj.id);
+		if (this.state.mapLoaded === false) {
+			this.setState({ mapLoaded: true });
+		}
 	};
 
 	//light and dark mode on map
@@ -160,10 +162,11 @@ export default class TripMapper extends Component {
 		} else if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
-			this.state.geocoded === false
+			this.state.geocoded === false &&
+			this.state.mapLoaded === false
 		) {
 			this.leafletMap.leafletElement.setView([40, 34], 2);
-			console.log('world View', this.state.geocoded);
+			console.log('world View', this.state.mapLoaded);
 		}
 
 		return (
@@ -206,11 +209,15 @@ export default class TripMapper extends Component {
 								key={trip.id}
 								position={[trip.lat, trip.lng]}
 								anchor='bottom'
-								onMouseMove={e => this.markerFocus(e, trip)}
-								//onClick={e => this.markerFocus(e, trip)}
+								onMouseMove={e => this.markerFocus(trip)}
+								//onMouse={e => this.props.hoverFocus(trip.id)}
+								onMouseOut={e => this.props.hoverRemoveFocus()}
+								//onMouseMove={e => this.props.scrollTo(trip.id)}
 								// icon={this.configMyIcon(location.locationType)}
 							>
-								<Tooltip>{trip.name}</Tooltip>
+								<Tooltip>
+									<p>{trip.name}</p>
+								</Tooltip>
 							</Marker>
 						))}
 					</MarkerClusterGroup>
