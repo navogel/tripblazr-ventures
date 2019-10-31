@@ -35,7 +35,7 @@ class LocationForm extends Component {
 		tripId: '',
 		summary: '',
 		lat: '',
-		lng: this.props.newLng,
+		lng: '',
 		address: '',
 		price: '',
 		likes: '',
