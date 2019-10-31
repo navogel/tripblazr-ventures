@@ -77,8 +77,7 @@ export default class Mapper extends Component {
 		searchTerm: '',
 		searchRange: 8000,
 		stars: '3',
-		recievedTrip: false,
-		noResults: false
+		recievedTrip: false
 	};
 
 	//function for storing click events on geosearch and click to add markers
@@ -173,11 +172,6 @@ export default class Mapper extends Component {
 
 	//drop marker on click and record coords and address
 	componentDidMount() {
-		// if (this.props.locations.length === 0) {
-		// 	this.setState({noResults: true})
-		// } else {
-		// 	this.setState({noResults: false})
-		// }
 		console.log('trip deets from trip at didmount', this.props.tripDetails);
 
 		const map = this.leafletMap.leafletElement;
@@ -244,12 +238,15 @@ export default class Mapper extends Component {
 				this.props.tripDetails.lat,
 				this.props.tripDetails.lng
 			];
+
+			this.setState({ recievedTrip: true });
+
 			if (this.props.locations.length === 0) {
 				this.leafletMap.leafletElement.setView(tripCoords, 13);
+				L.marker(tripCoords, { icon: myIcon4 })
+					.bindTooltip(this.props.tripDetails.name, { className: 'toolTip' })
+					.addTo(this.leafletMap.leafletElement);
 			}
-			// L.marker(tripCoords, { icon: myIcon4 })
-			// 	.bindTooltip(this.props.tripDetails.name, { className: 'toolTip' })
-			// 	.addTo(this.leafletMap.leafletElement);
 		}
 	}
 
@@ -327,7 +324,7 @@ export default class Mapper extends Component {
 					onClick={this.getCoord}
 					attributionControl={false}
 				>
-					{this.state.tripView && (
+					{this.state.tripView && this.state.recievedTrip && (
 						<GeoSearch
 							ref={m => {
 								this.leafletGeo = m;

@@ -20,7 +20,10 @@ class GeoSearch extends MapControl {
 		const searchBox = L.Control.geocoder({
 			geocoder: new L.Control.Geocoder.Mapbox(Token.MB, {
 				geocodingQueryParams: {
-					proximity: { lat: 36, lng: -86 },
+					proximity: {
+						lat: this.props.tripDetails.lat,
+						lng: this.props.tripDetails.lng
+					},
 					language: 'en'
 				}
 			}),
