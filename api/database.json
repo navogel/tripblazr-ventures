@@ -5946,20 +5946,6 @@
       "id": 504
     },
     {
-      "tripId": 13,
-      "summary": "they say its fun",
-      "lat": 24.5565145,
-      "lng": -81.7880903,
-      "address": "1430 Virginia Street, Key West, Florida 33040, United States",
-      "price": 0,
-      "likes": null,
-      "locationTypeId": 2,
-      "name": "Some fun Place I heard about",
-      "url": "",
-      "star": false,
-      "id": 505
-    },
-    {
       "tripId": 1,
       "summary": "",
       "lat": 36.0695,

@@ -206,6 +206,7 @@ class Trip extends Component {
 								</div>
 							)}
 							<div className='tripButtons'>
+								<Divider />
 								<IconButton onClick={this.switchTrip}>
 									<TransitEnterexitIcon />
 								</IconButton>
