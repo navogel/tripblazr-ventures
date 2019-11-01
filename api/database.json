@@ -40,7 +40,7 @@
   "trips": [
     {
       "id": 1,
-      "name": "Profound regional help-desk",
+      "name": "Fun in Asia",
       "userId": 1,
       "summary": null,
       "communication": null,
@@ -53,7 +53,7 @@
     },
     {
       "id": 2,
-      "name": "Re-contextualized composite knowledge base",
+      "name": "Backpacking the Water",
       "userId": 1,
       "summary": null,
       "communication": null,
@@ -66,7 +66,7 @@
     },
     {
       "id": 3,
-      "name": "Right-sized transitional protocol",
+      "name": "Asia",
       "userId": 3,
       "summary": null,
       "communication": null,
@@ -79,7 +79,7 @@
     },
     {
       "id": 4,
-      "name": "Phased leading edge infrastructure",
+      "name": "Lets go fly a kite",
       "userId": 1,
       "summary": null,
       "communication": null,
@@ -92,7 +92,7 @@
     },
     {
       "id": 5,
-      "name": "Face to face intermediate paradigm",
+      "name": "Happy Birthday to the ground",
       "userId": 1,
       "summary": null,
       "communication": null,
@@ -5959,7 +5959,7 @@
     },
     {
       "tripId": 13,
-      "summary": "grocer",
+      "summary": "It's a grocer.",
       "lat": 24.56122,
       "lng": -81.765054,
       "address": " 3108 Flagler Ave, Key West, Florida 33040, United States of America",
@@ -5998,6 +5998,20 @@
       "url": "",
       "star": false,
       "id": 506
+    },
+    {
+      "tripId": 13,
+      "summary": "Its a beach",
+      "lat": 24.546925,
+      "lng": -81.795697,
+      "address": " Duval St, Key West, Florida 33040, United States of America",
+      "price": 0,
+      "likes": null,
+      "locationTypeId": 2,
+      "name": "South Beach",
+      "url": "",
+      "star": false,
+      "id": 507
     }
   ]
 }

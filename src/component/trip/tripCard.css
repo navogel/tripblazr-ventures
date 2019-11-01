@@ -32,24 +32,6 @@ a {
 	transition: 1s;
 }
 
-.tripCard1:hover {
-	box-shadow: 0px 3px 5px rgba(47, 108, 240, 0.5) !important;
-	/* transform: scale(1.05); */
-}
-.tripCard2:hover {
-	box-shadow: 0px 3px 5px rgba(248, 186, 70, 0.651) !important;
-	/* transform: scale(1.05); */
-}
-.tripCard3:hover {
-	box-shadow: 0px 3px 5px rgba(226, 132, 210, 0.527) !important;
-	/* transform: scale(1.05); */
-}
-
-.tripCard4:hover {
-	box-shadow: 0px 3px 5px rgba(101, 211, 238, 0.493) !important;
-	/* transform: scale(1.05); */
-}
-
 .MuiCardActions-root {
 	display: flex;
 	padding: 0px !important;
@@ -61,7 +43,7 @@ a {
 	background: rgba(255, 217, 0, 0) !important;
 }
 
-.tripCardHover {
+.tripCardHover .cardActionArea {
 	background-color: rgba(155, 221, 245, 0.692) !important;
 }
 
@@ -86,6 +68,7 @@ a {
 .cardContent > p {
 	flex: 1 0 auto;
 	margin: 0em;
+	color: black;
 }
 
 .cardContent h3 {
@@ -107,17 +90,74 @@ a {
 	/* background-color: peru !important; */
 }
 
-.cardButtons {
+.cardActionArea p {
+	margin: 0.5em;
+}
+
+.card-tripname {
+	margin-top: 0.7em;
+	margin-bottom: 0em;
+	font-size: 1.3em;
+}
+
+.MuiCardActions-root {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
 	align-items: flex-end;
-	background-color: peachpuff;
+	background-color: rgb(61, 61, 61);
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+		0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.MuiCardActions-root .MuiButton-textPrimary {
+	color: white;
+}
+
+.MuiCardActions-root .MuiButtonBase-root {
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	border-radius: 3px;
+}
+
+.MuiCardActions-root .MuiButtonBase-root:hover {
+	background-color: rgb(255, 255, 255);
+	color: black;
 }
 
 .cardLabel {
-	position: relative;
-	top: -23px;
-	left: -7px;
+	width: 100%;
+	top: -9px;
+	left: -10px;
 	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	position: relative;
+	margin: 0px !important;
+}
+
+.cardLabel p {
+	margin: 0px;
+}
+
+/* div[class^='scroll'] {
+	display: none;
+} */
+
+.cardButtons1 {
+	background-color: rgb(76, 146, 250) !important;
+}
+
+.cardButtons2 {
+	background-color: rgb(240, 191, 31) !important;
+}
+
+.cardButtons3 {
+	background-color: rgb(219, 87, 168) !important;
+}
+
+.cardButtons4 {
+	background-color: rgb(58, 189, 40) !important;
 }

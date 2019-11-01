@@ -107,7 +107,7 @@ class Trip extends Component {
 		//console.log(scrollEl);
 		animateScrollTo(scrollEl, {
 			elementToScroll: document.querySelector('.listWrapper'),
-			verticalOffset: -20,
+			verticalOffset: -10,
 			maxDuration: 1000,
 			minDuration: 100,
 			speed: 1000,
@@ -180,6 +180,7 @@ class Trip extends Component {
 					<TripDrawer ref='drawer' getData={this.getData} />
 					<div className='leftColumn'>
 						<div className='listHeader'>
+							<h1>{this.state.tripDetails.name}</h1>
 							<button onClick={this.switchTrip}>back to trips</button>
 							<button onClick={e => this.filterType(1)}>Hotels</button>
 							<button onClick={e => this.filterType(2)}>Activities</button>

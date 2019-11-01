@@ -27,33 +27,34 @@ class LocationCard extends Component {
 		//console.log('hovered props', this.props.hovered);
 		return (
 			<>
-				<Card className={hoverCard}>
+				<Card className={hoverCard} elevation='4'>
+					<div className={'scroll' + this.props.location.id}></div>
 					<CardActionArea
 						onClick={() => this.props.focusMarker(this.props.location)}
 						className='cardActionArea'
 					>
 						<p className='cardLabel'>
-							{this.props.location.locationType.locationType}
+							<p>{this.props.location.locationType.locationType}</p>
+							{/* <p>{`$${this.props.location.price}`}</p> */}
 						</p>
-						<div className={'scroll' + this.props.location.id}></div>
+
 						{/* <Link to={`/mytrips/${this.props.location.id}`}> */}
 						{/* <CardMedia
 								className='tripCardMedia'
 								image=
 								
 							/> */}
-						<CardContent className='cardContent'>
-							<h3>
-								<span className='card-tripname'>
-									{/* {firstLetterCase(this.props.location.name)} */}
-									{this.props.location.name}
-								</span>
-							</h3>
 
-							<p>{this.props.location.summary}</p>
-						</CardContent>
+						<h3 className='card-tripname'>
+							{/* {firstLetterCase(this.props.location.name)} */}
+							{this.props.location.name}
+						</h3>
+
+						<p>{this.props.location.summary}</p>
 					</CardActionArea>
-					<CardActions className='cardButtons'>
+					<CardActions
+						className={'cardButtons' + this.props.location.locationTypeId}
+					>
 						<Button
 							size='small'
 							color='primary'
