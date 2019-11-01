@@ -5985,6 +5985,62 @@
       "url": "",
       "star": false,
       "id": 505
+    },
+    {
+      "tripId": 12,
+      "summary": "",
+      "lat": 13.745619,
+      "lng": 100.491592,
+      "address": " 336 Maharaj Rd., Bangkok, Bangkok Metropolitan Region 10200, Thailand",
+      "price": 10,
+      "likes": null,
+      "locationTypeId": 1,
+      "name": "Arom d Hostel",
+      "url": "",
+      "star": false,
+      "id": 506
+    },
+    {
+      "tripId": 12,
+      "summary": "",
+      "lat": 13.749036,
+      "lng": 100.49391,
+      "address": "Sakdi Chaisit Gate, The Grand Palace, Bangkok, Bangkok Metropolis 10200, Thailand",
+      "price": null,
+      "likes": null,
+      "locationTypeId": 1,
+      "name": "some place",
+      "url": "",
+      "star": false,
+      "id": 507
+    },
+    {
+      "tripId": 12,
+      "summary": "",
+      "lat": 13.731996,
+      "lng": 100.56281,
+      "address": " 21/3 Sukhumvit 18, Bangkok, Bangkok Metropolitan Region 10110, Thailand",
+      "price": null,
+      "likes": null,
+      "locationTypeId": 4,
+      "name": "Tacos & Salsa",
+      "url": "",
+      "star": false,
+      "id": 508
+    },
+    {
+      "tripId": 12,
+      "summary": "",
+      "lat": 13.760086,
+      "lng": 100.496346,
+      "address": " 88/3 Khao San Rd, Bangkok, Bangkok Metropolitan Region 10200, Thailand",
+      "price": null,
+      "likes": null,
+      "locationTypeId": 1,
+      "name": "Koh Lanta Pizzeria",
+      "url": "",
+      "star": false,
+      "id": 509
     }
   ]
 }

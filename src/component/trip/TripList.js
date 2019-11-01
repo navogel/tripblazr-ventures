@@ -170,6 +170,7 @@ class TripList extends Component {
 							// hoverFocus={this.hoverFocus}
 							hovered={this.state.hovered}
 							hoverRemoveFocus={this.hoverRemoveFocus}
+							{...this.props}
 						/>
 						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 					</div>

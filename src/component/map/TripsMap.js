@@ -5,6 +5,8 @@ import L from 'leaflet';
 import TripGeoSearch from './TripGeoSearch';
 import Control from 'react-leaflet-control';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 //import SearchManager from '../../modules/SearchManager';
 
 const createClusterCustomIcon = function(cluster) {
@@ -25,7 +27,7 @@ const myIcon4 = L.icon({
 	shadowAnchor: [9, 41]
 });
 
-export default class TripMapper extends Component {
+class TripMapper extends Component {
 	state = {
 		lat: '',
 		lng: '',
@@ -43,7 +45,7 @@ export default class TripMapper extends Component {
 	};
 
 	markerFocus = obj => {
-		console.log('got the deets', obj);
+		//console.log('got the deets', obj);
 		this.props.scrollTo(obj.id);
 		if (this.state.mapLoaded === false) {
 			this.setState({ mapLoaded: true });
@@ -204,21 +206,23 @@ export default class TripMapper extends Component {
 						zoomToBounds={{ padding: [50, 50] }}
 					>
 						{this.props.trips.map(trip => (
-							<Marker
-								className='location'
-								key={trip.id}
-								position={[trip.lat, trip.lng]}
-								anchor='bottom'
-								onMouseMove={e => this.markerFocus(trip)}
-								//onMouse={e => this.props.hoverFocus(trip.id)}
-								onMouseOut={e => this.props.hoverRemoveFocus()}
-								//onMouseMove={e => this.props.scrollTo(trip.id)}
-								// icon={this.configMyIcon(location.locationType)}
-							>
-								<Tooltip>
-									<p>{trip.name}</p>
-								</Tooltip>
-							</Marker>
+							<Link to={`/mytrips/${trip.id}`} trip={trip}>
+								<Marker
+									className='location'
+									key={trip.id}
+									position={[trip.lat, trip.lng]}
+									anchor='bottom'
+									onMouseMove={e => this.markerFocus(trip)}
+									//onMouse={e => this.props.hoverFocus(trip.id)}
+									onMouseOut={e => this.props.hoverRemoveFocus()}
+									onClick={e => this.props.history.push(`/mytrips/${trip.id}`)}
+									// icon={this.configMyIcon(location.locationType)}
+								>
+									<Tooltip>
+										<p>{trip.name}</p>
+									</Tooltip>
+								</Marker>
+							</Link>
 						))}
 					</MarkerClusterGroup>
 
@@ -231,3 +235,5 @@ export default class TripMapper extends Component {
 		);
 	}
 }
+
+export default withRouter(TripMapper);

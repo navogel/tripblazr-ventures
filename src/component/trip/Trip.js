@@ -98,7 +98,10 @@ class Trip extends Component {
 		animateScrollTo(scrollEl, {
 			elementToScroll: document.querySelector('.listWrapper'),
 			verticalOffset: -20,
-			maxDuration: 1000
+			maxDuration: 1000,
+			minDuration: 100,
+			speed: 1000,
+			cancelOnUserAction: true
 		});
 		if (this.state.hovered !== id) {
 			this.setState({ hovered: id });
