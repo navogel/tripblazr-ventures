@@ -4383,19 +4383,6 @@
       "name": "Grocery"
     },
     {
-      "id": 366,
-      "tripId": 1,
-      "summary": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
-      "price": "$15.59",
-      "address": "2 Graceland Pass",
-      "lng": -86.60887,
-      "lat": 36.11809,
-      "visited": false,
-      "likes": 2,
-      "locationTypeId": 2,
-      "name": "Grocery"
-    },
-    {
       "id": 367,
       "tripId": 2,
       "summary": null,
@@ -4420,19 +4407,6 @@
       "likes": 3,
       "locationTypeId": 2,
       "name": "Books"
-    },
-    {
-      "id": 370,
-      "tripId": 1,
-      "summary": null,
-      "price": "$94.39",
-      "address": "64254 Union Crossing",
-      "lng": -86.67876,
-      "lat": 36.2337,
-      "visited": true,
-      "likes": 21,
-      "locationTypeId": 2,
-      "name": "Outdoors"
     },
     {
       "id": 371,
@@ -6012,6 +5986,20 @@
       "url": "",
       "star": false,
       "id": 507
+    },
+    {
+      "tripId": 1,
+      "summary": "waterFALLS",
+      "lat": 35.660644,
+      "lng": -85.35759,
+      "address": " 2009 Village Camp Rd, Pikeville, Tennessee 37367, United States of America",
+      "price": null,
+      "likes": null,
+      "locationTypeId": 2,
+      "name": "Fall Creek Falls State Park",
+      "url": "",
+      "star": false,
+      "id": 508
     }
   ]
 }

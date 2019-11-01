@@ -27,7 +27,13 @@ export default class ApplicationViews extends Component {
 					path='/mytrips'
 					render={props => {
 						if (this.props.user) {
-							return <TripList {...props} activeUser={this.props.activeUser} />;
+							return (
+								<TripList
+									{...props}
+									activeUser={this.props.activeUser}
+									clearUser={this.props.clearUser}
+								/>
+							);
 						} else {
 							return <Redirect to='/login' />;
 						}

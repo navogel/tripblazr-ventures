@@ -16,6 +16,7 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import CloseIcon from '@material-ui/icons/Close';
 
 const styles = theme => ({
 	container: {
@@ -129,6 +130,15 @@ class LocationEditForm extends Component {
 			<>
 				<form className={classes.container} noValidate autoComplete='off'>
 					<div className='formWrapper'>
+						<div className='absoluteCloseFab'>
+							<Fab
+								color='primary'
+								size='small'
+								onClick={e => this.props.closeDrawer()}
+							>
+								<CloseIcon />
+							</Fab>
+						</div>
 						{/* <Fab
 								
 								size='small'
@@ -238,18 +248,7 @@ class LocationEditForm extends Component {
 								}}
 							/>
 						</div>
-						<div className='formSubmit'>
-							<Fab
-								variant='extended'
-								size='small'
-								color='primary'
-								aria-label='submit'
-								className={classes.margin}
-								onClick={e => this.props.closeDrawer()}
-							>
-								<AddIcon className={classes.extendedIcon} />
-								Close
-							</Fab>
+						<div className='formSubmitEdit'>
 							<Fab
 								variant='extended'
 								size='small'

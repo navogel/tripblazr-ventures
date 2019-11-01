@@ -40,16 +40,17 @@ class App extends Component {
 				{/* <div className='darkMode'></div> */}
 				{this.state.user ? (
 					<>
-						<Nav
+						{/* <Nav
 							clearUser={this.clearUser}
 							user={this.state.user}
 							{...this.props}
 							activeUser={this.state.activeUser}
-						/>
+						/> */}
 						<ApplicationViews
 							user={this.state.user}
 							{...this.props}
 							activeUser={this.state.activeUser}
+							clearUser={this.clearUser}
 						/>
 					</>
 				) : (

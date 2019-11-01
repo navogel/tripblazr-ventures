@@ -14,6 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import animateScrollTo from 'animated-scroll-to';
 import ErrorIcon from '@material-ui/icons/Error';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 class TripList extends Component {
 	state = {
@@ -25,6 +26,13 @@ class TripList extends Component {
 		newName: '',
 		snackOpen: false,
 		hovered: ''
+	};
+
+	//logout
+
+	handleLogout = e => {
+		this.props.clearUser();
+		this.props.history.push('/');
 	};
 
 	//drop a pin alert via snacktime
@@ -130,6 +138,10 @@ class TripList extends Component {
 					<div className='leftColumn'>
 						<div className='listHeader'>
 							<h1>Your Trips</h1>
+							<Fab color='primary' size='small' onClick={this.handleLogout}>
+								<ExitToAppIcon />
+							</Fab>
+
 							<Fab color='primary' size='small' onClick={this.handleClickOpen}>
 								<AddIcon />
 							</Fab>

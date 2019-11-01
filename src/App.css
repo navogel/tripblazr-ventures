@@ -87,13 +87,18 @@
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
+	box-shadow: -2px 5px 5px;
 }
 
-.listWrapper::-webkit-scrollbar {
+.leftColumn .listHeader {
+	justify-content: space-evenly;
+}
+
+*::-webkit-scrollbar {
 	width: 10px;
 	background-color: #3e4244b4;
 }
-.listWrapper::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
 	border-radius: 3px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 	background-color: #575858;
@@ -166,4 +171,16 @@
 
 .MuiDrawer-paperAnchorRight {
 	justify-content: center;
+}
+
+.absoluteCloseFab {
+	position: fixed;
+	right: 40px;
+	top: 30px;
+}
+
+.formSubmitEdit {
+	position: fixed;
+	right: 46px;
+	bottom: 40px;
 }
