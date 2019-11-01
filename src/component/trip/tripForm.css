@@ -11,6 +11,11 @@
 	justify-content: center;
 }
 
+.LocationInputWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
 .nameCity {
 	display: flex;
 	flex-direction: row;
@@ -39,7 +44,7 @@
 }
 
 .modalTitle {
-	margin-top: 5em !important;
+	margin-top: 4em !important;
 	margin-bottom: 5em !important;
 	text-align: center;
 }

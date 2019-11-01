@@ -89,13 +89,16 @@ class Trip extends Component {
 	//scroll to hovered marker
 
 	scrollTo = id => {
+		if (this.state.clickedCoords) {
+			this.clearCoords();
+		}
 		let newId = '.scroll' + id;
 		let scrollEl = document.querySelector(newId);
 		//console.log(scrollEl);
 		animateScrollTo(scrollEl, {
 			elementToScroll: document.querySelector('.listWrapper'),
 			verticalOffset: -20,
-			maxDuration: 2000
+			maxDuration: 1000
 		});
 		if (this.state.hovered !== id) {
 			this.setState({ hovered: id });
@@ -156,7 +159,7 @@ class Trip extends Component {
 	};
 
 	render() {
-		console.log('trip geo searhc marker', this.state.geoMarker);
+		//console.log('trip geo searhc marker', this.state.geoMarker);
 		return (
 			<>
 				<div className='tripWrapper'>
@@ -167,9 +170,9 @@ class Trip extends Component {
 							<button onClick={e => this.filterType(2)}>Activities</button>
 							<button onClick={e => this.filterType(3)}>Food</button>
 							<button onClick={e => this.getData()}>All</button>
-							<Fab color='primary' size='small' onClick={this.handleClickOpen}>
+							{/* <Fab color='primary' size='small' onClick={this.handleClickOpen}>
 								<AddIcon />
-							</Fab>
+							</Fab> */}
 						</div>
 						<div className='listWrapper'>
 							{this.state.locations.map(location => (

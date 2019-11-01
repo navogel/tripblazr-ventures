@@ -124,6 +124,10 @@
 	width: 30px !important;
 }
 
+.leaflet-marker-icon:focus {
+	outline: 0;
+}
+
 /* .specMarker {
 	width: 19px !important;
 	height: 32px !important;

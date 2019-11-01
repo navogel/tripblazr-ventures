@@ -91,10 +91,10 @@ export default class Mapper extends Component {
 
 	markerFocus = (e, obj) => {
 		//console.log('got the deets', obj);
-		this.props.scrollTo(obj.id);
 		if (this.state.mapLoaded === false) {
 			this.setState({ mapLoaded: true });
 		}
+		this.props.scrollTo(obj.id);
 	};
 
 	//light and dark mode on map
@@ -206,7 +206,7 @@ export default class Mapper extends Component {
 							// .openPopup();
 						} else {
 							marker = L.marker(r.center, { icon: myIcon4 })
-								.bindTooltip(r.name, { className: 'toolTip' })
+								.bindTooltip(r.name.split(',')[0], { className: 'toolTip' })
 								.addTo(map)
 								.on('click', e => this.storeGeocode(e, r));
 							// .openPopup();
@@ -248,9 +248,10 @@ export default class Mapper extends Component {
 
 			if (this.props.locations.length === 0) {
 				this.leafletMap.leafletElement.setView(tripCoords, 13);
-				L.marker(tripCoords, { icon: myIcon4 })
-					.bindTooltip(this.props.tripDetails.name, { className: 'toolTip' })
-					.addTo(this.leafletMap.leafletElement);
+				//option to drop a marker on the map at trip coords until user has added content
+				// 	L.marker(tripCoords, { icon: myIcon4 })
+				// 		.bindTooltip(this.props.tripDetails.name, { className: 'toolTip' })
+				// 		.addTo(this.leafletMap.leafletElement);
 			}
 		}
 	}

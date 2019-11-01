@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TripManager from '../../modules/TripManager';
 import PropTypes from 'prop-types';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
+import ReactDOM from 'react-dom';
 //import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -14,6 +14,8 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
+import NativeSelect from '@material-ui/core/NativeSelect';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const styles = theme => ({
 	container: {
@@ -28,10 +30,14 @@ const styles = theme => ({
 		marginTop: 16
 	},
 	menu: {
-		width: 200
+		width: 400
 	},
 	extendedIcon: {
 		marginRight: theme.spacing(1)
+	},
+	formControl: {
+		margin: theme.spacing(1),
+		minWidth: 200
 	}
 });
 class LocationForm extends Component {
@@ -45,8 +51,10 @@ class LocationForm extends Component {
 		likes: '',
 		locationTypeId: '',
 		name: this.props.geoMarker.properties.text,
-		visited: false,
-		loadingStatus: false
+		star: false,
+		url: '',
+		loadingStatus: false,
+		labelWidth: 0
 		// imageLink: ''
 	};
 
@@ -56,111 +64,157 @@ class LocationForm extends Component {
 		this.setState(stateToChange);
 	};
 
+	handleChange = name => event => {
+		this.setState({ [name]: event.target.value });
+	};
+
 	/*  Local method for validation, set loadingStatus, create animal object, invoke the AnimalManager post method, and redirect to the full animal list
 	 */
 	constructNewLocation = evt => {
 		evt.preventDefault();
-		if (this.state.tripName === '' || this.state.city === '') {
-			window.alert('Please input an trip destination and name');
+		if (this.state.name === '' || this.state.locationTypeId === '') {
+			window.alert(
+				'Well this is awkward...  you have to enter a name and type.'
+			);
+		} else if (isNaN(this.state.price)) {
+			window.alert(
+				'Well this is awkward... you need to enter numbers for the cost... youll thank us later.'
+			);
 		} else {
 			this.setState({ loadingStatus: true });
-			const trip = {
+			const location = {
 				tripId: this.state.tripId,
 				summary: this.state.summary,
 				lat: this.state.lat,
 				lng: this.state.lng,
 				address: this.state.address,
-				price: this.state.price,
-				likes: this.state.likes,
-				locationTypeId: this.state.locationTypeId,
+				price: parseFloat(this.state.price),
+				likes: parseInt(this.state.likes),
+				locationTypeId: parseInt(this.state.locationTypeId),
 				name: this.state.name,
-				visited: false
+				url: this.state.url,
+				star: false
 			};
 
-			// Create the animal and redirect user to animal list
 			this.props.handleClose();
-			TripManager.postTrip(trip).then(() => {
-				console.log('addform props', this.props);
-				this.props.getTrips();
+			TripManager.postLocation(location).then(() => {
+				this.props.getData();
+				this.setState({ loadingStatus: false });
 			});
 		}
 	};
+	componentDidMount() {
+		this.setState({
+			labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
+		});
+	}
 
 	render() {
 		const { classes } = this.props;
-		console.log('props location add', this.props);
+		console.log('state', this.state.locationTypeId);
 		return (
 			<>
 				<form className={classes.container} noValidate autoComplete='off'>
 					<div className='formWrapper'>
 						<DialogTitle className='modalTitle'>
-							{'Lets get this trip started.'}
+							{"OK, we got the location.  Now let's get a few more details:"}
 						</DialogTitle>
-						<div className='inputWrapper'>
-							<div className='nameCity'>
-								<TextField
-									id='address'
-									label='Address'
-									className={classes.textField}
-									value={this.state.address}
-									onChange={this.handleFieldChange}
-									margin='dense'
-									variant='outlined'
-									placeholder='Got an address?'
-								/>
-								<TextField
-									id='tripName'
-									label='Name'
-									className={classes.textField}
-									value={this.state.name}
-									onChange={this.handleFieldChange}
-									margin='dense'
-									variant='outlined'
-									placeholder='Enter the place name'
-								/>
+						<div className='LocationInputWrapper'>
+							<TextField
+								id='tripName'
+								label='Name'
+								className={classes.textField}
+								value={this.state.name}
+								onChange={this.handleFieldChange}
+								margin='dense'
+								variant='outlined'
+								placeholder='Enter the place name'
+							/>
 
-								<div className='tripDescription'>
-									<TextField
-										id='summary'
-										label='Description'
-										className={classes.textField}
-										value={this.state.summary}
-										onChange={this.handleFieldChange}
-										margin='dense'
-										variant='outlined'
-										placeholder='What kind of place is this?'
-										multiline
-										rows=''
-									/>
-								</div>
-								<FormControl variant='outlined' className={classes.formControl}>
-									<InputLabel
-										ref={ref => {
-											this.InputLabelRef = ref;
-										}}
-										htmlFor='outlined-age-simple'
-									>
-										Age
-									</InputLabel>
-									<Select
-										value={this.state.age}
-										onChange={this.handleChange}
-										input={
-											<OutlinedInput
-												labelWidth={this.state.labelWidth}
-												name='Type'
-												id='outlined-age-simple'
-											/>
-										}
-									>
-										<MenuItem value={1}>Lodging</MenuItem>
-										<MenuItem value={2}>Activity</MenuItem>
-										<MenuItem value={3}>Food</MenuItem>
-										<MenuItem value={4}>Transpo</MenuItem>
-									</Select>
-								</FormControl>
+							<FormControl
+								variant='outlined'
+								margin='dense'
+								className={classes.formControl}
+							>
+								<InputLabel
+									ref={ref => {
+										this.InputLabelRef = ref;
+									}}
+									htmlFor='outlined-type-native-simple'
+								>
+									Type
+								</InputLabel>
+								<NativeSelect
+									value={this.state.locationTypeId}
+									onChange={this.handleChange('locationTypeId')}
+									input={
+										<OutlinedInput
+											name='type'
+											labelWidth={this.state.labelWidth}
+											id='locationTypeId'
+										/>
+									}
+								>
+									<option value='' />
+									<option value={1}>Lodging</option>
+									<option value={2}>Activity</option>
+									<option value={3}>Food</option>
+									<option value={4}>Transportation</option>
+								</NativeSelect>
+							</FormControl>
+							<div className='midFormText'>
+								<p> Optional:</p>
 							</div>
-							{/* <div className='tripNotes'>
+
+							<TextField
+								id='address'
+								label='Address'
+								className={classes.textField}
+								value={this.state.address}
+								onChange={this.handleFieldChange}
+								margin='dense'
+								variant='outlined'
+								placeholder='Got an address?'
+							/>
+							<TextField
+								id='summary'
+								label='Description'
+								className={classes.textField}
+								value={this.state.summary}
+								onChange={this.handleFieldChange}
+								margin='dense'
+								variant='outlined'
+								placeholder='What kind of place is this?'
+								multiline
+								rows=''
+							/>
+							<TextField
+								id='url'
+								label='URL'
+								className={classes.textField}
+								value={this.state.url}
+								onChange={this.handleFieldChange}
+								margin='dense'
+								variant='outlined'
+								placeholder='Enter a link to the source'
+							/>
+							<TextField
+								id='price'
+								label='Cost'
+								className={classes.textField}
+								value={this.state.price}
+								onChange={this.handleFieldChange}
+								margin='dense'
+								variant='outlined'
+								placeholder='Estimate your costs'
+								InputProps={{
+									startAdornment: (
+										<InputAdornment position='start'>$</InputAdornment>
+									)
+								}}
+							/>
+						</div>
+						{/* <div className='tripNotes'>
 								<TextField
 									id='communication'
 									label='Communication Notes'
@@ -186,7 +240,6 @@ class LocationForm extends Component {
 									rows='2'
 								/>
 							</div> */}
-						</div>
 
 						{/* <button
 						type='button'
@@ -203,7 +256,7 @@ class LocationForm extends Component {
 								aria-label='submit'
 								className={classes.margin}
 								disabled={this.state.loadingStatus}
-								onClick={this.constructNewTrip}
+								onClick={this.constructNewLocation}
 							>
 								<AddIcon className={classes.extendedIcon} />
 								Submit

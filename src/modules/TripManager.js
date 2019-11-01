@@ -26,6 +26,12 @@ export default {
 			method: 'DELETE'
 		}).then(result => result.json());
 	},
+	deleteTripLocations(id) {
+		return fetch(`${remoteURL}/locations?tripId=${id}`, {
+			method: 'DELETE'
+		}).then(result => result.json());
+	},
+	
 	deleteLocation(id) {
 		return fetch(`${remoteURL}/locations/${id}`, {
 			method: 'DELETE'
@@ -50,7 +56,7 @@ export default {
 		}).then(data => data.json());
 	},
 	postLocation(newLocation) {
-		return fetch(`${remoteURL}/trips`, {
+		return fetch(`${remoteURL}/locations`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -59,7 +65,7 @@ export default {
 		}).then(data => data.json());
 	},
 	updateLocation(editedLocation) {
-		return fetch(`${remoteURL}/trips/${editedLocation.id}`, {
+		return fetch(`${remoteURL}/locations/${editedLocation.id}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json'
