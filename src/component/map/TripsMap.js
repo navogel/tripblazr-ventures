@@ -206,7 +206,7 @@ class TripMapper extends Component {
 						zoomToBounds={{ padding: [50, 50] }}
 					>
 						{this.props.trips.map(trip => (
-							<Link to={`/mytrips/${trip.id}`} trip={trip}>
+							<Link key={trip.id} to={`/mytrips/${trip.id}`} trip={trip}>
 								<Marker
 									className='location'
 									key={trip.id}

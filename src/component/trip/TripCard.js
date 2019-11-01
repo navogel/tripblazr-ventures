@@ -27,7 +27,7 @@ class TripCard extends Component {
 		//console.log('tripcard props', this.props.trip);
 		return (
 			<>
-				<Card className={hoverCard} elevation='4'>
+				<Card className={hoverCard} elevation={4}>
 					<div className={'scroll' + this.props.trip.id}></div>
 					<CardActionArea className='cardActionArea'>
 						<Link to={`/mytrips/${this.props.trip.id}`} trip={this.props.trip}>
@@ -47,7 +47,7 @@ class TripCard extends Component {
 							</CardContent>
 						</Link>
 					</CardActionArea>
-					<CardActions className='cardButtons' elevation='2'>
+					<CardActions className='cardButtons'>
 						<Button
 							size='small'
 							color='primary'

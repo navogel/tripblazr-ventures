@@ -27,14 +27,14 @@ class LocationCard extends Component {
 		//console.log('hovered props', this.props.hovered);
 		return (
 			<>
-				<Card className={hoverCard} elevation='4'>
+				<Card className={hoverCard} elevation={4}>
 					<div className={'scroll' + this.props.location.id}></div>
 					<CardActionArea
 						onClick={() => this.props.focusMarker(this.props.location)}
 						className='cardActionArea'
 					>
 						<p className='cardLabel'>
-							<p>{this.props.location.locationType.locationType}</p>
+							{this.props.location.locationType.locationType}
 							{/* <p>{`$${this.props.location.price}`}</p> */}
 						</p>
 

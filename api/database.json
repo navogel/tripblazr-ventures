@@ -5986,6 +5986,20 @@
       "url": "",
       "star": false,
       "id": 508
+    },
+    {
+      "tripId": 2,
+      "summary": "",
+      "lat": 36.547789144807545,
+      "lng": -86.66002745402649,
+      "address": "8092 Guthrie Road, Cross Plains, Tennessee 37049, United States",
+      "price": null,
+      "likes": null,
+      "locationTypeId": 1,
+      "name": "FARM",
+      "url": "",
+      "star": false,
+      "id": 509
     }
   ]
 }
