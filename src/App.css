@@ -78,7 +78,7 @@
 	flex-direction: column;
 	flex-basis: 30%;
 	flex: 0.7;
-	min-width: 400px;
+	min-width: 370px;
 }
 
 .listHeader {
@@ -91,8 +91,8 @@
 }
 
 .leftColumn .listHeader {
-	justify-content: space-between;
-	padding: 1.5em;
+	justify-content: space-around;
+	padding: 1em;
 }
 
 *::-webkit-scrollbar {
