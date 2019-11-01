@@ -35,7 +35,8 @@ class Trip extends Component {
 		open: false,
 		openEdit: false,
 		snackOpen: false,
-		geoMarker: {}
+		geoMarker: {},
+		menuOpen: true
 	};
 
 	//drop a pin alert via snacktime
@@ -181,6 +182,14 @@ class Trip extends Component {
 		this.handleClickOpen();
 	};
 
+	toggleMenu = () => {
+		if (this.state.menuOpen === true) {
+			this.setState({ menuOpen: false });
+		} else {
+			this.setState({ menuOpen: true });
+		}
+	};
+
 	render() {
 		//console.log('trip geo searhc marker', this.state.geoMarker);
 		return (
@@ -189,35 +198,41 @@ class Trip extends Component {
 					<TripDrawer ref='drawer' getData={this.getData} />
 					<div className='leftColumn'>
 						<div className='listHeader'>
-							<div className='tripHeader'>
-								<h1>{this.state.tripDetails.name}</h1>
-								<h2>{this.state.tripDetails.city}</h2>
-							</div>
+							{this.state.menuOpen && (
+								<div className='tripHeader'>
+									<h1>{this.state.tripDetails.name}</h1>
+									<h2>{this.state.tripDetails.city}</h2>
+									<Divider />
+								</div>
+							)}
 							<div className='tripButtons'>
-								<IconButton color='secondary' onClick={this.switchTrip}>
+								<IconButton onClick={this.switchTrip}>
 									<TransitEnterexitIcon />
 								</IconButton>
 								{/* <button onClick={this.switchTrip}>back to trips</button> */}
-								<IconButton color='secondary' onClick={e => this.filterType(1)}>
+								<IconButton onClick={e => this.filterType(1)}>
 									<HotelIcon />
 								</IconButton>
 								{/* <button onClick={e => this.filterType(1)}>Hotels</button> */}
-								<IconButton color='secondary' onClick={e => this.filterType(2)}>
+								<IconButton onClick={e => this.filterType(2)}>
 									<DirectionsWalkIcon />
 								</IconButton>
 								{/* <button onClick={e => this.filterType(2)}>Activities</button> */}
-								<IconButton color='secondary' onClick={e => this.filterType(3)}>
+								<IconButton onClick={e => this.filterType(3)}>
 									<FastfoodIcon />
 								</IconButton>
 								{/* <button onClick={e => this.filterType(3)}>Food</button> */}
-								<IconButton color='secondary' onClick={e => this.filterType(4)}>
+								<IconButton onClick={e => this.filterType(4)}>
 									<CommuteIcon />
 								</IconButton>
 								{/* <button onClick={e => this.filterType(4)}>Transpo</button> */}
-								<IconButton color='secondary' onClick={e => this.getData()}>
+								<IconButton onClick={e => this.getData()}>
 									<RotateLeftIcon />
 								</IconButton>
-								{/* <button onClick={e => this.getData()}>All</button> */}
+								<IconButton onClick={e => this.toggleMenu()}>
+									<HeightIcon />
+								</IconButton>
+								<Divider />
 							</div>
 						</div>
 						<div className='listWrapper'>

@@ -15,6 +15,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import animateScrollTo from 'animated-scroll-to';
 import ErrorIcon from '@material-ui/icons/Error';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
 
 class TripList extends Component {
 	state = {
@@ -137,11 +138,10 @@ class TripList extends Component {
 				<div className='tripWrapper'>
 					<div className='leftColumn'>
 						<div className='listHeader'>
+							<IconButton size='small' onClick={this.handleLogout}>
+								<TransitEnterexitIcon />
+							</IconButton>
 							<h1>Your Trips</h1>
-							<Fab color='primary' size='small' onClick={this.handleLogout}>
-								<ExitToAppIcon />
-							</Fab>
-
 							<Fab color='primary' size='small' onClick={this.handleClickOpen}>
 								<AddIcon />
 							</Fab>
