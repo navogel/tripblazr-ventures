@@ -36,11 +36,18 @@
 }
 
 .formSubmit {
-	margin: 1em;
-	align-self: flex-end;
+	margin-top: 3em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	padding-top: 1em;
 	margin-bottom: 0em;
 	color: white;
+}
+
+.MuiFab-extended.MuiFab-sizeSmall {
+	padding-right: 18px !important;
+	padding-left: 8px !important;
 }
 
 .modalTitle {

@@ -14,6 +14,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import ErrorIcon from '@material-ui/icons/Error';
 import LocationForm from '../trip/LocationForm';
 import AddIcon from '@material-ui/icons/Add';
+import TripDrawer from './TripDrawer';
 
 class Trip extends Component {
 	state = {
@@ -23,6 +24,7 @@ class Trip extends Component {
 		droppedPin: false,
 		hovered: '',
 		open: false,
+		openEdit: false,
 		snackOpen: false,
 		geoMarker: {}
 	};
@@ -42,7 +44,7 @@ class Trip extends Component {
 		this.setState({ snackOpen: false });
 	};
 
-	//modal open
+	//modal open NEW LOCATION
 
 	handleClickOpen = () => {
 		if (this.state.newLat === '') {
@@ -54,6 +56,14 @@ class Trip extends Component {
 
 	handleClose = () => {
 		this.setState({ open: false });
+	};
+
+	//drawer for viewing and editing
+
+	toggleDrawer = obj => {
+		// Access the handleToggle function of the drawer reference
+		//onClick={this.toggleDrawer('right', true)
+		this.refs.drawer.openDrawer(obj);
 	};
 
 	//go back to my trips
@@ -105,6 +115,7 @@ class Trip extends Component {
 		});
 		if (this.state.hovered !== id) {
 			this.setState({ hovered: id });
+			console.log('set state hovered: id');
 		}
 	};
 
@@ -166,12 +177,14 @@ class Trip extends Component {
 		return (
 			<>
 				<div className='tripWrapper'>
+					<TripDrawer ref='drawer' getData={this.getData} />
 					<div className='leftColumn'>
 						<div className='listHeader'>
 							<button onClick={this.switchTrip}>back to trips</button>
 							<button onClick={e => this.filterType(1)}>Hotels</button>
 							<button onClick={e => this.filterType(2)}>Activities</button>
 							<button onClick={e => this.filterType(3)}>Food</button>
+							<button onClick={e => this.filterType(4)}>Transpo</button>
 							<button onClick={e => this.getData()}>All</button>
 							{/* <Fab color='primary' size='small' onClick={this.handleClickOpen}>
 								<AddIcon />
@@ -185,6 +198,7 @@ class Trip extends Component {
 									getData={this.getData}
 									focusMarker={this.FocusMarker}
 									hovered={this.state.hovered}
+									toggleDrawer={this.toggleDrawer}
 									//{...this.props}
 								/>
 							))}
@@ -209,6 +223,19 @@ class Trip extends Component {
 						</div>
 					)}
 				</div>
+				<Dialog
+					open={this.state.open}
+					onClose={this.handleClose}
+					aria-labelledby='form-dialog-title'
+				>
+					<LocationForm
+						getData={this.getData}
+						geoMarker={this.state.geoMarker}
+						handleClose={this.handleClose}
+						activeUser={this.props.activeUser}
+						tripDetails={this.state.tripDetails}
+					/>
+				</Dialog>
 				<Dialog
 					open={this.state.open}
 					onClose={this.handleClose}

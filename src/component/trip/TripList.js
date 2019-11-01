@@ -85,11 +85,6 @@ class TripList extends Component {
 		this.setState({ hovered: '' });
 	};
 
-	toggleDrawer = () => {
-		// Access the handleToggle function of the drawer reference
-		this.refs.drawer.openDrawer();
-	};
-
 	//allows user to click a trip and zoom to its location on the map
 	FocusMarker = obj => {
 		console.log('obj', obj.lat);
@@ -131,7 +126,6 @@ class TripList extends Component {
 		//console.log('new lat', this.state.newLat);
 		return (
 			<>
-				<TripDrawer ref='drawer' />
 				<div className='tripWrapper'>
 					<div className='leftColumn'>
 						<div className='listHeader'>

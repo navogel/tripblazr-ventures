@@ -2,19 +2,19 @@
   "locationTypes": [
     {
       "id": 1,
-      "locationType": "lodging"
+      "locationType": "Lodging"
     },
     {
       "id": 2,
-      "locationType": "activity"
+      "locationType": "Activity"
     },
     {
       "id": 3,
-      "locationType": "food"
+      "locationType": "Food"
     },
     {
       "id": 4,
-      "locationType": "transportation"
+      "locationType": "Transportation"
     }
   ],
   "users": [
@@ -4929,17 +4929,16 @@
       "name": "Tools"
     },
     {
-      "id": 415,
       "tripId": 1,
-      "summary": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
-      "price": "$27.82",
-      "address": "82 Holy Cross Parkway",
-      "lng": -86.89725,
+      "summary": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. asdfasdf\nasdf\n\nasdf\nasdf\nasdf\nasd\nf\nasdf\na\nsdf\nasd\nf",
       "lat": 36.17724,
-      "visited": true,
+      "lng": -86.89725,
+      "address": "82 Holy Cross Parkway",
+      "price": 27.82,
       "likes": 13,
       "locationTypeId": 2,
-      "name": "Grocery"
+      "name": "Grocery",
+      "id": 415
     },
     {
       "id": 416,
@@ -5938,7 +5937,7 @@
       "address": " 219 Ann St, Key West, Florida 33040, United States of America",
       "price": 100,
       "likes": null,
-      "locationTypeId": 2,
+      "locationTypeId": 4,
       "name": "Ann Street Cottage",
       "url": "",
       "star": false,
@@ -5987,60 +5986,18 @@
       "id": 505
     },
     {
-      "tripId": 12,
+      "tripId": 1,
       "summary": "",
-      "lat": 13.745619,
-      "lng": 100.491592,
-      "address": " 336 Maharaj Rd., Bangkok, Bangkok Metropolitan Region 10200, Thailand",
-      "price": 10,
+      "lat": 36.0695,
+      "lng": -86.683734,
+      "address": " Richards Rd, Antioch, Tennessee 37013, United States of America",
+      "price": null,
       "likes": null,
       "locationTypeId": 1,
-      "name": "Arom d Hostel",
+      "name": "Tacos De Pescado y Camaron",
       "url": "",
       "star": false,
       "id": 506
-    },
-    {
-      "tripId": 12,
-      "summary": "",
-      "lat": 13.749036,
-      "lng": 100.49391,
-      "address": "Sakdi Chaisit Gate, The Grand Palace, Bangkok, Bangkok Metropolis 10200, Thailand",
-      "price": null,
-      "likes": null,
-      "locationTypeId": 1,
-      "name": "some place",
-      "url": "",
-      "star": false,
-      "id": 507
-    },
-    {
-      "tripId": 12,
-      "summary": "",
-      "lat": 13.731996,
-      "lng": 100.56281,
-      "address": " 21/3 Sukhumvit 18, Bangkok, Bangkok Metropolitan Region 10110, Thailand",
-      "price": null,
-      "likes": null,
-      "locationTypeId": 4,
-      "name": "Tacos & Salsa",
-      "url": "",
-      "star": false,
-      "id": 508
-    },
-    {
-      "tripId": 12,
-      "summary": "",
-      "lat": 13.760086,
-      "lng": 100.496346,
-      "address": " 88/3 Khao San Rd, Bangkok, Bangkok Metropolitan Region 10200, Thailand",
-      "price": null,
-      "likes": null,
-      "locationTypeId": 1,
-      "name": "Koh Lanta Pizzeria",
-      "url": "",
-      "star": false,
-      "id": 509
     }
   ]
 }

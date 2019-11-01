@@ -93,6 +93,7 @@ export default class Mapper extends Component {
 		//console.log('got the deets', obj);
 		if (this.state.mapLoaded === false) {
 			this.setState({ mapLoaded: true });
+			console.log('set state maploaded');
 		}
 		this.props.scrollTo(obj.id);
 	};
@@ -191,12 +192,12 @@ export default class Mapper extends Component {
 				results => {
 					var r = results[0];
 					console.log('reverse geocode results', r);
-					this.setState({
-						lat: r.center.lat,
-						lng: r.center.lng
-					});
 
 					if (r) {
+						this.setState({
+							lat: r.center.lat,
+							lng: r.center.lng
+						});
 						if (marker) {
 							map.removeLayer(marker);
 							marker = L.marker(r.center, { icon: myIcon4 })
@@ -234,6 +235,10 @@ export default class Mapper extends Component {
 		const lat = e.latlng.lat;
 		const lng = e.latlng.lng;
 		console.log(lat, lng);
+	};
+
+	saveObj = obj => {
+		console.log('fb obj', obj);
 	};
 
 	componentDidUpdate(prevProps) {
@@ -304,7 +309,7 @@ export default class Mapper extends Component {
 			//if not first load, and link has been clicked, zoom to marker
 			console.log('clicked place from list render');
 
-			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 13);
+			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 15);
 		} else if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
@@ -402,7 +407,7 @@ export default class Mapper extends Component {
 											location.location.longitude
 										]}
 										anchor='bottom'
-										//onClick={e => this.markerFocus(e, location)}
+										onClick={e => this.saveObj(location)}
 										// icon={this.configMyIcon(location.locationTypeId)}
 									>
 										<Tooltip>

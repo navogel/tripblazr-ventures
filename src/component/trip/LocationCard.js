@@ -28,11 +28,14 @@ class LocationCard extends Component {
 		return (
 			<>
 				<Card className={hoverCard}>
-					<div className={'scroll' + this.props.location.id}></div>
 					<CardActionArea
 						onClick={() => this.props.focusMarker(this.props.location)}
 						className='cardActionArea'
 					>
+						<p className='cardLabel'>
+							{this.props.location.locationType.locationType}
+						</p>
+						<div className={'scroll' + this.props.location.id}></div>
 						{/* <Link to={`/mytrips/${this.props.location.id}`}> */}
 						{/* <CardMedia
 								className='tripCardMedia'
@@ -43,11 +46,11 @@ class LocationCard extends Component {
 							<h3>
 								<span className='card-tripname'>
 									{/* {firstLetterCase(this.props.location.name)} */}
-									{this.props.location.name}{' '}
-									{this.props.location.locationType.locationType}
+									{this.props.location.name}
 								</span>
 							</h3>
-							<p>Summary: {this.props.location.summary}</p>
+
+							<p>{this.props.location.summary}</p>
 						</CardContent>
 					</CardActionArea>
 					<CardActions className='cardButtons'>
@@ -58,12 +61,14 @@ class LocationCard extends Component {
 						>
 							Delete
 						</Button>
-						{/* <EditAnimalModal id={this.props.animal.id} {...this.props} /> */}
-						{/* <Link to={`/animals/${this.props.animal.id}`}>
-						<Button size='small' color='primary'>
-							Info
+						<Button
+							size='small'
+							color='primary'
+							// onClick={() => this.toggleDrawer(this.props.location)}
+							onClick={() => this.props.toggleDrawer(this.props.location)}
+						>
+							Edit
 						</Button>
-					</Link> */}
 					</CardActions>
 				</Card>
 			</>
