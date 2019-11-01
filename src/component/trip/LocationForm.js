@@ -42,15 +42,15 @@ const styles = theme => ({
 });
 class LocationForm extends Component {
 	state = {
-		tripId: this.props.tripDetails.id,
+		tripId: '',
 		summary: '',
-		lat: this.props.geoMarker.center.lat,
-		lng: this.props.geoMarker.center.lng,
-		address: this.props.geoMarker.name.split(/,(.+)/)[1],
+		lat: '',
+		lng: '',
+		address: '',
 		price: '',
 		likes: '',
 		locationTypeId: '',
-		name: this.props.geoMarker.properties.text,
+		name: '',
 		star: false,
 		url: '',
 		loadingStatus: false,
@@ -107,6 +107,24 @@ class LocationForm extends Component {
 		this.setState({
 			labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
 		});
+		console.log('location form props', this.props);
+		//add some logic here to manage the obj that is passed
+		if (this.props.geoMarker.properties) {
+			this.setState({
+				tripId: this.props.tripDetails.id,
+				lat: this.props.geoMarker.center.lat,
+				lng: this.props.geoMarker.center.lng,
+				address: this.props.geoMarker.name.split(/,(.+)/)[1],
+				name: this.props.geoMarker.properties.text
+			});
+		} else {
+			this.setState({
+				tripId: this.props.tripDetails.id,
+				lat: this.props.geoMarker.center.lat,
+				lng: this.props.geoMarker.center.lng,
+				address: this.props.geoMarker.name
+			});
+		}
 	}
 
 	render() {
@@ -121,7 +139,7 @@ class LocationForm extends Component {
 						</DialogTitle>
 						<div className='LocationInputWrapper'>
 							<TextField
-								id='tripName'
+								id='name'
 								label='Name'
 								className={classes.textField}
 								value={this.state.name}

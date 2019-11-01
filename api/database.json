@@ -5943,6 +5943,48 @@
       "url": "",
       "star": false,
       "id": 502
+    },
+    {
+      "tripId": 13,
+      "summary": "vegan lunch",
+      "lat": 24.558932,
+      "lng": -81.798413,
+      "address": " 829 Fleming St, Key West, Florida 33040, United States of America",
+      "price": 4.5,
+      "likes": null,
+      "locationTypeId": 3,
+      "name": "Date & Thyme Organic Cafe",
+      "url": "",
+      "star": false,
+      "id": 503
+    },
+    {
+      "tripId": 13,
+      "summary": "grocer",
+      "lat": 24.56122,
+      "lng": -81.765054,
+      "address": " 3108 Flagler Ave, Key West, Florida 33040, United States of America",
+      "price": 50,
+      "likes": null,
+      "locationTypeId": 3,
+      "name": "Atlantic Grocery",
+      "url": "",
+      "star": false,
+      "id": 504
+    },
+    {
+      "tripId": 13,
+      "summary": "they say its fun",
+      "lat": 24.5565145,
+      "lng": -81.7880903,
+      "address": "1430 Virginia Street, Key West, Florida 33040, United States",
+      "price": 0,
+      "likes": null,
+      "locationTypeId": 2,
+      "name": "Some fun Place I heard about",
+      "url": "",
+      "star": false,
+      "id": 505
     }
   ]
 }
