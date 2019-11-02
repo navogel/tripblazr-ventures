@@ -209,6 +209,17 @@ class Trip extends Component {
 
 	render() {
 		//console.log('trip geo searhc marker', this.state.geoMarker);
+		let tripCost = 0;
+
+		this.state.locations.forEach(location => {
+			//console.log(parsed);
+			if (location.price === null) {
+				console.log(location.price);
+			} else {
+				tripCost += parseInt(location.price);
+			}
+		});
+
 		return (
 			<>
 				<div className='tripWrapper'>
@@ -219,6 +230,7 @@ class Trip extends Component {
 								<div className='tripHeader'>
 									<h1>{this.state.tripDetails.name}</h1>
 									<h4>{this.state.tripDetails.city}</h4>
+									<h4>Estimated Trip Price: ${tripCost}</h4>
 								</div>
 							)}
 							<div className='tripButtons'>
