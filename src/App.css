@@ -1,4 +1,7 @@
 /* @import url('~leaflet.markercluster/dist/styles.min.css'); */
+body {
+	background-color: grey;
+}
 
 .App {
 	text-align: center;
@@ -87,12 +90,12 @@
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
-	box-shadow: -2px 5px 5px;
+	box-shadow: -2px 2px 5px;
 }
 
 .leftColumn .listHeader {
 	justify-content: space-around;
-	padding: 1em;
+	padding: 0em;
 }
 
 *::-webkit-scrollbar {
@@ -196,4 +199,18 @@
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	margin-bottom: 0;
+	border-bottom: 2px solid;
+	background-color: #575858;
+}
+
+.tripButtons > .MuiIconButton-root {
+	color: white !important;
+}
+
+.tripHeader h1,
+.tripHeader h4 {
+	margin: 0.5em;
+}
+.tripHeader {
+	padding: 1em;
 }

@@ -204,7 +204,7 @@ class LocationEditForm extends Component {
 								id='address'
 								label='Address'
 								className={classes.textField}
-								value={this.state.address}
+								value={this.state.address || ''}
 								onChange={this.handleFieldChange}
 								margin='dense'
 								variant='outlined'
@@ -214,7 +214,7 @@ class LocationEditForm extends Component {
 								id='summary'
 								label='Description'
 								className={classes.textField}
-								value={this.state.summary}
+								value={this.state.summary || ''}
 								onChange={this.handleFieldChange}
 								margin='dense'
 								variant='outlined'
@@ -226,7 +226,7 @@ class LocationEditForm extends Component {
 								id='url'
 								label='URL'
 								className={classes.textField}
-								value={this.state.url}
+								value={this.state.url || ''}
 								onChange={this.handleFieldChange}
 								margin='dense'
 								variant='outlined'
@@ -236,7 +236,7 @@ class LocationEditForm extends Component {
 								id='price'
 								label='Cost'
 								className={classes.textField}
-								value={this.state.price}
+								value={this.state.price || ''}
 								onChange={this.handleFieldChange}
 								margin='dense'
 								variant='outlined'

@@ -35,7 +35,6 @@ class LocationCard extends Component {
 					>
 						<p className='cardLabel'>
 							{this.props.location.locationType.locationType}
-							{/* <p>{`$${this.props.location.price}`}</p> */}
 						</p>
 
 						{/* <Link to={`/mytrips/${this.props.location.id}`}> */}
@@ -52,9 +51,15 @@ class LocationCard extends Component {
 
 						<p>{this.props.location.summary}</p>
 					</CardActionArea>
+
 					<CardActions
 						className={'cardButtons' + this.props.location.locationTypeId}
 					>
+						<p className='price'>
+							<b>
+								{this.props.location.price && `$${this.props.location.price}`}
+							</b>
+						</p>
 						<Button
 							size='small'
 							color='primary'

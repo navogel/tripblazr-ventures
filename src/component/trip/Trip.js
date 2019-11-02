@@ -29,13 +29,19 @@ class Trip extends Component {
 	state = {
 		locations: [],
 		tripDetails: {},
+		// list item is clicked, map zooms and moves to that point. prevent fitBounds
 		clickedCoords: [],
+		//reverse geocoding listener when map is clicked map moves to that point, prevent fitBounds
 		droppedPin: false,
+		//marker ID is hovered -> list view scrolls and highlights
 		hovered: '',
+		//object set for adding or editing
+		geoMarker: {},
+		//modals/drawer/snacks
 		open: false,
 		openEdit: false,
 		snackOpen: false,
-		geoMarker: {},
+
 		menuOpen: true
 	};
 
@@ -118,9 +124,9 @@ class Trip extends Component {
 		animateScrollTo(scrollEl, {
 			elementToScroll: document.querySelector('.listWrapper'),
 			verticalOffset: -10,
-			maxDuration: 1000,
-			minDuration: 100,
-			speed: 1000,
+			maxDuration: 3000,
+			minDuration: 250,
+			speed: 500,
 			cancelOnUserAction: true
 		});
 		if (this.state.hovered !== id) {
@@ -166,6 +172,17 @@ class Trip extends Component {
 		});
 	};
 
+	//Get data and remove all maping states -> clean tripview of all locations
+
+	mapRefresh = () => {
+		this.getData();
+		this.setState({
+			geoMarker: {},
+			clickedCoords: [],
+			hovered: ''
+		});
+	};
+
 	componentDidMount() {
 		// console.log('props from tripcard', this.props);
 
@@ -201,12 +218,11 @@ class Trip extends Component {
 							{this.state.menuOpen && (
 								<div className='tripHeader'>
 									<h1>{this.state.tripDetails.name}</h1>
-									<h2>{this.state.tripDetails.city}</h2>
-									<Divider />
+									<h4>{this.state.tripDetails.city}</h4>
 								</div>
 							)}
 							<div className='tripButtons'>
-								<Divider />
+								{/* <Divider /> */}
 								<IconButton onClick={this.switchTrip}>
 									<TransitEnterexitIcon />
 								</IconButton>
@@ -282,19 +298,7 @@ class Trip extends Component {
 						tripDetails={this.state.tripDetails}
 					/>
 				</Dialog>
-				<Dialog
-					open={this.state.open}
-					onClose={this.handleClose}
-					aria-labelledby='form-dialog-title'
-				>
-					<LocationForm
-						getData={this.getData}
-						geoMarker={this.state.geoMarker}
-						handleClose={this.handleClose}
-						activeUser={this.props.activeUser}
-						tripDetails={this.state.tripDetails}
-					/>
-				</Dialog>
+
 				<Snackbar
 					anchorOrigin={{
 						vertical: 'top',

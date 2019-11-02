@@ -44,7 +44,7 @@ a {
 }
 
 .tripCardHover .cardActionArea {
-	background-color: rgba(155, 221, 245, 0.692) !important;
+	background-color: #bbdefb !important;
 }
 
 .tripCardMedia {
@@ -117,8 +117,8 @@ a {
 .MuiCardActions-root .MuiButtonBase-root {
 	border-radius: 3px;
 	margin-right: 0.5em;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
 	border-radius: 3px;
 }
 
@@ -160,4 +160,13 @@ a {
 
 .cardButtons4 {
 	background-color: rgb(58, 189, 40) !important;
+}
+
+.price {
+	color: white;
+	margin-right: auto;
+	padding-left: 0.5em;
+	font-size: 1.2em;
+	margin-top: 0em;
+	margin-bottom: 0em;
 }

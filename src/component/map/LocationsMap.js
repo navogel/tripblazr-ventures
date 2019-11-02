@@ -83,7 +83,7 @@ export default class Mapper extends Component {
 
 	//function for storing click events on geosearch and click to add markers
 	storeGeocode = (e, obj) => {
-		console.log('yaya got dem O-B-Js', obj);
+		//console.log('yaya got dem O-B-Js', obj);
 		this.props.addGeoSearchMarker(obj);
 	};
 
@@ -161,7 +161,7 @@ export default class Mapper extends Component {
 				this.setState({
 					searchResults: filteredResults
 				});
-				console.log(this.state.searchResults);
+				//console.log(this.state.searchResults);
 			});
 		}
 	};
@@ -178,7 +178,7 @@ export default class Mapper extends Component {
 
 	//drop marker on click and record coords and address
 	componentDidMount() {
-		console.log('trip deets from trip at didmount', this.props.tripDetails);
+		//console.log('trip deets from trip at didmount', this.props.tripDetails);
 
 		const map = this.leafletMap.leafletElement;
 		const geocoder = L.Control.Geocoder.mapbox(Token);
@@ -191,7 +191,7 @@ export default class Mapper extends Component {
 				map.options.crs.scale(map.getZoom()),
 				results => {
 					var r = results[0];
-					console.log('reverse geocode results', r);
+					//	console.log('reverse geocode results', r);
 
 					if (r) {
 						this.setState({
@@ -234,7 +234,7 @@ export default class Mapper extends Component {
 	getCoord = e => {
 		const lat = e.latlng.lat;
 		const lng = e.latlng.lng;
-		console.log(lat, lng);
+		//console.log(lat, lng);
 	};
 
 	saveObj = obj => {
@@ -309,7 +309,7 @@ export default class Mapper extends Component {
 			//if not first load, and link has been clicked, zoom to marker
 			console.log('clicked place from list render');
 
-			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 15);
+			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 13);
 		} else if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
