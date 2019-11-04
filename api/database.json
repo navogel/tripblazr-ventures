@@ -35,6 +35,12 @@
       "name": "sue",
       "userName": "sue",
       "password": "pass"
+    },
+    {
+      "userName": "sam",
+      "password": "sam",
+      "name": "sam",
+      "id": 4
     }
   ],
   "trips": [
@@ -193,6 +199,32 @@
       "published": false,
       "userId": 1,
       "id": 13
+    },
+    {
+      "name": "Guys Weekend",
+      "city": "Manhattan, New York City, New York, United States of America",
+      "summary": "",
+      "lat": 40.7903,
+      "lng": -73.9597,
+      "communication": "",
+      "money": "",
+      "likes": "",
+      "published": false,
+      "userId": 4,
+      "id": 14
+    },
+    {
+      "name": "Backpacking NExt Year",
+      "city": "Bangkok, Bangkok Metropolitan Region, Thailand",
+      "summary": "",
+      "lat": 13.75,
+      "lng": 100.51667,
+      "communication": "",
+      "money": "",
+      "likes": "",
+      "published": false,
+      "userId": 4,
+      "id": 15
     }
   ],
   "locations": [
@@ -468,19 +500,6 @@
       "likes": 16,
       "locationTypeId": 2,
       "name": "Health"
-    },
-    {
-      "id": 25,
-      "tripId": 1,
-      "summary": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
-      "price": "48.14",
-      "address": "18261 Loftsgordon Point",
-      "lng": -86.78206,
-      "lat": 36.08863,
-      "visited": true,
-      "likes": 2,
-      "locationTypeId": 1,
-      "name": "Games"
     },
     {
       "id": 26,
@@ -767,19 +786,6 @@
       "likes": 2,
       "locationTypeId": 1,
       "name": "Music"
-    },
-    {
-      "id": 48,
-      "tripId": 1,
-      "summary": "Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
-      "price": "54.77",
-      "address": "21786 Shoshone Center",
-      "lng": -86.84049,
-      "lat": 36.13563,
-      "visited": true,
-      "likes": 2,
-      "locationTypeId": 2,
-      "name": "Automotive"
     },
     {
       "id": 49,
@@ -3122,17 +3128,16 @@
       "name": "Industrial"
     },
     {
-      "id": 262,
       "tripId": 1,
       "summary": null,
-      "price": "44.30",
-      "address": "843 Killdeer Way",
-      "lng": -86.88056,
       "lat": 36.12024,
-      "visited": true,
+      "lng": -86.88056,
+      "address": "843 Killdeer Way",
+      "price": 40,
       "likes": 0,
       "locationTypeId": 3,
-      "name": "Tools"
+      "name": "Tools",
+      "id": 262
     },
     {
       "id": 263,
@@ -3536,19 +3541,6 @@
       "likes": 24,
       "locationTypeId": 2,
       "name": "Movies"
-    },
-    {
-      "id": 296,
-      "tripId": 1,
-      "summary": null,
-      "price": "14.82",
-      "address": "086 Michigan Point",
-      "lng": -86.79031,
-      "lat": 36.19187,
-      "visited": true,
-      "likes": 1,
-      "locationTypeId": 3,
-      "name": "Outdoors"
     },
     {
       "id": 297,
@@ -5974,6 +5966,34 @@
       "url": "",
       "star": false,
       "id": 509
+    },
+    {
+      "tripId": 14,
+      "summary": "",
+      "lat": 40.752785,
+      "lng": -73.97745,
+      "address": " Grand Central Terminal, New York City, New York 10017, United States of America",
+      "price": 70,
+      "likes": null,
+      "locationTypeId": 4,
+      "name": "Grand Central Terminal Clock",
+      "url": "",
+      "star": false,
+      "id": 510
+    },
+    {
+      "tripId": 14,
+      "summary": "",
+      "lat": 40.792027,
+      "lng": -73.959853,
+      "address": "North Meadow, Central Park, New York, New York 10025, United States",
+      "price": 0,
+      "likes": null,
+      "locationTypeId": 2,
+      "name": "Central Park",
+      "url": "",
+      "star": false,
+      "id": 512
     }
   ]
 }

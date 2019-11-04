@@ -5,6 +5,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import LocationEditForm from './LocationEditForm';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
 const styles = {
 	list: {
@@ -97,13 +98,13 @@ class TripDrawer extends React.Component {
 		// );
 
 		return (
-			<div>
+			<>
 				{/* <Button onClick={this.toggleDrawer('right', true)}>Open Right</Button> */}
-
+				{/* <ClickAwayListener onClickAway={this.closeDrawer}> */}
 				<Drawer
 					anchor='right'
 					open={this.state.right}
-					// onClose={this.toggleDrawer('right', false)}
+					onClose={this.toggleDrawer('right', false)}
 				>
 					<div
 						tabIndex={0}
@@ -121,7 +122,8 @@ class TripDrawer extends React.Component {
 						</div>
 					</div>
 				</Drawer>
-			</div>
+				{/* </ClickAwayListener> */}
+			</>
 		);
 	}
 }
