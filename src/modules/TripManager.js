@@ -31,7 +31,7 @@ export default {
 			method: 'DELETE'
 		}).then(result => result.json());
 	},
-	
+
 	deleteLocation(id) {
 		return fetch(`${remoteURL}/locations/${id}`, {
 			method: 'DELETE'
@@ -48,7 +48,7 @@ export default {
 	},
 	updateTrip(editedTrip) {
 		return fetch(`${remoteURL}/trips/${editedTrip.id}`, {
-			method: 'PUT',
+			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json'
 			},
@@ -66,11 +66,16 @@ export default {
 	},
 	updateLocation(editedLocation) {
 		return fetch(`${remoteURL}/locations/${editedLocation.id}`, {
-			method: 'PUT',
+			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(editedLocation)
 		}).then(data => data.json());
+	},
+	getStarTrip(id) {
+		return fetch(
+			`${remoteURL}/locations?tripId=${id}&star=true&_expand=locationType`
+		).then(result => result.json());
 	}
 };

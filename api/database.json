@@ -54,7 +54,7 @@
       "published": false,
       "lng": -86.58756,
       "lat": 36.13986,
-      "likes": null,
+      "likes": 0,
       "city": "place"
     },
     {
@@ -67,7 +67,7 @@
       "published": false,
       "lng": -56.69137,
       "lat": 45.17325,
-      "likes": null,
+      "likes": 0,
       "city": "place"
     },
     {
@@ -236,7 +236,7 @@
       "address": "556 Gateway Circle",
       "lng": -86.64506,
       "lat": 36.05702,
-      "visited": false,
+      "star": false,
       "likes": 17,
       "locationTypeId": 2,
       "name": "Baby"
@@ -249,7 +249,7 @@
       "address": null,
       "lng": -86.77478,
       "lat": 36.1647,
-      "visited": false,
+      "star": false,
       "likes": 23,
       "locationTypeId": 2,
       "name": "Health"
@@ -262,7 +262,7 @@
       "address": "70 Comanche Court",
       "lng": -86.90788,
       "lat": 36.17131,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 3,
       "name": "Electronics"
@@ -275,7 +275,7 @@
       "address": "047 West Circle",
       "lng": -86.85507,
       "lat": 36.11807,
-      "visited": true,
+      "star": true,
       "likes": 10,
       "locationTypeId": 2,
       "name": "Health"
@@ -288,7 +288,7 @@
       "address": "3495 Burrows Point",
       "lng": -86.74933,
       "lat": 36.15167,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 3,
       "name": "Shoes"
@@ -301,7 +301,7 @@
       "address": null,
       "lng": -86.84279,
       "lat": 36.21752,
-      "visited": true,
+      "star": true,
       "likes": 12,
       "locationTypeId": 2,
       "name": "Computers"
@@ -314,7 +314,7 @@
       "address": "5 Clarendon Junction",
       "lng": -86.87977,
       "lat": 36.03955,
-      "visited": false,
+      "star": false,
       "likes": 23,
       "locationTypeId": 1,
       "name": "Books"
@@ -327,7 +327,7 @@
       "address": "49 Claremont Alley",
       "lng": -86.64056,
       "lat": 36.16111,
-      "visited": false,
+      "star": false,
       "likes": 6,
       "locationTypeId": 1,
       "name": "Tools"
@@ -340,7 +340,7 @@
       "address": "97 Graceland Avenue",
       "lng": -86.82048,
       "lat": 36.07291,
-      "visited": true,
+      "star": true,
       "likes": 2,
       "locationTypeId": 2,
       "name": "Automotive"
@@ -353,7 +353,7 @@
       "address": "93905 Melvin Avenue",
       "lng": -86.64728,
       "lat": 36.18527,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -366,7 +366,7 @@
       "address": null,
       "lng": -86.62251,
       "lat": 36.124,
-      "visited": false,
+      "star": false,
       "likes": 3,
       "locationTypeId": 2,
       "name": "Beauty"
@@ -379,7 +379,7 @@
       "address": "22 Kropf Road",
       "lng": -86.79391,
       "lat": 36.16286,
-      "visited": false,
+      "star": false,
       "likes": 13,
       "locationTypeId": 3,
       "name": "Garden"
@@ -392,7 +392,7 @@
       "address": "68 School Circle",
       "lng": -86.8258,
       "lat": 36.21756,
-      "visited": true,
+      "star": true,
       "likes": 8,
       "locationTypeId": 2,
       "name": "Beauty"
@@ -405,7 +405,7 @@
       "address": "94292 Merry Road",
       "lng": -86.6289,
       "lat": 36.03494,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 3,
       "name": "Kids"
@@ -418,7 +418,7 @@
       "address": "22277 Wayridge Parkway",
       "lng": -86.91641,
       "lat": 36.1647,
-      "visited": false,
+      "star": false,
       "likes": 5,
       "locationTypeId": 2,
       "name": "Baby"
@@ -431,7 +431,7 @@
       "address": null,
       "lng": -86.90785,
       "lat": 36.16561,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Outdoors"
@@ -444,7 +444,7 @@
       "address": null,
       "lng": -86.81148,
       "lat": 36.22258,
-      "visited": true,
+      "star": true,
       "likes": 6,
       "locationTypeId": 3,
       "name": "Sports"
@@ -457,7 +457,7 @@
       "address": "81 Meadow Ridge Park",
       "lng": -86.62816,
       "lat": 36.20808,
-      "visited": true,
+      "star": true,
       "likes": 9,
       "locationTypeId": 3,
       "name": "Industrial"
@@ -470,7 +470,7 @@
       "address": null,
       "lng": -86.80312,
       "lat": 36.19926,
-      "visited": true,
+      "star": true,
       "likes": 11,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -483,7 +483,7 @@
       "address": null,
       "lng": -86.88631,
       "lat": 36.20681,
-      "visited": false,
+      "star": false,
       "likes": 5,
       "locationTypeId": 1,
       "name": "Automotive"
@@ -496,7 +496,7 @@
       "address": "7 Towne Drive",
       "lng": -86.88884,
       "lat": 36.10962,
-      "visited": false,
+      "star": false,
       "likes": 16,
       "locationTypeId": 2,
       "name": "Health"
@@ -509,7 +509,7 @@
       "address": "517 Westridge Drive",
       "lng": -86.62638,
       "lat": 36.11029,
-      "visited": true,
+      "star": true,
       "likes": 21,
       "locationTypeId": 1,
       "name": "Outdoors"
@@ -522,7 +522,7 @@
       "address": "14 Bunker Hill Center",
       "lng": -86.73016,
       "lat": 36.05341,
-      "visited": true,
+      "star": true,
       "likes": 18,
       "locationTypeId": 3,
       "name": "Music"
@@ -535,7 +535,7 @@
       "address": "3 Crowley Place",
       "lng": -86.86198,
       "lat": 36.15358,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 2,
       "name": "Home"
@@ -548,7 +548,7 @@
       "address": "6551 Bonner Park",
       "lng": -86.78634,
       "lat": 36.11981,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 2,
       "name": "Garden"
@@ -561,7 +561,7 @@
       "address": "7 Mockingbird Drive",
       "lng": -86.89658,
       "lat": 36.08072,
-      "visited": false,
+      "star": false,
       "likes": 17,
       "locationTypeId": 1,
       "name": "Movies"
@@ -574,7 +574,7 @@
       "address": null,
       "lng": -86.63389,
       "lat": 36.02877,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 1,
       "name": "Toys"
@@ -587,7 +587,7 @@
       "address": "75109 Gulseth Place",
       "lng": -86.80033,
       "lat": 36.12084,
-      "visited": false,
+      "star": false,
       "likes": 12,
       "locationTypeId": 3,
       "name": "Games"
@@ -600,7 +600,7 @@
       "address": "2 Aberg Center",
       "lng": -86.89154,
       "lat": 36.08236,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 2,
       "name": "Music"
@@ -613,7 +613,7 @@
       "address": "7183 Logan Pass",
       "lng": -86.83215,
       "lat": 36.09145,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 1,
       "name": "Books"
@@ -626,7 +626,7 @@
       "address": "9 Surrey Park",
       "lng": -86.79968,
       "lat": 36.0351,
-      "visited": false,
+      "star": false,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Garden"
@@ -639,7 +639,7 @@
       "address": null,
       "lng": -86.8068,
       "lat": 36.17094,
-      "visited": false,
+      "star": false,
       "likes": 9,
       "locationTypeId": 3,
       "name": "Outdoors"
@@ -652,7 +652,7 @@
       "address": null,
       "lng": -86.92303,
       "lat": 36.04699,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Movies"
@@ -665,7 +665,7 @@
       "address": "4811 Esch Junction",
       "lng": -86.7879,
       "lat": 36.17687,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 3,
       "name": "Health"
@@ -678,7 +678,7 @@
       "address": "236 Bluestem Point",
       "lng": -86.81059,
       "lat": 36.05722,
-      "visited": true,
+      "star": true,
       "likes": 10,
       "locationTypeId": 3,
       "name": "Sports"
@@ -691,7 +691,7 @@
       "address": "20378 Prairieview Court",
       "lng": -86.82359,
       "lat": 36.18881,
-      "visited": false,
+      "star": false,
       "likes": 10,
       "locationTypeId": 2,
       "name": "Grocery"
@@ -704,7 +704,7 @@
       "address": null,
       "lng": -86.88618,
       "lat": 36.14499,
-      "visited": false,
+      "star": false,
       "likes": 11,
       "locationTypeId": 1,
       "name": "Shoes"
@@ -717,7 +717,7 @@
       "address": "98259 Kings Parkway",
       "lng": -86.67268,
       "lat": 36.169,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 1,
       "name": "Music"
@@ -730,7 +730,7 @@
       "address": "14 Debs Parkway",
       "lng": -86.79301,
       "lat": 36.19942,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 1,
       "name": "Electronics"
@@ -743,7 +743,7 @@
       "address": "424 Morning Place",
       "lng": -86.78371,
       "lat": 36.15937,
-      "visited": true,
+      "star": true,
       "likes": 12,
       "locationTypeId": 2,
       "name": "Jewelery"
@@ -756,7 +756,7 @@
       "address": "058 Northport Crossing",
       "lng": -86.68385,
       "lat": 36.13268,
-      "visited": false,
+      "star": false,
       "likes": 19,
       "locationTypeId": 3,
       "name": "Tools"
@@ -769,7 +769,7 @@
       "address": "39 Bluejay Center",
       "lng": -86.74982,
       "lat": 36.17339,
-      "visited": false,
+      "star": false,
       "likes": 10,
       "locationTypeId": 2,
       "name": "Electronics"
@@ -782,7 +782,7 @@
       "address": null,
       "lng": -86.8717,
       "lat": 36.22129,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 1,
       "name": "Music"
@@ -795,7 +795,7 @@
       "address": null,
       "lng": -86.80667,
       "lat": 36.13572,
-      "visited": false,
+      "star": false,
       "likes": 5,
       "locationTypeId": 1,
       "name": "Garden"
@@ -808,7 +808,7 @@
       "address": null,
       "lng": -86.63569,
       "lat": 36.06612,
-      "visited": true,
+      "star": true,
       "likes": 6,
       "locationTypeId": 3,
       "name": "Home"
@@ -821,7 +821,7 @@
       "address": "8198 1st Trail",
       "lng": -86.76892,
       "lat": 36.18536,
-      "visited": false,
+      "star": false,
       "likes": 18,
       "locationTypeId": 2,
       "name": "Electronics"
@@ -834,7 +834,7 @@
       "address": "642 Novick Lane",
       "lng": -86.6778,
       "lat": 36.05454,
-      "visited": false,
+      "star": false,
       "likes": 21,
       "locationTypeId": 3,
       "name": "Kids"
@@ -847,7 +847,7 @@
       "address": "77 Bowman Place",
       "lng": -86.77121,
       "lat": 36.13589,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 2,
       "name": "Automotive"
@@ -860,7 +860,7 @@
       "address": "72974 Glacier Hill Point",
       "lng": -86.74988,
       "lat": 36.13517,
-      "visited": true,
+      "star": true,
       "likes": 19,
       "locationTypeId": 2,
       "name": "Tools"
@@ -873,7 +873,7 @@
       "address": null,
       "lng": -86.76165,
       "lat": 36.22426,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Movies"
@@ -886,7 +886,7 @@
       "address": null,
       "lng": -86.81891,
       "lat": 36.09262,
-      "visited": true,
+      "star": true,
       "likes": 1,
       "locationTypeId": 2,
       "name": "Outdoors"
@@ -899,7 +899,7 @@
       "address": null,
       "lng": -86.8576,
       "lat": 36.04617,
-      "visited": false,
+      "star": false,
       "likes": 1,
       "locationTypeId": 2,
       "name": "Computers"
@@ -912,7 +912,7 @@
       "address": "7 Meadow Ridge Drive",
       "lng": -86.65801,
       "lat": 36.04889,
-      "visited": false,
+      "star": false,
       "likes": 23,
       "locationTypeId": 3,
       "name": "Kids"
@@ -925,7 +925,7 @@
       "address": "22577 Arizona Pass",
       "lng": -86.81597,
       "lat": 36.23273,
-      "visited": true,
+      "star": true,
       "likes": 19,
       "locationTypeId": 2,
       "name": "Outdoors"
@@ -938,7 +938,7 @@
       "address": "6 Stang Hill",
       "lng": -86.82954,
       "lat": 36.03248,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 2,
       "name": "Baby"
@@ -951,7 +951,7 @@
       "address": null,
       "lng": -86.88245,
       "lat": 36.13685,
-      "visited": false,
+      "star": false,
       "likes": 13,
       "locationTypeId": 2,
       "name": "Jewelery"
@@ -964,7 +964,7 @@
       "address": "9 Cardinal Junction",
       "lng": -86.91407,
       "lat": 36.04667,
-      "visited": false,
+      "star": false,
       "likes": 16,
       "locationTypeId": 3,
       "name": "Games"
@@ -977,7 +977,7 @@
       "address": "6043 Amoth Court",
       "lng": -86.89721,
       "lat": 36.20308,
-      "visited": false,
+      "star": false,
       "likes": 9,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -990,7 +990,7 @@
       "address": "9 Thompson Point",
       "lng": -86.74518,
       "lat": 36.22374,
-      "visited": false,
+      "star": false,
       "likes": 23,
       "locationTypeId": 1,
       "name": "Books"
@@ -1003,7 +1003,7 @@
       "address": null,
       "lng": -86.58813,
       "lat": 36.14489,
-      "visited": false,
+      "star": false,
       "likes": 18,
       "locationTypeId": 2,
       "name": "Clothing"
@@ -1016,7 +1016,7 @@
       "address": "8 5th Alley",
       "lng": -86.5905,
       "lat": 36.08047,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 2,
       "name": "Home"
@@ -1029,7 +1029,7 @@
       "address": "128 Graedel Hill",
       "lng": -86.77877,
       "lat": 36.09916,
-      "visited": false,
+      "star": false,
       "likes": 3,
       "locationTypeId": 3,
       "name": "Grocery"
@@ -1042,7 +1042,7 @@
       "address": "9 Shasta Alley",
       "lng": -86.75247,
       "lat": 36.06564,
-      "visited": true,
+      "star": true,
       "likes": 22,
       "locationTypeId": 3,
       "name": "Automotive"
@@ -1055,7 +1055,7 @@
       "address": null,
       "lng": -86.77381,
       "lat": 36.03941,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 1,
       "name": "Clothing"
@@ -1068,7 +1068,7 @@
       "address": null,
       "lng": -86.71842,
       "lat": 36.14519,
-      "visited": true,
+      "star": true,
       "likes": 6,
       "locationTypeId": 1,
       "name": "Beauty"
@@ -1081,7 +1081,7 @@
       "address": "3 David Drive",
       "lng": -86.77358,
       "lat": 36.13561,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 2,
       "name": "Automotive"
@@ -1094,7 +1094,7 @@
       "address": "98439 Magdeline Court",
       "lng": -86.68019,
       "lat": 36.14335,
-      "visited": true,
+      "star": true,
       "likes": 11,
       "locationTypeId": 2,
       "name": "Automotive"
@@ -1107,7 +1107,7 @@
       "address": null,
       "lng": -86.84277,
       "lat": 36.22429,
-      "visited": false,
+      "star": false,
       "likes": 19,
       "locationTypeId": 2,
       "name": "Health"
@@ -1120,7 +1120,7 @@
       "address": null,
       "lng": -86.74473,
       "lat": 36.17827,
-      "visited": true,
+      "star": true,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Shoes"
@@ -1133,7 +1133,7 @@
       "address": null,
       "lng": -86.80263,
       "lat": 36.09716,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 1,
       "name": "Grocery"
@@ -1146,7 +1146,7 @@
       "address": "1 Green Trail",
       "lng": -86.76212,
       "lat": 36.1318,
-      "visited": true,
+      "star": true,
       "likes": 2,
       "locationTypeId": 2,
       "name": "Movies"
@@ -1159,7 +1159,7 @@
       "address": "64024 Bay Alley",
       "lng": -86.82153,
       "lat": 36.09418,
-      "visited": false,
+      "star": false,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Outdoors"
@@ -1172,7 +1172,7 @@
       "address": "1399 Bellgrove Plaza",
       "lng": -86.59157,
       "lat": 36.21804,
-      "visited": false,
+      "star": false,
       "likes": 1,
       "locationTypeId": 3,
       "name": "Shoes"
@@ -1185,7 +1185,7 @@
       "address": "0007 Northridge Hill",
       "lng": -86.61705,
       "lat": 36.20274,
-      "visited": true,
+      "star": true,
       "likes": 14,
       "locationTypeId": 1,
       "name": "Outdoors"
@@ -1198,7 +1198,7 @@
       "address": "78454 Sundown Parkway",
       "lng": -86.74115,
       "lat": 36.06879,
-      "visited": false,
+      "star": false,
       "likes": 10,
       "locationTypeId": 1,
       "name": "Kids"
@@ -1211,7 +1211,7 @@
       "address": null,
       "lng": -86.87504,
       "lat": 36.23278,
-      "visited": true,
+      "star": true,
       "likes": 23,
       "locationTypeId": 1,
       "name": "Tools"
@@ -1224,7 +1224,7 @@
       "address": null,
       "lng": -86.64965,
       "lat": 36.14978,
-      "visited": true,
+      "star": true,
       "likes": 14,
       "locationTypeId": 3,
       "name": "Toys"
@@ -1237,7 +1237,7 @@
       "address": "06 Express Street",
       "lng": -86.84785,
       "lat": 36.03231,
-      "visited": false,
+      "star": false,
       "likes": 16,
       "locationTypeId": 1,
       "name": "Electronics"
@@ -1250,7 +1250,7 @@
       "address": "0 Hoepker Street",
       "lng": -86.91765,
       "lat": 36.14439,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -1263,7 +1263,7 @@
       "address": null,
       "lng": -86.9248,
       "lat": 36.12871,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Kids"
@@ -1276,7 +1276,7 @@
       "address": "2563 Buell Crossing",
       "lng": -86.61085,
       "lat": 36.23704,
-      "visited": true,
+      "star": true,
       "likes": 18,
       "locationTypeId": 2,
       "name": "Computers"
@@ -1289,7 +1289,7 @@
       "address": null,
       "lng": -86.90099,
       "lat": 36.15791,
-      "visited": false,
+      "star": false,
       "likes": 16,
       "locationTypeId": 3,
       "name": "Music"
@@ -1302,7 +1302,7 @@
       "address": "1646 High Crossing Road",
       "lng": -86.78508,
       "lat": 36.02932,
-      "visited": false,
+      "star": false,
       "likes": 21,
       "locationTypeId": 1,
       "name": "Tools"
@@ -1315,7 +1315,7 @@
       "address": null,
       "lng": -86.89367,
       "lat": 36.09725,
-      "visited": false,
+      "star": false,
       "likes": 23,
       "locationTypeId": 2,
       "name": "Computers"
@@ -1328,7 +1328,7 @@
       "address": null,
       "lng": -86.79966,
       "lat": 36.15003,
-      "visited": false,
+      "star": false,
       "likes": 25,
       "locationTypeId": 2,
       "name": "Baby"
@@ -1341,7 +1341,7 @@
       "address": "578 Donald Drive",
       "lng": -86.64238,
       "lat": 36.03771,
-      "visited": true,
+      "star": true,
       "likes": 9,
       "locationTypeId": 2,
       "name": "Automotive"
@@ -1354,7 +1354,7 @@
       "address": "0 South Way",
       "lng": -86.72692,
       "lat": 36.03662,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 1,
       "name": "Automotive"
@@ -1367,7 +1367,7 @@
       "address": null,
       "lng": -86.85339,
       "lat": 36.23711,
-      "visited": true,
+      "star": true,
       "likes": 18,
       "locationTypeId": 2,
       "name": "Music"
@@ -1380,7 +1380,7 @@
       "address": "500 Oriole Junction",
       "lng": -86.88361,
       "lat": 36.22528,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 2,
       "name": "Music"
@@ -1393,7 +1393,7 @@
       "address": "5 Pennsylvania Junction",
       "lng": -86.71013,
       "lat": 36.08381,
-      "visited": true,
+      "star": true,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Computers"
@@ -1406,7 +1406,7 @@
       "address": null,
       "lng": -86.71977,
       "lat": 36.05703,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 1,
       "name": "Beauty"
@@ -1419,7 +1419,7 @@
       "address": "699 Ronald Regan Trail",
       "lng": -86.5958,
       "lat": 36.14364,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 1,
       "name": "Electronics"
@@ -1432,7 +1432,7 @@
       "address": "2 Sommers Hill",
       "lng": -86.8936,
       "lat": 36.20162,
-      "visited": true,
+      "star": true,
       "likes": 14,
       "locationTypeId": 2,
       "name": "Jewelery"
@@ -1445,7 +1445,7 @@
       "address": "08 Commercial Park",
       "lng": -86.65903,
       "lat": 36.1194,
-      "visited": true,
+      "star": true,
       "likes": 2,
       "locationTypeId": 3,
       "name": "Shoes"
@@ -1458,7 +1458,7 @@
       "address": null,
       "lng": -86.67344,
       "lat": 36.05678,
-      "visited": true,
+      "star": true,
       "likes": 8,
       "locationTypeId": 3,
       "name": "Movies"
@@ -1471,7 +1471,7 @@
       "address": null,
       "lng": -86.91748,
       "lat": 36.06739,
-      "visited": true,
+      "star": true,
       "likes": 25,
       "locationTypeId": 2,
       "name": "Games"
@@ -1484,7 +1484,7 @@
       "address": "1857 Shasta Court",
       "lng": -86.72475,
       "lat": 36.18863,
-      "visited": true,
+      "star": true,
       "likes": 3,
       "locationTypeId": 3,
       "name": "Electronics"
@@ -1497,7 +1497,7 @@
       "address": "96755 Russell Road",
       "lng": -86.72841,
       "lat": 36.13845,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 3,
       "name": "Electronics"
@@ -1510,7 +1510,7 @@
       "address": null,
       "lng": -86.66918,
       "lat": 36.17175,
-      "visited": true,
+      "star": true,
       "likes": 3,
       "locationTypeId": 3,
       "name": "Toys"
@@ -1523,23 +1523,14 @@
       "address": "9395 Warbler Road",
       "lng": -86.81228,
       "lat": 36.16367,
-      "visited": true,
+      "star": true,
       "likes": 8,
       "locationTypeId": 3,
       "name": "Jewelery"
     },
     {
       "id": 121,
-      "tripId": 1,
-      "summary": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
-      "price": null,
-      "address": null,
-      "lng": -86.72173,
-      "lat": 36.0792,
-      "visited": false,
-      "likes": 22,
-      "locationTypeId": 3,
-      "name": "Music"
+      "star": false
     },
     {
       "id": 122,
@@ -1549,7 +1540,7 @@
       "address": "74095 Dawn Street",
       "lng": -86.88247,
       "lat": 36.1001,
-      "visited": true,
+      "star": true,
       "likes": 25,
       "locationTypeId": 1,
       "name": "Computers"
@@ -1562,7 +1553,7 @@
       "address": "5252 Prairieview Court",
       "lng": -86.88793,
       "lat": 36.10664,
-      "visited": false,
+      "star": false,
       "likes": 16,
       "locationTypeId": 3,
       "name": "Tools"
@@ -1575,7 +1566,7 @@
       "address": "8 5th Circle",
       "lng": -86.7827,
       "lat": 36.23668,
-      "visited": false,
+      "star": false,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Toys"
@@ -1588,7 +1579,7 @@
       "address": "3 Melody Parkway",
       "lng": -86.81248,
       "lat": 36.2141,
-      "visited": false,
+      "star": false,
       "likes": 4,
       "locationTypeId": 1,
       "name": "Music"
@@ -1601,7 +1592,7 @@
       "address": "47 Victoria Court",
       "lng": -86.91169,
       "lat": 36.22293,
-      "visited": true,
+      "star": true,
       "likes": 11,
       "locationTypeId": 1,
       "name": "Garden"
@@ -1614,7 +1605,7 @@
       "address": "657 Artisan Terrace",
       "lng": -86.72479,
       "lat": 36.20379,
-      "visited": true,
+      "star": true,
       "likes": 4,
       "locationTypeId": 3,
       "name": "Garden"
@@ -1627,7 +1618,7 @@
       "address": "26 Daystar Alley",
       "lng": -86.67077,
       "lat": 36.10827,
-      "visited": true,
+      "star": true,
       "likes": 2,
       "locationTypeId": 1,
       "name": "Outdoors"
@@ -1640,7 +1631,7 @@
       "address": null,
       "lng": -86.76719,
       "lat": 36.13104,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 2,
       "name": "Kids"
@@ -1653,7 +1644,7 @@
       "address": "35502 Schiller Trail",
       "lng": -86.84162,
       "lat": 36.19045,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 2,
       "name": "Jewelery"
@@ -1666,7 +1657,7 @@
       "address": null,
       "lng": -86.74469,
       "lat": 36.06903,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 1,
       "name": "Shoes"
@@ -1679,7 +1670,7 @@
       "address": "5535 Bonner Terrace",
       "lng": -86.71441,
       "lat": 36.04118,
-      "visited": false,
+      "star": false,
       "likes": 5,
       "locationTypeId": 1,
       "name": "Music"
@@ -1692,7 +1683,7 @@
       "address": "446 Rusk Road",
       "lng": -86.82031,
       "lat": 36.06731,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Sports"
@@ -1705,7 +1696,7 @@
       "address": "7 Lakewood Park",
       "lng": -86.77961,
       "lat": 36.14971,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 2,
       "name": "Health"
@@ -1718,7 +1709,7 @@
       "address": null,
       "lng": -86.71793,
       "lat": 36.22124,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 1,
       "name": "Industrial"
@@ -1731,7 +1722,7 @@
       "address": "89 Eliot Alley",
       "lng": -86.59469,
       "lat": 36.21952,
-      "visited": true,
+      "star": true,
       "likes": 5,
       "locationTypeId": 3,
       "name": "Kids"
@@ -1744,7 +1735,7 @@
       "address": null,
       "lng": -86.70107,
       "lat": 36.19695,
-      "visited": false,
+      "star": false,
       "likes": 23,
       "locationTypeId": 2,
       "name": "Grocery"
@@ -1757,7 +1748,7 @@
       "address": "647 Texas Point",
       "lng": -86.59293,
       "lat": 36.04898,
-      "visited": false,
+      "star": false,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Grocery"
@@ -1770,7 +1761,7 @@
       "address": null,
       "lng": -86.73975,
       "lat": 36.03756,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 3,
       "name": "Home"
@@ -1783,7 +1774,7 @@
       "address": null,
       "lng": -86.87894,
       "lat": 36.23452,
-      "visited": false,
+      "star": false,
       "likes": 25,
       "locationTypeId": 2,
       "name": "Baby"
@@ -1796,7 +1787,7 @@
       "address": "59858 Summit Crossing",
       "lng": -86.60678,
       "lat": 36.07709,
-      "visited": false,
+      "star": false,
       "likes": 13,
       "locationTypeId": 2,
       "name": "Garden"
@@ -1809,7 +1800,7 @@
       "address": "7 Gerald Parkway",
       "lng": -86.91189,
       "lat": 36.21838,
-      "visited": true,
+      "star": true,
       "likes": 13,
       "locationTypeId": 2,
       "name": "Baby"
@@ -1822,7 +1813,7 @@
       "address": null,
       "lng": -86.88198,
       "lat": 36.22635,
-      "visited": true,
+      "star": true,
       "likes": 23,
       "locationTypeId": 3,
       "name": "Shoes"
@@ -1835,7 +1826,7 @@
       "address": "1 Duke Plaza",
       "lng": -86.76405,
       "lat": 36.06668,
-      "visited": false,
+      "star": false,
       "likes": 4,
       "locationTypeId": 2,
       "name": "Automotive"
@@ -1848,7 +1839,7 @@
       "address": "00 Corscot Parkway",
       "lng": -86.63852,
       "lat": 36.10867,
-      "visited": false,
+      "star": false,
       "likes": 21,
       "locationTypeId": 2,
       "name": "Automotive"
@@ -1861,7 +1852,7 @@
       "address": "8 Kingsford Parkway",
       "lng": -86.61171,
       "lat": 36.1554,
-      "visited": false,
+      "star": false,
       "likes": 24,
       "locationTypeId": 1,
       "name": "Jewelery"
@@ -1874,7 +1865,7 @@
       "address": null,
       "lng": -86.66693,
       "lat": 36.12055,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 1,
       "name": "Beauty"
@@ -1887,7 +1878,7 @@
       "address": "308 Mendota Circle",
       "lng": -86.68786,
       "lat": 36.10314,
-      "visited": false,
+      "star": false,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Toys"
@@ -1900,7 +1891,7 @@
       "address": "973 Portage Center",
       "lng": -86.71339,
       "lat": 36.09984,
-      "visited": false,
+      "star": false,
       "likes": 6,
       "locationTypeId": 3,
       "name": "Industrial"
@@ -1913,7 +1904,7 @@
       "address": null,
       "lng": -86.82787,
       "lat": 36.09795,
-      "visited": false,
+      "star": false,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Clothing"
@@ -1926,7 +1917,7 @@
       "address": "0765 Northwestern Pass",
       "lng": -86.88478,
       "lat": 36.07662,
-      "visited": true,
+      "star": true,
       "likes": 9,
       "locationTypeId": 2,
       "name": "Books"
@@ -1939,7 +1930,7 @@
       "address": "52 Petterle Center",
       "lng": -86.84937,
       "lat": 36.08322,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 3,
       "name": "Automotive"
@@ -1952,7 +1943,7 @@
       "address": "521 Northport Crossing",
       "lng": -86.73562,
       "lat": 36.15376,
-      "visited": false,
+      "star": false,
       "likes": 22,
       "locationTypeId": 1,
       "name": "Beauty"
@@ -1965,7 +1956,7 @@
       "address": null,
       "lng": -86.79963,
       "lat": 36.18119,
-      "visited": false,
+      "star": false,
       "likes": 18,
       "locationTypeId": 3,
       "name": "Electronics"
@@ -1978,7 +1969,7 @@
       "address": "5 Monterey Avenue",
       "lng": -86.69607,
       "lat": 36.10109,
-      "visited": false,
+      "star": false,
       "likes": 22,
       "locationTypeId": 3,
       "name": "Automotive"
@@ -1991,7 +1982,7 @@
       "address": "7072 Spenser Plaza",
       "lng": -86.88857,
       "lat": 36.17109,
-      "visited": true,
+      "star": true,
       "likes": 4,
       "locationTypeId": 2,
       "name": "Health"
@@ -2004,7 +1995,7 @@
       "address": "815 Basil Court",
       "lng": -86.75838,
       "lat": 36.21383,
-      "visited": false,
+      "star": false,
       "likes": 10,
       "locationTypeId": 1,
       "name": "Beauty"
@@ -2017,7 +2008,7 @@
       "address": "72178 Westridge Terrace",
       "lng": -86.73482,
       "lat": 36.07676,
-      "visited": false,
+      "star": false,
       "likes": 1,
       "locationTypeId": 3,
       "name": "Garden"
@@ -2030,7 +2021,7 @@
       "address": "9 Green Junction",
       "lng": -86.62691,
       "lat": 36.18508,
-      "visited": false,
+      "star": false,
       "likes": 13,
       "locationTypeId": 3,
       "name": "Books"
@@ -2043,7 +2034,7 @@
       "address": null,
       "lng": -86.63736,
       "lat": 36.05821,
-      "visited": false,
+      "star": false,
       "likes": 20,
       "locationTypeId": 3,
       "name": "Health"
@@ -2056,7 +2047,7 @@
       "address": "19 Forest Run Park",
       "lng": -86.67222,
       "lat": 36.05835,
-      "visited": false,
+      "star": false,
       "likes": 6,
       "locationTypeId": 2,
       "name": "Books"
@@ -2069,7 +2060,7 @@
       "address": null,
       "lng": -86.81462,
       "lat": 36.06209,
-      "visited": false,
+      "star": false,
       "likes": 22,
       "locationTypeId": 3,
       "name": "Toys"
@@ -2082,7 +2073,7 @@
       "address": "42 Fallview Street",
       "lng": -86.63021,
       "lat": 36.06219,
-      "visited": false,
+      "star": false,
       "likes": 23,
       "locationTypeId": 3,
       "name": "Baby"
@@ -2095,7 +2086,7 @@
       "address": "43 Susan Street",
       "lng": -86.58865,
       "lat": 36.13901,
-      "visited": false,
+      "star": false,
       "likes": 1,
       "locationTypeId": 1,
       "name": "Movies"
@@ -2108,7 +2099,7 @@
       "address": "79 Little Fleur Circle",
       "lng": -86.61117,
       "lat": 36.23086,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 2,
       "name": "Books"
@@ -2121,7 +2112,7 @@
       "address": null,
       "lng": -86.60163,
       "lat": 36.03368,
-      "visited": true,
+      "star": true,
       "likes": 9,
       "locationTypeId": 3,
       "name": "Jewelery"
@@ -2134,7 +2125,7 @@
       "address": "0309 Eastwood Avenue",
       "lng": -86.7641,
       "lat": 36.05197,
-      "visited": true,
+      "star": true,
       "likes": 0,
       "locationTypeId": 3,
       "name": "Outdoors"
@@ -2147,7 +2138,7 @@
       "address": "42625 Sheridan Plaza",
       "lng": -86.62081,
       "lat": 36.12257,
-      "visited": true,
+      "star": true,
       "likes": 0,
       "locationTypeId": 1,
       "name": "Sports"
@@ -2160,7 +2151,7 @@
       "address": "93011 Riverside Hill",
       "lng": -86.6362,
       "lat": 36.10654,
-      "visited": true,
+      "star": true,
       "likes": 24,
       "locationTypeId": 1,
       "name": "Shoes"
@@ -2173,7 +2164,7 @@
       "address": "055 Lakeland Parkway",
       "lng": -86.67373,
       "lat": 36.07526,
-      "visited": false,
+      "star": false,
       "likes": 6,
       "locationTypeId": 2,
       "name": "Electronics"
@@ -2186,7 +2177,7 @@
       "address": "2977 Truax Park",
       "lng": -86.64996,
       "lat": 36.14373,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 2,
       "name": "Garden"
@@ -2199,7 +2190,7 @@
       "address": null,
       "lng": -86.81062,
       "lat": 36.0678,
-      "visited": false,
+      "star": false,
       "likes": 20,
       "locationTypeId": 2,
       "name": "Automotive"
@@ -2212,7 +2203,7 @@
       "address": "5804 Northland Crossing",
       "lng": -86.67346,
       "lat": 36.22099,
-      "visited": false,
+      "star": false,
       "likes": 6,
       "locationTypeId": 3,
       "name": "Clothing"
@@ -2225,7 +2216,7 @@
       "address": null,
       "lng": -86.78979,
       "lat": 36.10716,
-      "visited": false,
+      "star": false,
       "likes": 17,
       "locationTypeId": 3,
       "name": "Electronics"
@@ -2238,7 +2229,7 @@
       "address": "12 Brentwood Point",
       "lng": -86.86777,
       "lat": 36.16004,
-      "visited": true,
+      "star": true,
       "likes": 3,
       "locationTypeId": 1,
       "name": "Industrial"
@@ -2251,7 +2242,7 @@
       "address": "1 Thackeray Crossing",
       "lng": -86.86056,
       "lat": 36.19774,
-      "visited": false,
+      "star": false,
       "likes": 11,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -2264,7 +2255,7 @@
       "address": "62 Meadow Vale Circle",
       "lng": -86.71757,
       "lat": 36.18316,
-      "visited": true,
+      "star": true,
       "likes": 24,
       "locationTypeId": 2,
       "name": "Shoes"
@@ -2277,7 +2268,7 @@
       "address": null,
       "lng": -86.84117,
       "lat": 36.11784,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 2,
       "name": "Tools"
@@ -2290,7 +2281,7 @@
       "address": null,
       "lng": -86.92654,
       "lat": 36.2357,
-      "visited": true,
+      "star": true,
       "likes": 19,
       "locationTypeId": 1,
       "name": "Shoes"
@@ -2303,7 +2294,7 @@
       "address": null,
       "lng": -86.88539,
       "lat": 36.04633,
-      "visited": true,
+      "star": true,
       "likes": 17,
       "locationTypeId": 1,
       "name": "Shoes"
@@ -2316,7 +2307,7 @@
       "address": null,
       "lng": -86.85815,
       "lat": 36.11675,
-      "visited": true,
+      "star": true,
       "likes": 11,
       "locationTypeId": 1,
       "name": "Computers"
@@ -2329,7 +2320,7 @@
       "address": "39 Luster Street",
       "lng": -86.75954,
       "lat": 36.05158,
-      "visited": true,
+      "star": true,
       "likes": 11,
       "locationTypeId": 1,
       "name": "Outdoors"
@@ -2342,23 +2333,14 @@
       "address": "16 Lukken Alley",
       "lng": -86.63377,
       "lat": 36.22776,
-      "visited": true,
+      "star": true,
       "likes": 0,
       "locationTypeId": 1,
       "name": "Baby"
     },
     {
       "id": 195,
-      "tripId": 1,
-      "summary": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
-      "price": "84.75",
-      "address": "17993 Lien Drive",
-      "lng": -86.62823,
-      "lat": 36.21457,
-      "visited": false,
-      "likes": 13,
-      "locationTypeId": 3,
-      "name": "Jewelery"
+      "star": false
     },
     {
       "id": 196,
@@ -2368,7 +2350,7 @@
       "address": "7770 Farwell Circle",
       "lng": -86.68366,
       "lat": 36.14506,
-      "visited": true,
+      "star": true,
       "likes": 11,
       "locationTypeId": 1,
       "name": "Clothing"
@@ -2381,7 +2363,7 @@
       "address": "2030 Pine View Parkway",
       "lng": -86.82838,
       "lat": 36.15203,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Baby"
@@ -2394,7 +2376,7 @@
       "address": null,
       "lng": -86.79438,
       "lat": 36.16097,
-      "visited": false,
+      "star": false,
       "likes": 18,
       "locationTypeId": 2,
       "name": "Tools"
@@ -2407,7 +2389,7 @@
       "address": "231 Thierer Hill",
       "lng": -86.60505,
       "lat": 36.13182,
-      "visited": false,
+      "star": false,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Grocery"
@@ -2420,7 +2402,7 @@
       "address": "68 Clove Park",
       "lng": -86.60804,
       "lat": 36.07223,
-      "visited": true,
+      "star": true,
       "likes": 14,
       "locationTypeId": 1,
       "name": "Home"
@@ -2433,7 +2415,7 @@
       "address": null,
       "lng": -86.66601,
       "lat": 36.23494,
-      "visited": true,
+      "star": true,
       "likes": 0,
       "locationTypeId": 3,
       "name": "Home"
@@ -2446,7 +2428,7 @@
       "address": "4 Lyons Hill",
       "lng": -86.91934,
       "lat": 36.1375,
-      "visited": true,
+      "star": true,
       "likes": 9,
       "locationTypeId": 3,
       "name": "Grocery"
@@ -2459,7 +2441,7 @@
       "address": "8 Beilfuss Crossing",
       "lng": -86.87767,
       "lat": 36.11253,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Outdoors"
@@ -2472,7 +2454,7 @@
       "address": "44892 Hazelcrest Drive",
       "lng": -86.81509,
       "lat": 36.23324,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 2,
       "name": "Games"
@@ -2485,23 +2467,14 @@
       "address": null,
       "lng": -86.81648,
       "lat": 36.06249,
-      "visited": false,
+      "star": false,
       "likes": 22,
       "locationTypeId": 3,
       "name": "Computers"
     },
     {
       "id": 207,
-      "tripId": 1,
-      "summary": "Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-      "price": "70.49",
-      "address": "839 Buell Point",
-      "lng": -86.59243,
-      "lat": 36.21104,
-      "visited": true,
-      "likes": 7,
-      "locationTypeId": 1,
-      "name": "Sports"
+      "star": true
     },
     {
       "id": 209,
@@ -2511,7 +2484,7 @@
       "address": null,
       "lng": -86.649,
       "lat": 36.10594,
-      "visited": true,
+      "star": true,
       "likes": 1,
       "locationTypeId": 3,
       "name": "Automotive"
@@ -2524,7 +2497,7 @@
       "address": "7 Autumn Leaf Center",
       "lng": -86.77323,
       "lat": 36.20753,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 1,
       "name": "Home"
@@ -2537,7 +2510,7 @@
       "address": "82236 Old Gate Alley",
       "lng": -86.69238,
       "lat": 36.11882,
-      "visited": false,
+      "star": false,
       "likes": 5,
       "locationTypeId": 1,
       "name": "Industrial"
@@ -2550,7 +2523,7 @@
       "address": "05 Spaight Court",
       "lng": -86.78092,
       "lat": 36.21516,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 3,
       "name": "Tools"
@@ -2563,7 +2536,7 @@
       "address": null,
       "lng": -86.71267,
       "lat": 36.19256,
-      "visited": false,
+      "star": false,
       "likes": 19,
       "locationTypeId": 2,
       "name": "Computers"
@@ -2576,7 +2549,7 @@
       "address": "2 Gateway Hill",
       "lng": -86.82871,
       "lat": 36.07699,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 2,
       "name": "Movies"
@@ -2589,7 +2562,7 @@
       "address": "319 Loeprich Avenue",
       "lng": -86.8381,
       "lat": 36.08313,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 1,
       "name": "Health"
@@ -2602,7 +2575,7 @@
       "address": "0364 Everett Plaza",
       "lng": -86.84132,
       "lat": 36.1046,
-      "visited": false,
+      "star": false,
       "likes": 6,
       "locationTypeId": 1,
       "name": "Jewelery"
@@ -2615,7 +2588,7 @@
       "address": "30 Wayridge Hill",
       "lng": -86.64987,
       "lat": 36.10282,
-      "visited": true,
+      "star": true,
       "likes": 3,
       "locationTypeId": 1,
       "name": "Movies"
@@ -2628,7 +2601,7 @@
       "address": "36 Troy Drive",
       "lng": -86.7462,
       "lat": 36.07606,
-      "visited": true,
+      "star": true,
       "likes": 1,
       "locationTypeId": 1,
       "name": "Automotive"
@@ -2641,7 +2614,7 @@
       "address": null,
       "lng": -86.74813,
       "lat": 36.09356,
-      "visited": true,
+      "star": true,
       "likes": 10,
       "locationTypeId": 1,
       "name": "Baby"
@@ -2654,7 +2627,7 @@
       "address": "5299 Ilene Terrace",
       "lng": -86.83834,
       "lat": 36.17956,
-      "visited": false,
+      "star": false,
       "likes": 11,
       "locationTypeId": 2,
       "name": "Music"
@@ -2667,7 +2640,7 @@
       "address": "47 Lukken Way",
       "lng": -86.62264,
       "lat": 36.232,
-      "visited": false,
+      "star": false,
       "likes": 1,
       "locationTypeId": 2,
       "name": "Outdoors"
@@ -2680,7 +2653,7 @@
       "address": "2521 Fairview Drive",
       "lng": -86.80981,
       "lat": 36.1879,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 3,
       "name": "Computers"
@@ -2693,7 +2666,7 @@
       "address": "45222 Oriole Crossing",
       "lng": -86.6394,
       "lat": 36.19029,
-      "visited": true,
+      "star": true,
       "likes": 18,
       "locationTypeId": 3,
       "name": "Clothing"
@@ -2706,7 +2679,7 @@
       "address": null,
       "lng": -86.79157,
       "lat": 36.05325,
-      "visited": true,
+      "star": true,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Kids"
@@ -2719,7 +2692,7 @@
       "address": "904 Dahle Terrace",
       "lng": -86.69123,
       "lat": 36.16689,
-      "visited": true,
+      "star": true,
       "likes": 25,
       "locationTypeId": 1,
       "name": "Books"
@@ -2732,7 +2705,7 @@
       "address": "5257 Blue Bill Park Alley",
       "lng": -86.7873,
       "lat": 36.04096,
-      "visited": false,
+      "star": false,
       "likes": 11,
       "locationTypeId": 1,
       "name": "Jewelery"
@@ -2745,7 +2718,7 @@
       "address": "26659 Browning Center",
       "lng": -86.91145,
       "lat": 36.15487,
-      "visited": false,
+      "star": false,
       "likes": 10,
       "locationTypeId": 1,
       "name": "Health"
@@ -2758,7 +2731,7 @@
       "address": "9572 Fair Oaks Center",
       "lng": -86.59555,
       "lat": 36.09943,
-      "visited": true,
+      "star": true,
       "likes": 3,
       "locationTypeId": 3,
       "name": "Toys"
@@ -2771,7 +2744,7 @@
       "address": "4137 Knutson Street",
       "lng": -86.85012,
       "lat": 36.15968,
-      "visited": false,
+      "star": false,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Movies"
@@ -2784,7 +2757,7 @@
       "address": "00317 Kedzie Pass",
       "lng": -86.79797,
       "lat": 36.02979,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Movies"
@@ -2797,7 +2770,7 @@
       "address": null,
       "lng": -86.76895,
       "lat": 36.17,
-      "visited": false,
+      "star": false,
       "likes": 3,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -2810,7 +2783,7 @@
       "address": null,
       "lng": -86.65438,
       "lat": 36.08675,
-      "visited": false,
+      "star": false,
       "likes": 22,
       "locationTypeId": 1,
       "name": "Tools"
@@ -2823,7 +2796,7 @@
       "address": "0017 Goodland Avenue",
       "lng": -86.8624,
       "lat": 36.16117,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 1,
       "name": "Electronics"
@@ -2836,7 +2809,7 @@
       "address": "794 Bluejay Place",
       "lng": -86.87108,
       "lat": 36.03388,
-      "visited": false,
+      "star": false,
       "likes": 11,
       "locationTypeId": 2,
       "name": "Outdoors"
@@ -2849,7 +2822,7 @@
       "address": null,
       "lng": -86.75783,
       "lat": 36.20099,
-      "visited": true,
+      "star": true,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Grocery"
@@ -2862,7 +2835,7 @@
       "address": "5 Parkside Street",
       "lng": -86.68659,
       "lat": 36.20459,
-      "visited": true,
+      "star": true,
       "likes": 24,
       "locationTypeId": 3,
       "name": "Baby"
@@ -2875,7 +2848,7 @@
       "address": null,
       "lng": -86.92903,
       "lat": 36.10134,
-      "visited": false,
+      "star": false,
       "likes": 11,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -2888,7 +2861,7 @@
       "address": "5287 Kedzie Alley",
       "lng": -86.66047,
       "lat": 36.22571,
-      "visited": true,
+      "star": true,
       "likes": 21,
       "locationTypeId": 2,
       "name": "Grocery"
@@ -2901,7 +2874,7 @@
       "address": "8 Stephen Crossing",
       "lng": -86.86859,
       "lat": 36.10403,
-      "visited": false,
+      "star": false,
       "likes": 5,
       "locationTypeId": 2,
       "name": "Tools"
@@ -2914,7 +2887,7 @@
       "address": "2 Judy Pass",
       "lng": -86.79811,
       "lat": 36.10734,
-      "visited": true,
+      "star": true,
       "likes": 22,
       "locationTypeId": 3,
       "name": "Automotive"
@@ -2927,7 +2900,7 @@
       "address": "78289 Blue Bill Park Court",
       "lng": -86.69837,
       "lat": 36.03337,
-      "visited": false,
+      "star": false,
       "likes": 21,
       "locationTypeId": 2,
       "name": "Computers"
@@ -2940,7 +2913,7 @@
       "address": null,
       "lng": -86.88325,
       "lat": 36.16255,
-      "visited": false,
+      "star": false,
       "likes": 16,
       "locationTypeId": 3,
       "name": "Movies"
@@ -2953,7 +2926,7 @@
       "address": "30 Westend Road",
       "lng": -86.65489,
       "lat": 36.1066,
-      "visited": true,
+      "star": true,
       "likes": 5,
       "locationTypeId": 1,
       "name": "Tools"
@@ -2966,7 +2939,7 @@
       "address": "3157 Daystar Hill",
       "lng": -86.87365,
       "lat": 36.08302,
-      "visited": true,
+      "star": true,
       "likes": 19,
       "locationTypeId": 3,
       "name": "Automotive"
@@ -2979,7 +2952,7 @@
       "address": "93166 Bashford Pass",
       "lng": -86.82443,
       "lat": 36.07147,
-      "visited": false,
+      "star": false,
       "likes": 12,
       "locationTypeId": 3,
       "name": "Shoes"
@@ -2992,7 +2965,7 @@
       "address": "34519 Anderson Hill",
       "lng": -86.61163,
       "lat": 36.07265,
-      "visited": true,
+      "star": true,
       "likes": 16,
       "locationTypeId": 2,
       "name": "Health"
@@ -3005,7 +2978,7 @@
       "address": null,
       "lng": -86.71568,
       "lat": 36.21096,
-      "visited": false,
+      "star": false,
       "likes": 11,
       "locationTypeId": 1,
       "name": "Beauty"
@@ -3018,7 +2991,7 @@
       "address": null,
       "lng": -86.58943,
       "lat": 36.23696,
-      "visited": true,
+      "star": true,
       "likes": 5,
       "locationTypeId": 1,
       "name": "Movies"
@@ -3031,7 +3004,7 @@
       "address": "82906 Ludington Park",
       "lng": -86.71694,
       "lat": 36.11461,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 2,
       "name": "Grocery"
@@ -3044,23 +3017,22 @@
       "address": "8 Armistice Place",
       "lng": -86.6091,
       "lat": 36.06491,
-      "visited": false,
+      "star": false,
       "likes": 25,
       "locationTypeId": 3,
       "name": "Books"
     },
     {
-      "id": 255,
       "tripId": 1,
       "summary": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
-      "price": null,
-      "address": null,
-      "lng": -86.89456,
       "lat": 36.13796,
-      "visited": false,
+      "lng": -86.89456,
+      "address": null,
+      "price": null,
       "likes": 25,
       "locationTypeId": 1,
-      "name": "Grocery"
+      "name": "Grocery",
+      "id": 255
     },
     {
       "id": 256,
@@ -3070,7 +3042,7 @@
       "address": null,
       "lng": -86.79927,
       "lat": 36.0929,
-      "visited": true,
+      "star": true,
       "likes": 6,
       "locationTypeId": 2,
       "name": "Movies"
@@ -3083,7 +3055,7 @@
       "address": null,
       "lng": -86.70833,
       "lat": 36.03137,
-      "visited": true,
+      "star": true,
       "likes": 1,
       "locationTypeId": 1,
       "name": "Toys"
@@ -3096,7 +3068,7 @@
       "address": null,
       "lng": -86.74321,
       "lat": 36.05804,
-      "visited": false,
+      "star": false,
       "likes": 9,
       "locationTypeId": 3,
       "name": "Movies"
@@ -3109,7 +3081,7 @@
       "address": "37183 Trailsway Circle",
       "lng": -86.79491,
       "lat": 36.15397,
-      "visited": false,
+      "star": false,
       "likes": 1,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -3122,7 +3094,7 @@
       "address": "3 Dapin Crossing",
       "lng": -86.86108,
       "lat": 36.22444,
-      "visited": true,
+      "star": true,
       "likes": 21,
       "locationTypeId": 3,
       "name": "Industrial"
@@ -3137,7 +3109,8 @@
       "likes": 0,
       "locationTypeId": 3,
       "name": "Tools",
-      "id": 262
+      "id": 262,
+      "star": true
     },
     {
       "id": 263,
@@ -3147,7 +3120,7 @@
       "address": "745 Linden Drive",
       "lng": -86.76322,
       "lat": 36.23255,
-      "visited": false,
+      "star": false,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Clothing"
@@ -3160,7 +3133,7 @@
       "address": "3757 Spaight Crossing",
       "lng": -86.59965,
       "lat": 36.08946,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 3,
       "name": "Toys"
@@ -3173,7 +3146,7 @@
       "address": "44658 Burning Wood Hill",
       "lng": -86.72644,
       "lat": 36.15207,
-      "visited": false,
+      "star": false,
       "likes": 9,
       "locationTypeId": 3,
       "name": "Toys"
@@ -3186,7 +3159,7 @@
       "address": "42304 Golf Course Road",
       "lng": -86.64373,
       "lat": 36.1411,
-      "visited": true,
+      "star": true,
       "likes": 6,
       "locationTypeId": 3,
       "name": "Outdoors"
@@ -3199,7 +3172,7 @@
       "address": "9 Blue Bill Park Circle",
       "lng": -86.60515,
       "lat": 36.08139,
-      "visited": false,
+      "star": false,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Books"
@@ -3212,7 +3185,7 @@
       "address": null,
       "lng": -86.69309,
       "lat": 36.12051,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Garden"
@@ -3225,7 +3198,7 @@
       "address": "2138 Shoshone Terrace",
       "lng": -86.859,
       "lat": 36.14289,
-      "visited": true,
+      "star": true,
       "likes": 17,
       "locationTypeId": 2,
       "name": "Games"
@@ -3238,7 +3211,7 @@
       "address": "019 Graedel Plaza",
       "lng": -86.92717,
       "lat": 36.1898,
-      "visited": false,
+      "star": false,
       "likes": 19,
       "locationTypeId": 2,
       "name": "Jewelery"
@@ -3251,7 +3224,7 @@
       "address": "25 6th Trail",
       "lng": -86.69346,
       "lat": 36.12389,
-      "visited": true,
+      "star": true,
       "likes": 24,
       "locationTypeId": 1,
       "name": "Sports"
@@ -3264,7 +3237,7 @@
       "address": null,
       "lng": -86.64686,
       "lat": 36.18863,
-      "visited": true,
+      "star": true,
       "likes": 3,
       "locationTypeId": 2,
       "name": "Sports"
@@ -3277,7 +3250,7 @@
       "address": "606 Hansons Parkway",
       "lng": -86.71065,
       "lat": 36.22002,
-      "visited": true,
+      "star": true,
       "likes": 1,
       "locationTypeId": 1,
       "name": "Games"
@@ -3290,7 +3263,7 @@
       "address": "52820 Hoffman Junction",
       "lng": -86.66293,
       "lat": 36.03995,
-      "visited": false,
+      "star": false,
       "likes": 21,
       "locationTypeId": 1,
       "name": "Grocery"
@@ -3303,7 +3276,7 @@
       "address": null,
       "lng": -86.61642,
       "lat": 36.19506,
-      "visited": false,
+      "star": false,
       "likes": 20,
       "locationTypeId": 3,
       "name": "Grocery"
@@ -3316,7 +3289,7 @@
       "address": "7013 Boyd Pass",
       "lng": -86.78398,
       "lat": 36.17581,
-      "visited": true,
+      "star": true,
       "likes": 2,
       "locationTypeId": 3,
       "name": "Outdoors"
@@ -3329,7 +3302,7 @@
       "address": "346 Hoffman Avenue",
       "lng": -86.6749,
       "lat": 36.14438,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Movies"
@@ -3342,7 +3315,7 @@
       "address": "931 Prairieview Road",
       "lng": -86.77917,
       "lat": 36.06603,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 2,
       "name": "Health"
@@ -3355,7 +3328,7 @@
       "address": "80563 Blaine Hill",
       "lng": -86.70951,
       "lat": 36.13268,
-      "visited": false,
+      "star": false,
       "likes": 12,
       "locationTypeId": 2,
       "name": "Industrial"
@@ -3368,7 +3341,7 @@
       "address": "64653 Corscot Pass",
       "lng": -86.75463,
       "lat": 36.19687,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 1,
       "name": "Music"
@@ -3381,7 +3354,7 @@
       "address": "44759 Lighthouse Bay Road",
       "lng": -86.86594,
       "lat": 36.13805,
-      "visited": false,
+      "star": false,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Baby"
@@ -3394,7 +3367,7 @@
       "address": null,
       "lng": -86.87291,
       "lat": 36.08907,
-      "visited": true,
+      "star": true,
       "likes": 21,
       "locationTypeId": 2,
       "name": "Beauty"
@@ -3407,7 +3380,7 @@
       "address": null,
       "lng": -86.8783,
       "lat": 36.15321,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Computers"
@@ -3420,7 +3393,7 @@
       "address": "2 Arapahoe Point",
       "lng": -86.7232,
       "lat": 36.21128,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 3,
       "name": "Outdoors"
@@ -3433,7 +3406,7 @@
       "address": "77806 Melrose Trail",
       "lng": -86.81455,
       "lat": 36.05142,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 2,
       "name": "Toys"
@@ -3446,7 +3419,7 @@
       "address": null,
       "lng": -86.8032,
       "lat": 36.19767,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 1,
       "name": "Automotive"
@@ -3459,7 +3432,7 @@
       "address": "55 Scott Parkway",
       "lng": -86.63641,
       "lat": 36.19037,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 3,
       "name": "Kids"
@@ -3472,7 +3445,7 @@
       "address": null,
       "lng": -86.85962,
       "lat": 36.16123,
-      "visited": false,
+      "star": false,
       "likes": 25,
       "locationTypeId": 3,
       "name": "Garden"
@@ -3485,7 +3458,7 @@
       "address": "8295 Heath Hill",
       "lng": -86.61747,
       "lat": 36.10436,
-      "visited": true,
+      "star": true,
       "likes": 24,
       "locationTypeId": 3,
       "name": "Jewelery"
@@ -3498,7 +3471,7 @@
       "address": "6716 Truax Place",
       "lng": -86.86447,
       "lat": 36.0731,
-      "visited": false,
+      "star": false,
       "likes": 22,
       "locationTypeId": 3,
       "name": "Automotive"
@@ -3511,7 +3484,7 @@
       "address": "3771 Elmside Avenue",
       "lng": -86.89599,
       "lat": 36.22279,
-      "visited": true,
+      "star": true,
       "likes": 3,
       "locationTypeId": 3,
       "name": "Shoes"
@@ -3524,7 +3497,7 @@
       "address": null,
       "lng": -86.74167,
       "lat": 36.20005,
-      "visited": false,
+      "star": false,
       "likes": 25,
       "locationTypeId": 1,
       "name": "Movies"
@@ -3537,7 +3510,7 @@
       "address": null,
       "lng": -86.83572,
       "lat": 36.07223,
-      "visited": false,
+      "star": false,
       "likes": 24,
       "locationTypeId": 2,
       "name": "Movies"
@@ -3550,7 +3523,7 @@
       "address": "50 Shasta Parkway",
       "lng": -86.5942,
       "lat": 36.04562,
-      "visited": true,
+      "star": true,
       "likes": 1,
       "locationTypeId": 1,
       "name": "Tools"
@@ -3563,7 +3536,7 @@
       "address": "69 Kings Street",
       "lng": -86.59388,
       "lat": 36.14645,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 2,
       "name": "Kids"
@@ -3576,7 +3549,7 @@
       "address": null,
       "lng": -86.7673,
       "lat": 36.14117,
-      "visited": true,
+      "star": true,
       "likes": 6,
       "locationTypeId": 2,
       "name": "Movies"
@@ -3589,7 +3562,7 @@
       "address": "6 Park Meadow Street",
       "lng": -86.8027,
       "lat": 36.17755,
-      "visited": false,
+      "star": false,
       "likes": 5,
       "locationTypeId": 1,
       "name": "Baby"
@@ -3602,7 +3575,7 @@
       "address": "61910 Vera Street",
       "lng": -86.85949,
       "lat": 36.0295,
-      "visited": true,
+      "star": true,
       "likes": 21,
       "locationTypeId": 2,
       "name": "Games"
@@ -3615,7 +3588,7 @@
       "address": "39 Leroy Center",
       "lng": -86.65749,
       "lat": 36.16396,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 3,
       "name": "Toys"
@@ -3628,7 +3601,7 @@
       "address": null,
       "lng": -86.79056,
       "lat": 36.23942,
-      "visited": true,
+      "star": true,
       "likes": 21,
       "locationTypeId": 2,
       "name": "Toys"
@@ -3641,7 +3614,7 @@
       "address": null,
       "lng": -86.82307,
       "lat": 36.20285,
-      "visited": false,
+      "star": true,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Computers"
@@ -3654,7 +3627,7 @@
       "address": "284 Westport Alley",
       "lng": -86.61492,
       "lat": 36.13292,
-      "visited": true,
+      "star": true,
       "likes": 11,
       "locationTypeId": 3,
       "name": "Sports"
@@ -3667,7 +3640,7 @@
       "address": "2737 Randy Point",
       "lng": -86.85847,
       "lat": 36.13764,
-      "visited": false,
+      "star": false,
       "likes": 17,
       "locationTypeId": 3,
       "name": "Garden"
@@ -3680,7 +3653,7 @@
       "address": "89085 Oak Drive",
       "lng": -86.77613,
       "lat": 36.09882,
-      "visited": true,
+      "star": true,
       "likes": 0,
       "locationTypeId": 3,
       "name": "Computers"
@@ -3693,7 +3666,7 @@
       "address": "531 Lerdahl Court",
       "lng": -86.75843,
       "lat": 36.17103,
-      "visited": false,
+      "star": false,
       "likes": 4,
       "locationTypeId": 1,
       "name": "Electronics"
@@ -3706,7 +3679,7 @@
       "address": "6303 High Crossing Drive",
       "lng": -86.78098,
       "lat": 36.07917,
-      "visited": false,
+      "star": false,
       "likes": 5,
       "locationTypeId": 1,
       "name": "Games"
@@ -3719,7 +3692,7 @@
       "address": "16069 Sloan Parkway",
       "lng": -86.89584,
       "lat": 36.03107,
-      "visited": true,
+      "star": true,
       "likes": 16,
       "locationTypeId": 2,
       "name": "Electronics"
@@ -3732,7 +3705,7 @@
       "address": "41796 Ohio Crossing",
       "lng": -86.71233,
       "lat": 36.13075,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 3,
       "name": "Electronics"
@@ -3745,7 +3718,7 @@
       "address": "04 Marcy Hill",
       "lng": -86.70959,
       "lat": 36.07165,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Shoes"
@@ -3758,7 +3731,7 @@
       "address": "2 Loomis Point",
       "lng": -86.89926,
       "lat": 36.04098,
-      "visited": true,
+      "star": true,
       "likes": 3,
       "locationTypeId": 2,
       "name": "Garden"
@@ -3771,7 +3744,7 @@
       "address": "90069 Killdeer Plaza",
       "lng": -86.75228,
       "lat": 36.21486,
-      "visited": true,
+      "star": true,
       "likes": 19,
       "locationTypeId": 2,
       "name": "Books"
@@ -3784,7 +3757,7 @@
       "address": "59 Marcy Lane",
       "lng": -86.58919,
       "lat": 36.17349,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 3,
       "name": "Kids"
@@ -3797,7 +3770,7 @@
       "address": "33 Anderson Way",
       "lng": -86.88951,
       "lat": 36.11781,
-      "visited": true,
+      "star": true,
       "likes": 23,
       "locationTypeId": 3,
       "name": "Sports"
@@ -3810,7 +3783,7 @@
       "address": "982 Village Place",
       "lng": -86.64079,
       "lat": 36.08292,
-      "visited": true,
+      "star": true,
       "likes": 17,
       "locationTypeId": 3,
       "name": "Automotive"
@@ -3823,7 +3796,7 @@
       "address": "2 Butternut Terrace",
       "lng": -86.61604,
       "lat": 36.23812,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 3,
       "name": "Movies"
@@ -3836,7 +3809,7 @@
       "address": null,
       "lng": -86.78179,
       "lat": 36.07913,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 3,
       "name": "Garden"
@@ -3849,7 +3822,7 @@
       "address": "031 Raven Way",
       "lng": -86.59391,
       "lat": 36.09483,
-      "visited": true,
+      "star": true,
       "likes": 18,
       "locationTypeId": 1,
       "name": "Tools"
@@ -3862,7 +3835,7 @@
       "address": null,
       "lng": -86.63735,
       "lat": 36.0341,
-      "visited": true,
+      "star": true,
       "likes": 11,
       "locationTypeId": 3,
       "name": "Music"
@@ -3875,7 +3848,7 @@
       "address": null,
       "lng": -86.79693,
       "lat": 36.18583,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 1,
       "name": "Grocery"
@@ -3888,7 +3861,7 @@
       "address": "8 Raven Lane",
       "lng": -86.75497,
       "lat": 36.19823,
-      "visited": false,
+      "star": false,
       "likes": 19,
       "locationTypeId": 2,
       "name": "Beauty"
@@ -3901,7 +3874,7 @@
       "address": "844 Ludington Way",
       "lng": -86.77058,
       "lat": 36.05472,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 3,
       "name": "Industrial"
@@ -3914,7 +3887,7 @@
       "address": "1400 Dapin Alley",
       "lng": -86.71908,
       "lat": 36.05868,
-      "visited": false,
+      "star": false,
       "likes": 10,
       "locationTypeId": 3,
       "name": "Music"
@@ -3927,7 +3900,7 @@
       "address": null,
       "lng": -86.7983,
       "lat": 36.12661,
-      "visited": false,
+      "star": false,
       "likes": 4,
       "locationTypeId": 1,
       "name": "Books"
@@ -3940,7 +3913,7 @@
       "address": null,
       "lng": -86.86272,
       "lat": 36.10358,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 1,
       "name": "Movies"
@@ -3953,7 +3926,7 @@
       "address": "48 Dottie Crossing",
       "lng": -86.61227,
       "lat": 36.14667,
-      "visited": false,
+      "star": false,
       "likes": 5,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -3966,7 +3939,7 @@
       "address": null,
       "lng": -86.62873,
       "lat": 36.18612,
-      "visited": false,
+      "star": false,
       "likes": 10,
       "locationTypeId": 2,
       "name": "Music"
@@ -3979,7 +3952,7 @@
       "address": "645 Basil Park",
       "lng": -86.76093,
       "lat": 36.06283,
-      "visited": true,
+      "star": true,
       "likes": 24,
       "locationTypeId": 2,
       "name": "Shoes"
@@ -3992,7 +3965,7 @@
       "address": "3 Hoffman Plaza",
       "lng": -86.59088,
       "lat": 36.07578,
-      "visited": true,
+      "star": true,
       "likes": 9,
       "locationTypeId": 1,
       "name": "Games"
@@ -4005,7 +3978,7 @@
       "address": "14 Sherman Hill",
       "lng": -86.86043,
       "lat": 36.18542,
-      "visited": false,
+      "star": false,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Industrial"
@@ -4018,7 +3991,7 @@
       "address": null,
       "lng": -86.5997,
       "lat": 36.10879,
-      "visited": true,
+      "star": true,
       "likes": 12,
       "locationTypeId": 3,
       "name": "Computers"
@@ -4031,7 +4004,7 @@
       "address": null,
       "lng": -86.65617,
       "lat": 36.18225,
-      "visited": true,
+      "star": true,
       "likes": 13,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -4044,7 +4017,7 @@
       "address": "198 Acker Lane",
       "lng": -86.85812,
       "lat": 36.11197,
-      "visited": true,
+      "star": true,
       "likes": 12,
       "locationTypeId": 3,
       "name": "Toys"
@@ -4057,7 +4030,7 @@
       "address": null,
       "lng": -86.74262,
       "lat": 36.02996,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 2,
       "name": "Books"
@@ -4070,7 +4043,7 @@
       "address": "4148 Pierstorff Street",
       "lng": -86.73594,
       "lat": 36.03435,
-      "visited": false,
+      "star": false,
       "likes": 18,
       "locationTypeId": 1,
       "name": "Beauty"
@@ -4083,7 +4056,7 @@
       "address": "350 Almo Circle",
       "lng": -86.68387,
       "lat": 36.19151,
-      "visited": false,
+      "star": false,
       "likes": 3,
       "locationTypeId": 1,
       "name": "Sports"
@@ -4096,7 +4069,7 @@
       "address": "19371 Vernon Circle",
       "lng": -86.70994,
       "lat": 36.19427,
-      "visited": true,
+      "star": true,
       "likes": 2,
       "locationTypeId": 2,
       "name": "Beauty"
@@ -4109,7 +4082,7 @@
       "address": "6744 Melby Street",
       "lng": -86.84844,
       "lat": 36.19002,
-      "visited": true,
+      "star": true,
       "likes": 21,
       "locationTypeId": 3,
       "name": "Grocery"
@@ -4122,7 +4095,7 @@
       "address": "2 Talisman Parkway",
       "lng": -86.64352,
       "lat": 36.15466,
-      "visited": true,
+      "star": true,
       "likes": 10,
       "locationTypeId": 3,
       "name": "Baby"
@@ -4135,7 +4108,7 @@
       "address": "56212 Pleasure Terrace",
       "lng": -86.62187,
       "lat": 36.13313,
-      "visited": true,
+      "star": true,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Home"
@@ -4148,7 +4121,7 @@
       "address": "56 Oneill Alley",
       "lng": -86.64272,
       "lat": 36.21941,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 2,
       "name": "Shoes"
@@ -4161,7 +4134,7 @@
       "address": null,
       "lng": -86.66399,
       "lat": 36.17822,
-      "visited": false,
+      "star": false,
       "likes": 12,
       "locationTypeId": 3,
       "name": "Home"
@@ -4174,7 +4147,7 @@
       "address": null,
       "lng": -86.72755,
       "lat": 36.05527,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 1,
       "name": "Music"
@@ -4187,7 +4160,7 @@
       "address": null,
       "lng": -86.81264,
       "lat": 36.11265,
-      "visited": true,
+      "star": true,
       "likes": 1,
       "locationTypeId": 2,
       "name": "Grocery"
@@ -4200,7 +4173,7 @@
       "address": "53 Manitowish Circle",
       "lng": -86.85574,
       "lat": 36.05788,
-      "visited": true,
+      "star": true,
       "likes": 9,
       "locationTypeId": 1,
       "name": "Baby"
@@ -4213,7 +4186,7 @@
       "address": null,
       "lng": -86.84013,
       "lat": 36.03249,
-      "visited": false,
+      "star": false,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Health"
@@ -4226,7 +4199,7 @@
       "address": "71510 Truax Pass",
       "lng": -86.59583,
       "lat": 36.0973,
-      "visited": false,
+      "star": false,
       "likes": 12,
       "locationTypeId": 2,
       "name": "Grocery"
@@ -4239,7 +4212,7 @@
       "address": "86 Northfield Trail",
       "lng": -86.79938,
       "lat": 36.09558,
-      "visited": true,
+      "star": true,
       "likes": 14,
       "locationTypeId": 2,
       "name": "Beauty"
@@ -4252,7 +4225,7 @@
       "address": null,
       "lng": -86.71487,
       "lat": 36.19799,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Baby"
@@ -4265,7 +4238,7 @@
       "address": null,
       "lng": -86.86991,
       "lat": 36.17483,
-      "visited": true,
+      "star": true,
       "likes": 9,
       "locationTypeId": 2,
       "name": "Tools"
@@ -4278,7 +4251,7 @@
       "address": "7 Delladonna Trail",
       "lng": -86.79677,
       "lat": 36.07695,
-      "visited": false,
+      "star": false,
       "likes": 21,
       "locationTypeId": 3,
       "name": "Automotive"
@@ -4291,7 +4264,7 @@
       "address": "4 David Court",
       "lng": -86.76325,
       "lat": 36.21689,
-      "visited": false,
+      "star": false,
       "likes": 24,
       "locationTypeId": 1,
       "name": "Industrial"
@@ -4304,7 +4277,7 @@
       "address": "5482 Merrick Road",
       "lng": -86.8335,
       "lat": 36.12859,
-      "visited": true,
+      "star": true,
       "likes": 25,
       "locationTypeId": 1,
       "name": "Outdoors"
@@ -4317,7 +4290,7 @@
       "address": "43615 Westend Parkway",
       "lng": -86.6707,
       "lat": 36.09335,
-      "visited": true,
+      "star": true,
       "likes": 24,
       "locationTypeId": 2,
       "name": "Automotive"
@@ -4330,7 +4303,7 @@
       "address": "949 Main Park",
       "lng": -86.65758,
       "lat": 36.20061,
-      "visited": true,
+      "star": true,
       "likes": 11,
       "locationTypeId": 1,
       "name": "Baby"
@@ -4343,7 +4316,7 @@
       "address": null,
       "lng": -86.82954,
       "lat": 36.142,
-      "visited": false,
+      "star": false,
       "likes": 25,
       "locationTypeId": 2,
       "name": "Health"
@@ -4356,7 +4329,7 @@
       "address": null,
       "lng": -86.76813,
       "lat": 36.11032,
-      "visited": true,
+      "star": true,
       "likes": 13,
       "locationTypeId": 2,
       "name": "Games"
@@ -4369,7 +4342,7 @@
       "address": null,
       "lng": -86.92154,
       "lat": 36.102,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Grocery"
@@ -4382,7 +4355,7 @@
       "address": "6 Meadow Valley Parkway",
       "lng": -86.89648,
       "lat": 36.12402,
-      "visited": true,
+      "star": true,
       "likes": 2,
       "locationTypeId": 3,
       "name": "Tools"
@@ -4395,7 +4368,7 @@
       "address": "5711 Memorial Plaza",
       "lng": -86.65624,
       "lat": 36.18395,
-      "visited": false,
+      "star": false,
       "likes": 3,
       "locationTypeId": 2,
       "name": "Books"
@@ -4408,7 +4381,7 @@
       "address": "5 Valley Edge Park",
       "lng": -86.74053,
       "lat": 36.23727,
-      "visited": false,
+      "star": false,
       "likes": 18,
       "locationTypeId": 2,
       "name": "Outdoors"
@@ -4421,7 +4394,7 @@
       "address": "07 Karstens Place",
       "lng": -86.62018,
       "lat": 36.12476,
-      "visited": true,
+      "star": true,
       "likes": 8,
       "locationTypeId": 2,
       "name": "Industrial"
@@ -4434,7 +4407,7 @@
       "address": "827 Utah Trail",
       "lng": -86.63354,
       "lat": 36.15175,
-      "visited": true,
+      "star": true,
       "likes": 8,
       "locationTypeId": 2,
       "name": "Jewelery"
@@ -4447,7 +4420,7 @@
       "address": "10967 Packers Way",
       "lng": -86.81864,
       "lat": 36.08445,
-      "visited": false,
+      "star": false,
       "likes": 13,
       "locationTypeId": 3,
       "name": "Clothing"
@@ -4460,7 +4433,7 @@
       "address": null,
       "lng": -86.82819,
       "lat": 36.14852,
-      "visited": true,
+      "star": true,
       "likes": 2,
       "locationTypeId": 2,
       "name": "Electronics"
@@ -4473,7 +4446,7 @@
       "address": "4069 Crowley Place",
       "lng": -86.68311,
       "lat": 36.08377,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 1,
       "name": "Outdoors"
@@ -4486,7 +4459,7 @@
       "address": null,
       "lng": -86.71617,
       "lat": 36.23441,
-      "visited": false,
+      "star": false,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Home"
@@ -4499,7 +4472,7 @@
       "address": null,
       "lng": -86.76028,
       "lat": 36.16392,
-      "visited": false,
+      "star": false,
       "likes": 4,
       "locationTypeId": 1,
       "name": "Games"
@@ -4512,7 +4485,7 @@
       "address": "90957 6th Trail",
       "lng": -86.74617,
       "lat": 36.05904,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 3,
       "name": "Computers"
@@ -4525,7 +4498,7 @@
       "address": "4877 Hanson Circle",
       "lng": -86.83156,
       "lat": 36.15319,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 3,
       "name": "Baby"
@@ -4538,7 +4511,7 @@
       "address": null,
       "lng": -86.73408,
       "lat": 36.09643,
-      "visited": true,
+      "star": true,
       "likes": 22,
       "locationTypeId": 1,
       "name": "Kids"
@@ -4551,7 +4524,7 @@
       "address": null,
       "lng": -86.69333,
       "lat": 36.02874,
-      "visited": true,
+      "star": true,
       "likes": 25,
       "locationTypeId": 3,
       "name": "Sports"
@@ -4564,7 +4537,7 @@
       "address": "4731 Barnett Road",
       "lng": -86.63805,
       "lat": 36.08054,
-      "visited": false,
+      "star": false,
       "likes": 23,
       "locationTypeId": 2,
       "name": "Beauty"
@@ -4577,7 +4550,7 @@
       "address": null,
       "lng": -86.79844,
       "lat": 36.15005,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 1,
       "name": "Books"
@@ -4590,7 +4563,7 @@
       "address": "28475 Debra Park",
       "lng": -86.59256,
       "lat": 36.2251,
-      "visited": true,
+      "star": true,
       "likes": 9,
       "locationTypeId": 1,
       "name": "Automotive"
@@ -4603,7 +4576,7 @@
       "address": "237 Lindbergh Junction",
       "lng": -86.74544,
       "lat": 36.18554,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 3,
       "name": "Shoes"
@@ -4616,7 +4589,7 @@
       "address": "648 4th Place",
       "lng": -86.67369,
       "lat": 36.10461,
-      "visited": true,
+      "star": true,
       "likes": 1,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -4629,7 +4602,7 @@
       "address": "74558 Grayhawk Park",
       "lng": -86.82987,
       "lat": 36.22945,
-      "visited": false,
+      "star": false,
       "likes": 1,
       "locationTypeId": 1,
       "name": "Baby"
@@ -4642,7 +4615,7 @@
       "address": "3 Jenna Avenue",
       "lng": -86.5975,
       "lat": 36.22679,
-      "visited": false,
+      "star": false,
       "likes": 10,
       "locationTypeId": 1,
       "name": "Books"
@@ -4655,7 +4628,7 @@
       "address": "993 Stang Junction",
       "lng": -86.79529,
       "lat": 36.19992,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 2,
       "name": "Garden"
@@ -4668,7 +4641,7 @@
       "address": null,
       "lng": -86.83225,
       "lat": 36.20532,
-      "visited": true,
+      "star": true,
       "likes": 19,
       "locationTypeId": 2,
       "name": "Sports"
@@ -4681,7 +4654,7 @@
       "address": "905 Sutherland Trail",
       "lng": -86.61511,
       "lat": 36.11026,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 2,
       "name": "Outdoors"
@@ -4694,7 +4667,7 @@
       "address": "275 Packers Place",
       "lng": -86.77114,
       "lat": 36.03442,
-      "visited": false,
+      "star": false,
       "likes": 16,
       "locationTypeId": 1,
       "name": "Home"
@@ -4707,7 +4680,7 @@
       "address": "685 Almo Parkway",
       "lng": -86.68837,
       "lat": 36.0433,
-      "visited": true,
+      "star": true,
       "likes": 2,
       "locationTypeId": 2,
       "name": "Kids"
@@ -4720,7 +4693,7 @@
       "address": null,
       "lng": -86.89768,
       "lat": 36.07966,
-      "visited": false,
+      "star": false,
       "likes": 24,
       "locationTypeId": 1,
       "name": "Sports"
@@ -4733,7 +4706,7 @@
       "address": "17 Mendota Way",
       "lng": -86.91203,
       "lat": 36.07123,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Toys"
@@ -4746,7 +4719,7 @@
       "address": "11748 Arrowood Drive",
       "lng": -86.586,
       "lat": 36.23802,
-      "visited": false,
+      "star": false,
       "likes": 10,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -4759,7 +4732,7 @@
       "address": "043 Drewry Alley",
       "lng": -86.79228,
       "lat": 36.10001,
-      "visited": false,
+      "star": true,
       "likes": 25,
       "locationTypeId": 3,
       "name": "Health"
@@ -4772,7 +4745,7 @@
       "address": "147 Kinsman Trail",
       "lng": -86.6227,
       "lat": 36.08263,
-      "visited": true,
+      "star": true,
       "likes": 5,
       "locationTypeId": 3,
       "name": "Games"
@@ -4785,7 +4758,7 @@
       "address": "0 Duke Terrace",
       "lng": -86.89677,
       "lat": 36.06965,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Home"
@@ -4798,7 +4771,7 @@
       "address": "99055 Lawn Avenue",
       "lng": -86.79995,
       "lat": 36.16576,
-      "visited": false,
+      "star": true,
       "likes": 18,
       "locationTypeId": 1,
       "name": "Garden"
@@ -4811,7 +4784,7 @@
       "address": "3089 Riverside Hill",
       "lng": -86.83605,
       "lat": 36.20398,
-      "visited": true,
+      "star": false,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Shoes"
@@ -4824,7 +4797,7 @@
       "address": "09 Center Trail",
       "lng": -86.74747,
       "lat": 36.05444,
-      "visited": false,
+      "star": false,
       "likes": 11,
       "locationTypeId": 2,
       "name": "Books"
@@ -4837,7 +4810,7 @@
       "address": "6 Hudson Trail",
       "lng": -86.81997,
       "lat": 36.16353,
-      "visited": true,
+      "star": true,
       "likes": 21,
       "locationTypeId": 1,
       "name": "Electronics"
@@ -4850,7 +4823,7 @@
       "address": "05 8th Crossing",
       "lng": -86.62252,
       "lat": 36.16075,
-      "visited": true,
+      "star": true,
       "likes": 18,
       "locationTypeId": 1,
       "name": "Music"
@@ -4863,7 +4836,7 @@
       "address": "7062 Golf Pass",
       "lng": -86.85264,
       "lat": 36.03083,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 1,
       "name": "Sports"
@@ -4876,7 +4849,7 @@
       "address": "89 Badeau Hill",
       "lng": -86.64286,
       "lat": 36.09441,
-      "visited": true,
+      "star": true,
       "likes": 14,
       "locationTypeId": 3,
       "name": "Sports"
@@ -4889,7 +4862,7 @@
       "address": "7372 Mandrake Alley",
       "lng": -86.66835,
       "lat": 36.17857,
-      "visited": true,
+      "star": true,
       "likes": 17,
       "locationTypeId": 2,
       "name": "Tools"
@@ -4902,7 +4875,7 @@
       "address": "14289 Canary Way",
       "lng": -86.8518,
       "lat": 36.12277,
-      "visited": true,
+      "star": true,
       "likes": 25,
       "locationTypeId": 2,
       "name": "Toys"
@@ -4915,7 +4888,7 @@
       "address": null,
       "lng": -86.83291,
       "lat": 36.20618,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 3,
       "name": "Grocery"
@@ -4928,7 +4901,7 @@
       "address": "44449 Utah Avenue",
       "lng": -86.78964,
       "lat": 36.22905,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 2,
       "name": "Health"
@@ -4941,7 +4914,7 @@
       "address": "470 Surrey Place",
       "lng": -86.85723,
       "lat": 36.09065,
-      "visited": false,
+      "star": false,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Computers"
@@ -4954,7 +4927,7 @@
       "address": "40015 Anzinger Court",
       "lng": -86.86453,
       "lat": 36.11682,
-      "visited": true,
+      "star": true,
       "likes": 14,
       "locationTypeId": 1,
       "name": "Toys"
@@ -4967,7 +4940,7 @@
       "address": "98801 Porter Pass",
       "lng": -86.7686,
       "lat": 36.23965,
-      "visited": true,
+      "star": true,
       "likes": 6,
       "locationTypeId": 3,
       "name": "Tools"
@@ -4980,7 +4953,7 @@
       "address": "45250 Homewood Alley",
       "lng": -86.75526,
       "lat": 36.18941,
-      "visited": false,
+      "star": false,
       "likes": 2,
       "locationTypeId": 3,
       "name": "Computers"
@@ -4993,7 +4966,7 @@
       "address": null,
       "lng": -86.67455,
       "lat": 36.10865,
-      "visited": true,
+      "star": true,
       "likes": 17,
       "locationTypeId": 1,
       "name": "Electronics"
@@ -5006,7 +4979,7 @@
       "address": "74 Prentice Street",
       "lng": -86.74011,
       "lat": 36.13408,
-      "visited": true,
+      "star": true,
       "likes": 6,
       "locationTypeId": 1,
       "name": "Shoes"
@@ -5019,7 +4992,7 @@
       "address": "35 Lillian Parkway",
       "lng": -86.80672,
       "lat": 36.05333,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 2,
       "name": "Tools"
@@ -5032,7 +5005,7 @@
       "address": "49 Everett Place",
       "lng": -86.86487,
       "lat": 36.04756,
-      "visited": false,
+      "star": false,
       "likes": 19,
       "locationTypeId": 3,
       "name": "Outdoors"
@@ -5045,7 +5018,7 @@
       "address": "10598 Waubesa Center",
       "lng": -86.58995,
       "lat": 36.2266,
-      "visited": false,
+      "star": false,
       "likes": 16,
       "locationTypeId": 1,
       "name": "Health"
@@ -5058,7 +5031,7 @@
       "address": "3 Vidon Court",
       "lng": -86.85754,
       "lat": 36.16691,
-      "visited": true,
+      "star": true,
       "likes": 22,
       "locationTypeId": 1,
       "name": "Automotive"
@@ -5071,7 +5044,7 @@
       "address": null,
       "lng": -86.66177,
       "lat": 36.09951,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 1,
       "name": "Books"
@@ -5084,7 +5057,7 @@
       "address": "40 Golden Leaf Court",
       "lng": -86.72674,
       "lat": 36.03778,
-      "visited": true,
+      "star": true,
       "likes": 6,
       "locationTypeId": 2,
       "name": "Jewelery"
@@ -5097,7 +5070,7 @@
       "address": "3 Pine View Junction",
       "lng": -86.74575,
       "lat": 36.16379,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 3,
       "name": "Games"
@@ -5110,7 +5083,7 @@
       "address": null,
       "lng": -86.72613,
       "lat": 36.15595,
-      "visited": true,
+      "star": true,
       "likes": 21,
       "locationTypeId": 3,
       "name": "Games"
@@ -5123,7 +5096,7 @@
       "address": "1098 Logan Park",
       "lng": -86.61412,
       "lat": 36.15637,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 2,
       "name": "Industrial"
@@ -5136,7 +5109,7 @@
       "address": "9646 Eagan Way",
       "lng": -86.78424,
       "lat": 36.12006,
-      "visited": false,
+      "star": false,
       "likes": 18,
       "locationTypeId": 3,
       "name": "Movies"
@@ -5149,7 +5122,7 @@
       "address": null,
       "lng": -86.79966,
       "lat": 36.08767,
-      "visited": false,
+      "star": false,
       "likes": 17,
       "locationTypeId": 1,
       "name": "Home"
@@ -5162,7 +5135,7 @@
       "address": null,
       "lng": -86.63158,
       "lat": 36.15195,
-      "visited": true,
+      "star": true,
       "likes": 5,
       "locationTypeId": 3,
       "name": "Movies"
@@ -5175,7 +5148,7 @@
       "address": null,
       "lng": -86.82369,
       "lat": 36.11214,
-      "visited": true,
+      "star": true,
       "likes": 24,
       "locationTypeId": 1,
       "name": "Health"
@@ -5188,7 +5161,7 @@
       "address": null,
       "lng": -86.7869,
       "lat": 36.12655,
-      "visited": false,
+      "star": false,
       "likes": 6,
       "locationTypeId": 2,
       "name": "Computers"
@@ -5201,7 +5174,7 @@
       "address": "86 Golden Leaf Crossing",
       "lng": -86.71358,
       "lat": 36.18659,
-      "visited": true,
+      "star": true,
       "likes": 22,
       "locationTypeId": 2,
       "name": "Shoes"
@@ -5214,7 +5187,7 @@
       "address": null,
       "lng": -86.74758,
       "lat": 36.19252,
-      "visited": true,
+      "star": true,
       "likes": 7,
       "locationTypeId": 3,
       "name": "Grocery"
@@ -5227,7 +5200,7 @@
       "address": "541 Nevada Point",
       "lng": -86.89729,
       "lat": 36.05274,
-      "visited": true,
+      "star": true,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Clothing"
@@ -5240,7 +5213,7 @@
       "address": "3756 Blue Bill Park Point",
       "lng": -86.66571,
       "lat": 36.1235,
-      "visited": false,
+      "star": true,
       "likes": 15,
       "locationTypeId": 1,
       "name": "Beauty"
@@ -5253,7 +5226,7 @@
       "address": null,
       "lng": -86.63247,
       "lat": 36.1185,
-      "visited": true,
+      "star": true,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Books"
@@ -5266,7 +5239,7 @@
       "address": null,
       "lng": -86.62474,
       "lat": 36.17831,
-      "visited": true,
+      "star": true,
       "likes": 2,
       "locationTypeId": 1,
       "name": "Toys"
@@ -5279,7 +5252,7 @@
       "address": "4 Mcguire Trail",
       "lng": -86.67301,
       "lat": 36.09009,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 2,
       "name": "Baby"
@@ -5292,7 +5265,7 @@
       "address": "01 Gina Center",
       "lng": -86.70754,
       "lat": 36.09164,
-      "visited": false,
+      "star": false,
       "likes": 17,
       "locationTypeId": 2,
       "name": "Tools"
@@ -5305,7 +5278,7 @@
       "address": "17785 Mosinee Terrace",
       "lng": -86.61416,
       "lat": 36.04153,
-      "visited": false,
+      "star": false,
       "likes": 21,
       "locationTypeId": 3,
       "name": "Toys"
@@ -5318,7 +5291,7 @@
       "address": null,
       "lng": -86.65603,
       "lat": 36.0429,
-      "visited": true,
+      "star": true,
       "likes": 10,
       "locationTypeId": 1,
       "name": "Music"
@@ -5331,7 +5304,7 @@
       "address": "35909 Claremont Court",
       "lng": -86.8672,
       "lat": 36.23121,
-      "visited": false,
+      "star": false,
       "likes": 9,
       "locationTypeId": 3,
       "name": "Toys"
@@ -5344,7 +5317,7 @@
       "address": "8 Nobel Way",
       "lng": -86.71232,
       "lat": 36.16602,
-      "visited": true,
+      "star": true,
       "likes": 1,
       "locationTypeId": 3,
       "name": "Outdoors"
@@ -5357,7 +5330,7 @@
       "address": null,
       "lng": -86.64458,
       "lat": 36.08481,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Grocery"
@@ -5370,7 +5343,7 @@
       "address": null,
       "lng": -86.88179,
       "lat": 36.06505,
-      "visited": true,
+      "star": true,
       "likes": 12,
       "locationTypeId": 3,
       "name": "Health"
@@ -5383,7 +5356,7 @@
       "address": "5226 Pleasure Park",
       "lng": -86.60115,
       "lat": 36.1692,
-      "visited": false,
+      "star": false,
       "likes": 9,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -5396,7 +5369,7 @@
       "address": "7 Drewry Pass",
       "lng": -86.64957,
       "lat": 36.05548,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 2,
       "name": "Home"
@@ -5409,7 +5382,7 @@
       "address": "4934 Drewry Avenue",
       "lng": -86.79861,
       "lat": 36.11223,
-      "visited": true,
+      "star": true,
       "likes": 3,
       "locationTypeId": 2,
       "name": "Garden"
@@ -5422,7 +5395,7 @@
       "address": null,
       "lng": -86.71878,
       "lat": 36.0916,
-      "visited": true,
+      "star": true,
       "likes": 20,
       "locationTypeId": 2,
       "name": "Industrial"
@@ -5435,7 +5408,7 @@
       "address": "5175 Quincy Pass",
       "lng": -86.88413,
       "lat": 36.21939,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 3,
       "name": "Music"
@@ -5448,7 +5421,7 @@
       "address": "7875 Mallory Street",
       "lng": -86.58495,
       "lat": 36.09,
-      "visited": false,
+      "star": true,
       "likes": 5,
       "locationTypeId": 2,
       "name": "Jewelery"
@@ -5461,7 +5434,7 @@
       "address": "46614 Alpine Park",
       "lng": -86.92518,
       "lat": 36.04449,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 3,
       "name": "Baby"
@@ -5474,7 +5447,7 @@
       "address": "528 Michigan Drive",
       "lng": -86.6316,
       "lat": 36.03077,
-      "visited": true,
+      "star": true,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Shoes"
@@ -5487,7 +5460,7 @@
       "address": null,
       "lng": -86.72343,
       "lat": 36.10003,
-      "visited": false,
+      "star": false,
       "likes": 9,
       "locationTypeId": 3,
       "name": "Industrial"
@@ -5500,7 +5473,7 @@
       "address": "50357 Rusk Terrace",
       "lng": -86.88923,
       "lat": 36.21716,
-      "visited": true,
+      "star": true,
       "likes": 16,
       "locationTypeId": 3,
       "name": "Shoes"
@@ -5513,7 +5486,7 @@
       "address": null,
       "lng": -86.80753,
       "lat": 36.24101,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 1,
       "name": "Home"
@@ -5526,7 +5499,7 @@
       "address": "9 1st Terrace",
       "lng": -86.91184,
       "lat": 36.0596,
-      "visited": true,
+      "star": true,
       "likes": 17,
       "locationTypeId": 2,
       "name": "Music"
@@ -5539,7 +5512,7 @@
       "address": null,
       "lng": -86.92407,
       "lat": 36.05633,
-      "visited": false,
+      "star": false,
       "likes": 16,
       "locationTypeId": 2,
       "name": "Music"
@@ -5552,7 +5525,7 @@
       "address": "52555 South Road",
       "lng": -86.77224,
       "lat": 36.23287,
-      "visited": true,
+      "star": true,
       "likes": 25,
       "locationTypeId": 3,
       "name": "Movies"
@@ -5565,7 +5538,7 @@
       "address": "6393 Delladonna Parkway",
       "lng": -86.87699,
       "lat": 36.2279,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 1,
       "name": "Automotive"
@@ -5578,7 +5551,7 @@
       "address": null,
       "lng": -86.80458,
       "lat": 36.0365,
-      "visited": false,
+      "star": false,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Shoes"
@@ -5591,7 +5564,7 @@
       "address": "78270 Springs Pass",
       "lng": -86.71352,
       "lat": 36.15501,
-      "visited": true,
+      "star": true,
       "likes": 24,
       "locationTypeId": 3,
       "name": "Garden"
@@ -5604,7 +5577,7 @@
       "address": null,
       "lng": -86.76686,
       "lat": 36.16367,
-      "visited": false,
+      "star": false,
       "likes": 11,
       "locationTypeId": 2,
       "name": "Clothing"
@@ -5617,7 +5590,7 @@
       "address": null,
       "lng": -86.90294,
       "lat": 36.08931,
-      "visited": false,
+      "star": false,
       "likes": 6,
       "locationTypeId": 3,
       "name": "Books"
@@ -5630,7 +5603,7 @@
       "address": null,
       "lng": -86.89557,
       "lat": 36.22855,
-      "visited": false,
+      "star": false,
       "likes": 8,
       "locationTypeId": 2,
       "name": "Computers"
@@ -5643,7 +5616,7 @@
       "address": "04278 Warbler Circle",
       "lng": -86.82556,
       "lat": 36.21936,
-      "visited": true,
+      "star": true,
       "likes": 25,
       "locationTypeId": 1,
       "name": "Sports"
@@ -5656,7 +5629,7 @@
       "address": "85999 Vernon Hill",
       "lng": -86.83092,
       "lat": 36.23528,
-      "visited": false,
+      "star": false,
       "likes": 3,
       "locationTypeId": 2,
       "name": "Outdoors"
@@ -5669,7 +5642,7 @@
       "address": "23104 Bellgrove Point",
       "lng": -86.67686,
       "lat": 36.06079,
-      "visited": false,
+      "star": false,
       "likes": 5,
       "locationTypeId": 3,
       "name": "Music"
@@ -5682,7 +5655,7 @@
       "address": "04300 Kinsman Way",
       "lng": -86.69471,
       "lat": 36.23089,
-      "visited": false,
+      "star": false,
       "likes": 18,
       "locationTypeId": 1,
       "name": "Garden"
@@ -5695,7 +5668,7 @@
       "address": null,
       "lng": -86.59859,
       "lat": 36.22153,
-      "visited": true,
+      "star": true,
       "likes": 8,
       "locationTypeId": 1,
       "name": "Jewelery"
@@ -5708,7 +5681,7 @@
       "address": "689 Straubel Street",
       "lng": -86.65885,
       "lat": 36.17362,
-      "visited": false,
+      "star": false,
       "likes": 14,
       "locationTypeId": 3,
       "name": "Toys"
@@ -5721,7 +5694,7 @@
       "address": null,
       "lng": -86.62033,
       "lat": 36.19309,
-      "visited": false,
+      "star": false,
       "likes": 21,
       "locationTypeId": 3,
       "name": "Baby"
@@ -5734,7 +5707,7 @@
       "address": "31 Stoughton Way",
       "lng": -86.64655,
       "lat": 36.10459,
-      "visited": false,
+      "star": false,
       "likes": 0,
       "locationTypeId": 3,
       "name": "Outdoors"
@@ -5747,7 +5720,7 @@
       "address": null,
       "lng": -86.68418,
       "lat": 36.15937,
-      "visited": false,
+      "star": false,
       "likes": 25,
       "locationTypeId": 1,
       "name": "Automotive"
@@ -5760,7 +5733,7 @@
       "address": null,
       "lng": -86.87323,
       "lat": 36.13607,
-      "visited": false,
+      "star": false,
       "likes": 7,
       "locationTypeId": 3,
       "name": "Kids"
@@ -5773,7 +5746,7 @@
       "address": null,
       "lng": -86.63761,
       "lat": 36.17918,
-      "visited": false,
+      "star": false,
       "likes": 1,
       "locationTypeId": 2,
       "name": "Beauty"
@@ -5786,7 +5759,7 @@
       "address": "6755 Jenifer Place",
       "lng": -86.60747,
       "lat": 36.03712,
-      "visited": false,
+      "star": false,
       "likes": 1,
       "locationTypeId": 1,
       "name": "Outdoors"
@@ -5799,7 +5772,7 @@
       "address": "45258 Gerald Center",
       "lng": -86.71149,
       "lat": 36.18884,
-      "visited": false,
+      "star": false,
       "likes": 3,
       "locationTypeId": 2,
       "name": "Beauty"
@@ -5812,7 +5785,7 @@
       "address": "5 Springview Park",
       "lng": -86.61633,
       "lat": 36.18115,
-      "visited": false,
+      "star": false,
       "likes": 18,
       "locationTypeId": 1,
       "name": "Tools"
@@ -5825,7 +5798,7 @@
       "address": "042 Northwestern Court",
       "lng": -86.80763,
       "lat": 36.07926,
-      "visited": false,
+      "star": false,
       "likes": 15,
       "locationTypeId": 2,
       "name": "Home"
@@ -5838,7 +5811,7 @@
       "address": null,
       "lng": -86.7629,
       "lat": 36.22825,
-      "visited": true,
+      "star": true,
       "likes": 15,
       "locationTypeId": 2,
       "name": "Industrial"
@@ -5851,7 +5824,7 @@
       "address": "58 Petterle Park",
       "lng": -86.61294,
       "lat": 36.175,
-      "visited": false,
+      "star": false,
       "likes": 25,
       "locationTypeId": 2,
       "name": "Electronics"
@@ -5864,7 +5837,7 @@
       "address": null,
       "lng": -86.71621,
       "lat": 36.14246,
-      "visited": true,
+      "star": true,
       "likes": 16,
       "locationTypeId": 1,
       "name": "Tools"
@@ -5876,11 +5849,11 @@
       "lng": -81.806832,
       "address": " 111 Front St, Key West, Florida 33040, United States of America",
       "price": 0,
-      "likes": null,
+      "likes": 0,
       "locationTypeId": 1,
       "name": "Harry Truman's Little White House",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 501
     },
     {
@@ -5890,11 +5863,11 @@
       "lng": -81.80397,
       "address": " 219 Ann St, Key West, Florida 33040, United States of America",
       "price": 100,
-      "likes": null,
+      "likes": 0,
       "locationTypeId": 4,
       "name": "Ann Street Cottage",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 502
     },
     {
@@ -5903,12 +5876,12 @@
       "lat": 24.558932,
       "lng": -81.798413,
       "address": " 829 Fleming St, Key West, Florida 33040, United States of America",
-      "price": 4.5,
-      "likes": null,
+      "price": 20,
+      "likes": 0,
       "locationTypeId": 3,
       "name": "Date & Thyme Organic Cafe",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 503
     },
     {
@@ -5918,11 +5891,11 @@
       "lng": -81.765054,
       "address": " 3108 Flagler Ave, Key West, Florida 33040, United States of America",
       "price": 50,
-      "likes": null,
+      "likes": 0,
       "locationTypeId": 3,
       "name": "Atlantic Grocery",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 504
     },
     {
@@ -5932,11 +5905,11 @@
       "lng": -86.683734,
       "address": " Richards Rd, Antioch, Tennessee 37013, United States of America",
       "price": null,
-      "likes": null,
+      "likes": 0,
       "locationTypeId": 1,
       "name": "Tacos De Pescado y Camaron",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 506
     },
     {
@@ -5945,8 +5918,8 @@
       "lat": 24.546925,
       "lng": -81.795697,
       "address": " Duval St, Key West, Florida 33040, United States of America",
-      "price": 0,
-      "likes": null,
+      "price": 2,
+      "likes": 0,
       "locationTypeId": 2,
       "name": "South Beach",
       "url": "",
@@ -5960,7 +5933,7 @@
       "lng": -86.66002745402649,
       "address": "8092 Guthrie Road, Cross Plains, Tennessee 37049, United States",
       "price": null,
-      "likes": null,
+      "likes": 0,
       "locationTypeId": 1,
       "name": "FARM",
       "url": "",
@@ -5974,7 +5947,7 @@
       "lng": -73.97745,
       "address": " Grand Central Terminal, New York City, New York 10017, United States of America",
       "price": 70,
-      "likes": null,
+      "likes": 0,
       "locationTypeId": 4,
       "name": "Grand Central Terminal Clock",
       "url": "",
@@ -5988,12 +5961,40 @@
       "lng": -73.959853,
       "address": "North Meadow, Central Park, New York, New York 10025, United States",
       "price": 0,
-      "likes": null,
+      "likes": 0,
       "locationTypeId": 2,
       "name": "Central Park",
       "url": "",
       "star": false,
       "id": 512
+    },
+    {
+      "tripId": 1,
+      "summary": "",
+      "lat": 36.1379811646181,
+      "lng": -86.862309488074,
+      "address": "5701 Knob Road, Nashville, Tennessee 37209, United States",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Knob Road",
+      "url": "",
+      "star": false,
+      "id": 513
+    },
+    {
+      "tripId": 1,
+      "summary": "",
+      "lat": 36.135025,
+      "lng": -86.804293,
+      "address": "Villager West, 2134 Fairfax Ave, Nashville, Tennessee 37212, United States",
+      "price": 4,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Vandy",
+      "url": "",
+      "star": true,
+      "id": 514
     }
   ]
 }

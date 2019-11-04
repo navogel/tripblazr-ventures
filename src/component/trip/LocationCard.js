@@ -10,6 +10,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Select from '@material-ui/core/Select';
 //import CardMedia from '@material-ui/core/CardMedia';
 import './tripCard.css';
+import StarIcon from '@material-ui/icons/Star';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 //table
 
@@ -17,6 +19,25 @@ class LocationCard extends Component {
 	handleDelete = id => {
 		TripManager.deleteLocation(id).then(() => this.props.getData());
 	};
+
+	addStar = (e, locationId) => {
+		e.stopPropagation();
+		let location = {
+			id: locationId,
+			star: true
+		};
+		TripManager.updateLocation(location).then(() => this.props.getData());
+	};
+
+	removeStar = (e, locationId) => {
+		e.stopPropagation();
+		let location = {
+			id: locationId,
+			star: false
+		};
+		TripManager.updateLocation(location).then(() => this.props.getData());
+	};
+
 	render() {
 		let hoverCard;
 		if (this.props.hovered === this.props.location.id) {
@@ -24,19 +45,32 @@ class LocationCard extends Component {
 		} else {
 			hoverCard = 'tripCard' + this.props.location.locationTypeId;
 		}
+
 		//console.log('hovered props', this.props.hovered);
 		return (
 			<>
 				<Card className={hoverCard} elevation={4}>
 					<div className={'scroll' + this.props.location.id}></div>
 					<CardActionArea
-						onClick={() => this.props.focusMarker(this.props.location)}
+						onClick={() => this.props.clickedCardItem(this.props.location)}
 						className='cardActionArea'
 					>
 						<p className='cardLabel'>
 							{this.props.location.locationType.locationType}
-						</p>
 
+							{this.props.location.star ? (
+								<StarIcon
+									className='starred'
+									color='secondary'
+									onClick={e => this.removeStar(e, this.props.location.id)}
+								/>
+							) : (
+								<StarBorderIcon
+									className='starred'
+									onClick={e => this.addStar(e, this.props.location.id)}
+								/>
+							)}
+						</p>
 						{/* <Link to={`/mytrips/${this.props.location.id}`}> */}
 						{/* <CardMedia
 								className='tripCardMedia'

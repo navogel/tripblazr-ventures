@@ -24,19 +24,28 @@ import Brightness2Icon from '@material-ui/icons/Brightness2';
 import DirectionsWalkIcon from '@material-ui/icons/DirectionsWalk';
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import HeightIcon from '@material-ui/icons/Height';
+import StarIcon from '@material-ui/icons/Star';
 
 class Trip extends Component {
 	state = {
 		locations: [],
 		tripDetails: {},
+
 		// list item is clicked, map zooms and moves to that point. prevent fitBounds
 		clickedCoords: [],
+
 		//reverse geocoding listener when map is clicked map moves to that point, prevent fitBounds
 		droppedPin: false,
+
 		//marker ID is hovered -> list view scrolls and highlights
 		hovered: '',
+
 		//object set for adding or editing
 		geoMarker: {},
+
+		//filter by starred
+		filterByStar: false,
+
 		//modals/drawer/snacks
 		open: false,
 		openEdit: false,
@@ -100,6 +109,15 @@ class Trip extends Component {
 		});
 	};
 
+	//filter by starred
+	filterByStar = () => {
+		if (this.state.filterByStar === false) {
+			this.setState({ filterByStar: true });
+		} else {
+			this.setState({ filterByStar: false });
+		}
+	};
+
 	//clear clicked coordinates
 
 	clearCoords = () => {
@@ -120,6 +138,10 @@ class Trip extends Component {
 		}
 		let newId = '.scroll' + id;
 		let scrollEl = document.querySelector(newId);
+		if (this.state.hovered !== id) {
+			this.setState({ hovered: id });
+			//console.log('set state hovered: id');
+		}
 		//console.log(scrollEl);
 		animateScrollTo(scrollEl, {
 			elementToScroll: document.querySelector('.listWrapper'),
@@ -129,10 +151,6 @@ class Trip extends Component {
 			speed: 500,
 			cancelOnUserAction: true
 		});
-		if (this.state.hovered !== id) {
-			this.setState({ hovered: id });
-			console.log('set state hovered: id');
-		}
 	};
 
 	//deprecated (speed slowdown) function to remove class on mouseout
@@ -143,7 +161,7 @@ class Trip extends Component {
 
 	//zoom to marker when clicking on a location list item
 
-	FocusMarker = obj => {
+	clickedCardItem = obj => {
 		this.setState({
 			clickedCoords: [obj.lat, obj.lng],
 			droppedPin: false
@@ -214,7 +232,7 @@ class Trip extends Component {
 		this.state.locations.forEach(location => {
 			//console.log(parsed);
 			if (location.price === null) {
-				console.log(location.price);
+				//console.log(location.price);
 			} else {
 				tripCost += parseInt(location.price);
 			}
@@ -255,6 +273,9 @@ class Trip extends Component {
 									<CommuteIcon />
 								</IconButton>
 								{/* <button onClick={e => this.filterType(4)}>Transpo</button> */}
+								<IconButton onClick={e => this.filterByStar()}>
+									<StarIcon />
+								</IconButton>
 								<IconButton onClick={e => this.getData()}>
 									<RotateLeftIcon />
 								</IconButton>
@@ -270,7 +291,7 @@ class Trip extends Component {
 									key={location.id}
 									location={location}
 									getData={this.getData}
-									focusMarker={this.FocusMarker}
+									clickedCardItem={this.clickedCardItem}
 									hovered={this.state.hovered}
 									toggleDrawer={this.toggleDrawer}
 									//{...this.props}

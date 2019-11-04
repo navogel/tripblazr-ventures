@@ -95,7 +95,7 @@ class TripList extends Component {
 	};
 
 	//allows user to click a trip and zoom to its location on the map
-	FocusMarker = obj => {
+	clickedCardItem = obj => {
 		console.log('obj', obj.lat);
 		this.setState({
 			clickedCoords: [obj.lat, obj.lng]
@@ -156,7 +156,7 @@ class TripList extends Component {
 									// ref={[trip.id]}
 									trip={trip}
 									getTrips={this.getTrips}
-									focusMarker={this.FocusMarker}
+									clickedCardItem={this.clickedCardItem}
 									hovered={this.state.hovered}
 									// {...this.props}
 								/>

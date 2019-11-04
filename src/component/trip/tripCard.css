@@ -170,3 +170,9 @@ a {
 	margin-top: 0em;
 	margin-bottom: 0em;
 }
+
+.starred {
+	right: -24px;
+	position: relative;
+	top: -5px;
+}

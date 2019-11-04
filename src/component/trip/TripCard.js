@@ -58,7 +58,7 @@ class TripCard extends Component {
 						<Button
 							size='small'
 							color='primary'
-							onClick={() => this.props.focusMarker(this.props.trip)}
+							onClick={() => this.props.clickedCardItem(this.props.trip)}
 						>
 							Zoom to Trip
 						</Button>
