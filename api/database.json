@@ -46,7 +46,7 @@
   "trips": [
     {
       "id": 1,
-      "name": "Fun in Asia 2009 ",
+      "name": "Fun in Asia 2009 !!",
       "userId": 1,
       "summary": null,
       "communication": null,
@@ -2887,7 +2887,7 @@
       "address": null,
       "lng": -86.71568,
       "lat": 36.21096,
-      "star": true,
+      "star": false,
       "likes": 11,
       "locationTypeId": 1,
       "name": "Beauty2"
@@ -4573,11 +4573,11 @@
       "id": 407,
       "tripId": 1,
       "summary": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
-      "price": 94.97,
+      "price": 130,
       "address": "99055 Lawn Avenue",
       "lng": -86.79995,
       "lat": 36.16576,
-      "star": false,
+      "star": true,
       "likes": 18,
       "locationTypeId": 1,
       "name": "Garden2"
@@ -4590,7 +4590,7 @@
       "address": "3089 Riverside Hill",
       "lng": -86.83605,
       "lat": 36.20398,
-      "star": true,
+      "star": false,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Shoes2"
@@ -5668,6 +5668,34 @@
       "url": "",
       "star": false,
       "id": 513
+    },
+    {
+      "tripId": 12,
+      "summary": "",
+      "lat": 13.686703999999999,
+      "lng": 100.74870899999999,
+      "address": " 999 Moo 1 Debaratana Rd, Bang Phli, Samut Prakan 10540, Thailand",
+      "price": 600,
+      "likes": 0,
+      "locationTypeId": 4,
+      "name": "Suvarnabhumi Airport",
+      "url": "",
+      "star": false,
+      "id": 514
+    },
+    {
+      "tripId": 12,
+      "summary": "Def want to stay nearby",
+      "lat": 13.759619,
+      "lng": 100.497695,
+      "address": " Bangkok, Bangkok Metropolitan Region 10200, Thailand",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Khaosan Road Nightlife",
+      "url": "",
+      "star": false,
+      "id": 515
     }
   ]
 }

@@ -120,6 +120,9 @@ a {
 	margin-top: 0.3em;
 	margin-bottom: 0.3em;
 	border-radius: 3px;
+	margin-left: 0em;
+	/* padding-left: 0em; */
+	/* padding-right: 0em; */
 }
 
 .MuiCardActions-root .MuiButtonBase-root:hover {
