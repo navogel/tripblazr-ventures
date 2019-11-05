@@ -1754,19 +1754,6 @@
       "name": "Baby"
     },
     {
-      "id": 145,
-      "tripId": 2,
-      "summary": null,
-      "price": "66.24",
-      "address": "59858 Summit Crossing",
-      "lng": -86.60678,
-      "lat": 36.07709,
-      "star": true,
-      "likes": 13,
-      "locationTypeId": 2,
-      "name": "Garden"
-    },
-    {
       "id": 146,
       "tripId": 3,
       "summary": null,
@@ -1884,19 +1871,6 @@
       "name": "Clothing"
     },
     {
-      "id": 156,
-      "tripId": 2,
-      "summary": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
-      "price": "72.51",
-      "address": "0765 Northwestern Pass",
-      "lng": -86.88478,
-      "lat": 36.07662,
-      "star": true,
-      "likes": 9,
-      "locationTypeId": 2,
-      "name": "Books"
-    },
-    {
       "id": 157,
       "tripId": 2,
       "summary": null,
@@ -1995,7 +1969,7 @@
       "address": "9 Green Junction",
       "lng": -86.62691,
       "lat": 36.18508,
-      "star": false,
+      "star": true,
       "likes": 13,
       "locationTypeId": 3,
       "name": "Books434"
@@ -2008,7 +1982,7 @@
       "address": null,
       "lng": -86.63736,
       "lat": 36.05821,
-      "star": false,
+      "star": true,
       "likes": 20,
       "locationTypeId": 3,
       "name": "Health"
@@ -2064,19 +2038,6 @@
       "likes": 1,
       "locationTypeId": 1,
       "name": "Movies"
-    },
-    {
-      "id": 172,
-      "tripId": 2,
-      "summary": null,
-      "price": "8.16",
-      "address": "79 Little Fleur Circle",
-      "lng": -86.61117,
-      "lat": 36.23086,
-      "star": false,
-      "likes": 8,
-      "locationTypeId": 2,
-      "name": "Books"
     },
     {
       "id": 173,
@@ -2714,7 +2675,7 @@
       "id": 232,
       "tripId": 2,
       "summary": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
-      "price": null,
+      "price": 230,
       "address": null,
       "lng": -86.76895,
       "lat": 36.17,
@@ -3086,19 +3047,6 @@
       "likes": 20,
       "locationTypeId": 1,
       "name": "Books"
-    },
-    {
-      "id": 270,
-      "tripId": 2,
-      "summary": null,
-      "price": 94.64,
-      "address": "2138 Shoshone Terrace",
-      "lng": -86.859,
-      "lat": 36.14289,
-      "star": true,
-      "likes": 17,
-      "locationTypeId": 2,
-      "name": "Games23"
     },
     {
       "id": 271,
@@ -4713,19 +4661,6 @@
       "name": "Sports"
     },
     {
-      "id": 416,
-      "tripId": 2,
-      "summary": null,
-      "price": 82.74,
-      "address": "14289 Canary Way",
-      "lng": -86.8518,
-      "lat": 36.12277,
-      "star": true,
-      "likes": 25,
-      "locationTypeId": 2,
-      "name": "Toys2"
-    },
-    {
       "id": 417,
       "tripId": 3,
       "summary": null,
@@ -5149,7 +5084,7 @@
       "address": null,
       "lng": -86.88179,
       "lat": 36.06505,
-      "star": true,
+      "star": false,
       "likes": 12,
       "locationTypeId": 3,
       "name": "Health cool"
@@ -5192,19 +5127,6 @@
       "likes": 3,
       "locationTypeId": 2,
       "name": "Garden"
-    },
-    {
-      "id": 461,
-      "tripId": 2,
-      "summary": null,
-      "price": null,
-      "address": null,
-      "lng": -86.71878,
-      "lat": 36.0916,
-      "star": true,
-      "likes": 20,
-      "locationTypeId": 2,
-      "name": "Industrial"
     },
     {
       "id": 462,
@@ -5545,19 +5467,6 @@
       "name": "Kids"
     },
     {
-      "id": 490,
-      "tripId": 2,
-      "summary": null,
-      "price": null,
-      "address": null,
-      "lng": -86.63761,
-      "lat": 36.17918,
-      "star": false,
-      "likes": 1,
-      "locationTypeId": 2,
-      "name": "Beauty"
-    },
-    {
       "id": 492,
       "tripId": 10,
       "summary": null,
@@ -5591,7 +5500,7 @@
       "address": "5 Springview Park",
       "lng": -86.61633,
       "lat": 36.18115,
-      "star": true,
+      "star": false,
       "likes": 18,
       "locationTypeId": 1,
       "name": "Tools"

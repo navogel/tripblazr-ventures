@@ -15,6 +15,7 @@ import ErrorIcon from '@material-ui/icons/Error';
 import LocationForm from '../trip/LocationForm';
 import AddIcon from '@material-ui/icons/Add';
 import TripDrawer from './TripDrawer';
+import TripDrawer2 from './TripDrawer';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
 import HotelIcon from '@material-ui/icons/Hotel';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
@@ -260,16 +261,16 @@ class Trip extends Component {
 		});
 	};
 
-	//Get data and remove all maping states -> clean tripview of all locations
+	// //Get data and remove all maping states -> clean tripview of all locations
 
-	mapRefresh = () => {
-		this.getData();
-		this.setState({
-			geoMarker: {},
-			clickedCoords: [],
-			hovered: ''
-		});
-	};
+	// mapRefresh = () => {
+	// 	this.getData();
+	// 	this.setState({
+	// 		geoMarker: {},
+	// 		clickedCoords: [],
+	// 		hovered: ''
+	// 	});
+	// };
 
 	componentDidMount() {
 		// console.log('props from tripcard', this.props);
@@ -286,6 +287,8 @@ class Trip extends Component {
 		});
 		this.handleClickOpen();
 	};
+
+	//toggle the hidden tripname view
 
 	toggleMenu = () => {
 		if (this.state.menuOpen === true) {
@@ -312,6 +315,7 @@ class Trip extends Component {
 			<>
 				<div className='tripWrapper'>
 					<TripDrawer ref='drawer' getData={this.getDataLite} />
+					<TripDrawer2 ref='drawer2' getData={this.getDataLite} />
 					<div className='leftColumn'>
 						<div className='listHeader'>
 							{this.state.menuOpen && (
