@@ -353,7 +353,7 @@
       "address": "93905 Melvin Avenue",
       "lng": -86.64728,
       "lat": 36.18527,
-      "star": false,
+      "star": true,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Beauty"
@@ -2679,7 +2679,7 @@
       "address": null,
       "lng": -86.79157,
       "lat": 36.05325,
-      "star": true,
+      "star": false,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Kids"
@@ -2757,7 +2757,7 @@
       "address": "00317 Kedzie Pass",
       "lng": -86.79797,
       "lat": 36.02979,
-      "star": false,
+      "star": true,
       "likes": 15,
       "locationTypeId": 3,
       "name": "Movies"
@@ -2978,7 +2978,7 @@
       "address": null,
       "lng": -86.71568,
       "lat": 36.21096,
-      "star": false,
+      "star": true,
       "likes": 11,
       "locationTypeId": 1,
       "name": "Beauty"
@@ -3181,11 +3181,11 @@
       "id": 269,
       "tripId": 1,
       "summary": null,
-      "price": null,
+      "price": 500,
       "address": null,
       "lng": -86.69309,
       "lat": 36.12051,
-      "star": false,
+      "star": true,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Garden"
@@ -5785,7 +5785,7 @@
       "address": "5 Springview Park",
       "lng": -86.61633,
       "lat": 36.18115,
-      "star": false,
+      "star": true,
       "likes": 18,
       "locationTypeId": 1,
       "name": "Tools"
@@ -5853,7 +5853,7 @@
       "locationTypeId": 1,
       "name": "Harry Truman's Little White House",
       "url": "",
-      "star": true,
+      "star": false,
       "id": 501
     },
     {
@@ -5867,7 +5867,7 @@
       "locationTypeId": 4,
       "name": "Ann Street Cottage",
       "url": "",
-      "star": true,
+      "star": false,
       "id": 502
     },
     {
@@ -5881,7 +5881,7 @@
       "locationTypeId": 3,
       "name": "Date & Thyme Organic Cafe",
       "url": "",
-      "star": true,
+      "star": false,
       "id": 503
     },
     {
@@ -5895,7 +5895,7 @@
       "locationTypeId": 3,
       "name": "Atlantic Grocery",
       "url": "",
-      "star": true,
+      "star": false,
       "id": 504
     },
     {
@@ -5925,20 +5925,6 @@
       "url": "",
       "star": false,
       "id": 507
-    },
-    {
-      "tripId": 2,
-      "summary": "",
-      "lat": 36.547789144807545,
-      "lng": -86.66002745402649,
-      "address": "8092 Guthrie Road, Cross Plains, Tennessee 37049, United States",
-      "price": null,
-      "likes": 0,
-      "locationTypeId": 1,
-      "name": "FARM",
-      "url": "",
-      "star": false,
-      "id": 509
     },
     {
       "tripId": 14,

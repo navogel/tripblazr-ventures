@@ -25,6 +25,7 @@ import DirectionsWalkIcon from '@material-ui/icons/DirectionsWalk';
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import HeightIcon from '@material-ui/icons/Height';
 import StarIcon from '@material-ui/icons/Star';
+import Tooltip from '@material-ui/core/Tooltip';
 
 class Trip extends Component {
 	state = {
@@ -42,9 +43,6 @@ class Trip extends Component {
 
 		//object set for adding or editing
 		geoMarker: {},
-
-		//filter by starred
-		filterByStar: false,
 
 		//modals/drawer/snacks
 		open: false,
@@ -111,11 +109,13 @@ class Trip extends Component {
 
 	//filter by starred
 	filterByStar = () => {
-		if (this.state.filterByStar === false) {
-			this.setState({ filterByStar: true });
-		} else {
-			this.setState({ filterByStar: false });
-		}
+		let newLocations = [];
+		this.state.locations.forEach(location => {
+			if (location.star === true) {
+				newLocations.push(location);
+			}
+		});
+		this.setState({ locations: newLocations });
 	};
 
 	//clear clicked coordinates
@@ -246,42 +246,55 @@ class Trip extends Component {
 						<div className='listHeader'>
 							{this.state.menuOpen && (
 								<div className='tripHeader'>
-									<h1>{this.state.tripDetails.name}</h1>
+									<h1>
+										<Tooltip title='back to trips'>
+											<IconButton onClick={this.switchTrip}>
+												<TransitEnterexitIcon />
+											</IconButton>
+										</Tooltip>
+										{this.state.tripDetails.name}
+									</h1>
 									<h4>{this.state.tripDetails.city}</h4>
 									<h4>Estimated Trip Price: ${tripCost}</h4>
 								</div>
 							)}
 							<div className='tripButtons'>
-								{/* <Divider /> */}
-								<IconButton onClick={this.switchTrip}>
-									<TransitEnterexitIcon />
-								</IconButton>
-								{/* <button onClick={this.switchTrip}>back to trips</button> */}
-								<IconButton onClick={e => this.filterType(1)}>
-									<HotelIcon />
-								</IconButton>
-								{/* <button onClick={e => this.filterType(1)}>Hotels</button> */}
-								<IconButton onClick={e => this.filterType(2)}>
-									<DirectionsWalkIcon />
-								</IconButton>
-								{/* <button onClick={e => this.filterType(2)}>Activities</button> */}
-								<IconButton onClick={e => this.filterType(3)}>
-									<FastfoodIcon />
-								</IconButton>
-								{/* <button onClick={e => this.filterType(3)}>Food</button> */}
-								<IconButton onClick={e => this.filterType(4)}>
-									<CommuteIcon />
-								</IconButton>
-								{/* <button onClick={e => this.filterType(4)}>Transpo</button> */}
-								<IconButton onClick={e => this.filterByStar()}>
-									<StarIcon />
-								</IconButton>
-								<IconButton onClick={e => this.getData()}>
-									<RotateLeftIcon />
-								</IconButton>
-								<IconButton onClick={e => this.toggleMenu()}>
-									<HeightIcon />
-								</IconButton>
+								<Tooltip title='filter stars'>
+									<IconButton onClick={e => this.filterByStar()}>
+										<StarIcon />
+									</IconButton>
+								</Tooltip>
+								<Tooltip title='filter lodging'>
+									<IconButton onClick={e => this.filterType(1)}>
+										<HotelIcon />
+									</IconButton>
+								</Tooltip>
+								<Tooltip title='filter activities'>
+									<IconButton onClick={e => this.filterType(2)}>
+										<DirectionsWalkIcon />
+									</IconButton>
+								</Tooltip>
+								<Tooltip title='filter food'>
+									<IconButton onClick={e => this.filterType(3)}>
+										<FastfoodIcon />
+									</IconButton>
+								</Tooltip>
+								<Tooltip title='filter transportation'>
+									<IconButton onClick={e => this.filterType(4)}>
+										<CommuteIcon />
+									</IconButton>
+								</Tooltip>
+
+								<Tooltip title='reset filters'>
+									<IconButton onClick={e => this.getData()}>
+										<RotateLeftIcon />
+									</IconButton>
+								</Tooltip>
+								<Tooltip title='toggle trip view'>
+									<IconButton onClick={e => this.toggleMenu()}>
+										<HeightIcon />
+									</IconButton>
+								</Tooltip>
 								<Divider />
 							</div>
 						</div>
@@ -294,6 +307,7 @@ class Trip extends Component {
 									clickedCardItem={this.clickedCardItem}
 									hovered={this.state.hovered}
 									toggleDrawer={this.toggleDrawer}
+									filterByStar={this.filterByStar}
 									//{...this.props}
 								/>
 							))}

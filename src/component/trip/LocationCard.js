@@ -16,6 +16,12 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 //table
 
 class LocationCard extends Component {
+	state = { star: false };
+
+	componentDidMount() {
+		this.setState({ star: this.props.location.star });
+	}
+
 	handleDelete = id => {
 		TripManager.deleteLocation(id).then(() => this.props.getData());
 	};
@@ -26,7 +32,8 @@ class LocationCard extends Component {
 			id: locationId,
 			star: true
 		};
-		TripManager.updateLocation(location).then(() => this.props.getData());
+		TripManager.updateLocation(location);
+		this.setState({ star: true });
 	};
 
 	removeStar = (e, locationId) => {
@@ -35,7 +42,8 @@ class LocationCard extends Component {
 			id: locationId,
 			star: false
 		};
-		TripManager.updateLocation(location).then(() => this.props.getData());
+		TripManager.updateLocation(location);
+		this.setState({ star: false });
 	};
 
 	render() {
@@ -58,7 +66,7 @@ class LocationCard extends Component {
 						<p className='cardLabel'>
 							{this.props.location.locationType.locationType}
 
-							{this.props.location.star ? (
+							{this.state.star ? (
 								<StarIcon
 									className='starred'
 									color='secondary'
