@@ -17,29 +17,28 @@ const styles = {
 	}
 };
 
-class TripDrawer2 extends React.Component {
+class LocDrawer extends React.Component {
 	state = {
 		right: false,
 		location: {}
 	};
 
-	toggleDrawer2 = (side, open) => () => {
+	toggleLocDrawer = (side, open) => () => {
 		this.setState({
 			[side]: open
 		});
 	};
 
-	openDrawer2 = obj => {
+	openLocDrawer = obj => {
 		this.setState({
 			right: true,
 			location: obj
 		});
 	};
 
-	closeDrawer2 = () => {
+	closeLocDrawer = () => {
 		this.setState({
-			right: false,
-			location: {}
+			right: false
 		});
 	};
 
@@ -105,7 +104,7 @@ class TripDrawer2 extends React.Component {
 				<Drawer
 					anchor='right'
 					open={this.state.right}
-					onClose={this.toggleDrawer2('right', false)}
+					onClose={this.toggleLocDrawer('right', false)}
 				>
 					<div
 						tabIndex={0}
@@ -118,7 +117,8 @@ class TripDrawer2 extends React.Component {
 							<LocationDetails
 								location={this.state.location}
 								getData={this.props.getData}
-								closeDrawer={this.closeDrawer2}
+								closeLocDrawer={this.closeLocDrawer}
+								toggleDrawer={this.props.toggleDrawer}
 							/>
 						</div>
 					</div>
@@ -129,8 +129,8 @@ class TripDrawer2 extends React.Component {
 	}
 }
 
-TripDrawer2.propTypes = {
+LocDrawer.propTypes = {
 	classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(TripDrawer2);
+export default withStyles(styles)(LocDrawer);

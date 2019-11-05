@@ -60,7 +60,7 @@ class LocationCard extends Component {
 				<Card className={hoverCard} elevation={4}>
 					<div className={'scroll' + this.props.location.id}></div>
 					<CardActionArea
-						onClick={() => this.props.toggleDrawer2(this.props.location)}
+						onClick={() => this.props.toggleLocDrawer(this.props.location)}
 						className='cardActionArea'
 					>
 						<p className='cardLabel'>

@@ -437,7 +437,7 @@ export default class Mapper extends Component {
 									onMouseMove={e => this.markerFocus(e, location)}
 									// onMouseOut={e => this.props.hoverRemoveFocus()}
 									icon={this.configMyIcon(location.locationTypeId)}
-									onClick={e => this.props.toggleDrawer2(location)}
+									onClick={e => this.props.toggleLocDrawer(location)}
 								>
 									<Tooltip>{location.name}</Tooltip>
 									{/* <Popup

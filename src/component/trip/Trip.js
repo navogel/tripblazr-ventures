@@ -15,7 +15,7 @@ import ErrorIcon from '@material-ui/icons/Error';
 import LocationForm from '../trip/LocationForm';
 import AddIcon from '@material-ui/icons/Add';
 import TripDrawer from './TripDrawer';
-import TripDrawer2 from './LocationDetailsDrawer';
+import LocDrawer from './LocationDetailsDrawer';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
 import HotelIcon from '@material-ui/icons/Hotel';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
@@ -85,10 +85,10 @@ class Trip extends Component {
 
 	//drawer for viewing
 
-	toggleDrawer2 = obj => {
+	toggleLocDrawer = obj => {
 		// Access the handleToggle function of the drawer reference
 		//onClick={this.toggleDrawer('right', true)
-		this.refs.drawer2.openDrawer2(obj);
+		this.refs.drawer2.openLocDrawer(obj);
 	};
 
 	//drawer for editing
@@ -325,7 +325,11 @@ class Trip extends Component {
 			<>
 				<div className='tripWrapper'>
 					<TripDrawer ref='drawer' getData={this.getDataLite} />
-					<TripDrawer2 ref='drawer2' getData={this.getDataLite} />
+					<LocDrawer
+						ref='drawer2'
+						getData={this.getDataLite}
+						toggleDrawer={this.toggleDrawer}
+					/>
 					<div className='leftColumn'>
 						<div className='listHeader'>
 							{this.state.menuOpen && (
@@ -392,7 +396,7 @@ class Trip extends Component {
 									hovered={this.state.hovered}
 									toggleDrawer={this.toggleDrawer}
 									filterByStar={this.filterByStar}
-									toggleDrawer2={this.toggleDrawer2}
+									toggleLocDrawer={this.toggleLocDrawer}
 									//{...this.props}
 								/>
 							))}
@@ -413,7 +417,7 @@ class Trip extends Component {
 								hovered={this.state.hovered}
 								hoverRemoveFocus={this.hoverRemoveFocus}
 								addGeoSearchMarker={this.addGeoSearchMarker}
-								toggleDrawer2={this.toggleDrawer2}
+								toggleLocDrawer={this.toggleLocDrawer}
 							/>
 							{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 						</div>
