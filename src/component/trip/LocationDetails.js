@@ -1,135 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
-import LocationEditForm from './LocationEditForm';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import React, { Component } from 'react';
 
-const styles = {
-	list: {
-		width: 500
-	},
-	fullList: {
-		width: 'auto'
-	}
-};
-
-class TripDrawer2 extends React.Component {
-	state = {
-		right: false,
-		location: {}
-	};
-
-	toggleDrawer = (side, open) => () => {
-		this.setState({
-			[side]: open
-		});
-	};
-
-	openDrawer = obj => {
-		this.setState({
-			right: true,
-			location: obj
-		});
-	};
-
-	closeDrawer = () => {
-		this.setState({
-			right: false,
-			location: {}
-		});
-	};
-
+class LocationDetail extends Component {
 	render() {
-		const { classes } = this.props;
-
-		// const sideList = (
-		// 	<div className={classes.list}>
-		// 		<List>
-		// 			{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-		// 				<ListItem button key={text}>
-		// 					<ListItemIcon>
-		// 						{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-		// 					</ListItemIcon>
-		// 					<ListItemText primary={text} />
-		// 				</ListItem>
-		// 			))}
-		// 		</List>
-		// 		<Divider />
-		// 		<List>
-		// 			{['All mail', 'Trash', 'Spam'].map((text, index) => (
-		// 				<ListItem button key={text}>
-		// 					<ListItemIcon>
-		// 						{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-		// 					</ListItemIcon>
-		// 					<ListItemText primary={text} />
-		// 				</ListItem>
-		// 			))}
-		// 		</List>
-		// 	</div>
-		// );
-
-		// const fullList = (
-		// 	<div className={classes.fullList}>
-		// 		<List>
-		// 			{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-		// 				<ListItem button key={text}>
-		// 					<ListItemIcon>
-		// 						{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-		// 					</ListItemIcon>
-		// 					<ListItemText primary={text} />
-		// 				</ListItem>
-		// 			))}
-		// 		</List>
-		// 		<Divider />
-		// 		<List>
-		// 			{['All mail', 'Trash', 'Spam'].map((text, index) => (
-		// 				<ListItem button key={text}>
-		// 					<ListItemIcon>
-		// 						{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-		// 					</ListItemIcon>
-		// 					<ListItemText primary={text} />
-		// 				</ListItem>
-		// 			))}
-		// 		</List>
-		// 	</div>
-		// );
-
 		return (
 			<>
-				{/* <Button onClick={this.toggleDrawer('right', true)}>Open Right</Button> */}
-				{/* <ClickAwayListener onClickAway={this.closeDrawer}> */}
-				<Drawer
-					anchor='right'
-					open={this.state.right}
-					onClose={this.toggleDrawer('right', false)}
-				>
-					<div
-						tabIndex={0}
-						role='button'
-						// onClick={this.toggleDrawer('right', false)}
-						//onKeyDown={this.toggleDrawer('right', false)}
-					>
-						{/* {sideList} */}
-						<div className='drawerWrapper'>
-							<LocationEditForm
-								location={this.state.location}
-								getData={this.props.getData}
-								closeDrawer={this.closeDrawer}
-							/>
-						</div>
-					</div>
-				</Drawer>
-				{/* </ClickAwayListener> */}
+				<p>some stuffs here</p>
 			</>
 		);
 	}
 }
 
-TripDrawer.propTypes = {
-	classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(TripDrawer2);
+export default LocationDetail;

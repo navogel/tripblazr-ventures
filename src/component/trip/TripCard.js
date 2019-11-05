@@ -124,7 +124,7 @@ class TripCard extends Component {
 							color='primary'
 							onClick={() => this.props.clickedCardItem(this.props.trip)}
 						>
-							Fly to Trip
+							Fly to
 						</Button>
 						{/* <EditAnimalModal id={this.props.animal.id} {...this.props} /> */}
 						{/* <Link to={`/animals/${this.props.animal.id}`}>

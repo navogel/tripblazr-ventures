@@ -2461,7 +2461,7 @@
       "star": true,
       "likes": 7,
       "locationTypeId": 3,
-      "name": "Tools2"
+      "name": "Tools"
     },
     {
       "id": 213,
@@ -2992,7 +2992,7 @@
       "price": 40,
       "likes": 0,
       "locationTypeId": 3,
-      "name": "Tools",
+      "name": "Tools What",
       "id": 262,
       "star": false
     },
@@ -4534,14 +4534,14 @@
       "id": 404,
       "tripId": 1,
       "summary": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
-      "price": "28.70",
+      "price": 28.7,
       "address": "043 Drewry Alley",
       "lng": -86.79228,
       "lat": 36.10001,
       "star": true,
       "likes": 25,
       "locationTypeId": 3,
-      "name": "Health"
+      "name": "Health2"
     },
     {
       "id": 405,

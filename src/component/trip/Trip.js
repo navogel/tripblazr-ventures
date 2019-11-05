@@ -15,7 +15,7 @@ import ErrorIcon from '@material-ui/icons/Error';
 import LocationForm from '../trip/LocationForm';
 import AddIcon from '@material-ui/icons/Add';
 import TripDrawer from './TripDrawer';
-import TripDrawer2 from './TripDrawer';
+import TripDrawer2 from './LocationDetailsDrawer';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
 import HotelIcon from '@material-ui/icons/Hotel';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
@@ -83,7 +83,15 @@ class Trip extends Component {
 		this.setState({ open: false });
 	};
 
-	//drawer for viewing and editing
+	//drawer for viewing
+
+	toggleDrawer2 = obj => {
+		// Access the handleToggle function of the drawer reference
+		//onClick={this.toggleDrawer('right', true)
+		this.refs.drawer2.openDrawer2(obj);
+	};
+
+	//drawer for editing
 
 	toggleDrawer = obj => {
 		// Access the handleToggle function of the drawer reference
@@ -382,6 +390,7 @@ class Trip extends Component {
 									hovered={this.state.hovered}
 									toggleDrawer={this.toggleDrawer}
 									filterByStar={this.filterByStar}
+									toggleDrawer2={this.toggleDrawer2}
 									//{...this.props}
 								/>
 							))}
@@ -402,6 +411,7 @@ class Trip extends Component {
 								hovered={this.state.hovered}
 								hoverRemoveFocus={this.hoverRemoveFocus}
 								addGeoSearchMarker={this.addGeoSearchMarker}
+								toggleDrawer2={this.toggleDrawer2}
 							/>
 							{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 						</div>
