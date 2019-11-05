@@ -378,6 +378,7 @@ class Trip extends Component {
 										<RotateLeftIcon />
 									</IconButton>
 								</Tooltip>
+
 								<Tooltip title='toggle trip view'>
 									<IconButton onClick={e => this.toggleMenu()}>
 										<HeightIcon />

@@ -171,6 +171,7 @@ body {
 
 .drawerWrapper {
 	width: 600px;
+	height: 100vh;
 }
 
 .MuiDrawer-paperAnchorRight {
@@ -213,4 +214,66 @@ body {
 }
 .tripHeader {
 	padding: 1em;
+}
+
+/* location Details drawer */
+
+/* .locDetailsWrapper {
+	height: 100%;
+	overflow: scroll;
+} */
+
+/* .locDrawerWrapper {
+	widows: 600px;
+} */
+
+.locCard {
+	padding: 1em 3em;
+	margin: 3em;
+	border: rgb(206, 204, 204) solid 1px;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	padding-top: 2.5em;
+}
+
+.locCard > h3 {
+	margin: 0.5em 0em;
+}
+
+.urlLink {
+	height: 2.5em;
+	overflow: auto;
+	white-space: nowrap;
+	overflow-y: hidden;
+}
+
+.locCard > .MuiButton-root {
+	display: flex;
+	align-self: flex-end;
+}
+
+.locVideo {
+	padding: 1em 3em;
+	margin: 3em;
+	border: rgb(206, 204, 204) solid 1px;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+}
+
+.video-responsive {
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+	height: 0;
+	margin-top: 1em;
+	border-radius: 5px;
+}
+.video-responsive iframe {
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
 }

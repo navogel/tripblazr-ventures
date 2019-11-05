@@ -1,4 +1,13 @@
 {
+
+  "locationNotes":[
+    {
+      "id": 1,
+      "locationId": 503,
+      "note": "",
+      "date": 
+    }
+  ]
   "locationTypes": [
     {
       "id": 1,
@@ -2884,13 +2893,14 @@
       "tripId": 1,
       "summary": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
       "price": 23,
-      "address": null,
+      "address": "234 Some place Dr.",
       "lng": -86.71568,
       "lat": 36.21096,
       "star": false,
       "likes": 11,
       "locationTypeId": 1,
-      "name": "Beauty2"
+      "name": "Beauty2",
+      "url": "https://www.booking.com/hotel/th/studio-sukhumvit-18-by-icheck-inn.html?label=gen173nr-1FCAEoggI46AdIM1gEaK8CiAEBmAExuAEXyAEM2AEB6AEB-AECiAIBqAIDuAL4qIfuBcACAQ;sid=ed540c4e033f9fde8b9e2ea641926210;all_sr_blocks=100537101_183636423_0_0_0;checkin=2019-11-13;checkout=2019-11-15;dest_id=-3414440;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=1;highlighted_blocks=100537101_183636423_0_0_0;hpos=1;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;srepoch=1572983945;srpvid=a0948c84e1ec0121;type=total;ucfs=1&#hotelTmpl"
     },
     {
       "id": 252,
@@ -4564,10 +4574,11 @@
       "address": "99055 Lawn Avenue",
       "lng": -86.79995,
       "lat": 36.16576,
-      "star": true,
+      "star": false,
       "likes": 18,
       "locationTypeId": 1,
-      "name": "Garden2"
+      "name": "Garden2",
+      "url": "https://www.google.com/"
     },
     {
       "id": 408,
@@ -4577,7 +4588,7 @@
       "address": "3089 Riverside Hill",
       "lng": -86.83605,
       "lat": 36.20398,
-      "star": false,
+      "star": true,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Shoes2"
@@ -5654,7 +5665,7 @@
       "locationTypeId": 2,
       "name": "Knob Road",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 513
     },
     {
