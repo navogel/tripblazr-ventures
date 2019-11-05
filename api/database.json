@@ -2890,7 +2890,7 @@
       "star": true,
       "likes": 11,
       "locationTypeId": 1,
-      "name": "Beauty"
+      "name": "Beauty2"
     },
     {
       "id": 252,
@@ -2992,7 +2992,7 @@
       "price": 40,
       "likes": 0,
       "locationTypeId": 3,
-      "name": "Tools What",
+      "name": "Tools What2",
       "id": 262,
       "star": false
     },
@@ -3559,14 +3559,14 @@
       "id": 316,
       "tripId": 1,
       "summary": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
-      "price": "8.17",
+      "price": 8.17,
       "address": "90069 Killdeer Plaza",
       "lng": -86.75228,
       "lat": 36.21486,
       "star": true,
       "likes": 19,
       "locationTypeId": 2,
-      "name": "Books"
+      "name": "Books2"
     },
     {
       "id": 317,
@@ -4541,7 +4541,7 @@
       "star": true,
       "likes": 25,
       "locationTypeId": 3,
-      "name": "Health2"
+      "name": "Health"
     },
     {
       "id": 405,
@@ -4586,14 +4586,14 @@
       "id": 408,
       "tripId": 1,
       "summary": null,
-      "price": "82.66",
+      "price": 82.66,
       "address": "3089 Riverside Hill",
       "lng": -86.83605,
       "lat": 36.20398,
       "star": true,
       "likes": 12,
       "locationTypeId": 1,
-      "name": "Shoes"
+      "name": "Shoes2"
     },
     {
       "id": 409,
@@ -4755,14 +4755,14 @@
       "id": 427,
       "tripId": 1,
       "summary": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
-      "price": "51.32",
+      "price": 51.32,
       "address": "35 Lillian Parkway",
       "lng": -86.80672,
       "lat": 36.05333,
       "star": true,
       "likes": 20,
       "locationTypeId": 2,
-      "name": "Tools"
+      "name": "Tools2"
     },
     {
       "id": 428,
@@ -5145,7 +5145,7 @@
       "id": 463,
       "tripId": 1,
       "summary": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
-      "price": "16.30",
+      "price": 16.3,
       "address": "7875 Mallory Street",
       "lng": -86.58495,
       "lat": 36.09,
@@ -5666,7 +5666,7 @@
       "locationTypeId": 2,
       "name": "Knob Road",
       "url": "",
-      "star": true,
+      "star": false,
       "id": 513
     }
   ]

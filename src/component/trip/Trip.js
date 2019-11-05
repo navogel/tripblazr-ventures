@@ -138,8 +138,10 @@ class Trip extends Component {
 			this.setState({
 				locations: locations,
 				clickedCoords: [],
+				droppedPin: false,
 				lastFilter: 'star'
 			});
+			this.refs.mapper.resetScroll();
 		});
 	};
 
