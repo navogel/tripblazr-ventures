@@ -59,7 +59,7 @@
     },
     {
       "id": 2,
-      "name": "Fun Times",
+      "name": "Fun Times at NSS",
       "userId": 1,
       "summary": null,
       "communication": null,
@@ -275,7 +275,7 @@
       "address": "3495 Burrows Point",
       "lng": -86.74933,
       "lat": 36.15167,
-      "star": true,
+      "star": false,
       "likes": 20,
       "locationTypeId": 3,
       "name": "Shoes"
@@ -642,7 +642,7 @@
       "star": false,
       "likes": 0,
       "locationTypeId": 2,
-      "name": "Movies2222"
+      "name": "Movies"
     },
     {
       "id": 38,
@@ -1363,7 +1363,7 @@
       "id": 108,
       "tripId": 5,
       "summary": null,
-      "price": "67.86",
+      "price": 0,
       "address": "5 Pennsylvania Junction",
       "lng": -86.71013,
       "lat": 36.08381,
@@ -1448,7 +1448,7 @@
       "star": true,
       "likes": 25,
       "locationTypeId": 2,
-      "name": "Games"
+      "name": "Gameswwww"
     },
     {
       "id": 117,
@@ -1666,7 +1666,7 @@
       "id": 138,
       "tripId": 5,
       "summary": null,
-      "price": "42.19",
+      "price": null,
       "address": "7 Lakewood Park",
       "lng": -86.77961,
       "lat": 36.14971,
@@ -2601,7 +2601,7 @@
       "address": "45222 Oriole Crossing",
       "lng": -86.6394,
       "lat": 36.19029,
-      "star": true,
+      "star": false,
       "likes": 18,
       "locationTypeId": 3,
       "name": "Clothing"
@@ -2705,7 +2705,7 @@
       "address": "0017 Goodland Avenue",
       "lng": -86.8624,
       "lat": 36.16117,
-      "star": true,
+      "star": false,
       "likes": 15,
       "locationTypeId": 1,
       "name": "Electronics"
@@ -2731,7 +2731,7 @@
       "address": null,
       "lng": -86.75783,
       "lat": 36.20099,
-      "star": true,
+      "star": false,
       "likes": 13,
       "locationTypeId": 1,
       "name": "Grocery"
@@ -3541,19 +3541,6 @@
       "likes": 15,
       "locationTypeId": 3,
       "name": "Shoes"
-    },
-    {
-      "id": 315,
-      "tripId": 5,
-      "summary": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
-      "price": "61.27",
-      "address": "2 Loomis Point",
-      "lng": -86.89926,
-      "lat": 36.04098,
-      "star": true,
-      "likes": 3,
-      "locationTypeId": 2,
-      "name": "Garden"
     },
     {
       "id": 316,
@@ -5696,6 +5683,34 @@
       "url": "",
       "star": false,
       "id": 515
+    },
+    {
+      "tripId": 12,
+      "summary": "",
+      "lat": 13.744681,
+      "lng": 100.50208,
+      "address": "London Bride, ChinaWorld, Bangkok, Bangkok Metropolis 10200, Thailand",
+      "price": 23,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "SightSeeing",
+      "url": "",
+      "star": false,
+      "id": 516
+    },
+    {
+      "tripId": 12,
+      "summary": "Temple ",
+      "lat": 13.7439725,
+      "lng": 100.4888835,
+      "address": " Wat Arun Rajwararam, Bangkok, Bangkok Metropolitan Region 10600, Thailand",
+      "price": 3,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Wat Arun Prang",
+      "url": "",
+      "star": false,
+      "id": 517
     }
   ]
 }

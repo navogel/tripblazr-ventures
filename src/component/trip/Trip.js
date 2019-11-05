@@ -309,7 +309,7 @@ class Trip extends Component {
 	};
 
 	render() {
-		//console.log('trip geo searhc marker', this.state.geoMarker);
+		console.log('we have a trip trigger');
 		let tripCost = 0;
 
 		this.state.locations.forEach(location => {
