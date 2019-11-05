@@ -48,8 +48,9 @@ class Trip extends Component {
 		open: false,
 		openEdit: false,
 		snackOpen: false,
+		menuOpen: true,
 
-		menuOpen: true
+		lastFilter: ''
 	};
 
 	//drop a pin alert via snacktime
@@ -102,21 +103,35 @@ class Trip extends Component {
 			this.setState({
 				locations: locations,
 				clickedCoords: [],
-				droppedPin: false
+				droppedPin: false,
+				lastFilter: id
 			});
 			this.refs.mapper.resetScroll();
+			console.log(this.state.lastFilter);
 		});
 	};
 
 	//filter by starred
+	// filterByStar = () => {
+	// 	let newLocations = [];
+	// 	this.state.locations.forEach(location => {
+	// 		if (location.star === true) {
+	// 			newLocations.push(location);
+	// 		}
+	// 	});
+	// 	this.setState({ locations: newLocations });
+	// };
+
+	//or
+
 	filterByStar = () => {
-		let newLocations = [];
-		this.state.locations.forEach(location => {
-			if (location.star === true) {
-				newLocations.push(location);
-			}
+		TripManager.getStarTrip(this.props.tripId).then(locations => {
+			this.setState({
+				locations: locations,
+				clickedCoords: [],
+				lastFilter: 'star'
+			});
 		});
-		this.setState({ locations: newLocations });
 	};
 
 	//clear clicked coordinates
@@ -187,9 +202,62 @@ class Trip extends Component {
 				});
 			});
 		this.setState({
-			geoMarker: {}
+			geoMarker: {},
+			lastFilter: ''
 		});
 		this.refs.mapper.resetScroll();
+	};
+
+	// getDataLite = () => {
+	// 	TripManager.getTrip(this.props.tripId).then(locations => {
+	// 		this.setState({
+	// 			locations: locations,
+	// 			clickedCoords: []
+	// 		});
+	// 	});
+	// 	this.setState({
+	// 		geoMarker: {}
+	// 	});
+	// };
+
+	//alternative to getDataLite(reserve last search)
+
+	getDataLite = () => {
+		if (this.state.lastFilter === 'star') {
+			TripManager.getStarTrip(this.props.tripId).then(locations => {
+				this.setState({
+					locations: locations,
+					clickedCoords: []
+				});
+			});
+		} else if (
+			this.state.lastFilter === 1 ||
+			this.state.lastFilter === 2 ||
+			this.state.lastFilter === 3 ||
+			this.state.lastFilter === 4
+		) {
+			TripManager.getTripByType(this.props.tripId, this.state.lastFilter).then(
+				locations => {
+					console.log('refresh lite by type', this.state.lastFilter);
+					this.setState({
+						locations: locations,
+						clickedCoords: [],
+						droppedPin: false
+					});
+					//this.refs.mapper.resetScroll();
+				}
+			);
+		} else {
+			TripManager.getTrip(this.props.tripId).then(locations => {
+				this.setState({
+					locations: locations,
+					clickedCoords: []
+				});
+			});
+		}
+		this.setState({
+			geoMarker: {}
+		});
 	};
 
 	//Get data and remove all maping states -> clean tripview of all locations
@@ -243,7 +311,7 @@ class Trip extends Component {
 		return (
 			<>
 				<div className='tripWrapper'>
-					<TripDrawer ref='drawer' getData={this.getData} />
+					<TripDrawer ref='drawer' getData={this.getDataLite} />
 					<div className='leftColumn'>
 						<div className='listHeader'>
 							{this.state.menuOpen && (
@@ -305,7 +373,7 @@ class Trip extends Component {
 								<LocationCard
 									key={location.id}
 									location={location}
-									getData={this.getData}
+									getData={this.getDataLite}
 									clickedCardItem={this.clickedCardItem}
 									hovered={this.state.hovered}
 									toggleDrawer={this.toggleDrawer}
@@ -341,7 +409,7 @@ class Trip extends Component {
 					aria-labelledby='form-dialog-title'
 				>
 					<LocationForm
-						getData={this.getData}
+						getData={this.getDataLite}
 						geoMarker={this.state.geoMarker}
 						handleClose={this.handleClose}
 						activeUser={this.props.activeUser}

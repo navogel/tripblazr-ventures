@@ -46,7 +46,7 @@
   "trips": [
     {
       "id": 1,
-      "name": "Fun in Asia",
+      "name": "Fun in Asia 2009 ",
       "userId": 1,
       "summary": null,
       "communication": null,
@@ -59,7 +59,7 @@
     },
     {
       "id": 2,
-      "name": "Backpacking the Water",
+      "name": "Fun Times",
       "userId": 1,
       "summary": null,
       "communication": null,
@@ -160,19 +160,6 @@
       "lat": 36.08047,
       "likes": 43,
       "city": "place"
-    },
-    {
-      "name": "Hanging With Mr. Cooper",
-      "city": "Painesville, Ohio, United States of America",
-      "summary": "",
-      "lat": 41.7245,
-      "lng": -81.2457,
-      "communication": "",
-      "money": "",
-      "likes": "",
-      "published": false,
-      "userId": 1,
-      "id": 11
     },
     {
       "name": "Backpacking 2020",
@@ -349,14 +336,14 @@
       "id": 11,
       "tripId": 2,
       "summary": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
-      "price": "15.75",
+      "price": 15.75,
       "address": "93905 Melvin Avenue",
       "lng": -86.64728,
       "lat": 36.18527,
       "star": true,
       "likes": 15,
       "locationTypeId": 3,
-      "name": "Beauty"
+      "name": "Beauty O"
     },
     {
       "id": 12,
@@ -655,7 +642,7 @@
       "star": false,
       "likes": 0,
       "locationTypeId": 2,
-      "name": "Movies"
+      "name": "Movies2222"
     },
     {
       "id": 38,
@@ -765,14 +752,14 @@
       "id": 46,
       "tripId": 2,
       "summary": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
-      "price": "79.24",
+      "price": 79.24,
       "address": "39 Bluejay Center",
       "lng": -86.74982,
       "lat": 36.17339,
-      "star": false,
+      "star": true,
       "likes": 10,
       "locationTypeId": 2,
-      "name": "Electronics"
+      "name": "Electronics2"
     },
     {
       "id": 47,
@@ -785,7 +772,7 @@
       "star": false,
       "likes": 2,
       "locationTypeId": 1,
-      "name": "Music"
+      "name": "Music2"
     },
     {
       "id": 49,
@@ -877,19 +864,6 @@
       "likes": 20,
       "locationTypeId": 1,
       "name": "Movies"
-    },
-    {
-      "id": 59,
-      "tripId": 2,
-      "summary": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
-      "price": null,
-      "address": null,
-      "lng": -86.81891,
-      "lat": 36.09262,
-      "star": true,
-      "likes": 1,
-      "locationTypeId": 2,
-      "name": "Outdoors"
     },
     {
       "id": 60,
@@ -1614,14 +1588,14 @@
       "id": 130,
       "tripId": 2,
       "summary": null,
-      "price": "58.29",
+      "price": 58.29,
       "address": "26 Daystar Alley",
       "lng": -86.67077,
       "lat": 36.10827,
       "star": true,
       "likes": 2,
       "locationTypeId": 1,
-      "name": "Outdoors"
+      "name": "Econo Lodge"
     },
     {
       "id": 131,
@@ -1735,7 +1709,7 @@
       "address": null,
       "lng": -86.70107,
       "lat": 36.19695,
-      "star": false,
+      "star": true,
       "likes": 23,
       "locationTypeId": 2,
       "name": "Grocery"
@@ -1787,7 +1761,7 @@
       "address": "59858 Summit Crossing",
       "lng": -86.60678,
       "lat": 36.07709,
-      "star": false,
+      "star": true,
       "likes": 13,
       "locationTypeId": 2,
       "name": "Garden"
@@ -2017,14 +1991,14 @@
       "id": 166,
       "tripId": 2,
       "summary": null,
-      "price": "77.78",
+      "price": 77.78,
       "address": "9 Green Junction",
       "lng": -86.62691,
       "lat": 36.18508,
       "star": false,
       "likes": 13,
       "locationTypeId": 3,
-      "name": "Books"
+      "name": "Books434"
     },
     {
       "id": 167,
@@ -2219,7 +2193,7 @@
       "star": false,
       "likes": 17,
       "locationTypeId": 3,
-      "name": "Electronics"
+      "name": "Electronics23"
     },
     {
       "id": 186,
@@ -2519,14 +2493,14 @@
       "id": 212,
       "tripId": 1,
       "summary": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
-      "price": "71.15",
+      "price": 71.15,
       "address": "05 Spaight Court",
       "lng": -86.78092,
       "lat": 36.21516,
-      "star": false,
+      "star": true,
       "likes": 7,
       "locationTypeId": 3,
-      "name": "Tools"
+      "name": "Tools2"
     },
     {
       "id": 213,
@@ -2734,19 +2708,6 @@
       "star": false,
       "likes": 12,
       "locationTypeId": 1,
-      "name": "Movies"
-    },
-    {
-      "id": 231,
-      "tripId": 2,
-      "summary": null,
-      "price": "67.73",
-      "address": "00317 Kedzie Pass",
-      "lng": -86.79797,
-      "lat": 36.02979,
-      "star": true,
-      "likes": 15,
-      "locationTypeId": 3,
       "name": "Movies"
     },
     {
@@ -2961,7 +2922,7 @@
       "id": 251,
       "tripId": 1,
       "summary": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
-      "price": null,
+      "price": 23,
       "address": null,
       "lng": -86.71568,
       "lat": 36.21096,
@@ -3008,19 +2969,6 @@
       "likes": 25,
       "locationTypeId": 3,
       "name": "Books"
-    },
-    {
-      "id": 256,
-      "tripId": 2,
-      "summary": null,
-      "price": null,
-      "address": null,
-      "lng": -86.79927,
-      "lat": 36.0929,
-      "star": true,
-      "likes": 6,
-      "locationTypeId": 2,
-      "name": "Movies"
     },
     {
       "id": 257,
@@ -3085,7 +3033,7 @@
       "locationTypeId": 3,
       "name": "Tools",
       "id": 262,
-      "star": true
+      "star": false
     },
     {
       "id": 263,
@@ -3099,19 +3047,6 @@
       "likes": 13,
       "locationTypeId": 1,
       "name": "Clothing"
-    },
-    {
-      "id": 264,
-      "tripId": 2,
-      "summary": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-      "price": "65.63",
-      "address": "3757 Spaight Crossing",
-      "lng": -86.59965,
-      "lat": 36.08946,
-      "star": false,
-      "likes": 0,
-      "locationTypeId": 3,
-      "name": "Toys"
     },
     {
       "id": 265,
@@ -3156,14 +3091,14 @@
       "id": 270,
       "tripId": 2,
       "summary": null,
-      "price": "94.64",
+      "price": 94.64,
       "address": "2138 Shoshone Terrace",
       "lng": -86.859,
       "lat": 36.14289,
       "star": true,
       "likes": 17,
       "locationTypeId": 2,
-      "name": "Games"
+      "name": "Games23"
     },
     {
       "id": 271,
@@ -3189,19 +3124,6 @@
       "star": true,
       "likes": 24,
       "locationTypeId": 1,
-      "name": "Sports"
-    },
-    {
-      "id": 273,
-      "tripId": 2,
-      "summary": null,
-      "price": null,
-      "address": null,
-      "lng": -86.64686,
-      "lat": 36.18863,
-      "star": true,
-      "likes": 3,
-      "locationTypeId": 2,
       "name": "Sports"
     },
     {
@@ -3342,7 +3264,7 @@
       "address": null,
       "lng": -86.8783,
       "lat": 36.15321,
-      "star": true,
+      "star": false,
       "likes": 20,
       "locationTypeId": 1,
       "name": "Computers"
@@ -3567,19 +3489,6 @@
       "likes": 21,
       "locationTypeId": 2,
       "name": "Toys"
-    },
-    {
-      "id": 305,
-      "tripId": 1,
-      "summary": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
-      "price": null,
-      "address": null,
-      "lng": -86.82307,
-      "lat": 36.20285,
-      "star": true,
-      "likes": 15,
-      "locationTypeId": 3,
-      "name": "Computers"
     },
     {
       "id": 306,
@@ -3875,7 +3784,7 @@
       "address": null,
       "lng": -86.86272,
       "lat": 36.10358,
-      "star": true,
+      "star": false,
       "likes": 7,
       "locationTypeId": 1,
       "name": "Movies"
@@ -4310,19 +4219,6 @@
       "name": "Grocery"
     },
     {
-      "id": 367,
-      "tripId": 2,
-      "summary": null,
-      "price": "24.72",
-      "address": "6 Meadow Valley Parkway",
-      "lng": -86.89648,
-      "lat": 36.12402,
-      "star": true,
-      "likes": 2,
-      "locationTypeId": 3,
-      "name": "Tools"
-    },
-    {
       "id": 368,
       "tripId": 9,
       "summary": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
@@ -4404,14 +4300,14 @@
       "id": 377,
       "tripId": 2,
       "summary": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
-      "price": "14.89",
+      "price": 14.89,
       "address": "4069 Crowley Place",
       "lng": -86.68311,
       "lat": 36.08377,
       "star": false,
       "likes": 8,
       "locationTypeId": 1,
-      "name": "Outdoors"
+      "name": "Outdoors OK!"
     },
     {
       "id": 378,
@@ -4729,14 +4625,14 @@
       "id": 407,
       "tripId": 1,
       "summary": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
-      "price": "94.97",
+      "price": 94.97,
       "address": "99055 Lawn Avenue",
       "lng": -86.79995,
       "lat": 36.16576,
-      "star": true,
+      "star": false,
       "likes": 18,
       "locationTypeId": 1,
-      "name": "Garden"
+      "name": "Garden2"
     },
     {
       "id": 408,
@@ -4746,7 +4642,7 @@
       "address": "3089 Riverside Hill",
       "lng": -86.83605,
       "lat": 36.20398,
-      "star": false,
+      "star": true,
       "likes": 12,
       "locationTypeId": 1,
       "name": "Shoes"
@@ -4759,7 +4655,7 @@
       "address": "09 Center Trail",
       "lng": -86.74747,
       "lat": 36.05444,
-      "star": false,
+      "star": true,
       "likes": 11,
       "locationTypeId": 2,
       "name": "Books"
@@ -4820,14 +4716,14 @@
       "id": 416,
       "tripId": 2,
       "summary": null,
-      "price": "82.74",
+      "price": 82.74,
       "address": "14289 Canary Way",
       "lng": -86.8518,
       "lat": 36.12277,
       "star": true,
       "likes": 25,
       "locationTypeId": 2,
-      "name": "Toys"
+      "name": "Toys2"
     },
     {
       "id": 417,
@@ -4906,19 +4802,6 @@
       "likes": 2,
       "locationTypeId": 3,
       "name": "Computers"
-    },
-    {
-      "id": 424,
-      "tripId": 2,
-      "summary": null,
-      "price": null,
-      "address": null,
-      "lng": -86.67455,
-      "lat": 36.10865,
-      "star": true,
-      "likes": 17,
-      "locationTypeId": 1,
-      "name": "Electronics"
     },
     {
       "id": 425,
@@ -5155,32 +5038,6 @@
       "name": "Clothing"
     },
     {
-      "id": 446,
-      "tripId": 1,
-      "summary": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
-      "price": "53.84",
-      "address": "3756 Blue Bill Park Point",
-      "lng": -86.66571,
-      "lat": 36.1235,
-      "star": true,
-      "likes": 15,
-      "locationTypeId": 1,
-      "name": "Beauty"
-    },
-    {
-      "id": 448,
-      "tripId": 2,
-      "summary": null,
-      "price": null,
-      "address": null,
-      "lng": -86.63247,
-      "lat": 36.1185,
-      "star": true,
-      "likes": 12,
-      "locationTypeId": 1,
-      "name": "Books"
-    },
-    {
       "id": 449,
       "tripId": 3,
       "summary": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
@@ -5295,7 +5152,7 @@
       "star": true,
       "likes": 12,
       "locationTypeId": 3,
-      "name": "Health"
+      "name": "Health cool"
     },
     {
       "id": 458,
@@ -5773,7 +5630,7 @@
       "address": "58 Petterle Park",
       "lng": -86.61294,
       "lat": 36.175,
-      "star": false,
+      "star": true,
       "likes": 25,
       "locationTypeId": 2,
       "name": "Electronics"
@@ -5802,7 +5659,7 @@
       "locationTypeId": 1,
       "name": "Harry Truman's Little White House",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 501
     },
     {
@@ -5816,7 +5673,7 @@
       "locationTypeId": 4,
       "name": "Ann Street Cottage",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 502
     },
     {
@@ -5844,22 +5701,8 @@
       "locationTypeId": 3,
       "name": "Atlantic Grocery",
       "url": "",
-      "star": false,
-      "id": 504
-    },
-    {
-      "tripId": 1,
-      "summary": "",
-      "lat": 36.0695,
-      "lng": -86.683734,
-      "address": " Richards Rd, Antioch, Tennessee 37013, United States of America",
-      "price": null,
-      "likes": 0,
-      "locationTypeId": 1,
-      "name": "Tacos De Pescado y Camaron",
-      "url": "",
       "star": true,
-      "id": 506
+      "id": 504
     },
     {
       "tripId": 13,
@@ -5905,31 +5748,17 @@
     },
     {
       "tripId": 1,
-      "summary": "",
+      "summary": "uh huh",
       "lat": 36.1379811646181,
       "lng": -86.862309488074,
       "address": "5701 Knob Road, Nashville, Tennessee 37209, United States",
-      "price": null,
+      "price": 23,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Knob Road",
       "url": "",
-      "star": false,
-      "id": 513
-    },
-    {
-      "tripId": 1,
-      "summary": "",
-      "lat": 36.135025,
-      "lng": -86.804293,
-      "address": "Villager West, 2134 Fairfax Ave, Nashville, Tennessee 37212, United States",
-      "price": 4,
-      "likes": 0,
-      "locationTypeId": 2,
-      "name": "Vandy",
-      "url": "",
       "star": true,
-      "id": 514
+      "id": 513
     }
   ]
 }

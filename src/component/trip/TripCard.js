@@ -9,10 +9,39 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 //import CardMedia from '@material-ui/core/CardMedia';
 import './tripCard.css';
+import TextField from '@material-ui/core/TextField';
 
 //table
 
 class TripCard extends Component {
+	state = {
+		edit: false,
+		name: ''
+	};
+
+	editView = () => {
+		this.setState({ edit: true });
+	};
+
+	editName = tripId => {
+		let trip = {
+			id: tripId,
+			name: this.state.name
+		};
+		TripManager.updateTrip(trip).then(() => this.props.getTrips());
+		this.setState({ edit: false });
+	};
+
+	componentDidMount() {
+		this.setState({ name: this.props.trip.name });
+	}
+
+	handleFieldChange = evt => {
+		const stateToChange = {};
+		stateToChange[evt.target.id] = evt.target.value;
+		this.setState(stateToChange);
+	};
+
 	handleDelete = id => {
 		TripManager.deleteTrip(id).then(() => this.props.getTrips());
 	};
@@ -29,25 +58,60 @@ class TripCard extends Component {
 			<>
 				<Card className={hoverCard} elevation={4}>
 					<div className={'scroll' + this.props.trip.id}></div>
-					<CardActionArea className='cardActionArea'>
-						<Link to={`/mytrips/${this.props.trip.id}`} trip={this.props.trip}>
-							{/* <CardMedia
-								className='tripCardMedia'
-								image=
-								
-							/> */}
+					{this.state.edit ? (
+						<CardActionArea className='cardActionArea'>
 							<CardContent className='cardContent'>
 								<h3>
 									<span className='card-tripname'>
-										{/* {firstLetterCase(this.props.trip.name)} */}
-										{this.props.trip.name}
+										<TextField
+											id='name'
+											label='Name'
+											value={this.state.name}
+											onChange={this.handleFieldChange}
+											margin='dense'
+											variant='outlined'
+											placeholder='Enter the place name'
+										/>
 									</span>
 								</h3>
 								<p>Destination: {this.props.trip.city}</p>
 							</CardContent>
-						</Link>
-					</CardActionArea>
+						</CardActionArea>
+					) : (
+						<CardActionArea className='cardActionArea'>
+							<Link
+								to={`/mytrips/${this.props.trip.id}`}
+								trip={this.props.trip}
+							>
+								<CardContent className='cardContent'>
+									<h3>
+										<span className='card-tripname'>
+											{this.props.trip.name}
+										</span>
+									</h3>
+									<p>Destination: {this.props.trip.city}</p>
+								</CardContent>
+							</Link>
+						</CardActionArea>
+					)}
 					<CardActions className='cardButtons'>
+						{this.state.edit ? (
+							<Button
+								size='small'
+								color='primary'
+								onClick={() => this.editName(this.props.trip.id)}
+							>
+								submit
+							</Button>
+						) : (
+							<Button
+								size='small'
+								color='primary'
+								onClick={() => this.editView()}
+							>
+								Edit
+							</Button>
+						)}
 						<Button
 							size='small'
 							color='primary'
@@ -60,7 +124,7 @@ class TripCard extends Component {
 							color='primary'
 							onClick={() => this.props.clickedCardItem(this.props.trip)}
 						>
-							Zoom to Trip
+							Fly to Trip
 						</Button>
 						{/* <EditAnimalModal id={this.props.animal.id} {...this.props} /> */}
 						{/* <Link to={`/animals/${this.props.animal.id}`}>
