@@ -98,6 +98,10 @@ export default class Mapper extends Component {
 		this.props.scrollTo(obj.id);
 	};
 
+	resetScroll = () => {
+		this.setState({ mapLoaded: false });
+	};
+
 	//light and dark mode on map
 
 	mapToggle = () => {

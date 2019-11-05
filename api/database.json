@@ -2672,19 +2672,6 @@
       "name": "Clothing"
     },
     {
-      "id": 225,
-      "tripId": 1,
-      "summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
-      "price": null,
-      "address": null,
-      "lng": -86.79157,
-      "lat": 36.05325,
-      "star": false,
-      "likes": 13,
-      "locationTypeId": 1,
-      "name": "Kids"
-    },
-    {
       "id": 226,
       "tripId": 8,
       "summary": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.",
@@ -3023,18 +3010,6 @@
       "name": "Books"
     },
     {
-      "tripId": 1,
-      "summary": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
-      "lat": 36.13796,
-      "lng": -86.89456,
-      "address": null,
-      "price": null,
-      "likes": 25,
-      "locationTypeId": 1,
-      "name": "Grocery",
-      "id": 255
-    },
-    {
       "id": 256,
       "tripId": 2,
       "summary": null,
@@ -3176,19 +3151,6 @@
       "likes": 20,
       "locationTypeId": 1,
       "name": "Books"
-    },
-    {
-      "id": 269,
-      "tripId": 1,
-      "summary": null,
-      "price": 500,
-      "address": null,
-      "lng": -86.69309,
-      "lat": 36.12051,
-      "star": true,
-      "likes": 0,
-      "locationTypeId": 2,
-      "name": "Garden"
     },
     {
       "id": 270,
@@ -4853,19 +4815,6 @@
       "likes": 14,
       "locationTypeId": 3,
       "name": "Sports"
-    },
-    {
-      "id": 414,
-      "tripId": 1,
-      "summary": null,
-      "price": "92.89",
-      "address": "7372 Mandrake Alley",
-      "lng": -86.66835,
-      "lat": 36.17857,
-      "star": true,
-      "likes": 17,
-      "locationTypeId": 2,
-      "name": "Tools"
     },
     {
       "id": 416,

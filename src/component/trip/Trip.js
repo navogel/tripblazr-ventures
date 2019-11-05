@@ -104,6 +104,7 @@ class Trip extends Component {
 				clickedCoords: [],
 				droppedPin: false
 			});
+			this.refs.mapper.resetScroll();
 		});
 	};
 
@@ -188,6 +189,7 @@ class Trip extends Component {
 		this.setState({
 			geoMarker: {}
 		});
+		this.refs.mapper.resetScroll();
 	};
 
 	//Get data and remove all maping states -> clean tripview of all locations
@@ -316,6 +318,7 @@ class Trip extends Component {
 					{this.state.tripDetails && (
 						<div className='mapWrapper'>
 							<Mapper
+								ref='mapper'
 								className='mapper'
 								locations={this.state.locations}
 								tripDetails={this.state.tripDetails}
