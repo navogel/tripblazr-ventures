@@ -7,15 +7,28 @@ import TripManager from '../../modules/TripManager';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 class LocationNoteCard extends Component {
-	// state = {
-	// 	myCard: ''
-	// };
+	state = {
+		myCard: '',
+		note: false,
+		url: false,
+		YT: false
+	};
 
 	handleDelete = id => {
 		TripManager.deleteLocationNote(id).then(() => {
 			this.props.getNotes();
 		});
 	};
+
+	componentDidMount() {
+		if (this.props.note.type === 'YT') {
+			this.setState({ YT: true });
+		} else if (this.props.note.type === 'note') {
+			this.setState({ note: true });
+		} else if (this.props.note.type === 'url') {
+			this.setState({ url: true });
+		}
+	}
 
 	// componentDidMount() {
 	// 	if (parseInt(this.props.activeUSer) === this.props.note.userId) {
@@ -37,36 +50,141 @@ class LocationNoteCard extends Component {
 
 		return (
 			<>
-				<div className='locNoteCard'>
-					<div className='myCard'>
-						<div className='msgHeader'>
-							<p>Posted: {timeStamp} </p>
+				{this.state.note && (
+					<div className='locNoteCard'>
+						<div className='myCard'>
+							<div className='msgHeader'>
+								<p>Posted: {timeStamp} </p>
 
-							{this.props.note.editTimeStamp !== '' ? (
-								<p>
-									Last Edited {moment(this.props.note.editTimeStamp).fromNow()}
-								</p>
-							) : (
-								''
-							)}
-						</div>
-						<DialogTitle>{this.props.note.note}</DialogTitle>
-						<div className='cardButtonRow'>
-							{/* <EditMessageForm
+								{this.props.note.title !== '' ? (
+									<p>
+										<b>{this.props.note.title}</b>
+									</p>
+								) : (
+									''
+								)}
+							</div>
+							<DialogTitle>{this.props.note.note}</DialogTitle>
+							<div className='cardButtonRow'>
+								{/* <EditMessageForm
 								{...this.props.Note}
 								getData={this.props.getNotes}
 							/> */}
+								{this.props.note.editTimeStamp !== '' ? (
+									<p className='editStamp'>
+										Last Edited{' '}
+										{moment(this.props.note.editTimeStamp).fromNow()}
+									</p>
+								) : (
+									''
+								)}
 
-							<Button
-								size='small'
-								color='primary'
-								onClick={() => this.handleDelete(this.props.note.id)}
-							>
-								Delete
-							</Button>
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.handleDelete(this.props.note.id)}
+								>
+									Delete
+								</Button>
+							</div>
 						</div>
 					</div>
-				</div>
+				)}
+
+				{this.state.url && (
+					<div className='locNoteCard'>
+						<div className='myCard'>
+							<div className='msgHeader'>
+								<p>Posted: {timeStamp} </p>
+
+								{this.props.note.title !== '' ? (
+									<p>
+										<b>{this.props.note.title}</b>
+									</p>
+								) : (
+									''
+								)}
+							</div>
+							<DialogTitle className='urlNoteLink'>
+								<a href={this.props.note.note} target='_blank'>
+									{this.props.note.note}
+								</a>
+							</DialogTitle>
+							<div className='cardButtonRow'>
+								{/* <EditMessageForm
+								{...this.props.Note}
+								getData={this.props.getNotes}
+							/> */}
+								{this.props.note.editTimeStamp !== '' ? (
+									<p className='editStamp'>
+										Last Edited{' '}
+										{moment(this.props.note.editTimeStamp).fromNow()}
+									</p>
+								) : (
+									''
+								)}
+
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.handleDelete(this.props.note.id)}
+								>
+									Delete
+								</Button>
+							</div>
+						</div>
+					</div>
+				)}
+
+				{this.state.YT && (
+					<div className='locNoteCard'>
+						<div className='myCard'>
+							<div className='msgHeader'>
+								<p>Posted: {timeStamp} </p>
+
+								{this.props.note.title !== '' ? (
+									<p>
+										<b>{this.props.note.title}</b>
+									</p>
+								) : (
+									''
+								)}
+							</div>
+							<div className='video-responsive'>
+								<iframe
+									width='560'
+									height='315'
+									src={`https://www.youtube.com/embed/${this.props.note.note}`}
+									frameborder='0'
+									allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+									allowfullscreen
+								></iframe>
+							</div>
+							<div className='cardButtonRow'>
+								{/* <EditMessageForm
+								{...this.props.Note}
+								getData={this.props.getNotes}
+							/> */}
+								{this.props.note.editTimeStamp !== '' ? (
+									<p className='editStamp'>
+										Last Edited{' '}
+										{moment(this.props.note.editTimeStamp).fromNow()}
+									</p>
+								) : (
+									''
+								)}
+
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.handleDelete(this.props.note.id)}
+								>
+									Delete
+								</Button>
+							</div>
+						</div>
+					</div>
+				)}
 			</>
 		);
 	}

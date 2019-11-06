@@ -137,12 +137,12 @@ class AddNoteForm extends React.Component {
 					<TextField
 						fullWidth
 						id='title'
-						label='Note Title'
+						label='Optional Title'
 						value={this.state.name}
 						onChange={this.handleFieldChange}
 						margin='dense'
 						variant='outlined'
-						placeholder='Note Title'
+						placeholder='Optional Title'
 					/>
 					<TextField
 						fullWidth

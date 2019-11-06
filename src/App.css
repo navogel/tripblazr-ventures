@@ -313,3 +313,14 @@ body {
 	margin-top: 0.5em;
 	justify-content: center;
 }
+
+.editStamp {
+	margin-right: auto;
+}
+
+.urlNoteLink {
+	/* height: 2.5em; */
+	overflow: auto;
+	white-space: nowrap;
+	overflow-y: hidden;
+}

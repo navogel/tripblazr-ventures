@@ -82,7 +82,7 @@ export default {
 	},
 	getLocationNotes(id) {
 		return fetch(
-			`${remoteURL}/locationNotes?locationId=${id}&_expand=user`
+			`${remoteURL}/locationNotes?locationId=${id}&_sort=date&_order=desc&_expand=user`
 		).then(result => result.json());
 	},
 	deleteLocationNote(id) {

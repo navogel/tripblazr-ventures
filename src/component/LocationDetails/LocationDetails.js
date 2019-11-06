@@ -48,7 +48,7 @@ class LocationDetail extends Component {
 								{this.state.location.locationType.locationType}
 							</DialogTitle>
 							{this.state.location.address && (
-								<h3>Address: {this.state.location.address}</h3>
+								<h3>{this.state.location.address}</h3>
 							)}
 							{this.state.location.summary && (
 								<>
@@ -83,39 +83,6 @@ class LocationDetail extends Component {
 					<EditIcon />
 					Edit
 				</Fab> */}
-
-						{/* `<div className='locVideo'>
-							<div className='video-responsive'>
-								<iframe
-									width='560'
-									height='315'
-									src='https://www.youtube.com/embed/Z8cjC2pViSo'
-									frameborder='0'
-									allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-									allowfullscreen
-								></iframe>
-							</div>
-							<div className='video-responsive'>
-								<iframe
-									width='560'
-									height='315'
-									src='https://www.youtube.com/embed/Z8cjC2pViSo'
-									frameborder='0'
-									allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-									allowfullscreen
-								></iframe>
-							</div>
-							<div className='video-responsive'>
-								<iframe
-									width='560'
-									height='315'
-									src='https://www.youtube.com/embed/Z8cjC2pViSo'
-									frameborder='0'
-									allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-									allowfullscreen
-								></iframe>
-							</div>
-						</div>` */}
 
 						<LocationNotes
 							activeUser={this.props.activeUser}
