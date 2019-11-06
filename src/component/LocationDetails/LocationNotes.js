@@ -32,8 +32,11 @@ class LocationNotes extends Component {
 	};
 
 	newNote = () => {
-		console.log('newnote pls');
-		this.setState({ addNote: true });
+		if (this.state.addNote === false) {
+			this.setState({ addNote: true });
+		} else {
+			this.setState({ addNote: false });
+		}
 	};
 
 	closeNewNote = () => {

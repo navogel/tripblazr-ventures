@@ -20,6 +20,30 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import moment from 'moment';
 
+const styles = theme => ({
+	container: {
+		display: 'flex',
+		flexWrap: 'wrap'
+	},
+	textField: {
+		marginLeft: theme.spacing(1),
+		marginRight: theme.spacing(1)
+	},
+	dense: {
+		marginTop: 16
+	},
+	menu: {
+		width: 400
+	},
+	extendedIcon: {
+		marginRight: theme.spacing(1)
+	},
+	formControl: {
+		//margin: theme.spacing(1),
+		minWidth: 200
+	}
+});
+
 class AddNoteForm extends React.Component {
 	state = {
 		// visible: false,
@@ -27,13 +51,26 @@ class AddNoteForm extends React.Component {
 		date: '',
 		note: '',
 		loadingStatus: false,
-		editTimeStamp: ''
+		editTimeStamp: '',
+		type: '',
+		title: '',
+		labelWidth: 0
 	};
+
+	componentDidMount() {
+		this.setState({
+			labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
+		});
+	}
 
 	handleFieldChange = evt => {
 		const stateToChange = {};
 		stateToChange[evt.target.id] = evt.target.value;
 		this.setState(stateToChange);
+	};
+
+	handleChange = name => event => {
+		this.setState({ [name]: event.target.value });
 	};
 
 	addNewNote = () => {
@@ -48,7 +85,9 @@ class AddNoteForm extends React.Component {
 				date: moment(new Date()),
 				note: this.state.note,
 				userId: userId,
-				editTimeStamp: ''
+				editTimeStamp: '',
+				title: this.state.title,
+				type: this.state.type
 			};
 			TripManager.postLocationNote(message)
 				.then(this.props.getNotes)
@@ -57,7 +96,9 @@ class AddNoteForm extends React.Component {
 						date: '',
 						note: '',
 						loadingStatus: false,
-						editTimeStamp: ''
+						editTimeStamp: '',
+						title: '',
+						type: ''
 					})
 				);
 			this.props.closeNewNote();
@@ -88,20 +129,61 @@ class AddNoteForm extends React.Component {
 	};
 
 	render() {
+		const { classes } = this.props;
+
 		return (
 			<div className='msgSubmitRow'>
 				<div className='formField'>
 					<TextField
 						fullWidth
-						id='note'
-						label='note'
+						id='title'
+						label='Note Title'
 						value={this.state.name}
 						onChange={this.handleFieldChange}
 						margin='dense'
 						variant='outlined'
-						placeholder='Add a travel note'
+						placeholder='Note Title'
+					/>
+					<TextField
+						fullWidth
+						id='note'
+						label='add a travel note, URL link, or Youtube video ID'
+						value={this.state.name}
+						onChange={this.handleFieldChange}
+						margin='dense'
+						variant='outlined'
+						placeholder='Add note'
 					/>
 				</div>
+				<FormControl
+					variant='outlined'
+					margin='dense'
+					className={classes.formControl}
+				>
+					<InputLabel
+						ref={ref => {
+							this.InputLabelRef = ref;
+						}}
+						htmlFor='outlined-type-native-simple'
+					>
+						Note Type
+					</InputLabel>
+					<NativeSelect
+						value={this.state.type}
+						onChange={this.handleChange('type')}
+						input={
+							<OutlinedInput
+								name='type'
+								labelWidth={this.state.labelWidth}
+								id='type'
+							/>
+						}
+					>
+						<option value={'note'}>{'Travel Note '}</option>
+						<option value={'url'}>{'Link '}</option>
+						<option value={'YT'}>{'YouTube Id '}</option>
+					</NativeSelect>
+				</FormControl>
 
 				<div className='noteSubmit'>
 					<Fab
@@ -121,4 +203,4 @@ class AddNoteForm extends React.Component {
 	}
 }
 
-export default AddNoteForm;
+export default withStyles(styles)(AddNoteForm);
