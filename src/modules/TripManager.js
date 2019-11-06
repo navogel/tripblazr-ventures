@@ -79,5 +79,14 @@ export default {
 		return fetch(
 			`${remoteURL}/locations?tripId=${id}&star=true&_expand=locationType&_embed=locationNotes`
 		).then(result => result.json());
-	}
+	},
+	getLocationNotes(id) {
+		return fetch(
+			`${remoteURL}/locationNotes?locationId=${id}&_expand=user`
+		).then(result => result.json());
+	},
+	getSharedTrips(userEmail) {
+		return fetch(
+			`${remoteURL}/sharedTrips?friendEmail=${userEmail}&_expand=trip&_expand=user`
+		).then(result => result.json());
 };

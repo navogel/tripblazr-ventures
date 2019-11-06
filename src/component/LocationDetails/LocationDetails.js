@@ -5,6 +5,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import CloseIcon from '@material-ui/icons/Close';
 import Button from '@material-ui/core/Button';
 import YouTube from 'react-youtube';
+import LocationNotes from './LocationNotes';
 
 class LocationDetail extends Component {
 	state = {
@@ -115,6 +116,10 @@ class LocationDetail extends Component {
 								></iframe>
 							</div>
 						</div>` */}
+						<LocationNotes
+							activeUser={this.props.activeUser}
+							locationId={this.state.location.id}
+						/>
 					</div>
 				)}
 			</>

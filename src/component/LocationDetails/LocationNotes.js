@@ -3,36 +3,26 @@ import MessagesManager from '../../modules/MessagesManager';
 import MessageCard from './MessageCard';
 import AddNoteForm from './AddNoteForm';
 
-class MessagesList extends Component {
+class LocationNotes extends Component {
 	//define what this component needs to render
 	state = {
 		messages: []
 	};
 
-	//function for scrolling 5000px down from top
-	scrollToMyRef = () => {
-		window.scrollTo({
-			top: 5000,
-			behavior: 'smooth'
-		});
-	};
-
 	componentDidMount() {
 		//getAll from AnimalManager and hang on to that data; put it in state
-		MessagesManager.getMessages(this.props.activeUser).then(messages => {
+		TripManager.getLocationNotes(this.props.locationId).then(messages => {
 			this.setState({
 				messages: messages
 			});
-			this.scrollToMyRef();
 		});
 	}
 
-	getData = () => {
-		MessagesManager.getMessages(this.props.activeUser).then(messages => {
+	getMessages = () => {
+		MessagesManager.getMessages(this.props.locationId).then(messages => {
 			this.setState({
 				messages: messages
 			});
-			this.scrollToMyRef();
 		});
 	};
 
@@ -43,17 +33,17 @@ class MessagesList extends Component {
 					<h1>MESSAGES</h1>
 				</div>
 				{this.state.messages.map(message => (
-					<MessageCard
+					<LocationNoteCard
 						key={message.id}
 						message={message}
 						{...this.props}
-						getData={this.getData}
+						getMessages={this.getMessages}
 					/>
 				))}
-				<AddMessageForm ref={this.myRef} getData={this.getData} />
+				{/* <AddMessageForm ref={this.myRef} getData={this.getData} /> */}
 			</div>
 		);
 	}
 }
 
-export default MessagesList;
+export default LocationNotes;

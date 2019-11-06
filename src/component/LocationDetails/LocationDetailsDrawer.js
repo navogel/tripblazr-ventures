@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
-import LocationEditForm from './LocationEditForm';
+import LocationEditForm from '../trip/LocationEditForm';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import LocationDetails from './LocationDetails';
 
@@ -119,6 +119,7 @@ class LocDrawer extends React.Component {
 								getData={this.props.getData}
 								closeLocDrawer={this.closeLocDrawer}
 								toggleDrawer={this.props.toggleDrawer}
+								activeUser={this.props.activeUser}
 							/>
 						</div>
 					</div>

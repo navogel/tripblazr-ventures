@@ -1,4 +1,18 @@
 {
+	"sharedTrips": [
+		{
+			"tripId": 1,
+			"id": 1,
+			"userId": 1,
+			"friendEmail": "sam@sam.com"
+		},
+		{
+			"tripId": 13,
+			"id": 2,
+			"userId": 1,
+			"friendEmail": "sam@sam.com"
+		}
+	],
 	"locationNotes": [
 		{
 			"locationId": 504,
@@ -40,25 +54,22 @@
 			"id": 1,
 			"name": "steve",
 			"userName": "steve",
-			"password": "pass"
+			"password": "pass",
+			"email:": "steve@steve.com"
 		},
 		{
 			"id": 2,
 			"name": "sam",
 			"userName": "sam",
-			"password": "pass"
+			"password": "pass",
+			"email": "sam@sam.com"
 		},
 		{
 			"id": 3,
 			"name": "sue",
 			"userName": "sue",
-			"password": "pass"
-		},
-		{
-			"userName": "sam",
-			"password": "sam",
-			"name": "sam",
-			"id": 4
+			"password": "pass",
+			"email": "sue@sue.com"
 		}
 	],
 	"trips": [

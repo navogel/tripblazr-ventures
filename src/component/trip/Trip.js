@@ -15,7 +15,7 @@ import ErrorIcon from '@material-ui/icons/Error';
 import LocationForm from '../trip/LocationForm';
 import AddIcon from '@material-ui/icons/Add';
 import TripDrawer from './TripDrawer';
-import LocDrawer from './LocationDetailsDrawer';
+import LocDrawer from '../LocationDetails/LocationDetailsDrawer';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
 import HotelIcon from '@material-ui/icons/Hotel';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
@@ -329,6 +329,7 @@ class Trip extends Component {
 						ref='drawer2'
 						getData={this.getDataLite}
 						toggleDrawer={this.toggleDrawer}
+						activeUser={this.props.activeUser}
 					/>
 					<div className='leftColumn'>
 						<div className='listHeader'>
