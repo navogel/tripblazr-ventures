@@ -277,3 +277,21 @@ body {
 	width: 100%;
 	position: absolute;
 }
+
+.locNoteCard {
+	padding: 1em 2em;
+	margin: 2em 0em;
+	border: rgb(206, 204, 204) solid 1px;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+}
+
+.mainContainer {
+	margin: 3em;
+}
+
+.msgHeader {
+	display: flex;
+	justify-content: space-between;
+}

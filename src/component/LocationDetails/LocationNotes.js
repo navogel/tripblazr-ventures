@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
-import MessagesManager from '../../modules/MessagesManager';
-import MessageCard from './MessageCard';
-import AddNoteForm from './AddNoteForm';
+// import MessagesManager from '../../modules/MessagesManager';
+import LocationNoteCard from './LocationNoteCard';
+// import AddNoteForm from './AddNoteForm';
+import TripManager from '../../modules/TripManager';
 
 class LocationNotes extends Component {
 	//define what this component needs to render
 	state = {
-		messages: []
+		notes: []
 	};
 
 	componentDidMount() {
 		//getAll from AnimalManager and hang on to that data; put it in state
-		TripManager.getLocationNotes(this.props.locationId).then(messages => {
+		TripManager.getLocationNotes(this.props.locationId).then(notes => {
 			this.setState({
-				messages: messages
+				notes: notes
 			});
 		});
 	}
 
-	getMessages = () => {
-		MessagesManager.getMessages(this.props.locationId).then(messages => {
+	getNotes = () => {
+		TripManager.getLocationNotes(this.props.locationId).then(notes => {
 			this.setState({
-				messages: messages
+				notes: notes
 			});
 		});
 	};
@@ -30,14 +31,15 @@ class LocationNotes extends Component {
 		return (
 			<div className='mainContainer'>
 				<div className='sectionHeader'>
-					<h1>MESSAGES</h1>
+					<h3>Notes</h3>
 				</div>
-				{this.state.messages.map(message => (
+				{this.state.notes.map(note => (
 					<LocationNoteCard
-						key={message.id}
-						message={message}
+						key={note.id}
+						note={note}
 						{...this.props}
-						getMessages={this.getMessages}
+						getNotes={this.getNotes}
+						activeUser={this.props.activeUser}
 					/>
 				))}
 				{/* <AddMessageForm ref={this.myRef} getData={this.getData} /> */}

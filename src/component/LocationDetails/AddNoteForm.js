@@ -20,7 +20,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import moment from 'moment';
 
-class AddMessageForm extends React.Component {
+class AddNoteForm extends React.Component {
 	state = {
 		visible: false,
 		locationId: '',
@@ -110,4 +110,4 @@ class AddMessageForm extends React.Component {
 	}
 }
 
-export default AddMessageForm;
+export default AddNoteForm;

@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
-import MessagesManager from '../../modules/MessagesManager';
-import EditMessageForm from './EditMessageForm';
+import Button from '@material-ui/core/Button';
+// import MessagesManager from '../../modules/MessagesManager';
+// import EditMessageForm from './EditMessageForm';
 import moment from 'moment';
-class MessageCard extends Component {
+import TripManager from '../../modules/TripManager';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
+class LocationNoteCard extends Component {
 	state = {
 		myCard: ''
 	};
 
 	handleDelete = id => {
-		MessagesManager.delete(id).then(() => {
-			this.props.getData();
+		TripManager.deleteNote(id).then(() => {
+			this.props.getNotes();
 		});
 	};
 
 	componentDidMount() {
-		if (
-			parseInt(sessionStorage.getItem('activeUser')) ===
-			this.props.message.userId
-		) {
+		if (parseInt(this.props.activeUSer) === this.props.note.userId) {
 			this.setState({
 				myCard: true
 			});
@@ -33,73 +33,64 @@ class MessageCard extends Component {
 	}
 
 	render() {
-		let timeStamp = moment(this.props.message.date).fromNow();
+		let timeStamp = moment(this.props.note.date).fromNow();
 
 		return (
 			<>
-				{this.state.myCard ? (
-					<div className='myCard'>
-						<p>Posted: {timeStamp} </p>
-						<p>{this.props.message.message}</p>
-						{this.props.message.editTimeStamp !== '' ? (
-							<p>
-								Last Edited {moment(this.props.message.editTimeStamp).fromNow()}
-							</p>
-						) : (
-							''
-						)}
-						<div className='cardButtonRow'>
-							<EditMessageForm
-								{...this.props.message}
-								getData={this.props.getData}
-							/>
-							<Button
-								className='addItemBtn'
-								type='primary'
-								shape='round'
-								icon='delete'
-								size='small'
-								onClick={() => this.handleDelete(this.props.message.id)}
-							>
-								Delete
-							</Button>
-						</div>
-					</div>
-				) : (
-					<>
-						<div className='friendCard'>
-							<div className='msgHeader'>
-								<h5>
-									<span>{this.props.message.user.userName}</span>
-								</h5>
-								<p>Posted: {timeStamp} </p>
+				<div className='locNoteCard'>
+					{this.state.myCard ? (
+						<div className='myCard'>
+							<p>Posted: {timeStamp} </p>
+							<DialogTitle>{this.props.note.message}</DialogTitle>
+							{this.props.note.editTimeStamp !== '' ? (
+								<p>
+									Last Edited {moment(this.props.note.editTimeStamp).fromNow()}
+								</p>
+							) : (
+								''
+							)}
+							<div className='cardButtonRow'>
+								{/* <EditMessageForm
+								{...this.props.Note}
+								getData={this.props.getNotes}
+							/> */}
+
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.handleDelete(this.props.note.id)}
+								>
+									Delete
+								</Button>
 							</div>
-							<div className='msgBody'>
-								<p>{this.props.message.message}</p>
-								{this.props.message.editTimeStamp !== '' ? (
-									<p>
-										Last Edited{' '}
-										{moment(this.props.message.editTimeStamp).fromNow()}
-									</p>
-								) : (
-									''
-								)}
-								<div>
-									<img
-										className='cardImg'
-										src={`/images/ghost${this.props.message.userId}.png`}
-										alt='Smiley face'
-										height='42'
-										width='42'
-									/>
+						</div>
+					) : (
+						<>
+							<div className='friendCard'>
+								<div className='msgHeader'>
+									<h5>
+										<span>{this.props.note.user.userName}</span>
+									</h5>
+									<p>Posted: {timeStamp} </p>
+								</div>
+								<div className='msgBody'>
+									<DialogTitle>{this.props.note.message}</DialogTitle>
+									{this.props.note.editTimeStamp !== '' ? (
+										<p>
+											Last Edited{' '}
+											{moment(this.props.note.editTimeStamp).fromNow()}
+										</p>
+									) : (
+										''
+									)}
 								</div>
 							</div>
-						</div>
-					</>
-				)}
+						</>
+					)}
+				</div>
 			</>
 		);
 	}
 }
 
-export default MessageCard;
+export default LocationNoteCard;

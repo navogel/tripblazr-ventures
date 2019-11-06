@@ -85,8 +85,14 @@ export default {
 			`${remoteURL}/locationNotes?locationId=${id}&_expand=user`
 		).then(result => result.json());
 	},
+	deleteLocationNote(id) {
+		return fetch(`${remoteURL}/locationNotes/${id}`, {
+			method: 'DELETE'
+		}).then(result => result.json());
+	},
 	getSharedTrips(userEmail) {
 		return fetch(
 			`${remoteURL}/sharedTrips?friendEmail=${userEmail}&_expand=trip&_expand=user`
 		).then(result => result.json());
+	}
 };

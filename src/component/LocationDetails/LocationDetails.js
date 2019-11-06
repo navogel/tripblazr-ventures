@@ -116,6 +116,7 @@ class LocationDetail extends Component {
 								></iframe>
 							</div>
 						</div>` */}
+
 						<LocationNotes
 							activeUser={this.props.activeUser}
 							locationId={this.state.location.id}
