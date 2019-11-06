@@ -3,11 +3,15 @@ import React, { Component } from 'react';
 import LocationNoteCard from './LocationNoteCard';
 // import AddNoteForm from './AddNoteForm';
 import TripManager from '../../modules/TripManager';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import AddNoteForm from './AddNoteForm';
 
 class LocationNotes extends Component {
 	//define what this component needs to render
 	state = {
-		notes: []
+		notes: [],
+		addNote: false
 	};
 
 	componentDidMount() {
@@ -27,12 +31,37 @@ class LocationNotes extends Component {
 		});
 	};
 
+	newNote = () => {
+		console.log('newnote pls');
+		this.setState({ addNote: true });
+	};
+
+	closeNewNote = () => {
+		this.setState({ addNote: false });
+	};
+
 	render() {
 		return (
 			<div className='mainContainer'>
 				<div className='sectionHeader'>
-					<h3>Notes</h3>
+					<h2>Travel Notes</h2>
+					<Fab
+						onClick={this.newNote}
+						size='small'
+						color='primary'
+						aria-label='add'
+					>
+						<AddIcon />
+					</Fab>
 				</div>
+				{this.state.addNote && (
+					<AddNoteForm
+						getNotes={this.getNotes}
+						activeUser={this.props.activeUser}
+						closeNewNote={this.closeNewNote}
+						locationId={this.props.locationId}
+					/>
+				)}
 				{this.state.notes.map(note => (
 					<LocationNoteCard
 						key={note.id}
@@ -40,6 +69,7 @@ class LocationNotes extends Component {
 						{...this.props}
 						getNotes={this.getNotes}
 						activeUser={this.props.activeUser}
+						locationId={this.props.locationId}
 					/>
 				))}
 				{/* <AddMessageForm ref={this.myRef} getData={this.getData} /> */}

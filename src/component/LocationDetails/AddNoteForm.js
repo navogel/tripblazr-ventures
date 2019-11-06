@@ -9,7 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import './tripForm.css';
+// import './tripForm.css';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
@@ -22,8 +22,8 @@ import moment from 'moment';
 
 class AddNoteForm extends React.Component {
 	state = {
-		visible: false,
-		locationId: '',
+		// visible: false,
+		//locationId: '',
 		date: '',
 		note: '',
 		loadingStatus: false,
@@ -36,40 +36,49 @@ class AddNoteForm extends React.Component {
 		this.setState(stateToChange);
 	};
 
-	addNewMessage = () => {
+	addNewNote = () => {
 		// evt.preventDefault();
 		this.setState({ loadingStatus: true });
 		if (this.state.message === '') {
 			window.alert('Please fill out all the fields');
 		} else {
-			let userId = parseInt(sessionStorage.getItem('activeUser'));
+			let userId = this.props.activeUser;
 			const message = {
+				locationId: this.props.locationId,
 				date: moment(new Date()),
-				message: this.state.message,
+				note: this.state.note,
 				userId: userId,
 				editTimeStamp: ''
 			};
-			MessagesManager.post(message)
-				.then(this.props.getData)
-				.then(this.setState({ loadingStatus: false }));
+			TripManager.postLocationNote(message)
+				.then(this.props.getNotes)
+				.then(
+					this.setState({
+						date: '',
+						note: '',
+						loadingStatus: false,
+						editTimeStamp: ''
+					})
+				);
+			this.props.closeNewNote();
 		}
 	};
 
-	updateExistingMessage = evt => {
-		//evt.preventDefault()
-		this.setState({ loadingStatus: true });
-		const editedMessage = {
-			userId: this.state.userId,
-			date: this.state.date,
-			message: this.state.message,
-			editTimeStamp: moment(new Date()),
-			id: this.props.id
-		};
+	// updateExistingMessage = evt => {
+	// 	//evt.preventDefault()
+	// 	this.setState({ loadingStatus: true });
+	// 	const editedMessage = {
+	// 		userId: this.state.userId,
+	// 		date: this.state.date,
+	// 		message: this.state.message,
+	// 		editTimeStamp: moment(new Date()),
+	// 		id: this.props.id
+	// 	};
 
-		MessagesManager.update(editedMessage)
-			.then(this.props.getData)
-			.then(this.setState({ loadingStatus: false }));
-	};
+	// 	MessagesManager.update(editedMessage)
+	// 		.then(this.props.getData)
+	// 		.then(this.setState({ loadingStatus: false }));
+	// };
 
 	handleClick = evt => {
 		evt.preventDefault();
@@ -83,27 +92,29 @@ class AddNoteForm extends React.Component {
 			<div className='msgSubmitRow'>
 				<div className='formField'>
 					<TextField
+						fullWidth
 						id='note'
 						label='note'
-						className={classes.textField}
 						value={this.state.name}
 						onChange={this.handleFieldChange}
 						margin='dense'
 						variant='outlined'
-						placeholder='Add a note'
+						placeholder='Add a travel note'
 					/>
 				</div>
 
-				<div className='formField'>
-					<Button
-						className='login-form-button'
-						type='primary'
+				<div className='noteSubmit'>
+					<Fab
+						variant='extended'
+						size='small'
+						color='primary'
+						aria-label='submit'
 						disabled={this.state.loadingStatus}
-						onClick={this.handleClick}
-						icon='add'
+						onClick={this.addNewNote}
 					>
+						<AddIcon />
 						Submit
-					</Button>
+					</Fab>
 				</div>
 			</div>
 		);

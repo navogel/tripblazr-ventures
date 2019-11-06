@@ -309,7 +309,7 @@ class Trip extends Component {
 	};
 
 	render() {
-		console.log('we have a trip trigger');
+		//console.log('we have a trip trigger');
 		let tripCost = 0;
 
 		this.state.locations.forEach(location => {

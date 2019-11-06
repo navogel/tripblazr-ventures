@@ -90,6 +90,24 @@ export default {
 			method: 'DELETE'
 		}).then(result => result.json());
 	},
+	postLocationNote(newNote) {
+		return fetch(`${remoteURL}/locationNotes`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(newNote)
+		}).then(data => data.json());
+	},
+	updateLocationNote(editedLocationNote) {
+		return fetch(`${remoteURL}/locationNotes/${editedLocationNote.id}`, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(editedLocationNote)
+		}).then(data => data.json());
+	},
 	getSharedTrips(userEmail) {
 		return fetch(
 			`${remoteURL}/sharedTrips?friendEmail=${userEmail}&_expand=trip&_expand=user`
