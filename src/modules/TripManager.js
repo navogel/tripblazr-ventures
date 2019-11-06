@@ -9,7 +9,7 @@ export default {
 	},
 	getTrip(id) {
 		return fetch(
-			`${remoteURL}/locations?tripId=${id}&_expand=locationType`
+			`${remoteURL}/locations?tripId=${id}&_expand=locationType&_embed=locationNotes`
 		).then(result => result.json());
 	},
 	getTripDetails(id) {
@@ -18,7 +18,7 @@ export default {
 
 	getTripByType(id, typeId) {
 		return fetch(
-			`${remoteURL}/locations?tripId=${id}&locationTypeId=${typeId}&_expand=locationType`
+			`${remoteURL}/locations?tripId=${id}&locationTypeId=${typeId}&_expand=locationType&_embed=locationNotes`
 		).then(result => result.json());
 	},
 	deleteTrip(id) {
@@ -26,6 +26,8 @@ export default {
 			method: 'DELETE'
 		}).then(result => result.json());
 	},
+
+	//attempt to batch delete, DOES NOT WORK
 	deleteTripLocations(id) {
 		return fetch(`${remoteURL}/locations?tripId=${id}`, {
 			method: 'DELETE'
@@ -75,7 +77,7 @@ export default {
 	},
 	getStarTrip(id) {
 		return fetch(
-			`${remoteURL}/locations?tripId=${id}&star=true&_expand=locationType`
+			`${remoteURL}/locations?tripId=${id}&star=true&_expand=locationType&_embed=locationNotes`
 		).then(result => result.json());
 	}
 };
