@@ -8,14 +8,21 @@ import Login from './component/auth/Login';
 class App extends Component {
 	state = {
 		user: sessionStorage.getItem('activeUser') !== null,
-		activeUser: this.getUser()
+		activeUser: this.getUser(),
+		email: this.getEmail()
 	};
 
 	isAuthenticated = () => sessionStorage.getItem('activeUser') !== null;
 
-	setUser = id => {
-		sessionStorage.setItem('activeUser', id);
-		this.setState({ activeUser: this.getUser(), user: true });
+	setUser = user => {
+		console.log(user);
+		sessionStorage.setItem('activeUser', user.id);
+		sessionStorage.setItem('userEmail', user.email);
+		this.setState({
+			activeUser: this.getUser(),
+			user: true,
+			email: this.getEmail()
+		});
 	};
 
 	getUser() {
@@ -26,8 +33,17 @@ class App extends Component {
 		}
 	}
 
+	getEmail() {
+		if (sessionStorage.getItem('userEmail')) {
+			return sessionStorage.getItem('userEmail');
+		} else {
+			return '';
+		}
+	}
+
 	clearUser = () => {
 		sessionStorage.removeItem('activeUser');
+		sessionStorage.removeItem('userEmail');
 		this.setState({
 			user: this.isAuthenticated()
 		});
@@ -51,6 +67,7 @@ class App extends Component {
 							{...this.props}
 							activeUser={this.state.activeUser}
 							clearUser={this.clearUser}
+							email={this.state.email}
 						/>
 					</>
 				) : (

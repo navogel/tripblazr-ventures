@@ -52,6 +52,7 @@ class ApplicationViews extends Component {
 									{...props}
 									activeUser={this.props.activeUser}
 									clearUser={this.props.clearUser}
+									email={this.props.email}
 								/>
 							);
 						} else {

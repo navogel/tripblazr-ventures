@@ -90,6 +90,7 @@ class TripCard extends Component {
 										</span>
 									</h3>
 									<p>Destination: {this.props.trip.city}</p>
+									{this.props.name && <p>Created By: {this.props.name}</p>}
 								</CardContent>
 							</Link>
 						</CardActionArea>
@@ -112,13 +113,15 @@ class TripCard extends Component {
 								Edit
 							</Button>
 						)}
-						<Button
-							size='small'
-							color='primary'
-							onClick={() => this.handleDelete(this.props.trip.id)}
-						>
-							Delete
-						</Button>
+						{!this.props.name && (
+							<Button
+								size='small'
+								color='primary'
+								onClick={() => this.handleDelete(this.props.trip.id)}
+							>
+								Delete
+							</Button>
+						)}
 						<Button
 							size='small'
 							color='primary'

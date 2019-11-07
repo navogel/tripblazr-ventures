@@ -7,7 +7,8 @@ class Registration extends Component {
 		regUserName: '',
 		regPassword: '',
 		regName: '',
-		regPasswordConfirm: ''
+		regPasswordConfirm: '',
+		regEmail: ''
 	};
 
 	// Update state whenever an input field is edited
@@ -23,6 +24,7 @@ class Registration extends Component {
 		let password = this.state.regPassword;
 		let name = this.state.regName;
 		let passwordConfirm = this.state.regPasswordConfirm;
+		let email = this.state.email;
 		// starting the if statement
 		if (password !== passwordConfirm) {
 			// if pass isn't equal to passConfirm
@@ -36,12 +38,13 @@ class Registration extends Component {
 			const newUser = {
 				userName: userName,
 				password: password,
+				email: email,
 				name: name
 			};
 			AuthManager.createUser(newUser).then(response => {
 				//response[0].id is the ID of the user you logged in with,
 				//in case of "Steve" it would be "1"
-				this.props.setUser(response.id);
+				this.props.setUser(response);
 				this.props.history.push(`/mytrips`);
 			});
 		}
@@ -90,6 +93,15 @@ class Registration extends Component {
 							type='password'
 							id='regPasswordConfirm'
 							placeholder='Confirm Password'
+							required=''
+						/>
+					</div>
+					<div className='formField'>
+						<input
+							onChange={this.handleFieldChange}
+							type='email'
+							id='regEmail'
+							placeholder='Email'
 							required=''
 						/>
 					</div>

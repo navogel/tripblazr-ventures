@@ -129,7 +129,7 @@
       "name": "steve",
       "userName": "steve",
       "password": "pass",
-      "email:": "steve@steve.com"
+      "email": "steve@steve.com"
     },
     {
       "id": 2,
@@ -149,7 +149,7 @@
   "trips": [
     {
       "id": 1,
-      "name": "Fun in Asia 2009 !!",
+      "name": "Fun in Asia 2009 !",
       "userId": 1,
       "summary": null,
       "communication": null,

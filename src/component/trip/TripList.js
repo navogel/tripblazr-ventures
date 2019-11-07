@@ -16,6 +16,7 @@ import animateScrollTo from 'animated-scroll-to';
 import ErrorIcon from '@material-ui/icons/Error';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
+import Button from '@material-ui/core/Button';
 
 class TripList extends Component {
 	state = {
@@ -26,7 +27,9 @@ class TripList extends Component {
 		newLng: '',
 		newName: '',
 		snackOpen: false,
-		hovered: ''
+		hovered: '',
+		sharedTrips: [],
+		shareView: false
 	};
 
 	//logout
@@ -68,26 +71,34 @@ class TripList extends Component {
 	//get all trips
 
 	getTrips = () => {
-		TripManager.getAllTrips(this.props.activeUser).then(newTrips => {
-			this.setState({
-				trips: newTrips,
-				clickedCoords: []
+		TripManager.getAllTrips(this.props.activeUser)
+			.then(newTrips => {
+				this.setState({
+					trips: newTrips,
+					clickedCoords: []
+				});
+			})
+			.then(() => {
+				TripManager.getSharedTrips(this.props.email).then(newSharedTrips => {
+					this.setState({
+						sharedTrips: newSharedTrips
+					});
+				});
 			});
-		});
 	};
 
 	//scroll to hovered marker, set state for classChange
 
 	scrollTo = id => {
+		if (this.state.hovered !== id) {
+			this.setState({ hovered: id });
+		}
 		let newId = '.scroll' + id;
 		let scrollEl = document.querySelector(newId);
 		animateScrollTo(scrollEl, {
 			elementToScroll: document.querySelector('.listWrapper'),
 			verticalOffset: -20
 		});
-		if (this.state.hovered !== id) {
-			this.setState({ hovered: id });
-		}
 	};
 
 	hoverRemoveFocus = () => {
@@ -122,17 +133,21 @@ class TripList extends Component {
 		this.getTrips();
 		//console.log('trippin', this.state.trips);
 	}
-	//add special class tripcard when its marker is hovered on the map
 
-	// hoverFocus = id => {
-	// 	this.setState({ hovered: id });
-	// 	console.log('triggered on focus');
-	// };
+	//toggle shareView
+
+	shareViewToggle = () => {
+		if (this.state.shareView === false) {
+			this.setState({ shareView: true });
+		} else {
+			this.setState({ shareView: false });
+		}
+	};
 
 	render() {
 		// const { classes } = this.props;
 		//console.log('clicked cords', this.state.clickedCoords);
-		//console.log('new lat', this.state.newLat);
+		console.log('shared trippin', this.state.sharedTrips);
 		return (
 			<>
 				<div className='tripWrapper'>
@@ -147,21 +162,48 @@ class TripList extends Component {
 							</Fab>
 						</div>
 						<Divider />
-						<div className='listWrapper'>
-							{/* <button onClick={this.toggleDrawer}>handle drawers</button> */}
+						<Button
+							size='small'
+							color='primary'
+							onClick={() => this.shareViewToggle()}
+						>
+							Shared Trips Toggle
+						</Button>
 
-							{this.state.trips.map(trip => (
-								<TripCard
-									key={trip.id}
-									// ref={[trip.id]}
-									trip={trip}
-									getTrips={this.getTrips}
-									clickedCardItem={this.clickedCardItem}
-									hovered={this.state.hovered}
-									// {...this.props}
-								/>
-							))}
-						</div>
+						{this.state.shareView ? (
+							<div className='listWrapper'>
+								{/* <button onClick={this.toggleDrawer}>handle drawers</button> */}
+
+								{this.state.sharedTrips.map(trip => (
+									<TripCard
+										key={trip.trip.id}
+										// ref={[trip.id]}
+										trip={trip.trip}
+										getTrips={this.getTrips}
+										clickedCardItem={this.clickedCardItem}
+										hovered={this.state.hovered}
+										name={trip.user.name}
+										// {...this.props}
+									/>
+								))}
+							</div>
+						) : (
+							<div className='listWrapper'>
+								{/* <button onClick={this.toggleDrawer}>handle drawers</button> */}
+
+								{this.state.trips.map(trip => (
+									<TripCard
+										key={trip.id}
+										// ref={[trip.id]}
+										trip={trip}
+										getTrips={this.getTrips}
+										clickedCardItem={this.clickedCardItem}
+										hovered={this.state.hovered}
+										// {...this.props}
+									/>
+								))}
+							</div>
+						)}
 					</div>
 					<div className='mapWrapper'>
 						<TripMapper

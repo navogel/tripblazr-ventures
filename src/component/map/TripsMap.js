@@ -45,11 +45,11 @@ class TripMapper extends Component {
 	};
 
 	markerFocus = obj => {
-		//console.log('got the deets', obj);
-		this.props.scrollTo(obj.id);
 		if (this.state.mapLoaded === false) {
 			this.setState({ mapLoaded: true });
 		}
+		//console.log('got the deets', obj);
+		this.props.scrollTo(obj.id);
 	};
 
 	//light and dark mode on map
