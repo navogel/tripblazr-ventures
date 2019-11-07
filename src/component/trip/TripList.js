@@ -29,6 +29,7 @@ class TripList extends Component {
 		snackOpen: false,
 		hovered: '',
 		sharedTrips: [],
+		sharedMapTrips: [],
 		shareView: false
 	};
 
@@ -57,6 +58,7 @@ class TripList extends Component {
 	//modal open
 
 	handleClickOpen = () => {
+		console.log('clicked open');
 		if (this.state.newLat === '') {
 			this.handleSnackClick();
 		} else {
@@ -80,7 +82,14 @@ class TripList extends Component {
 			})
 			.then(() => {
 				TripManager.getSharedTrips(this.props.email).then(newSharedTrips => {
+					console.log('new shared', newSharedTrips);
+					let sharedMapTrips = [];
+					newSharedTrips.forEach(trip => {
+						sharedMapTrips.push(trip.trip);
+						console.log('trip trip', trip.trip);
+					});
 					this.setState({
+						sharedMapTrips: sharedMapTrips,
 						sharedTrips: newSharedTrips
 					});
 				});
@@ -147,7 +156,7 @@ class TripList extends Component {
 	render() {
 		// const { classes } = this.props;
 		//console.log('clicked cords', this.state.clickedCoords);
-		console.log('shared trippin', this.state.sharedTrips);
+		console.log('shared trippin', this.state.sharedMapTrips);
 		return (
 			<>
 				<div className='tripWrapper'>
@@ -183,6 +192,7 @@ class TripList extends Component {
 										clickedCardItem={this.clickedCardItem}
 										hovered={this.state.hovered}
 										name={trip.user.name}
+										handleClickOpen={this.handleClickOpen}
 										// {...this.props}
 									/>
 								))}
@@ -205,23 +215,45 @@ class TripList extends Component {
 							</div>
 						)}
 					</div>
-					<div className='mapWrapper'>
-						<TripMapper
-							className='mapper'
-							trips={this.state.trips}
-							lat={this.state.lat}
-							lng={this.state.lng}
-							clickedCoords={this.state.clickedCoords}
-							addMarker={this.addMarker}
-							clearClickedCoords={this.clearClickedCoords}
-							scrollTo={this.scrollTo}
-							// hoverFocus={this.hoverFocus}
-							hovered={this.state.hovered}
-							hoverRemoveFocus={this.hoverRemoveFocus}
-							{...this.props}
-						/>
-						{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
-					</div>
+					{this.state.shareView ? (
+						<div className='mapWrapper'>
+							<TripMapper
+								className='mapper'
+								trips={this.state.sharedMapTrips}
+								lat={this.state.lat}
+								lng={this.state.lng}
+								clickedCoords={this.state.clickedCoords}
+								addMarker={this.addMarker}
+								clearClickedCoords={this.clearClickedCoords}
+								scrollTo={this.scrollTo}
+								// hoverFocus={this.hoverFocus}
+								hovered={this.state.hovered}
+								hoverRemoveFocus={this.hoverRemoveFocus}
+								handleClickOpen={this.handleClickOpen}
+								{...this.props}
+							/>
+							{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
+						</div>
+					) : (
+						<div className='mapWrapper'>
+							<TripMapper
+								className='mapper'
+								trips={this.state.trips}
+								lat={this.state.lat}
+								lng={this.state.lng}
+								clickedCoords={this.state.clickedCoords}
+								addMarker={this.addMarker}
+								clearClickedCoords={this.clearClickedCoords}
+								scrollTo={this.scrollTo}
+								// hoverFocus={this.hoverFocus}
+								hovered={this.state.hovered}
+								hoverRemoveFocus={this.hoverRemoveFocus}
+								handleClickOpen={this.handleClickOpen}
+								{...this.props}
+							/>
+							{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
+						</div>
+					)}
 				</div>
 
 				<Dialog

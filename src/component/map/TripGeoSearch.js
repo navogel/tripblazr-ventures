@@ -7,6 +7,7 @@ class TripGeoSearch extends MapControl {
 	createLeafletElement(props) {}
 
 	componentDidMount() {
+		console.log('props geo', this.props);
 		var myIcon4 = L.icon({
 			iconUrl: '/images/markers/icon4.png',
 			iconSize: [25, 41],
@@ -38,9 +39,9 @@ class TripGeoSearch extends MapControl {
 
 			this._geocodeMarker = new L.Marker(result.center, { icon: myIcon4 })
 				.bindTooltip(result.html || result.name, { className: 'toolTip' })
-				.addTo(this.props.leaflet.map);
-			//later add to trip on click
-			//.on('click', e => this.props.storeGeocode(e, result));
+				.addTo(this.props.leaflet.map)
+				//later add to trip on click
+				.on('click', e => this.props.handleClickOpen());
 
 			return this;
 		});

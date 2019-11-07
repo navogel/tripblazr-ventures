@@ -192,6 +192,7 @@ class TripMapper extends Component {
 						storeGeocode={this.storeGeocode}
 						addMarker={this.props.addMarker}
 						clearClickedCoords={this.props.clearClickedCoords}
+						handleClickOpen={this.props.handleClickOpen}
 					/>
 
 					<TileLayer
@@ -214,7 +215,7 @@ class TripMapper extends Component {
 									anchor='bottom'
 									onMouseMove={e => this.markerFocus(trip)}
 									//onMouse={e => this.props.hoverFocus(trip.id)}
-									onMouseOut={e => this.props.hoverRemoveFocus()}
+									//onMouseOut={e => this.props.hoverRemoveFocus()}
 									onClick={e => this.props.history.push(`/mytrips/${trip.id}`)}
 									// icon={this.configMyIcon(location.locationType)}
 								>
