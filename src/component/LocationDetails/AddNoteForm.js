@@ -52,7 +52,7 @@ class AddNoteForm extends React.Component {
 		note: '',
 		loadingStatus: false,
 		editTimeStamp: '',
-		type: '',
+		type: 'note',
 		title: '',
 		labelWidth: 0
 	};

@@ -66,8 +66,6 @@ class LocationNoteCard extends Component {
 					<div className='locNoteCard'>
 						<div className='myCard'>
 							<div className='msgHeader'>
-								<p>Posted: {timeStamp} </p>
-
 								{this.props.note.title !== '' ? (
 									<p>
 										<b>{this.props.note.title}</b>
@@ -84,11 +82,11 @@ class LocationNoteCard extends Component {
 							/> */}
 								{this.props.note.editTimeStamp !== '' ? (
 									<p className='editStamp'>
-										Last Edited{' '}
+										Last Edited:{' '}
 										{moment(this.props.note.editTimeStamp).fromNow()}
 									</p>
 								) : (
-									''
+									<p className='editStamp'>Posted: {timeStamp} </p>
 								)}
 
 								<Button
@@ -114,8 +112,6 @@ class LocationNoteCard extends Component {
 					<div className='locNoteCard'>
 						<div className='myCard'>
 							<div className='msgHeader'>
-								<p>Posted: {timeStamp} </p>
-
 								{this.props.note.title !== '' ? (
 									<p>
 										<b>{this.props.note.title}</b>
@@ -136,11 +132,11 @@ class LocationNoteCard extends Component {
 							/> */}
 								{this.props.note.editTimeStamp !== '' ? (
 									<p className='editStamp'>
-										Last Edited{' '}
+										Last Edited:{' '}
 										{moment(this.props.note.editTimeStamp).fromNow()}
 									</p>
 								) : (
-									''
+									<p className='editStamp'>Posted: {timeStamp} </p>
 								)}
 
 								<Button
@@ -166,8 +162,6 @@ class LocationNoteCard extends Component {
 					<div className='locNoteCard'>
 						<div className='myCard'>
 							<div className='msgHeader'>
-								<p>Posted: {timeStamp} </p>
-
 								{this.props.note.title !== '' ? (
 									<p>
 										<b>{this.props.note.title}</b>
@@ -193,11 +187,11 @@ class LocationNoteCard extends Component {
 							/> */}
 								{this.props.note.editTimeStamp !== '' ? (
 									<p className='editStamp'>
-										Last Edited{' '}
+										Last Edited:{' '}
 										{moment(this.props.note.editTimeStamp).fromNow()}
 									</p>
 								) : (
-									''
+									<p className='editStamp'>Posted: {timeStamp} </p>
 								)}
 
 								<Button

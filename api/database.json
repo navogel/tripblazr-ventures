@@ -53,6 +53,56 @@
       "title": "Key West Guide Video",
       "type": "YT",
       "id": 7
+    },
+    {
+      "locationId": 404,
+      "date": "2019-11-07T05:29:57.295Z",
+      "note": "asdfasdfasfd",
+      "userId": 1,
+      "editTimeStamp": "2019-11-07T05:30:03.153Z",
+      "title": "",
+      "type": "note",
+      "id": 8
+    },
+    {
+      "locationId": 463,
+      "date": "2019-11-07T05:31:37.423Z",
+      "note": "asdfasdfasdf",
+      "userId": 1,
+      "editTimeStamp": "",
+      "title": "",
+      "type": "note",
+      "id": 9
+    },
+    {
+      "locationId": 463,
+      "date": "2019-11-07T05:31:48.889Z",
+      "note": "yeah dont need a title ",
+      "userId": 1,
+      "editTimeStamp": "2019-11-07T05:31:57.507Z",
+      "title": "unless I want one",
+      "type": "note",
+      "id": 10
+    },
+    {
+      "locationId": 463,
+      "date": "2019-11-07T05:32:37.881Z",
+      "note": "VSa6uZht7_Q",
+      "userId": 1,
+      "editTimeStamp": "",
+      "title": "this guy...",
+      "type": "YT",
+      "id": 11
+    },
+    {
+      "locationId": 513,
+      "date": "2019-11-07T05:35:23.407Z",
+      "note": "this is a note about this place",
+      "userId": 1,
+      "editTimeStamp": "2019-11-07T05:35:34.478Z",
+      "title": "titles are cool",
+      "type": "note",
+      "id": 12
     }
   ],
   "locationTypes": [
@@ -2481,7 +2531,7 @@
       "id": 212,
       "tripId": 1,
       "summary": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
-      "price": 71.15,
+      "price": null,
       "address": "05 Spaight Court",
       "lng": -86.78092,
       "lat": 36.21516,
@@ -3022,7 +3072,7 @@
       "locationTypeId": 3,
       "name": "Tools What2",
       "id": 262,
-      "star": false
+      "star": true
     },
     {
       "id": 263,
