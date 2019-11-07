@@ -17,6 +17,8 @@ import ErrorIcon from '@material-ui/icons/Error';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
 import Button from '@material-ui/core/Button';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
 class TripList extends Component {
 	state = {
@@ -171,13 +173,18 @@ class TripList extends Component {
 							</Fab>
 						</div>
 						<Divider />
-						<Button
-							size='small'
-							color='primary'
-							onClick={() => this.shareViewToggle()}
-						>
-							Shared Trips Toggle
-						</Button>
+						<div className='shareToggle'>
+							<FormControlLabel
+								control={
+									<Switch
+										checked={this.state.shareView}
+										onChange={this.shareViewToggle}
+										value='this.state.shareView'
+									/>
+								}
+								label='Shared with Me'
+							/>
+						</div>
 
 						{this.state.shareView ? (
 							<div className='listWrapper'>
