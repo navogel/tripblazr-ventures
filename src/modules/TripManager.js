@@ -85,6 +85,11 @@ export default {
 			`${remoteURL}/locationNotes?locationId=${id}&_sort=date&_order=desc&_expand=user`
 		).then(result => result.json());
 	},
+	getLocationNote(id) {
+		return fetch(`${remoteURL}/locationNotes/${id}`).then(result =>
+			result.json()
+		);
+	},
 	deleteLocationNote(id) {
 		return fetch(`${remoteURL}/locationNotes/${id}`, {
 			method: 'DELETE'

@@ -5,19 +5,31 @@ import Button from '@material-ui/core/Button';
 import moment from 'moment';
 import TripManager from '../../modules/TripManager';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import Dialog from '@material-ui/core/Dialog';
+import NoteEditForm from './NoteEditForm';
 
 class LocationNoteCard extends Component {
 	state = {
 		myCard: '',
 		note: false,
 		url: false,
-		YT: false
+		YT: false,
+		open: false
 	};
 
 	handleDelete = id => {
 		TripManager.deleteLocationNote(id).then(() => {
 			this.props.getNotes();
 		});
+	};
+
+	//edit modal control
+	handleClickOpen = () => {
+		this.setState({ open: true });
+	};
+
+	handleClose = () => {
+		this.setState({ open: false });
 	};
 
 	componentDidMount() {
@@ -86,6 +98,13 @@ class LocationNoteCard extends Component {
 								>
 									Delete
 								</Button>
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.handleClickOpen()}
+								>
+									Edit
+								</Button>
 							</div>
 						</div>
 					</div>
@@ -130,6 +149,13 @@ class LocationNoteCard extends Component {
 									onClick={() => this.handleDelete(this.props.note.id)}
 								>
 									Delete
+								</Button>
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.handleClickOpen()}
+								>
+									Edit
 								</Button>
 							</div>
 						</div>
@@ -181,10 +207,29 @@ class LocationNoteCard extends Component {
 								>
 									Delete
 								</Button>
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.handleClickOpen()}
+								>
+									Edit
+								</Button>
 							</div>
 						</div>
 					</div>
 				)}
+				<Dialog
+					open={this.state.open}
+					onClose={this.handleClose}
+					aria-labelledby='form-dialog-title'
+				>
+					<NoteEditForm
+						note={this.props.note}
+						handleClose={this.handleClose}
+						activeUser={this.props.activeUser}
+						getNotes={this.props.getNotes}
+					/>
+				</Dialog>
 			</>
 		);
 	}

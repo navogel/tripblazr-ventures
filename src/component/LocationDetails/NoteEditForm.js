@@ -44,10 +44,8 @@ const styles = theme => ({
 	}
 });
 
-class AddNoteForm extends React.Component {
+class NoteEditForm extends React.Component {
 	state = {
-		// visible: false,
-		//locationId: '',
 		date: '',
 		note: '',
 		loadingStatus: false,
@@ -56,12 +54,6 @@ class AddNoteForm extends React.Component {
 		title: '',
 		labelWidth: 0
 	};
-
-	componentDidMount() {
-		this.setState({
-			labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
-		});
-	}
 
 	handleFieldChange = evt => {
 		const stateToChange = {};
@@ -73,48 +65,47 @@ class AddNoteForm extends React.Component {
 		this.setState({ [name]: event.target.value });
 	};
 
-	addNewNote = () => {
-		// evt.preventDefault();
+	updateExistingNote = () => {
+		//evt.preventDefault()
 		this.setState({ loadingStatus: true });
-		if (this.state.message === '' || this.state.type === '') {
-			window.alert('Please fill out the note and type of note');
-		} else {
-			let userId = this.props.activeUser;
-			const message = {
-				locationId: this.props.locationId,
-				date: moment(new Date()),
-				note: this.state.note,
-				userId: userId,
-				editTimeStamp: '',
-				title: this.state.title,
-				type: this.state.type
-			};
-			TripManager.postLocationNote(message)
-				.then(this.props.getNotes)
-				.then(
-					this.setState({
-						date: '',
-						note: '',
-						loadingStatus: false,
-						editTimeStamp: '',
-						title: '',
-						type: ''
-					})
-				);
-			this.props.closeNewNote();
-		}
+		const editedNote = {
+			userId: this.props.activeUser,
+			date: this.state.date,
+			note: this.state.note,
+			editTimeStamp: moment(new Date()),
+			id: this.props.note.id,
+			title: this.state.title,
+			type: this.state.type
+		};
+
+		TripManager.updateLocationNote(editedNote)
+			.then(this.props.getNotes)
+			.then(this.setState({ loadingstatus: false }));
+		this.props.handleClose();
 	};
 
-	handleClick = evt => {
-		evt.preventDefault();
-		this.addNewMessage();
-		this.onClose();
-		document.querySelector('#note').value = '';
-	};
+	componentDidMount() {
+		TripManager.getLocationNote(this.props.note.id).then(note => {
+			this.setState({
+				userId: this.props.activeUser,
+				date: note.date,
+				note: note.note,
+				loadingStatus: false,
+				type: note.type,
+				title: note.title
+			});
+		});
+	}
+
+	// handleClick = evt => {
+	// 	evt.preventDefault();
+	// 	this.updateExistingMessage();
+	// 	this.onClose();
+
+	// };
 
 	render() {
 		const { classes } = this.props;
-
 		return (
 			<div className='msgSubmitRow'>
 				<div className='formField'>
@@ -176,7 +167,7 @@ class AddNoteForm extends React.Component {
 						color='primary'
 						aria-label='submit'
 						disabled={this.state.loadingStatus}
-						onClick={this.addNewNote}
+						onClick={this.updateExistingNote}
 					>
 						<AddIcon />
 						Submit
@@ -187,4 +178,4 @@ class AddNoteForm extends React.Component {
 	}
 }
 
-export default withStyles(styles)(AddNoteForm);
+export default withStyles(styles)(NoteEditForm);
