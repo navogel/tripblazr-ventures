@@ -26,8 +26,8 @@ const styles = theme => ({
 		flexWrap: 'wrap'
 	},
 	textField: {
-		marginLeft: theme.spacing(1),
-		marginRight: theme.spacing(1)
+		//marginTop: theme.spacing(2),
+		marginBottom: theme.spacing(2)
 	},
 	dense: {
 		marginTop: 16
@@ -93,6 +93,7 @@ class NoteEditForm extends React.Component {
 				loadingStatus: false,
 				type: note.type,
 				title: note.title
+				//labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
 			});
 		});
 	}
@@ -107,71 +108,80 @@ class NoteEditForm extends React.Component {
 	render() {
 		const { classes } = this.props;
 		return (
-			<div className='msgSubmitRow'>
-				<div className='formField'>
-					<TextField
-						fullWidth
-						id='title'
-						label='Optional Title'
-						value={this.state.title}
-						onChange={this.handleFieldChange}
-						margin='dense'
+			<div className='editNoteWrapper'>
+				<DialogTitle className='modalTitle'>
+					{'Time to get your edit on.'}
+				</DialogTitle>
+				<div className='msgSubmitRow'>
+					<div className='formField'>
+						<TextField
+							className={classes.textField}
+							fullWidth
+							id='title'
+							label='Optional Title'
+							value={this.state.title}
+							onChange={this.handleFieldChange}
+							margin='dense'
+							variant='outlined'
+							placeholder='Optional Title'
+						/>
+						<TextField
+							className={classes.textField}
+							fullWidth
+							id='note'
+							label='add a travel note, URL link, or Youtube video ID'
+							value={this.state.note}
+							onChange={this.handleFieldChange}
+							margin='dense'
+							variant='outlined'
+							placeholder='Add note'
+							multiline
+							rowsMax='4'
+						/>
+					</div>
+					{/* <FormControl
 						variant='outlined'
-						placeholder='Optional Title'
-					/>
-					<TextField
-						fullWidth
-						id='note'
-						label='add a travel note, URL link, or Youtube video ID'
-						value={this.state.note}
-						onChange={this.handleFieldChange}
 						margin='dense'
-						variant='outlined'
-						placeholder='Add note'
-					/>
-				</div>
-				<FormControl
-					variant='outlined'
-					margin='dense'
-					className={classes.formControl}
-				>
-					<InputLabel
-						ref={ref => {
-							this.InputLabelRef = ref;
-						}}
-						htmlFor='outlined-type-native-simple'
+						className={classes.formControl}
 					>
-						Note Type
-					</InputLabel>
-					<NativeSelect
-						value={this.state.type}
-						onChange={this.handleChange('type')}
-						input={
-							<OutlinedInput
-								name='type'
-								labelWidth={this.state.labelWidth}
-								id='type'
-							/>
-						}
-					>
-						<option value={'note'}>{'Travel Note '}</option>
-						<option value={'url'}>{'Link '}</option>
-						<option value={'YT'}>{'YouTube Id '}</option>
-					</NativeSelect>
-				</FormControl>
+						<InputLabel
+							ref={ref => {
+								this.InputLabelRef = ref;
+							}}
+							htmlFor='outlined-type-native-simple'
+						>
+							Note Type
+						</InputLabel>
+						<NativeSelect
+							value={this.state.type}
+							onChange={this.handleChange('type')}
+							input={
+								<OutlinedInput
+									name='type'
+									labelWidth={this.state.labelWidth}
+									id='type'
+								/>
+							}
+						>
+							<option value={'note'}>{'Travel Note '}</option>
+							<option value={'url'}>{'Link '}</option>
+							<option value={'YT'}>{'YouTube Id '}</option>
+						</NativeSelect>
+					</FormControl> */}
 
-				<div className='noteSubmit'>
-					<Fab
-						variant='extended'
-						size='small'
-						color='primary'
-						aria-label='submit'
-						disabled={this.state.loadingStatus}
-						onClick={this.updateExistingNote}
-					>
-						<AddIcon />
-						Submit
-					</Fab>
+					<div className='noteEditSubmit'>
+						<Fab
+							variant='extended'
+							size='small'
+							color='primary'
+							aria-label='submit'
+							disabled={this.state.loadingStatus}
+							onClick={this.updateExistingNote}
+						>
+							<AddIcon />
+							Submit
+						</Fab>
+					</div>
 				</div>
 			</div>
 		);

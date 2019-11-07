@@ -15,11 +15,11 @@
   ],
   "locationNotes": [
     {
-      "title": "hump day",
+      "title": "H Day DAT bo",
       "locationId": 504,
       "date": "2019-09-02",
-      "note": "A friend told me they have BOGOs on Wednesdays!!!",
-      "editTimeStamp": "2019-11-07T00:22:44.938Z",
+      "note": "A friend told me they have BOGOs on Wednesdays!",
+      "editTimeStamp": "2019-11-07T00:47:26.920Z",
       "id": 2,
       "userId": 1,
       "type": "note"
@@ -46,11 +46,11 @@
     },
     {
       "locationId": 504,
-      "date": "2019-11-06T23:23:53.770Z",
+      "date": "2019-11-07T00:50:55.827Z",
       "note": "ijlNgSXcTe8",
       "userId": 1,
-      "editTimeStamp": "",
-      "title": "some vide,j",
+      "editTimeStamp": "2019-11-07T00:51:12.829Z",
+      "title": "Key West Guide Video",
       "type": "YT",
       "id": 7
     }

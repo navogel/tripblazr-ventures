@@ -300,6 +300,12 @@ body {
 .cardButtonRow {
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
+}
+
+.cardButtonRow p {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .sectionHeader {
@@ -311,7 +317,7 @@ body {
 .noteSubmit {
 	display: flex;
 	align-self: center;
-	margin-top: 0.5em;
+	margin-top: 1em;
 	justify-content: center;
 }
 
@@ -324,4 +330,16 @@ body {
 	overflow: auto;
 	white-space: nowrap;
 	overflow-y: hidden;
+}
+
+.editNoteWrapper {
+	padding: 3em;
+	margin: 3em;
+}
+
+.noteEditSubmit {
+	display: flex;
+	align-self: center;
+	margin-top: 3em;
+	justify-content: flex-end;
 }

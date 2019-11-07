@@ -137,6 +137,8 @@ class AddNoteForm extends React.Component {
 						margin='dense'
 						variant='outlined'
 						placeholder='Add note'
+						multiline
+						rowsMax='4'
 					/>
 				</div>
 				<FormControl

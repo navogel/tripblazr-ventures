@@ -125,7 +125,7 @@ class LocationEditForm extends Component {
 
 	render() {
 		const { classes } = this.props;
-		console.log('state', this.state.locationTypeId);
+		//console.log('state', this.state.locationTypeId);
 		return (
 			<>
 				<form className={classes.container} noValidate autoComplete='off'>
