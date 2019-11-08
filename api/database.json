@@ -147,9 +147,9 @@
     {
       "locationId": 501,
       "date": "2019-11-08T18:23:20.038Z",
-      "note": "Parking is available on the street",
+      "note": "Parking is available on the street!!!",
       "userId": 2,
-      "editTimeStamp": "",
+      "editTimeStamp": "2019-11-08T22:04:59.241Z",
       "title": "parking info",
       "type": "note",
       "id": 17
@@ -159,8 +159,8 @@
       "date": "2019-11-08T18:24:42.851Z",
       "note": "gvcSJk8QOQg",
       "userId": 2,
-      "editTimeStamp": "",
-      "title": "",
+      "editTimeStamp": "2019-11-08T22:04:40.040Z",
+      "title": "cool video",
       "type": "YT",
       "id": 18
     },

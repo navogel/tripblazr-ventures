@@ -180,9 +180,9 @@ class LocationNoteCard extends Component {
 									width='560'
 									height='315'
 									src={`https://www.youtube.com/embed/${this.props.note.note}`}
-									frameborder='0'
+									frameBorder='0'
 									allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-									allowfullscreen
+									allowFullScreen
 								></iframe>
 							</div>
 							<div className='cardButtonRow'>
