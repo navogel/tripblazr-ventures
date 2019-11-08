@@ -45,6 +45,10 @@ class Trip extends Component {
 		//object set for adding or editing
 		geoMarker: {},
 
+		//check for trip ownership
+
+		myTrip: false,
+
 		//modals/drawer/snacks
 		open: false,
 		openEdit: false,
@@ -262,7 +266,8 @@ class Trip extends Component {
 			TripManager.getTrip(this.props.tripId).then(locations => {
 				this.setState({
 					locations: locations,
-					clickedCoords: []
+					clickedCoords: [],
+					droppedPin: false
 				});
 			});
 		}

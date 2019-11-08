@@ -143,6 +143,26 @@
       "title": "",
       "type": "note",
       "id": 16
+    },
+    {
+      "locationId": 501,
+      "date": "2019-11-08T18:23:20.038Z",
+      "note": "Parking is available on the street",
+      "userId": 2,
+      "editTimeStamp": "",
+      "title": "parking info",
+      "type": "note",
+      "id": 17
+    },
+    {
+      "locationId": 501,
+      "date": "2019-11-08T18:24:42.851Z",
+      "note": "gvcSJk8QOQg",
+      "userId": 2,
+      "editTimeStamp": "",
+      "title": "",
+      "type": "YT",
+      "id": 18
     }
   ],
   "locationTypes": [
@@ -5702,9 +5722,9 @@
       "lat": 24.556488,
       "lng": -81.806832,
       "address": " 111 Front St, Key West, Florida 33040, United States of America",
-      "price": 129,
+      "price": 20,
       "likes": 0,
-      "locationTypeId": 1,
+      "locationTypeId": 2,
       "name": "Harry Truman's Little White House",
       "url": "",
       "star": true,
@@ -6101,6 +6121,34 @@
       "url": "",
       "star": false,
       "id": 536
+    },
+    {
+      "tripId": 1,
+      "summary": "",
+      "lat": 36.166845,
+      "lng": -86.770072,
+      "address": " 1 Titans Way, Nashville, Tennessee 37213, United States of America",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Titans Pro Shop",
+      "url": "",
+      "star": false,
+      "id": 537
+    },
+    {
+      "tripId": 1,
+      "summary": "",
+      "lat": 36.1335412356942,
+      "lng": -86.741927590796,
+      "address": "1215 Foster Avenue, Nashville, Tennessee 37210, United States",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 3,
+      "name": "some fun thing",
+      "url": "",
+      "star": false,
+      "id": 538
     }
   ]
 }
