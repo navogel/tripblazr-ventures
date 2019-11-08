@@ -36,11 +36,11 @@
 }
 
 .formSubmit {
-	margin-top: 3em;
+	margin-top: 1em;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
-	padding-top: 1em;
+	justify-content: flex-end;
+	padding-top: 0.5em;
 	margin-bottom: 0em;
 	color: white;
 }
@@ -52,6 +52,6 @@
 
 .modalTitle {
 	margin-top: 2em !important;
-	margin-bottom: 3em !important;
+	margin-bottom: 2em !important;
 	text-align: center;
 }
