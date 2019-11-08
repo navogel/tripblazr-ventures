@@ -343,3 +343,19 @@ body {
 	margin-top: 3em;
 	justify-content: flex-end;
 }
+
+.lodging {
+	color: rgb(76, 146, 250) !important;
+}
+
+.activity {
+	color: rgb(240, 191, 31) !important;
+}
+
+.food {
+	color: rgb(219, 87, 168) !important;
+}
+
+.transportation {
+	color: rgb(58, 189, 40) !important;
+}

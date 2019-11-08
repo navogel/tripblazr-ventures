@@ -395,22 +395,22 @@ class Trip extends Component {
 								</Tooltip>
 								<Tooltip title='filter lodging'>
 									<IconButton onClick={e => this.filterType(1)}>
-										<HotelIcon />
+										<HotelIcon className='lodging' />
 									</IconButton>
 								</Tooltip>
 								<Tooltip title='filter activities'>
 									<IconButton onClick={e => this.filterType(2)}>
-										<DirectionsWalkIcon />
+										<DirectionsWalkIcon className='activity' />
 									</IconButton>
 								</Tooltip>
 								<Tooltip title='filter food'>
 									<IconButton onClick={e => this.filterType(3)}>
-										<FastfoodIcon />
+										<FastfoodIcon className='food' />
 									</IconButton>
 								</Tooltip>
 								<Tooltip title='filter transportation'>
 									<IconButton onClick={e => this.filterType(4)}>
-										<CommuteIcon />
+										<CommuteIcon className='transportation' />
 									</IconButton>
 								</Tooltip>
 
