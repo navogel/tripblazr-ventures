@@ -207,7 +207,10 @@ export default class Mapper extends Component {
 							marker = L.marker(r.center, { icon: myIcon4 })
 								.bindTooltip(r.name, { className: 'toolTip' })
 								.addTo(map)
-								.on('click', e => this.storeGeocode(e, r));
+								.on('click', e => {
+									this.storeGeocode(e, r);
+									map.removeLayer(marker);
+								});
 							// .openPopup();
 						} else {
 							marker = L.marker(r.center, { icon: myIcon4 })
