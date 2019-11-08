@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
 import LocationEditForm from './LocationEditForm';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
 const styles = {
 	list: {
@@ -43,7 +40,7 @@ class TripDrawer extends React.Component {
 	};
 
 	render() {
-		const { classes } = this.props;
+		//const { classes } = this.props;
 
 		// const sideList = (
 		// 	<div className={classes.list}>

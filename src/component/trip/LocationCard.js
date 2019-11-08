@@ -6,8 +6,6 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Select from '@material-ui/core/Select';
 //import CardMedia from '@material-ui/core/CardMedia';
 import './tripCard.css';
 import StarIcon from '@material-ui/icons/Star';

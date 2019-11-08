@@ -17,15 +17,15 @@ const createClusterCustomIcon = function(cluster) {
 	});
 };
 
-const myIcon4 = L.icon({
-	iconUrl: '/images/markers/icon4.png',
-	iconSize: [25, 41],
-	iconAnchor: [12, 41],
-	tooltipAnchor: [15, -30],
-	shadowUrl: '/images/markers/shadow.png',
-	shadowSize: [30, 41],
-	shadowAnchor: [9, 41]
-});
+// const myIcon4 = L.icon({
+// 	iconUrl: '/images/markers/icon4.png',
+// 	iconSize: [25, 41],
+// 	iconAnchor: [12, 41],
+// 	tooltipAnchor: [15, -30],
+// 	shadowUrl: '/images/markers/shadow.png',
+// 	shadowSize: [30, 41],
+// 	shadowAnchor: [9, 41]
+// });
 
 class TripMapper extends Component {
 	state = {
@@ -142,17 +142,19 @@ class TripMapper extends Component {
 			markers.push(coord);
 		});
 		//if leaflet has loaded, pass marker array for bounds
+		// if (
+		// 	this.leafletMap &&
+		// 	this.leafletMap.leafletElement &&
+		// 	this.props.clickedCoords.length === 0 &&
+		// 	markers.length > 4
+		// ) {
+		// 	this.leafletMap.leafletElement.fitBounds(markers, {
+		// 		padding: [5, 5]
+		// 	});
+		//console.log('fit to bounds');
+		// } else
+
 		if (
-			this.leafletMap &&
-			this.leafletMap.leafletElement &&
-			this.props.clickedCoords.length === 0 &&
-			markers.length > 10
-		) {
-			this.leafletMap.leafletElement.fitBounds(markers, {
-				padding: [100, 100]
-			});
-			console.log('fit to bounds');
-		} else if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
 			this.props.clickedCoords.length > 0
@@ -168,7 +170,7 @@ class TripMapper extends Component {
 			this.state.mapLoaded === false
 		) {
 			this.leafletMap.leafletElement.setView([40, 34], 2);
-			console.log('world View', this.state.mapLoaded);
+			//console.log('world View', this.state.mapLoaded);
 		}
 
 		return (

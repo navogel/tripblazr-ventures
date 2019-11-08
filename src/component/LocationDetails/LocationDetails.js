@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Fab from '@material-ui/core/Fab';
-import EditIcon from '@material-ui/icons/Edit';
 import CloseIcon from '@material-ui/icons/Close';
 import Button from '@material-ui/core/Button';
-import YouTube from 'react-youtube';
 import LocationNotes from './LocationNotes';
 
 class LocationDetail extends Component {
@@ -57,7 +55,11 @@ class LocationDetail extends Component {
 							)}
 							{this.state.location.url && (
 								<h3 className='urlLink'>
-									<a href={this.state.location.url} target='_blank'>
+									<a
+										href={this.state.location.url}
+										rel='noopener noreferrer'
+										target='_blank'
+									>
 										{this.state.location.url}
 									</a>
 								</h3>

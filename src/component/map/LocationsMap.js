@@ -241,11 +241,11 @@ export default class Mapper extends Component {
 		} else return myIcon5;
 	};
 
-	getCoord = e => {
-		const lat = e.latlng.lat;
-		const lng = e.latlng.lng;
-		//console.log(lat, lng);
-	};
+	// getCoord = e => {
+	// 	const lat = e.latlng.lat;
+	// 	const lng = e.latlng.lng;
+	// 	console.log(lat, lng);
+	// };
 
 	saveObj = obj => {
 		console.log('fb obj', obj);

@@ -2,21 +2,17 @@ import React, { Component } from 'react';
 import TripManager from '../../modules/TripManager';
 import TripMapper from '../map/TripsMap';
 import TripCard from './TripCard';
-import TripDrawer from './TripDrawer';
 import TripForm from './TripForm';
 import Dialog from '@material-ui/core/Dialog';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import { withStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import animateScrollTo from 'animated-scroll-to';
 import ErrorIcon from '@material-ui/icons/Error';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
-import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
@@ -46,7 +42,7 @@ class TripList extends Component {
 
 	handleSnackClick = () => {
 		this.setState({ snackOpen: true });
-		console.log('snackery');
+		//console.log('snackery');
 	};
 
 	handleSnackClose = (event, reason) => {
@@ -60,7 +56,7 @@ class TripList extends Component {
 	//modal open
 
 	handleClickOpen = () => {
-		console.log('clicked open');
+		//console.log('clicked open');
 		if (this.state.newLat === '') {
 			this.handleSnackClick();
 		} else {
@@ -84,11 +80,11 @@ class TripList extends Component {
 			})
 			.then(() => {
 				TripManager.getSharedTrips(this.props.email).then(newSharedTrips => {
-					console.log('new shared', newSharedTrips);
+					//console.log('new shared', newSharedTrips);
 					let sharedMapTrips = [];
 					newSharedTrips.forEach(trip => {
 						sharedMapTrips.push(trip.trip);
-						console.log('trip trip', trip.trip);
+						//console.log('trip trip', trip.trip);
 					});
 					this.setState({
 						sharedMapTrips: sharedMapTrips,
@@ -118,7 +114,7 @@ class TripList extends Component {
 
 	//allows user to click a trip and zoom to its location on the map
 	clickedCardItem = obj => {
-		console.log('obj', obj.lat);
+		//console.log('obj', obj.lat);
 		this.setState({
 			clickedCoords: [obj.lat, obj.lng]
 		});
@@ -132,7 +128,7 @@ class TripList extends Component {
 	//store a marker info for adding to map
 
 	addMarker = obj => {
-		console.log('obj from add marker', obj);
+		//console.log('obj from add marker', obj);
 		this.setState({
 			newName: obj.geocode.name,
 			newLat: obj.geocode.center.lat,
@@ -158,7 +154,7 @@ class TripList extends Component {
 	render() {
 		// const { classes } = this.props;
 		//console.log('clicked cords', this.state.clickedCoords);
-		console.log('shared trippin', this.state.sharedMapTrips);
+		//console.log('shared trippin', this.state.sharedMapTrips);
 		return (
 			<>
 				<div className='tripWrapper'>

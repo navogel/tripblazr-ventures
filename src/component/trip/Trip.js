@@ -5,23 +5,18 @@ import { withRouter } from 'react-router-dom';
 import LocationCard from './LocationCard';
 import animateScrollTo from 'animated-scroll-to';
 import Dialog from '@material-ui/core/Dialog';
-import Fab from '@material-ui/core/Fab';
-import { withStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import ErrorIcon from '@material-ui/icons/Error';
 import LocationForm from '../trip/LocationForm';
-import AddIcon from '@material-ui/icons/Add';
 import TripDrawer from './TripDrawer';
 import LocDrawer from '../LocationDetails/LocationDetailsDrawer';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
 import HotelIcon from '@material-ui/icons/Hotel';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import CommuteIcon from '@material-ui/icons/Commute';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import Brightness2Icon from '@material-ui/icons/Brightness2';
 import DirectionsWalkIcon from '@material-ui/icons/DirectionsWalk';
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import HeightIcon from '@material-ui/icons/Height';
@@ -285,7 +280,7 @@ class Trip extends Component {
 	// };
 
 	componentDidMount() {
-		// console.log('props from tripcard', this.props);
+		//console.log('props from tripcard', this.props);
 
 		TripManager.getTrip(this.props.tripId)
 			.then(locations => {
@@ -295,12 +290,30 @@ class Trip extends Component {
 				});
 			})
 			.then(() => {
+				let email = this.props.email;
+				console.log('email', email);
+				let emailCheck = function(element) {
+					// function to check whether a trip has been shared with your email
+					return element.friendEmail === email;
+				};
 				TripManager.getTripDetails(this.props.tripId).then(details => {
 					if (details[0].userId === this.props.activeUser) {
 						this.setState({
 							myTrip: true,
 							tripDetails: details[0]
 						});
+					} else if (details[0].sharedTrips.some(emailCheck)) {
+						this.setState({
+							tripDetails: details[0],
+							sharedTrip: true
+						});
+					} else if (details[0].published === true) {
+						this.setState({
+							tripDetails: details[0],
+							publicTrip: true
+						});
+					} else {
+						this.props.history.push(`/mytrips`);
 					}
 				});
 			});
@@ -330,6 +343,10 @@ class Trip extends Component {
 		console.log(
 			'my trip?',
 			this.state.myTrip,
+			'shared trip?',
+			this.state.sharedTrip,
+			'public trip?',
+			this.state.publicTrip,
 			'trip deets',
 			this.state.tripDetails
 		);

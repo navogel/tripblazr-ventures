@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import TripManager from '../../modules/TripManager';
-import PropTypes from 'prop-types';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
 //import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';

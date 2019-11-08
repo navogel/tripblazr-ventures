@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TripManager from '../../modules/TripManager';
-import PropTypes from 'prop-types';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import ReactDOM from 'react-dom';
 //import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 // import './tripForm.css';
 import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import CloseIcon from '@material-ui/icons/Close';
 
 import moment from 'moment';
 

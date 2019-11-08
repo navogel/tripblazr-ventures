@@ -121,7 +121,11 @@ class LocationNoteCard extends Component {
 								)}
 							</div>
 							<DialogTitle className='urlNoteLink'>
-								<a href={this.props.note.note} target='_blank'>
+								<a
+									href={this.props.note.note}
+									rel='noopener noreferrer'
+									target='_blank'
+								>
 									{this.props.note.note}
 								</a>
 							</DialogTitle>
@@ -172,6 +176,7 @@ class LocationNoteCard extends Component {
 							</div>
 							<div className='video-responsive'>
 								<iframe
+									title={this.props.note.id}
 									width='560'
 									height='315'
 									src={`https://www.youtube.com/embed/${this.props.note.note}`}

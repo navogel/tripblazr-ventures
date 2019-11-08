@@ -7,7 +7,7 @@ class TripGeoSearch extends MapControl {
 	createLeafletElement(props) {}
 
 	componentDidMount() {
-		console.log('props geo', this.props);
+		//console.log('props geo', this.props);
 		var myIcon4 = L.icon({
 			iconUrl: '/images/markers/icon4.png',
 			iconSize: [25, 41],
@@ -27,7 +27,7 @@ class TripGeoSearch extends MapControl {
 		}).on('markgeocode', result => {
 			this.props.clearClickedCoords();
 			this.props.storeGeocode(result);
-			console.log('georeuslt', result);
+			//console.log('georeuslt', result);
 			// let printResult = this.props.storeGeocode(result);
 			result = result.geocode || result;
 
