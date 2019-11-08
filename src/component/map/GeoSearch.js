@@ -45,7 +45,10 @@ class GeoSearch extends MapControl {
 					className: 'toolTip'
 				})
 				.addTo(this.props.leaflet.map)
-				.on('click', e => this.props.storeGeocode(e, result));
+				.on('click', e => {
+					this.props.storeGeocode(e, result);
+					this.props.leaflet.map.removeLayer(this._geocodeMarker);
+				});
 
 			return this;
 		});

@@ -6149,6 +6149,20 @@
       "url": "",
       "star": false,
       "id": 538
+    },
+    {
+      "tripId": 1,
+      "summary": "",
+      "lat": 36.1720913,
+      "lng": -86.7497678,
+      "address": "1108 Boscobel Street, Nashville, Tennessee 37206, United States",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "some place new",
+      "url": "",
+      "star": false,
+      "id": 539
     }
   ]
 }
