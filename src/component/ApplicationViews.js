@@ -70,6 +70,7 @@ class ApplicationViews extends Component {
 								<Trip
 									tripId={parseInt(props.match.params.tripId)}
 									activeUser={this.props.activeUser}
+									email={this.props.email}
 									{...props}
 								/>
 							);

@@ -45,9 +45,13 @@ class Trip extends Component {
 		//object set for adding or editing
 		geoMarker: {},
 
-		//check for trip ownership
+		//states for trip ownership
 
 		myTrip: false,
+
+		sharedTrip: false,
+
+		publicTrip: false,
 
 		//modals/drawer/snacks
 		open: false,
@@ -202,20 +206,13 @@ class Trip extends Component {
 	//fetch trip locations and trip details
 
 	getData = () => {
-		TripManager.getTrip(this.props.tripId)
-			.then(locations => {
-				this.setState({
-					locations: locations,
-					clickedCoords: []
-				});
-			})
-			.then(() => {
-				TripManager.getTripDetails(this.props.tripId).then(details => {
-					this.setState({
-						tripDetails: details
-					});
-				});
+		TripManager.getTrip(this.props.tripId).then(locations => {
+			this.setState({
+				locations: locations,
+				clickedCoords: []
 			});
+		});
+
 		this.setState({
 			geoMarker: {},
 			lastFilter: ''
@@ -290,7 +287,23 @@ class Trip extends Component {
 	componentDidMount() {
 		// console.log('props from tripcard', this.props);
 
-		this.getData();
+		TripManager.getTrip(this.props.tripId)
+			.then(locations => {
+				this.setState({
+					locations: locations,
+					clickedCoords: []
+				});
+			})
+			.then(() => {
+				TripManager.getTripDetails(this.props.tripId).then(details => {
+					if (details[0].userId === this.props.activeUser) {
+						this.setState({
+							myTrip: true,
+							tripDetails: details[0]
+						});
+					}
+				});
+			});
 	}
 
 	//when marker is clicked add obj to state
@@ -314,7 +327,12 @@ class Trip extends Component {
 	};
 
 	render() {
-		//console.log('we have a trip trigger');
+		console.log(
+			'my trip?',
+			this.state.myTrip,
+			'trip deets',
+			this.state.tripDetails
+		);
 		let tripCost = 0;
 
 		this.state.locations.forEach(location => {

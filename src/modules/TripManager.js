@@ -13,7 +13,9 @@ export default {
 		).then(result => result.json());
 	},
 	getTripDetails(id) {
-		return fetch(`${remoteURL}/trips/${id}`).then(result => result.json());
+		return fetch(`${remoteURL}/trips?id=${id}&_embed=sharedTrips`).then(
+			result => result.json()
+		);
 	},
 
 	getTripByType(id, typeId) {
