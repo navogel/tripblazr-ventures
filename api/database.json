@@ -13,10 +13,28 @@
       "friendEmail": "sam@sam.com"
     },
     {
-      "email": "steve@steve.com",
+      "friendEmail": "steve@steve.com",
       "userId": 2,
       "tripId": 7,
       "id": 3
+    },
+    {
+      "friendEmail": "sam@sam.com",
+      "userId": 2,
+      "tripId": 7,
+      "id": 4
+    },
+    {
+      "friendEmail": "what@what.com",
+      "userId": 1,
+      "tripId": 13,
+      "id": 5
+    },
+    {
+      "friendEmail": "sam@sam.com",
+      "userId": 1,
+      "tripId": 5,
+      "id": 6
     }
   ],
   "locationNotes": [
@@ -225,7 +243,8 @@
       "userName": "what",
       "password": "pass",
       "name": "what",
-      "id": 4
+      "id": 4,
+      "email": "what@what.com"
     }
   ],
   "trips": [

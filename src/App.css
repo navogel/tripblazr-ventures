@@ -360,11 +360,24 @@ body {
 	color: rgb(58, 189, 40) !important;
 }
 
+.warning {
+	color: rgb(187, 53, 53);
+}
+
 /* tripDetails Mdodal */
 
 .tripDetailsWrapper {
 	width: 550px !important;
 	padding: 3em;
+}
+
+.shareList {
+	display: flex;
+	flex-direction: column;
+}
+
+.shareList > p {
+	text-align: center;
 }
 
 .tripShare {
@@ -380,17 +393,23 @@ body {
 .tripShareInput {
 	padding: 2em 3em;
 	width: 100%;
-	margin: 2em 3em;
+	/* margin: 0em 3em; */
 	align-items: center;
 	border-radius: 6px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	padding-top: 0em;
+}
+
+.tripShareInput > .MuiFormControl-root {
+	margin-left: 0em !important;
+	flex-grow: 1;
 }
 
 .tripShareInput > .MuiButtonBase-root {
 	margin-top: 0.2em;
-	margin-left: 2em;
+	margin-left: 1em;
 }
 
 .formWrapperTrip {
@@ -399,4 +418,5 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 2.5em;
 }

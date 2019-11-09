@@ -390,7 +390,7 @@ class Trip extends Component {
 								<div className='tripHeader'>
 									<h1>
 										{this.state.myTrip && (
-											<Tooltip title='sharing'>
+											<Tooltip title='manage trip sharing'>
 												<IconButton onClick={this.handleClickOpenTrip}>
 													<ShareIcon />
 												</IconButton>
@@ -507,6 +507,7 @@ class Trip extends Component {
 						handleClose={this.handleCloseTrip}
 						activeUser={this.props.activeUser}
 						tripId={this.state.tripDetails.id}
+						published={this.state.tripDetails.published}
 					/>
 				</Dialog>
 

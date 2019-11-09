@@ -9,6 +9,9 @@ import AddIcon from '@material-ui/icons/Add';
 import '../trip/tripForm.css';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
 const styles = theme => ({
 	container: {
@@ -32,9 +35,9 @@ const styles = theme => ({
 class TripDetails extends Component {
 	state = {
 		tripShares: [],
-		email: '',
+		friendEmail: '',
 		loadingStatus: false,
-		public: false
+		published: false
 		// imageLink: ''
 	};
 
@@ -52,12 +55,12 @@ class TripDetails extends Component {
 	 */
 	constructNewTripShare = evt => {
 		evt.preventDefault();
-		if (this.state.email === '') {
+		if (this.state.friendEmail === '') {
 			window.alert('Please input an email to share this trip');
 		} else {
 			this.setState({ loadingStatus: true });
 			const share = {
-				email: this.state.email,
+				friendEmail: this.state.friendEmail,
 				userId: this.props.activeUser,
 				tripId: this.props.tripId
 			};
@@ -70,11 +73,31 @@ class TripDetails extends Component {
 					this.setState({
 						tripShares: data,
 						loadingStatus: false,
-						email: ''
+						friendEmail: ''
 					});
 				});
 			});
 		}
+	};
+
+	ShareTrip = () => {
+		let trip = {
+			id: this.props.tripId,
+			published: true
+		};
+		TripManager.updateTrip(trip).then(() => {
+			this.setState({ published: true });
+		});
+	};
+
+	HideTrip = () => {
+		let trip = {
+			id: this.props.tripId,
+			published: false
+		};
+		TripManager.updateTrip(trip).then(() => {
+			this.setState({ published: false });
+		});
 	};
 
 	getShares = () => {
@@ -87,6 +110,9 @@ class TripDetails extends Component {
 
 	componentDidMount() {
 		this.getShares();
+		this.setState({
+			published: this.props.published
+		});
 	}
 
 	render() {
@@ -96,21 +122,52 @@ class TripDetails extends Component {
 				<div className='tripDetailsWrapper'>
 					<div className='formWrapperTrip'>
 						<DialogTitle className='modalTitle'>
-							{'Make this trip a collab.'}
+							{'Make this trip a collab or share it with the world.'}
 						</DialogTitle>
-						<div className='tripShareInput'>
-							<div className='nameCity'>
-								<TextField
-									id='email'
-									label='email'
-									className={classes.textField}
-									value={this.state.email}
-									onChange={this.handleFieldChange}
-									margin='dense'
-									variant='outlined'
-									placeholder='Be careful, they will get full access!!!'
+						{!this.state.published && (
+							<Tooltip title='click to let people see, but not touch'>
+								<FormControlLabel
+									control={
+										<Switch
+											checked={this.state.published}
+											onChange={this.ShareTrip}
+											value='this.state.shareView'
+										/>
+									}
+									label='This trip is NOT published.'
 								/>
-							</div>
+							</Tooltip>
+						)}
+						{this.state.published && (
+							<Tooltip title='click to hide this trip'>
+								<FormControlLabel
+									control={
+										<Switch
+											checked={this.state.published}
+											onChange={this.HideTrip}
+											value='this.state.shareView'
+										/>
+									}
+									label='This trip is published.'
+								/>
+							</Tooltip>
+						)}
+					</div>
+
+					<div className='shareList'>
+						<p>These people can access and edit your trip.</p>
+
+						<div className='tripShareInput'>
+							<TextField
+								id='friendEmail'
+								label='Email'
+								className={classes.textField}
+								value={this.state.friendEmail}
+								onChange={this.handleFieldChange}
+								margin='dense'
+								variant='outlined'
+								placeholder='trip together, stick together'
+							/>
 
 							{/* <button
 						type='button'
@@ -133,16 +190,19 @@ class TripDetails extends Component {
 								Submit
 							</Fab>
 						</div>
+						{this.state.tripShares.map(share => (
+							<div key={share.id} className='tripShare'>
+								<p>
+									<b>{share.friendEmail}</b>
+								</p>
+								<Tooltip title='remove from trip'>
+									<IconButton onClick={e => this.handleDelete(share.id)}>
+										<DeleteIcon className='warning' />
+									</IconButton>
+								</Tooltip>
+							</div>
+						))}
 					</div>
-
-					{this.state.tripShares.map(share => (
-						<div key={share.id} className='tripShare'>
-							<p>{share.email}</p>
-							<IconButton onClick={e => this.handleDelete(share.id)}>
-								<DeleteIcon />
-							</IconButton>
-						</div>
-					))}
 				</div>
 			</>
 		);
