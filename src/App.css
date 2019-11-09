@@ -93,6 +93,15 @@ body {
 	box-shadow: -2px 2px 5px;
 }
 
+.listHeaderName {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
 .leftColumn .listHeader {
 	justify-content: space-around;
 	padding: 0em;

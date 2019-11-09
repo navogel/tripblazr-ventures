@@ -160,27 +160,34 @@ class TripList extends Component {
 				<div className='tripWrapper'>
 					<div className='leftColumn'>
 						<div className='listHeader'>
-							<IconButton size='small' onClick={this.handleLogout}>
-								<TransitEnterexitIcon />
-							</IconButton>
-							<h1>Your Trips</h1>
-							<Fab color='primary' size='small' onClick={this.handleClickOpen}>
-								<AddIcon />
-							</Fab>
+							<div className='listHeaderName'>
+								<IconButton size='small' onClick={this.handleLogout}>
+									<TransitEnterexitIcon />
+								</IconButton>
+								<h1>Your Trips</h1>
+								<Fab
+									color='primary'
+									size='small'
+									onClick={this.handleClickOpen}
+								>
+									<AddIcon />
+								</Fab>
+							</div>
+							<div className='shareToggle'>
+								<FormControlLabel
+									control={
+										<Switch
+											checked={this.state.shareView}
+											onChange={this.shareViewToggle}
+											value='this.state.shareView'
+										/>
+									}
+									label='Shared with Me'
+								/>
+							</div>
 						</div>
+
 						<Divider />
-						<div className='shareToggle'>
-							<FormControlLabel
-								control={
-									<Switch
-										checked={this.state.shareView}
-										onChange={this.shareViewToggle}
-										value='this.state.shareView'
-									/>
-								}
-								label='Shared with Me'
-							/>
-						</div>
 
 						{this.state.shareView ? (
 							<div className='listWrapper'>
