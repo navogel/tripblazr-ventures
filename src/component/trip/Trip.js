@@ -304,7 +304,7 @@ class Trip extends Component {
 			})
 			.then(() => {
 				let email = this.props.email;
-				console.log('email', email);
+				//console.log('email', email);
 				let emailCheck = function(element) {
 					// function to check whether a trip has been shared with your email
 					return element.friendEmail === email;
@@ -335,7 +335,7 @@ class Trip extends Component {
 	//when marker is clicked add obj to state
 
 	addGeoSearchMarker = obj => {
-		console.log('obj from add marker', obj);
+		//console.log('obj from add marker', obj);
 		this.setState({
 			geoMarker: obj
 		});
@@ -402,7 +402,6 @@ class Trip extends Component {
 										<IconButton
 											className='backtoTripsBtn'
 											onClick={this.switchTrip}
-											size='large'
 										>
 											<TransitEnterexitIcon />
 										</IconButton>

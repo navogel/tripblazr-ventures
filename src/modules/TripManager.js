@@ -8,8 +8,8 @@ export default {
 		);
 	},
 	getAllPublicTrips() {
-		return fetch(`${remoteURL}/trips?published=true`).then(result =>
-			result.json()
+		return fetch(`${remoteURL}/trips?published=true&_expand=user`).then(
+			result => result.json()
 		);
 	},
 	getTrip(id) {

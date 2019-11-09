@@ -91,51 +91,67 @@ class TripCard extends Component {
 									</h3>
 									<p>Destination: {this.props.trip.city}</p>
 									{this.props.name && <p>Created By: {this.props.name}</p>}
+									{this.props.publicView && this.props.trip.user.name && (
+										<p>Created By: {this.props.trip.user.name}</p>
+									)}
 								</CardContent>
 							</Link>
 						</CardActionArea>
 					)}
-					<CardActions className='cardButtons'>
-						{this.state.edit ? (
+					{!this.props.publicView && (
+						<CardActions className='cardButtons'>
+							{this.state.edit ? (
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.editName(this.props.trip.id)}
+								>
+									submit
+								</Button>
+							) : (
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.editView()}
+								>
+									Edit
+								</Button>
+							)}
+							{!this.props.name && (
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.handleDelete(this.props.trip.id)}
+								>
+									Delete
+								</Button>
+							)}
 							<Button
 								size='small'
 								color='primary'
-								onClick={() => this.editName(this.props.trip.id)}
+								onClick={() => this.props.clickedCardItem(this.props.trip)}
 							>
-								submit
+								Fly to
 							</Button>
-						) : (
-							<Button
-								size='small'
-								color='primary'
-								onClick={() => this.editView()}
-							>
-								Edit
-							</Button>
-						)}
-						{!this.props.name && (
-							<Button
-								size='small'
-								color='primary'
-								onClick={() => this.handleDelete(this.props.trip.id)}
-							>
-								Delete
-							</Button>
-						)}
-						<Button
-							size='small'
-							color='primary'
-							onClick={() => this.props.clickedCardItem(this.props.trip)}
-						>
-							Fly to
-						</Button>
-						{/* <EditAnimalModal id={this.props.animal.id} {...this.props} /> */}
-						{/* <Link to={`/animals/${this.props.animal.id}`}>
+							{/* <EditAnimalModal id={this.props.animal.id} {...this.props} /> */}
+							{/* <Link to={`/animals/${this.props.animal.id}`}>
 						<Button size='small' color='primary'>
 							Info
 						</Button>
 					</Link> */}
-					</CardActions>
+						</CardActions>
+					)}
+					{this.props.publicView && (
+						<CardActions className='cardButtons'>
+							<Button
+								size='small'
+								color='primary'
+								onClick={() => this.props.clickedCardItem(this.props.trip)}
+							>
+								Fly to
+							</Button>
+						</CardActions>
+					)}
 				</Card>
 			</>
 		);

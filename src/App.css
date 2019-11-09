@@ -447,3 +447,11 @@ body {
 	justify-content: center;
 	margin-bottom: 2.5em;
 }
+
+.MuiGrid-root > div {
+	z-index: 900;
+}
+
+.shareToggle {
+	padding: 1em;
+}

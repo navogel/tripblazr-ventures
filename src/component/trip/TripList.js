@@ -15,6 +15,17 @@ import ErrorIcon from '@material-ui/icons/Error';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+// import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+// import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+// import Grow from '@material-ui/core/Grow';
+// import Paper from '@material-ui/core/Paper';
+// import Popper from '@material-ui/core/Popper';
+// import MenuItem from '@material-ui/core/MenuItem';
+// import MenuList from '@material-ui/core/MenuList';
+// import PropTypes from 'prop-types';
+import TripMenu from './TripMenu';
 
 class TripList extends Component {
 	state = {
@@ -76,7 +87,9 @@ class TripList extends Component {
 			.then(newTrips => {
 				this.setState({
 					trips: newTrips,
-					clickedCoords: []
+					clickedCoords: [],
+					shareView: false,
+					publicView: false
 				});
 			})
 			.then(() => {
@@ -93,16 +106,7 @@ class TripList extends Component {
 					});
 				});
 			});
-	};
-
-	getPublicTrips = () => {
-		TripManager.getAllPublicTrips().then(newTrips => {
-			this.setState({
-				trips: newTrips,
-				clickedCoords: [],
-				publicView: true
-			});
-		});
+		//this.refs.map.resetMap();
 	};
 
 	//scroll to hovered marker, set state for classChange
@@ -152,18 +156,29 @@ class TripList extends Component {
 		//console.log('trippin', this.state.trips);
 	}
 
-	//toggle shareView
+	//toggle Views
 
-	shareViewToggle = () => {
-		if (this.state.shareView === false) {
-			this.setState({ shareView: true });
-		} else {
-			this.setState({ shareView: false });
-		}
+	shareView = () => {
+		this.setState({
+			shareView: true,
+			publicView: false
+		});
+		//console.log('ref', this.refs);
+	};
+
+	getPublicTrips = () => {
+		TripManager.getAllPublicTrips().then(newTrips => {
+			this.setState({
+				trips: newTrips,
+				clickedCoords: [],
+				publicView: true,
+				shareView: false
+			});
+		});
+		//this.refs.map.resetMap();
 	};
 
 	render() {
-		// const { classes } = this.props;
 		//console.log('clicked cords', this.state.clickedCoords);
 		//console.log('shared trippin', this.state.sharedMapTrips);
 		return (
@@ -185,7 +200,7 @@ class TripList extends Component {
 								</Fab>
 							</div>
 							<div className='shareToggle'>
-								<FormControlLabel
+								{/* <FormControlLabel
 									control={
 										<Switch
 											checked={this.state.shareView}
@@ -204,6 +219,22 @@ class TripList extends Component {
 										/>
 									}
 									label='Shared with Me'
+								/>
+								<ButtonGroup
+									// fullWidth
+									variant='contained'
+									color='primary'
+									aria-label='full width outlined button group'
+								>
+									<Button onClick={this.getTrips}>Yours</Button>
+									<Button onClick={this.shareView}>Shared</Button>
+									<Button onClick={this.getPublicTrips}>Public</Button>
+								</ButtonGroup> */}
+
+								<TripMenu
+									shareView={this.shareView}
+									getPublicTrips={this.getPublicTrips}
+									getTrips={this.getTrips}
 								/>
 							</div>
 						</div>
@@ -240,6 +271,8 @@ class TripList extends Component {
 										getTrips={this.getTrips}
 										clickedCardItem={this.clickedCardItem}
 										hovered={this.state.hovered}
+										publicView={this.state.publicView}
+
 										// {...this.props}
 									/>
 								))}
@@ -249,6 +282,7 @@ class TripList extends Component {
 					{this.state.shareView ? (
 						<div className='mapWrapper'>
 							<TripMapper
+								ref='mapShare'
 								className='mapper'
 								trips={this.state.sharedMapTrips}
 								lat={this.state.lat}
@@ -268,6 +302,7 @@ class TripList extends Component {
 					) : (
 						<div className='mapWrapper'>
 							<TripMapper
+								ref='map'
 								className='mapper'
 								trips={this.state.trips}
 								lat={this.state.lat}

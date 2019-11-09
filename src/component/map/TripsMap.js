@@ -117,6 +117,10 @@ class TripMapper extends Component {
 		this.setState({ geocoded: false });
 	};
 
+	resetMap = () => {
+		this.leafletMap.leafletElement.setView([40, 34], 2);
+	};
+
 	getCoord = e => {
 		const lat = e.latlng.lat;
 		const lng = e.latlng.lng;
