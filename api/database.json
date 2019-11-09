@@ -11,6 +11,12 @@
       "id": 2,
       "userId": 1,
       "friendEmail": "sam@sam.com"
+    },
+    {
+      "email": "steve@steve.com",
+      "userId": 2,
+      "tripId": 7,
+      "id": 3
     }
   ],
   "locationNotes": [

@@ -119,5 +119,24 @@ export default {
 		return fetch(
 			`${remoteURL}/sharedTrips?friendEmail=${userEmail}&_expand=trip&_expand=user`
 		).then(result => result.json());
+	},
+	getTripsShares(tripId) {
+		return fetch(`${remoteURL}/sharedTrips?tripId=${tripId}`).then(result =>
+			result.json()
+		);
+	},
+	postTripShare(newShare) {
+		return fetch(`${remoteURL}/sharedTrips`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(newShare)
+		}).then(data => data.json());
+	},
+	deleteTripShare(id) {
+		return fetch(`${remoteURL}/sharedTrips/${id}`, {
+			method: 'DELETE'
+		}).then(result => result.json());
 	}
 };

@@ -22,6 +22,8 @@ import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import HeightIcon from '@material-ui/icons/Height';
 import StarIcon from '@material-ui/icons/Star';
 import Tooltip from '@material-ui/core/Tooltip';
+import TripDetails from '../TripDetails/TripDetails';
+import ShareIcon from '@material-ui/icons/Share';
 
 class Trip extends Component {
 	state = {
@@ -49,6 +51,7 @@ class Trip extends Component {
 		publicTrip: false,
 
 		//modals/drawer/snacks
+		openTrip: false,
 		open: false,
 		openEdit: false,
 		snackOpen: false,
@@ -84,6 +87,16 @@ class Trip extends Component {
 
 	handleClose = () => {
 		this.setState({ open: false });
+	};
+
+	//modal open TripDetails
+
+	handleClickOpenTrip = () => {
+		this.setState({ openTrip: true });
+	};
+
+	handleCloseTrip = () => {
+		this.setState({ openTrip: false });
 	};
 
 	//drawer for viewing
@@ -376,7 +389,14 @@ class Trip extends Component {
 							{this.state.menuOpen && (
 								<div className='tripHeader'>
 									<h1>
-										<Tooltip title='back to trips'>
+										{this.state.myTrip && (
+											<Tooltip title='sharing'>
+												<IconButton onClick={this.handleClickOpenTrip}>
+													<ShareIcon />
+												</IconButton>
+											</Tooltip>
+										)}
+										<Tooltip title='go back to trips'>
 											<IconButton onClick={this.switchTrip}>
 												<TransitEnterexitIcon />
 											</IconButton>
@@ -476,6 +496,17 @@ class Trip extends Component {
 						handleClose={this.handleClose}
 						activeUser={this.props.activeUser}
 						tripDetails={this.state.tripDetails}
+					/>
+				</Dialog>
+				<Dialog
+					open={this.state.openTrip}
+					onClose={this.handleCloseTrip}
+					aria-labelledby='form-dialog-title'
+				>
+					<TripDetails
+						handleClose={this.handleCloseTrip}
+						activeUser={this.props.activeUser}
+						tripId={this.state.tripDetails.id}
 					/>
 				</Dialog>
 
