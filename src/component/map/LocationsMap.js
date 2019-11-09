@@ -93,7 +93,7 @@ export default class Mapper extends Component {
 		//console.log('got the deets', obj);
 		if (this.state.mapLoaded === false) {
 			this.setState({ mapLoaded: true });
-			console.log('set state maploaded');
+			//console.log('set state maploaded');
 		}
 		this.props.scrollTo(obj.id);
 	};
@@ -182,8 +182,7 @@ export default class Mapper extends Component {
 
 	//drop marker on click and record coords and address
 	componentDidMount() {
-		console.log('trip public? at didmount', this.props.publicTrip);
-
+		//console.log('trip public? at didmount', this.props.publicTrip);
 		// const map = this.leafletMap.leafletElement;
 		// const geocoder = L.Control.Geocoder.mapbox(Token);
 		// let marker;
@@ -196,7 +195,6 @@ export default class Mapper extends Component {
 		// 			results => {
 		// 				var r = results[0];
 		// 				//	console.log('reverse geocode results', r);
-
 		// 				if (r) {
 		// 					this.setState({
 		// 						lat: r.center.lat,
@@ -246,7 +244,7 @@ export default class Mapper extends Component {
 	// };
 
 	saveObj = obj => {
-		console.log('fb obj', obj);
+		//console.log('fb obj', obj);
 	};
 
 	componentDidUpdate(prevProps) {
