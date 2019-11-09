@@ -88,21 +88,24 @@ class LocationNoteCard extends Component {
 								) : (
 									<p className='editStamp'>Posted: {timeStamp} </p>
 								)}
-
-								<Button
-									size='small'
-									color='primary'
-									onClick={() => this.handleDelete(this.props.note.id)}
-								>
-									Delete
-								</Button>
-								<Button
-									size='small'
-									color='primary'
-									onClick={() => this.handleClickOpen()}
-								>
-									Edit
-								</Button>
+								{!this.props.publicTrip && (
+									<>
+										<Button
+											size='small'
+											color='primary'
+											onClick={() => this.handleDelete(this.props.note.id)}
+										>
+											Delete
+										</Button>
+										<Button
+											size='small'
+											color='primary'
+											onClick={() => this.handleClickOpen()}
+										>
+											Edit
+										</Button>
+									</>
+								)}
 							</div>
 						</div>
 					</div>
@@ -142,21 +145,24 @@ class LocationNoteCard extends Component {
 								) : (
 									<p className='editStamp'>Posted: {timeStamp} </p>
 								)}
-
-								<Button
-									size='small'
-									color='primary'
-									onClick={() => this.handleDelete(this.props.note.id)}
-								>
-									Delete
-								</Button>
-								<Button
-									size='small'
-									color='primary'
-									onClick={() => this.handleClickOpen()}
-								>
-									Edit
-								</Button>
+								{!this.props.publicTrip && (
+									<>
+										<Button
+											size='small'
+											color='primary'
+											onClick={() => this.handleDelete(this.props.note.id)}
+										>
+											Delete
+										</Button>
+										<Button
+											size='small'
+											color='primary'
+											onClick={() => this.handleClickOpen()}
+										>
+											Edit
+										</Button>
+									</>
+								)}
 							</div>
 						</div>
 					</div>
@@ -198,21 +204,24 @@ class LocationNoteCard extends Component {
 								) : (
 									<p className='editStamp'>Posted: {timeStamp} </p>
 								)}
-
-								<Button
-									size='small'
-									color='primary'
-									onClick={() => this.handleDelete(this.props.note.id)}
-								>
-									Delete
-								</Button>
-								<Button
-									size='small'
-									color='primary'
-									onClick={() => this.handleClickOpen()}
-								>
-									Edit
-								</Button>
+								{!this.props.publicTrip && (
+									<>
+										<Button
+											size='small'
+											color='primary'
+											onClick={() => this.handleDelete(this.props.note.id)}
+										>
+											Delete
+										</Button>
+										<Button
+											size='small'
+											color='primary'
+											onClick={() => this.handleClickOpen()}
+										>
+											Edit
+										</Button>
+									</>
+								)}
 							</div>
 						</div>
 					</div>

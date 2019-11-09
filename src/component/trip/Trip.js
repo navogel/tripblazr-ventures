@@ -339,7 +339,7 @@ class Trip extends Component {
 		this.setState({
 			geoMarker: obj
 		});
-		this.handleClickOpen();
+		if (this.props.owner) this.handleClickOpen();
 	};
 
 	//toggle the hidden tripname view
@@ -353,16 +353,16 @@ class Trip extends Component {
 	};
 
 	render() {
-		console.log(
-			'my trip?',
-			this.state.myTrip,
-			'shared trip?',
-			this.state.sharedTrip,
-			'public trip?',
-			this.state.publicTrip,
-			'trip deets',
-			this.state.tripDetails
-		);
+		// console.log(
+		// 	'my trip?',
+		// 	this.state.myTrip,
+		// 	'shared trip?',
+		// 	this.state.sharedTrip,
+		// 	'public trip?',
+		// 	this.state.publicTrip,
+		// 	'trip deets',
+		// 	this.state.tripDetails
+		// );
 		let tripCost = 0;
 
 		this.state.locations.forEach(location => {
@@ -383,6 +383,7 @@ class Trip extends Component {
 						getData={this.getDataLite}
 						toggleDrawer={this.toggleDrawer}
 						activeUser={this.props.activeUser}
+						publicTrip={this.state.publicTrip}
 					/>
 					<div className='leftColumn'>
 						<div className='listHeader'>
@@ -465,6 +466,7 @@ class Trip extends Component {
 									toggleDrawer={this.toggleDrawer}
 									filterByStar={this.filterByStar}
 									toggleLocDrawer={this.toggleLocDrawer}
+									publicTrip={this.state.publicTrip}
 									//{...this.props}
 								/>
 							))}
@@ -486,6 +488,8 @@ class Trip extends Component {
 								hoverRemoveFocus={this.hoverRemoveFocus}
 								addGeoSearchMarker={this.addGeoSearchMarker}
 								toggleLocDrawer={this.toggleLocDrawer}
+								publicTrip={this.state.publicTrip}
+								ownerView={this.props.ownerView}
 							/>
 							{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
 						</div>

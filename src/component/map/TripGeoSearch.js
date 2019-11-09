@@ -41,7 +41,10 @@ class TripGeoSearch extends MapControl {
 				.bindTooltip(result.html || result.name, { className: 'toolTip' })
 				.addTo(this.props.leaflet.map)
 				//later add to trip on click
-				.on('click', e => this.props.handleClickOpen());
+				.on('click', e => {
+					this.props.handleClickOpen();
+					this.props.leaflet.map.removeLayer(this._geocodeMarker);
+				});
 
 			return this;
 		});

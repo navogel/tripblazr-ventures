@@ -57,7 +57,11 @@ class TripList extends Component {
 
 	handleClickOpen = () => {
 		//console.log('clicked open');
-		if (this.state.newLat === '') {
+		if (
+			this.state.newLat === '' ||
+			this.state.shareView ||
+			this.state.publicView
+		) {
 			this.handleSnackClick();
 		} else {
 			this.setState({ open: true });
@@ -94,7 +98,7 @@ class TripList extends Component {
 					});
 				});
 			});
-		//this.refs.map.resetMap();
+		//this.props.setOwner();
 	};
 
 	//scroll to hovered marker, set state for classChange
@@ -156,6 +160,7 @@ class TripList extends Component {
 
 	getPublicTrips = () => {
 		TripManager.getAllPublicTrips().then(newTrips => {
+			//this.props.removeOwner();
 			this.setState({
 				trips: newTrips,
 				clickedCoords: [],
@@ -252,6 +257,8 @@ class TripList extends Component {
 								hovered={this.state.hovered}
 								hoverRemoveFocus={this.hoverRemoveFocus}
 								handleClickOpen={this.handleClickOpen}
+								shareView={this.state.shareView}
+								publicView={this.state.publicView}
 								{...this.props}
 							/>
 							{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
@@ -272,6 +279,8 @@ class TripList extends Component {
 								hovered={this.state.hovered}
 								hoverRemoveFocus={this.hoverRemoveFocus}
 								handleClickOpen={this.handleClickOpen}
+								shareView={this.state.shareView}
+								publicView={this.state.publicView}
 								{...this.props}
 							/>
 							{/* <Mapper2 className='mapWrapper' props={this.state.locations} /> */}
@@ -299,7 +308,7 @@ class TripList extends Component {
 						horizontal: 'left'
 					}}
 					open={this.state.snackOpen}
-					autoHideDuration={5000}
+					autoHideDuration={7000}
 					onClose={this.handleSnackClose}
 					ContentProps={{
 						'aria-describedby': 'message-id'
@@ -310,7 +319,8 @@ class TripList extends Component {
 							<IconButton key='close' aria-label='Close' color='inherit'>
 								<ErrorIcon />
 							</IconButton>
-							Type in a location to drop a Pin!
+							To start a new trip: 1. Go to trips you own 2. Type in a location
+							to drop a Pin!
 						</span>
 					}
 					action={[

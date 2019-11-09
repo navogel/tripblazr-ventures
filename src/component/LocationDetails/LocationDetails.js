@@ -25,7 +25,7 @@ class LocationDetail extends Component {
 
 	render() {
 		// let siteLink = 'https://';
-		console.log('deets props', this.props);
+		//console.log('deets props', this.props);
 
 		return (
 			<>
@@ -68,13 +68,15 @@ class LocationDetail extends Component {
 							{this.state.location.price && (
 								<h3>Est Price: ${this.state.location.price}</h3>
 							)}
-							<Button
-								size='small'
-								color='primary'
-								onClick={() => this.switchToEdit(this.state.location)}
-							>
-								edit details
-							</Button>
+							{!this.props.publicTrip && (
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.switchToEdit(this.state.location)}
+								>
+									edit details
+								</Button>
+							)}
 						</div>
 						{/* <Fab
 					variant='extended'
@@ -89,6 +91,7 @@ class LocationDetail extends Component {
 						<LocationNotes
 							activeUser={this.props.activeUser}
 							locationId={this.state.location.id}
+							publicTrip={this.props.publicTrip}
 						/>
 					</div>
 				)}

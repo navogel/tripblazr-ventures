@@ -6,17 +6,17 @@ import TripList from './trip/TripList';
 class ApplicationViews extends Component {
 	state = {
 		loaded: false,
-		tripData: {},
-		publicView: false
+		tripData: {}
+		//OwnerView: false
 	};
 
-	setPublic = () => {
-		this.setState({ publicView: true });
-	};
+	// setOwner = () => {
+	// 	this.setState({ ownerView: true });
+	// };
 
-	removePublic = () => {
-		this.setState({ publicView: false });
-	};
+	// removeOwner = () => {
+	// 	this.setState({ ownerView: false });
+	// };
 
 	//  LATER: put this login into another component in order to match trip userID with active user
 	//
@@ -61,6 +61,8 @@ class ApplicationViews extends Component {
 									activeUser={this.props.activeUser}
 									clearUser={this.props.clearUser}
 									email={this.props.email}
+									// setOwner={this.setOwner}
+									// removeOwner={this.removeOwner}
 								/>
 							);
 						} else {
@@ -79,6 +81,7 @@ class ApplicationViews extends Component {
 									tripId={parseInt(props.match.params.tripId)}
 									activeUser={this.props.activeUser}
 									email={this.props.email}
+									//ownerView={this.state.ownerView}
 									{...props}
 								/>
 							);

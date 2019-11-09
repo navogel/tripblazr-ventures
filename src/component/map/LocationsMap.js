@@ -182,53 +182,51 @@ export default class Mapper extends Component {
 
 	//drop marker on click and record coords and address
 	componentDidMount() {
-		//console.log('trip deets from trip at didmount', this.props.tripDetails);
+		console.log('trip public? at didmount', this.props.publicTrip);
 
-		const map = this.leafletMap.leafletElement;
-		const geocoder = L.Control.Geocoder.mapbox(Token);
-		let marker;
+		// const map = this.leafletMap.leafletElement;
+		// const geocoder = L.Control.Geocoder.mapbox(Token);
+		// let marker;
+		// if (this.props.publicTrip === false) {
+		// 	map.on('click', e => {
+		// 		this.props.dropPin();
+		// 		geocoder.reverse(
+		// 			e.latlng,
+		// 			map.options.crs.scale(map.getZoom()),
+		// 			results => {
+		// 				var r = results[0];
+		// 				//	console.log('reverse geocode results', r);
 
-		map.on('click', e => {
-			this.props.dropPin();
-			geocoder.reverse(
-				e.latlng,
-				map.options.crs.scale(map.getZoom()),
-				results => {
-					var r = results[0];
-					//	console.log('reverse geocode results', r);
-
-					if (r) {
-						this.setState({
-							lat: r.center.lat,
-							lng: r.center.lng
-						});
-						if (marker) {
-							map.removeLayer(marker);
-							marker = L.marker(r.center, { icon: myIcon4 })
-								.bindTooltip(r.name, { className: 'toolTip' })
-								.addTo(map)
-								.on('click', e => {
-									this.storeGeocode(e, r);
-									map.removeLayer(marker);
-								});
-							// .openPopup();
-						} else {
-							marker = L.marker(r.center, { icon: myIcon4 })
-								.bindTooltip(r.name.split(',')[0], { className: 'toolTip' })
-								.addTo(map)
-								.on('click', e => {
-									this.storeGeocode(e, r);
-									map.removeLayer(marker);
-								});
-							// .openPopup();
-						}
-					}
-				}
-			);
-		});
-
-		//trying to set state in order to pass geosearch props but it breaks everything
-		//this.setState({ recievedTrip: true });
+		// 				if (r) {
+		// 					this.setState({
+		// 						lat: r.center.lat,
+		// 						lng: r.center.lng
+		// 					});
+		// 					if (marker) {
+		// 						map.removeLayer(marker);
+		// 						marker = L.marker(r.center, { icon: myIcon4 })
+		// 							.bindTooltip(r.name, { className: 'toolTip' })
+		// 							.addTo(map)
+		// 							.on('click', e => {
+		// 								this.storeGeocode(e, r);
+		// 								map.removeLayer(marker);
+		// 							});
+		// 						// .openPopup();
+		// 					} else {
+		// 						marker = L.marker(r.center, { icon: myIcon4 })
+		// 							.bindTooltip(r.name.split(',')[0], { className: 'toolTip' })
+		// 							.addTo(map)
+		// 							.on('click', e => {
+		// 								this.storeGeocode(e, r);
+		// 								map.removeLayer(marker);
+		// 							});
+		// 						// .openPopup();
+		// 					}
+		// 				}
+		// 			}
+		// 		);
+		// 	});
+		// }
 	}
 
 	configMyIcon = id => {
@@ -268,6 +266,49 @@ export default class Mapper extends Component {
 				// 		.bindTooltip(this.props.tripDetails.name, { className: 'toolTip' })
 				// 		.addTo(this.leafletMap.leafletElement);
 			}
+			const map = this.leafletMap.leafletElement;
+			const geocoder = L.Control.Geocoder.mapbox(Token);
+			let marker;
+			if (this.props.publicTrip === false) {
+				map.on('click', e => {
+					this.props.dropPin();
+					geocoder.reverse(
+						e.latlng,
+						map.options.crs.scale(map.getZoom()),
+						results => {
+							var r = results[0];
+							//	console.log('reverse geocode results', r);
+
+							if (r) {
+								this.setState({
+									lat: r.center.lat,
+									lng: r.center.lng
+								});
+								if (marker) {
+									map.removeLayer(marker);
+									marker = L.marker(r.center, { icon: myIcon4 })
+										.bindTooltip(r.name, { className: 'toolTip' })
+										.addTo(map)
+										.on('click', e => {
+											this.storeGeocode(e, r);
+											map.removeLayer(marker);
+										});
+									// .openPopup();
+								} else {
+									marker = L.marker(r.center, { icon: myIcon4 })
+										.bindTooltip(r.name.split(',')[0], { className: 'toolTip' })
+										.addTo(map)
+										.on('click', e => {
+											this.storeGeocode(e, r);
+											map.removeLayer(marker);
+										});
+									// .openPopup();
+								}
+							}
+						}
+					);
+				});
+			}
 		}
 	}
 
@@ -276,7 +317,7 @@ export default class Mapper extends Component {
 	//mapbox://styles/jerodis/ck24x2b5a12ro1cnzdopvyw08 light
 	//mapbox://styles/jerodis/ck24wv71g15vb1cp90thseofp dark
 	render() {
-		//console.log('trip deets from trip at render', this.props.tripDetails);
+		//console.log('trip deets from trip at render', this.props.ownerView);
 		let Atoken;
 		if (this.state.light === true) {
 			Atoken = `https://api.mapbox.com/styles/v1/jerodis/ck24x2b5a12ro1cnzdopvyw08/tiles/256/{z}/{x}/{y}@2x?access_token=${Token.MB}`;
@@ -305,7 +346,7 @@ export default class Mapper extends Component {
 			markers.length > 0 &&
 			this.state.mapLoaded === false
 		) {
-			console.log('fit bounds render');
+			//console.log('fit bounds render');
 			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
 		} else if (
 			this.leafletMap &&
@@ -317,7 +358,7 @@ export default class Mapper extends Component {
 			//console.log('cicked coords', this.props.clickedCoords);
 			//console.log('marker coords', markers);
 			//if not first load, and link has been clicked, zoom to marker
-			console.log('clicked place from list render');
+			//console.log('clicked place from list render');
 
 			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 13);
 		} else if (
@@ -328,7 +369,7 @@ export default class Mapper extends Component {
 			this.props.tripDetails.length > 0 &&
 			this.state.mapLoaded === false
 		) {
-			console.log('no locations', tripCoords);
+			//console.log('no locations', tripCoords);
 			this.leafletMap.leafletElement.setView(tripCoords, 13);
 		}
 

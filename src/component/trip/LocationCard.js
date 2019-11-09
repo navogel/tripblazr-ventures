@@ -61,22 +61,41 @@ class LocationCard extends Component {
 						onClick={() => this.props.toggleLocDrawer(this.props.location)}
 						className='cardActionArea'
 					>
-						<p className='cardLabel'>
-							{this.props.location.locationType.locationType}
+						{!this.props.publicTrip ? (
+							<p className='cardLabel'>
+								{this.props.location.locationType.locationType}
 
-							{this.state.star ? (
-								<StarIcon
-									className='starred'
-									color='secondary'
-									onClick={e => this.removeStar(e, this.props.location.id)}
-								/>
-							) : (
-								<StarBorderIcon
-									className='starred'
-									onClick={e => this.addStar(e, this.props.location.id)}
-								/>
-							)}
-						</p>
+								{this.state.star ? (
+									<StarIcon
+										className='starred'
+										color='secondary'
+										onClick={e => this.removeStar(e, this.props.location.id)}
+									/>
+								) : (
+									<StarBorderIcon
+										className='starred'
+										onClick={e => this.addStar(e, this.props.location.id)}
+									/>
+								)}
+							</p>
+						) : (
+							<p className='cardLabel'>
+								{this.props.location.locationType.locationType}
+
+								{this.state.star ? (
+									<StarIcon
+										className='starred'
+										color='secondary'
+										//onClick={e => this.removeStar(e, this.props.location.id)}
+									/>
+								) : (
+									<StarBorderIcon
+										className='starred'
+										//onClick={e => this.addStar(e, this.props.location.id)}
+									/>
+								)}
+							</p>
+						)}
 						{/* <Link to={`/mytrips/${this.props.location.id}`}> */}
 						{/* <CardMedia
 								className='tripCardMedia'
@@ -100,21 +119,25 @@ class LocationCard extends Component {
 								{this.props.location.price && `$${this.props.location.price}`}
 							</b>
 						</p>
-						<Button
-							size='small'
-							color='primary'
-							onClick={() => this.handleDelete(this.props.location.id)}
-						>
-							Delete
-						</Button>
-						<Button
-							size='small'
-							color='primary'
-							// onClick={() => this.toggleDrawer(this.props.location)}
-							onClick={() => this.props.toggleDrawer(this.props.location)}
-						>
-							Edit
-						</Button>
+						{!this.props.publicTrip && (
+							<>
+								<Button
+									size='small'
+									color='primary'
+									onClick={() => this.handleDelete(this.props.location.id)}
+								>
+									Delete
+								</Button>
+								<Button
+									size='small'
+									color='primary'
+									// onClick={() => this.toggleDrawer(this.props.location)}
+									onClick={() => this.props.toggleDrawer(this.props.location)}
+								>
+									Edit
+								</Button>
+							</>
+						)}
 						<Button
 							size='small'
 							color='primary'

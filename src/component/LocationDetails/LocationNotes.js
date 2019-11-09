@@ -48,14 +48,16 @@ class LocationNotes extends Component {
 			<div className='mainContainer'>
 				<div className='sectionHeader'>
 					<h2>Travel Notes</h2>
-					<Fab
-						onClick={this.newNote}
-						size='small'
-						color='primary'
-						aria-label='add'
-					>
-						<AddIcon />
-					</Fab>
+					{!this.props.publicTrip && (
+						<Fab
+							onClick={this.newNote}
+							size='small'
+							color='primary'
+							aria-label='add'
+						>
+							<AddIcon />
+						</Fab>
+					)}
 				</div>
 				{this.state.addNote && (
 					<AddNoteForm
@@ -73,6 +75,7 @@ class LocationNotes extends Component {
 						getNotes={this.getNotes}
 						activeUser={this.props.activeUser}
 						locationId={this.props.locationId}
+						publicTrip={this.props.publicTrip}
 					/>
 				))}
 				{/* <AddMessageForm ref={this.myRef} getData={this.getData} /> */}

@@ -116,6 +116,7 @@ class LocDrawer extends React.Component {
 								closeLocDrawer={this.closeLocDrawer}
 								toggleDrawer={this.props.toggleDrawer}
 								activeUser={this.props.activeUser}
+								publicTrip={this.props.publicTrip}
 							/>
 						</div>
 					</div>
