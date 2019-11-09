@@ -13,18 +13,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import animateScrollTo from 'animated-scroll-to';
 import ErrorIcon from '@material-ui/icons/Error';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-// import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-// import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-// import Grow from '@material-ui/core/Grow';
-// import Paper from '@material-ui/core/Paper';
-// import Popper from '@material-ui/core/Popper';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import MenuList from '@material-ui/core/MenuList';
-// import PropTypes from 'prop-types';
 import TripMenu from './TripMenu';
 
 class TripList extends Component {
@@ -200,37 +188,6 @@ class TripList extends Component {
 								</Fab>
 							</div>
 							<div className='shareToggle'>
-								{/* <FormControlLabel
-									control={
-										<Switch
-											checked={this.state.shareView}
-											onChange={this.shareViewToggle}
-											value='this.state.shareView'
-										/>
-									}
-									label='Shared with Me'
-								/>
-								<FormControlLabel
-									control={
-										<Switch
-											checked={this.state.shareView}
-											onChange={this.shareViewToggle}
-											value='this.state.shareView'
-										/>
-									}
-									label='Shared with Me'
-								/>
-								<ButtonGroup
-									// fullWidth
-									variant='contained'
-									color='primary'
-									aria-label='full width outlined button group'
-								>
-									<Button onClick={this.getTrips}>Yours</Button>
-									<Button onClick={this.shareView}>Shared</Button>
-									<Button onClick={this.getPublicTrips}>Public</Button>
-								</ButtonGroup> */}
-
 								<TripMenu
 									shareView={this.shareView}
 									getPublicTrips={this.getPublicTrips}
