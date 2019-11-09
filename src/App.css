@@ -91,6 +91,7 @@ body {
 	align-items: center;
 	flex-wrap: wrap;
 	box-shadow: -2px 2px 5px;
+	position: relative;
 }
 
 .listHeaderName {
@@ -203,6 +204,18 @@ body {
 	width: 100%;
 }
 
+.tripShareBtn {
+	position: absolute !important;
+	right: -1px;
+	top: -4px;
+}
+
+.backtoTripsBtn {
+	position: absolute !important;
+	left: -1px;
+	top: -4px;
+}
+
 .tripButtons {
 	width: 100%;
 	flex-direction: row;
@@ -223,6 +236,10 @@ body {
 }
 .tripHeader {
 	padding: 1em;
+}
+
+.tripHeader > h1 {
+	margin-top: 1em;
 }
 
 /* location Details drawer */

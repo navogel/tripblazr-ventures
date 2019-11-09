@@ -387,25 +387,32 @@ class Trip extends Component {
 					<div className='leftColumn'>
 						<div className='listHeader'>
 							{this.state.menuOpen && (
-								<div className='tripHeader'>
-									<h1>
-										{this.state.myTrip && (
-											<Tooltip title='manage trip sharing'>
-												<IconButton onClick={this.handleClickOpenTrip}>
-													<ShareIcon />
-												</IconButton>
-											</Tooltip>
-										)}
-										<Tooltip title='go back to trips'>
-											<IconButton onClick={this.switchTrip}>
-												<TransitEnterexitIcon />
+								<>
+									{this.state.myTrip && (
+										<Tooltip title='manage trip sharing'>
+											<IconButton
+												className='tripShareBtn'
+												onClick={this.handleClickOpenTrip}
+											>
+												<ShareIcon />
 											</IconButton>
 										</Tooltip>
-										{this.state.tripDetails.name}
-									</h1>
-									<h4>{this.state.tripDetails.city}</h4>
-									<h4>Estimated Trip Price: ${tripCost}</h4>
-								</div>
+									)}
+									<Tooltip title='go back to trips'>
+										<IconButton
+											className='backtoTripsBtn'
+											onClick={this.switchTrip}
+											size='large'
+										>
+											<TransitEnterexitIcon />
+										</IconButton>
+									</Tooltip>
+									<div className='tripHeader'>
+										<h1>{this.state.tripDetails.name}</h1>
+										<h4>{this.state.tripDetails.city}</h4>
+										<h4>Estimated Trip Price: ${tripCost}</h4>
+									</div>
+								</>
 							)}
 							<div className='tripButtons'>
 								<Tooltip title='filter stars'>
