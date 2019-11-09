@@ -7,6 +7,11 @@ export default {
 			result.json()
 		);
 	},
+	getAllPublicTrips() {
+		return fetch(`${remoteURL}/trips?published=true`).then(result =>
+			result.json()
+		);
+	},
 	getTrip(id) {
 		return fetch(
 			`${remoteURL}/locations?tripId=${id}&_expand=locationType&_embed=locationNotes`

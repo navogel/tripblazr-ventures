@@ -28,7 +28,8 @@ class TripList extends Component {
 		hovered: '',
 		sharedTrips: [],
 		sharedMapTrips: [],
-		shareView: false
+		shareView: false,
+		publicView: false
 	};
 
 	//logout
@@ -92,6 +93,16 @@ class TripList extends Component {
 					});
 				});
 			});
+	};
+
+	getPublicTrips = () => {
+		TripManager.getAllPublicTrips().then(newTrips => {
+			this.setState({
+				trips: newTrips,
+				clickedCoords: [],
+				publicView: true
+			});
+		});
 	};
 
 	//scroll to hovered marker, set state for classChange
@@ -174,6 +185,16 @@ class TripList extends Component {
 								</Fab>
 							</div>
 							<div className='shareToggle'>
+								<FormControlLabel
+									control={
+										<Switch
+											checked={this.state.shareView}
+											onChange={this.shareViewToggle}
+											value='this.state.shareView'
+										/>
+									}
+									label='Shared with Me'
+								/>
 								<FormControlLabel
 									control={
 										<Switch
