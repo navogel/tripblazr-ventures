@@ -6,7 +6,16 @@ import TripList from './trip/TripList';
 class ApplicationViews extends Component {
 	state = {
 		loaded: false,
-		tripData: {}
+		tripData: {},
+		publicView: false
+	};
+
+	setPublic = () => {
+		this.setState({ publicView: true });
+	};
+
+	removePublic = () => {
+		this.setState({ publicView: false });
 	};
 
 	//  LATER: put this login into another component in order to match trip userID with active user

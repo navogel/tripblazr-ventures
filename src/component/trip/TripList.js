@@ -239,7 +239,7 @@ class TripList extends Component {
 					{this.state.shareView ? (
 						<div className='mapWrapper'>
 							<TripMapper
-								ref='mapShare'
+								//ref='mapShare'
 								className='mapper'
 								trips={this.state.sharedMapTrips}
 								lat={this.state.lat}
@@ -259,7 +259,7 @@ class TripList extends Component {
 					) : (
 						<div className='mapWrapper'>
 							<TripMapper
-								ref='map'
+								//ref='map'
 								className='mapper'
 								trips={this.state.trips}
 								lat={this.state.lat}

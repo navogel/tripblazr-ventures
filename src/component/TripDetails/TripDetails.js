@@ -37,8 +37,7 @@ class TripDetails extends Component {
 		tripShares: [],
 		friendEmail: '',
 		loadingStatus: false,
-		published: false,
-		loadingStatus: false
+		published: false
 		// imageLink: ''
 	};
 
