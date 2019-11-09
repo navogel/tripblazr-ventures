@@ -37,7 +37,8 @@ class TripDetails extends Component {
 		tripShares: [],
 		friendEmail: '',
 		loadingStatus: false,
-		published: false
+		published: false,
+		loadingStatus: false
 		// imageLink: ''
 	};
 
@@ -62,7 +63,8 @@ class TripDetails extends Component {
 			const share = {
 				friendEmail: this.state.friendEmail,
 				userId: this.props.activeUser,
-				tripId: this.props.tripId
+				tripId: this.props.tripId,
+				loadingStatus: true
 			};
 
 			// Create the animal and redirect user to animal list
@@ -83,10 +85,14 @@ class TripDetails extends Component {
 	ShareTrip = () => {
 		let trip = {
 			id: this.props.tripId,
-			published: true
+			published: true,
+			loadingState: true
 		};
 		TripManager.updateTrip(trip).then(() => {
-			this.setState({ published: true });
+			this.setState({
+				published: true,
+				loadingState: false
+			});
 		});
 	};
 
@@ -96,7 +102,10 @@ class TripDetails extends Component {
 			published: false
 		};
 		TripManager.updateTrip(trip).then(() => {
-			this.setState({ published: false });
+			this.setState({
+				published: false,
+				loadingState: false
+			});
 		});
 	};
 
@@ -132,6 +141,7 @@ class TripDetails extends Component {
 											checked={this.state.published}
 											onChange={this.ShareTrip}
 											value='this.state.shareView'
+											disabled={this.state.loadingStatus}
 										/>
 									}
 									label='This trip is NOT published.'
@@ -146,6 +156,7 @@ class TripDetails extends Component {
 											checked={this.state.published}
 											onChange={this.HideTrip}
 											value='this.state.shareView'
+											disabled={this.state.loadingStatus}
 										/>
 									}
 									label='This trip is published.'

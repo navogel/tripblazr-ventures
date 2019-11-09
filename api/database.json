@@ -19,12 +19,6 @@
       "id": 3
     },
     {
-      "friendEmail": "sam@sam.com",
-      "userId": 2,
-      "tripId": 7,
-      "id": 4
-    },
-    {
       "friendEmail": "what@what.com",
       "userId": 1,
       "tripId": 13,
@@ -35,6 +29,19 @@
       "userId": 1,
       "tripId": 5,
       "id": 6
+    },
+    {
+      "friendEmail": "sam@sam.com",
+      "userId": 2,
+      "tripId": 7,
+      "id": 7
+    },
+    {
+      "friendEmail": "what@what.com",
+      "userId": 2,
+      "tripId": 7,
+      "loadingStatus": true,
+      "id": 8
     }
   ],
   "locationNotes": [
@@ -324,7 +331,8 @@
       "lng": -86.83471,
       "lat": 36.0966,
       "likes": 36,
-      "city": "place"
+      "city": "place",
+      "loadingState": true
     },
     {
       "id": 8,
