@@ -143,6 +143,14 @@ class TripCard extends Component {
 					)}
 					{this.props.publicView && (
 						<CardActions className='cardButtons'>
+							{this.props.trip.likes > 0 && (
+								<p className='price'>
+									<b>
+										{'Likes: '}
+										{this.props.trip.likes}
+									</b>
+								</p>
+							)}
 							<Button
 								size='small'
 								color='primary'
