@@ -614,7 +614,7 @@
       "id": 14,
       "tripId": 8,
       "summary": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-      "price": "83.88",
+      "price": 0,
       "address": "68 School Circle",
       "lng": -86.8258,
       "lat": 36.21756,
@@ -1077,19 +1077,6 @@
       "likes": 15,
       "locationTypeId": 2,
       "name": "Automotive"
-    },
-    {
-      "id": 57,
-      "tripId": 8,
-      "summary": null,
-      "price": "23.58",
-      "address": "72974 Glacier Hill Point",
-      "lng": -86.74988,
-      "lat": 36.13517,
-      "star": true,
-      "likes": 19,
-      "locationTypeId": 2,
-      "name": "Tools"
     },
     {
       "id": 58,
@@ -6275,6 +6262,48 @@
       "url": "",
       "star": false,
       "id": 542
+    },
+    {
+      "tripId": 8,
+      "summary": "",
+      "lat": 36.1844678,
+      "lng": -86.737269,
+      "address": "1703 Franklin Avenue, Nashville, Tennessee 37206, United States",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "test",
+      "url": "",
+      "star": false,
+      "id": 543
+    },
+    {
+      "tripId": 8,
+      "summary": "",
+      "lat": 36.149474,
+      "lng": -86.81248,
+      "address": " 2500 W End Ave, Nashville, Tennessee 37203, United States of America",
+      "price": 0,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Centennial Park",
+      "url": "",
+      "star": false,
+      "id": 544
+    },
+    {
+      "tripId": 8,
+      "summary": "",
+      "lat": 36.1520143223924,
+      "lng": -86.7946595110149,
+      "address": "1715 Broadway, Nashville, Tennessee 37203, United States",
+      "price": 200,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "some bar",
+      "url": "",
+      "star": true,
+      "id": 545
     }
   ]
 }

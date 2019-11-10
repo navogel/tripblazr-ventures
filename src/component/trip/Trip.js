@@ -310,7 +310,9 @@ class Trip extends Component {
 					return element.friendEmail === email;
 				};
 				TripManager.getTripDetails(this.props.tripId).then(details => {
-					if (details[0].userId === this.props.activeUser) {
+					if (details.length === 0) {
+						this.props.history.push(`/mytrips`);
+					} else if (details[0].userId === this.props.activeUser) {
 						this.setState({
 							myTrip: true,
 							tripDetails: details[0]
@@ -339,7 +341,7 @@ class Trip extends Component {
 		this.setState({
 			geoMarker: obj
 		});
-		if (this.props.owner) this.handleClickOpen();
+		if (this.state.myTrip || this.state.sharedTrip) this.handleClickOpen();
 	};
 
 	//toggle the hidden tripname view
@@ -353,16 +355,16 @@ class Trip extends Component {
 	};
 
 	render() {
-		// console.log(
-		// 	'my trip?',
-		// 	this.state.myTrip,
-		// 	'shared trip?',
-		// 	this.state.sharedTrip,
-		// 	'public trip?',
-		// 	this.state.publicTrip,
-		// 	'trip deets',
-		// 	this.state.tripDetails
-		// );
+		console.log(
+			'my trip?',
+			this.state.myTrip,
+			'shared trip?',
+			this.state.sharedTrip,
+			'public trip?',
+			this.state.publicTrip,
+			'trip deets',
+			this.state.tripDetails
+		);
 		let tripCost = 0;
 
 		this.state.locations.forEach(location => {

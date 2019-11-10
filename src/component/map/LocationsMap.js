@@ -267,46 +267,46 @@ export default class Mapper extends Component {
 			const map = this.leafletMap.leafletElement;
 			const geocoder = L.Control.Geocoder.mapbox(Token);
 			let marker;
-			if (this.props.publicTrip === false) {
-				map.on('click', e => {
-					this.props.dropPin();
-					geocoder.reverse(
-						e.latlng,
-						map.options.crs.scale(map.getZoom()),
-						results => {
-							var r = results[0];
-							//	console.log('reverse geocode results', r);
+			// if (this.props.publicTrip === false) {
+			map.on('click', e => {
+				this.props.dropPin();
+				geocoder.reverse(
+					e.latlng,
+					map.options.crs.scale(map.getZoom()),
+					results => {
+						var r = results[0];
+						//	console.log('reverse geocode results', r);
 
-							if (r) {
-								this.setState({
-									lat: r.center.lat,
-									lng: r.center.lng
-								});
-								if (marker) {
-									map.removeLayer(marker);
-									marker = L.marker(r.center, { icon: myIcon4 })
-										.bindTooltip(r.name, { className: 'toolTip' })
-										.addTo(map)
-										.on('click', e => {
-											this.storeGeocode(e, r);
-											map.removeLayer(marker);
-										});
-									// .openPopup();
-								} else {
-									marker = L.marker(r.center, { icon: myIcon4 })
-										.bindTooltip(r.name.split(',')[0], { className: 'toolTip' })
-										.addTo(map)
-										.on('click', e => {
-											this.storeGeocode(e, r);
-											map.removeLayer(marker);
-										});
-									// .openPopup();
-								}
+						if (r) {
+							this.setState({
+								lat: r.center.lat,
+								lng: r.center.lng
+							});
+							if (marker) {
+								map.removeLayer(marker);
+								marker = L.marker(r.center, { icon: myIcon4 })
+									.bindTooltip(r.name, { className: 'toolTip' })
+									.addTo(map)
+									.on('click', e => {
+										this.storeGeocode(e, r);
+										map.removeLayer(marker);
+									});
+								// .openPopup();
+							} else {
+								marker = L.marker(r.center, { icon: myIcon4 })
+									.bindTooltip(r.name.split(',')[0], { className: 'toolTip' })
+									.addTo(map)
+									.on('click', e => {
+										this.storeGeocode(e, r);
+										map.removeLayer(marker);
+									});
+								// .openPopup();
 							}
 						}
-					);
-				});
-			}
+					}
+				);
+			});
+			// }
 		}
 	}
 
