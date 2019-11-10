@@ -286,6 +286,21 @@ body {
 	align-self: flex-end;
 }
 
+.locAdd {
+	padding: 1em 3em;
+	margin: 3em;
+	border: rgb(206, 204, 204) solid 1px;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	/* padding-top: 2.5em; */
+}
+
+.locAdd > .MuiButton-root {
+	display: flex;
+	align-self: flex-end;
+}
+
 .locVideo {
 	padding: 1em 3em;
 	margin: 3em;

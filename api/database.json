@@ -30,16 +30,6 @@
       "type": "note"
     },
     {
-      "locationId": 502,
-      "date": "2019-11-06T22:26:13.345Z",
-      "note": "this is a note",
-      "userId": 1,
-      "editTimeStamp": "",
-      "title": "woo",
-      "type": "",
-      "id": 6
-    },
-    {
       "locationId": 504,
       "date": "2019-11-07T00:50:55.827Z",
       "note": "ijlNgSXcTe8",
@@ -138,6 +128,96 @@
       "title": "",
       "type": "note",
       "id": 21
+    },
+    {
+      "locationId": 540,
+      "date": "2019-11-10T06:55:17.668Z",
+      "note": "Arriving early!",
+      "userId": 1,
+      "editTimeStamp": "",
+      "title": "",
+      "type": "note",
+      "id": 22
+    },
+    {
+      "locationId": 560,
+      "date": "2019-11-06T20:31:08.686Z",
+      "note": "what??",
+      "userId": 5,
+      "editTimeStamp": "",
+      "title": "a nice title",
+      "type": "note",
+      "id": 23
+    },
+    {
+      "locationId": 561,
+      "date": "2019-11-08T18:23:20.038Z",
+      "note": "Parking is available on the street!!!",
+      "userId": 5,
+      "editTimeStamp": "2019-11-08T22:04:59.241Z",
+      "title": "parking info",
+      "type": "note",
+      "id": 24
+    },
+    {
+      "locationId": 561,
+      "date": "2019-11-08T18:24:42.851Z",
+      "note": "gvcSJk8QOQg",
+      "userId": 5,
+      "editTimeStamp": "2019-11-08T22:04:40.040Z",
+      "title": "cool video",
+      "type": "YT",
+      "id": 25
+    },
+    {
+      "locationId": 562,
+      "date": "2019-09-02",
+      "note": "A friend told me they have BOGOs on Wednesdays!!!!",
+      "userId": 5,
+      "editTimeStamp": "2019-11-08T21:02:33.759Z",
+      "title": "H Day DAT bo",
+      "type": "note",
+      "id": 26
+    },
+    {
+      "locationId": 562,
+      "date": "2019-11-07T00:50:55.827Z",
+      "note": "ijlNgSXcTe8",
+      "userId": 5,
+      "editTimeStamp": "2019-11-07T00:51:12.829Z",
+      "title": "Key West Guide Video",
+      "type": "YT",
+      "id": 27
+    },
+    {
+      "locationId": 563,
+      "date": "2019-11-08T21:04:09.142Z",
+      "note": "This place was super nice.  Highly recommend.",
+      "userId": 5,
+      "editTimeStamp": "",
+      "title": "",
+      "type": "note",
+      "id": 28
+    },
+    {
+      "locationId": 564,
+      "date": "2019-11-10T06:39:15.404Z",
+      "note": "arriving at 8am",
+      "userId": 5,
+      "editTimeStamp": "",
+      "title": "",
+      "type": "note",
+      "id": 29
+    },
+    {
+      "locationId": 565,
+      "date": "2019-11-08T21:04:09.142Z",
+      "note": "This place was super nice.  Highly recommend.",
+      "userId": 5,
+      "editTimeStamp": "",
+      "title": "",
+      "type": "note",
+      "id": 30
     }
   ],
   "locationTypes": [
@@ -182,6 +262,12 @@
       "password": "pass",
       "id": 4,
       "email": "what@what.com"
+    },
+    {
+      "userName": "nate",
+      "password": "pass",
+      "email": "nate@nate.com",
+      "id": 5
     }
   ],
   "trips": [
@@ -206,7 +292,7 @@
       "lng": 100.48333,
       "communication": "",
       "money": "",
-      "likes": "",
+      "likes": 0,
       "published": false,
       "userId": 1,
       "id": 12,
@@ -220,7 +306,7 @@
       "lng": -81.7994,
       "communication": "",
       "money": "",
-      "likes": "",
+      "likes": 12,
       "published": true,
       "userId": 1,
       "id": 13,
@@ -234,7 +320,7 @@
       "lng": 100.51667,
       "communication": "",
       "money": "",
-      "likes": "",
+      "likes": 0,
       "published": false,
       "userId": 4,
       "id": 14
@@ -247,7 +333,7 @@
       "lng": -118.2439,
       "communication": "",
       "money": "",
-      "likes": "",
+      "likes": 0,
       "published": true,
       "userId": 1,
       "id": 15,
@@ -261,7 +347,7 @@
       "lng": 31.23944,
       "communication": "",
       "money": "",
-      "likes": "",
+      "likes": 0,
       "published": false,
       "userId": 1,
       "id": 16
@@ -274,7 +360,7 @@
       "lng": 30.31667,
       "communication": "",
       "money": "",
-      "likes": "",
+      "likes": 0,
       "published": false,
       "userId": 1,
       "id": 17
@@ -287,10 +373,24 @@
       "lng": 139.77,
       "communication": "",
       "money": "",
-      "likes": "",
+      "likes": 0,
       "published": false,
       "userId": 1,
       "id": 18
+    },
+    {
+      "name": "BeachiKeen",
+      "city": "Key West, Florida, United States of America",
+      "summary": "",
+      "lat": 24.5548,
+      "lng": -81.7994,
+      "communication": "",
+      "money": "",
+      "likes": 0,
+      "published": true,
+      "userId": 5,
+      "id": 19,
+      "loadingState": true
     }
   ],
   "locations": [
@@ -769,6 +869,118 @@
       "url": "",
       "star": false,
       "id": 559
+    },
+    {
+      "tripId": "19",
+      "summary": "",
+      "lat": 24.558917,
+      "lng": -81.80397,
+      "address": " 219 Ann St, Key West, Florida 33040, United States of America",
+      "price": 100,
+      "likes": 0,
+      "locationTypeId": 3,
+      "name": "Ann Street Cottage",
+      "url": "",
+      "star": false,
+      "id": 560
+    },
+    {
+      "tripId": "19",
+      "summary": "",
+      "lat": 24.556488,
+      "lng": -81.806832,
+      "address": " 111 Front St, Key West, Florida 33040, United States of America",
+      "price": 20,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Harry Truman's Little White House",
+      "url": "",
+      "star": false,
+      "id": 561
+    },
+    {
+      "tripId": "19",
+      "summary": "It's a grocer.",
+      "lat": 24.56122,
+      "lng": -81.765054,
+      "address": " 3108 Flagler Ave, Key West, Florida 33040, United States of America",
+      "price": 25,
+      "likes": 0,
+      "locationTypeId": 3,
+      "name": "Atlantic Grocery",
+      "url": "",
+      "star": false,
+      "id": 562
+    },
+    {
+      "tripId": "19",
+      "summary": "4 bedroom with a HOTTUB TIME MACHINE",
+      "lat": 24.5541656,
+      "lng": -81.7926307,
+      "address": "1023 Grinnell Street, Key West, Florida 33040, United States",
+      "price": 340,
+      "likes": 0,
+      "locationTypeId": 1,
+      "name": "Air BnB Option",
+      "url": "",
+      "star": false,
+      "id": 563
+    },
+    {
+      "tripId": "19",
+      "summary": "",
+      "lat": 24.553968,
+      "lng": -81.756419,
+      "address": "Key West Seaplanes®, 3471 S Roosevelt Blvd, Key West, Florida 33040, United States",
+      "price": 453,
+      "likes": 0,
+      "locationTypeId": 4,
+      "name": "Key West Airport",
+      "url": "",
+      "star": false,
+      "id": 564
+    },
+    {
+      "tripId": "19",
+      "summary": "4 bedroom with a HOTTUB TIME MACHINE",
+      "lat": 24.5541656,
+      "lng": -81.7926307,
+      "address": "1023 Grinnell Street, Key West, Florida 33040, United States",
+      "price": 340,
+      "likes": 0,
+      "locationTypeId": 1,
+      "name": "Air BnB Option",
+      "url": "",
+      "star": false,
+      "id": 565
+    },
+    {
+      "tripId": "19",
+      "summary": "A cool spot to whale watch",
+      "lat": 24.54658,
+      "lng": -81.79742300000001,
+      "address": " South St & Whitehead St, Key West, Florida 33040, United States of America",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Southernmost point buoy",
+      "url": "",
+      "star": false,
+      "id": 566
+    },
+    {
+      "tripId": "19",
+      "summary": "Its a beach",
+      "lat": 24.546925,
+      "lng": -81.795697,
+      "address": " Duval St, Key West, Florida 33040, United States of America",
+      "price": 2,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "South Beach",
+      "url": "",
+      "star": false,
+      "id": 567
     }
   ]
 }

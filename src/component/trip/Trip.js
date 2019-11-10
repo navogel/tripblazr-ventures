@@ -386,6 +386,8 @@ class Trip extends Component {
 						toggleDrawer={this.toggleDrawer}
 						activeUser={this.props.activeUser}
 						publicTrip={this.state.publicTrip}
+						tripId={this.state.tripDetails.id}
+						likes={this.state.tripDetails.likes}
 					/>
 					<div className='leftColumn'>
 						<div className='listHeader'>
@@ -519,6 +521,7 @@ class Trip extends Component {
 						handleClose={this.handleCloseTrip}
 						activeUser={this.props.activeUser}
 						tripId={this.state.tripDetails.id}
+						likes={this.state.tripDetails.likes}
 						published={this.state.tripDetails.published}
 					/>
 				</Dialog>

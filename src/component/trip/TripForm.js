@@ -36,7 +36,7 @@ class TripForm extends Component {
 		lng: this.props.newLng,
 		communication: '',
 		money: '',
-		likes: '',
+		likes: 0,
 		published: false,
 		userId: this.props.activeUser,
 		loadingStatus: false
