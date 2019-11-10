@@ -308,7 +308,7 @@ class TripList extends Component {
 						horizontal: 'left'
 					}}
 					open={this.state.snackOpen}
-					autoHideDuration={7000}
+					autoHideDuration={10000}
 					onClose={this.handleSnackClose}
 					ContentProps={{
 						'aria-describedby': 'message-id'
@@ -319,8 +319,10 @@ class TripList extends Component {
 							<IconButton key='close' aria-label='Close' color='inherit'>
 								<ErrorIcon />
 							</IconButton>
-							To start a new trip: 1. Go to trips you own 2. Type in a location
-							to drop a Pin!
+							<b>
+								To create a new trip, type in a location to drop a pin. Make
+								sure you have selected "trips I own" below!
+							</b>
 						</span>
 					}
 					action={[

@@ -177,7 +177,13 @@ body {
 }
 
 .MuiSnackbarContent-root {
-	background: orange !important;
+	background: #ffd54f !important;
+	color: rgb(46, 45, 45) !important;
+}
+
+.MuiSnackbarContent-root span b {
+	position: relative;
+	top: 2px;
 }
 
 .drawerWrapper {
@@ -322,6 +328,10 @@ body {
 .msgHeader {
 	display: flex;
 	justify-content: space-between;
+}
+
+.msgHeader > p {
+	margin: 0.5em;
 }
 
 .cardButtonRow {

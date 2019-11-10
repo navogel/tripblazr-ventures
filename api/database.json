@@ -204,6 +204,16 @@
       "title": "",
       "type": "note",
       "id": 19
+    },
+    {
+      "locationId": 516,
+      "date": "2019-11-10T03:26:10.164Z",
+      "note": "Take the bus if leaving from downtown BK.",
+      "userId": 1,
+      "editTimeStamp": "2019-11-10T03:26:26.367Z",
+      "title": "travel advice",
+      "type": "note",
+      "id": 20
     }
   ],
   "locationTypes": [
@@ -227,21 +237,18 @@
   "users": [
     {
       "id": 1,
-      
       "userName": "steve",
       "password": "pass",
       "email": "steve@steve.com"
     },
     {
       "id": 2,
-      
       "userName": "sam",
       "password": "pass",
       "email": "sam@sam.com"
     },
     {
       "id": 3,
-     
       "userName": "sue",
       "password": "pass",
       "email": "sue@sue.com"
@@ -249,7 +256,6 @@
     {
       "userName": "what",
       "password": "pass",
-     
       "id": 4,
       "email": "what@what.com"
     }
@@ -384,7 +390,8 @@
       "likes": "",
       "published": false,
       "userId": 1,
-      "id": 12
+      "id": 12,
+      "loadingState": true
     },
     {
       "name": "Son of a Beach 2020",
@@ -6008,7 +6015,7 @@
       "locationTypeId": 1,
       "name": "Ramada Los Angeles/Downtown West",
       "url": "",
-      "star": true,
+      "star": false,
       "id": 524
     },
     {
@@ -6059,12 +6066,12 @@
       "lat": 33.942912,
       "lng": -118.406829,
       "address": " 1 World Way, Los Angeles, California 90045, United States of America",
-      "price": 400,
+      "price": 560,
       "likes": 0,
       "locationTypeId": 4,
       "name": "Los Angeles International Airport",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 528
     },
     {
@@ -6078,7 +6085,7 @@
       "locationTypeId": 1,
       "name": "Holiday Inn Express & Suites Los Angeles Downtown West",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 529
     },
     {
@@ -6304,6 +6311,48 @@
       "url": "",
       "star": true,
       "id": 545
+    },
+    {
+      "tripId": 15,
+      "summary": "A really cool piery area",
+      "lat": 34.001789712621786,
+      "lng": -118.4844266566287,
+      "address": "2800 Neilson Way, Santa Monica, California 90405, United States",
+      "price": 23,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Ocean Park",
+      "url": "",
+      "star": false,
+      "id": 548
+    },
+    {
+      "tripId": 15,
+      "summary": "",
+      "lat": 34.01,
+      "lng": -118.49,
+      "address": " Santa Monica, California 90401, United States of America",
+      "price": 78,
+      "likes": 0,
+      "locationTypeId": 3,
+      "name": "Santa Monica Pier Area/Ocean Avenue",
+      "url": "",
+      "star": false,
+      "id": 549
+    },
+    {
+      "tripId": 15,
+      "summary": "",
+      "lat": 34.0273605,
+      "lng": -118.275128,
+      "address": " 514 W Adams Blvd, Los Angeles, California 90007, United States of America",
+      "price": 0,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "St. John's Cathedral",
+      "url": "",
+      "star": false,
+      "id": 550
     }
   ]
 }

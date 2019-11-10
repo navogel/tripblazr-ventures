@@ -63,7 +63,6 @@ class Login extends Component {
 						<img
 							src='/images/TBpin.png'
 							alt='Smiley face'
-							height='auto'
 							//width='350px'
 							height='100px'
 							z-index='-2'
@@ -175,19 +174,3 @@ class Login extends Component {
 }
 
 export default withRouter(Login);
-
-{
-	/* <Spring
-							from={{ opacity: 0 }}
-							to={{ opacity: 1 }}
-							//config={{ duration: 500 }}
-						>
-							{props => (
-								<div style={props}> */
-}
-
-{
-	/* </div>
-							)}
-						</Spring> */
-}
