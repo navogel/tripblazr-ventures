@@ -208,16 +208,6 @@
       "title": "",
       "type": "note",
       "id": 29
-    },
-    {
-      "locationId": 565,
-      "date": "2019-11-08T21:04:09.142Z",
-      "note": "This place was super nice.  Highly recommend.",
-      "userId": 5,
-      "editTimeStamp": "",
-      "title": "",
-      "type": "note",
-      "id": 30
     }
   ],
   "locationTypes": [
@@ -333,7 +323,7 @@
       "lng": -118.2439,
       "communication": "",
       "money": "",
-      "likes": 0,
+      "likes": 2,
       "published": true,
       "userId": 1,
       "id": 15,
@@ -391,6 +381,19 @@
       "userId": 5,
       "id": 19,
       "loadingState": true
+    },
+    {
+      "name": "Island Hopping",
+      "city": "Phuket, Thailand",
+      "summary": "",
+      "lat": 7.89,
+      "lng": 98.39833,
+      "communication": "",
+      "money": "",
+      "likes": 0,
+      "published": false,
+      "userId": 5,
+      "id": 20
     }
   ],
   "locations": [
@@ -939,20 +942,6 @@
       "url": "",
       "star": false,
       "id": 564
-    },
-    {
-      "tripId": "19",
-      "summary": "4 bedroom with a HOTTUB TIME MACHINE",
-      "lat": 24.5541656,
-      "lng": -81.7926307,
-      "address": "1023 Grinnell Street, Key West, Florida 33040, United States",
-      "price": 340,
-      "likes": 0,
-      "locationTypeId": 1,
-      "name": "Air BnB Option",
-      "url": "",
-      "star": false,
-      "id": 565
     },
     {
       "tripId": "19",
