@@ -455,3 +455,25 @@ body {
 .shareToggle {
 	padding: 1em;
 }
+
+/* login classes */
+
+.appTitle {
+	font-family: 'Monoton', sans-serif;
+}
+
+.loginWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.loginForm {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	justify-content: center;
+	align-items: center;
+}
