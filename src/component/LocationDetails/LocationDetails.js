@@ -131,7 +131,10 @@ class LocationDetail extends Component {
 								{this.state.location.locationType.locationType}
 							</DialogTitle>
 							{this.state.location.address && (
-								<h3>{this.state.location.address}</h3>
+								<p className='address'>
+									<b>Address:</b>
+									{this.state.location.address}
+								</p>
 							)}
 							{this.state.location.summary && (
 								<>
