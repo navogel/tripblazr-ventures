@@ -355,16 +355,16 @@ class Trip extends Component {
 	};
 
 	render() {
-		console.log(
-			'my trip?',
-			this.state.myTrip,
-			'shared trip?',
-			this.state.sharedTrip,
-			'public trip?',
-			this.state.publicTrip,
-			'trip deets',
-			this.state.tripDetails
-		);
+		// console.log(
+		// 	'my trip?',
+		// 	this.state.myTrip,
+		// 	'shared trip?',
+		// 	this.state.sharedTrip,
+		// 	'public trip?',
+		// 	this.state.publicTrip,
+		// 	'trip deets',
+		// 	this.state.tripDetails
+		// );
 		let tripCost = 0;
 
 		this.state.locations.forEach(location => {

@@ -519,6 +519,10 @@ body {
 	color: white;
 }
 
+.MuiFab-root {
+	color: white !important;
+}
+
 .regField {
 	display: flex;
 }
@@ -534,4 +538,22 @@ body {
 	margin: 0.5em;
 	margin-top: 0.2em;
 	margin-bottom: 0em;
+}
+
+/* map buttons */
+
+.worldView {
+	position: relative;
+	left: 45px;
+	top: -74px;
+}
+
+.worldView > button > span > svg,
+.nightView > button > span > svg {
+	margin-right: 0.3em;
+}
+
+.worldView > button,
+.nightView > button {
+	color: white;
 }

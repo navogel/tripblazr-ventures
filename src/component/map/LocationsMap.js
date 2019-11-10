@@ -6,6 +6,9 @@ import GeoSearch from './GeoSearch';
 import Control from 'react-leaflet-control';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import SearchManager from '../../modules/SearchManager';
+import Fab from '@material-ui/core/Fab';
+import PublicIcon from '@material-ui/icons/Public';
+import Brightness3Icon from '@material-ui/icons/Brightness3';
 
 const createClusterCustomIcon = function(cluster) {
 	return L.divIcon({
@@ -519,11 +522,27 @@ export default class Mapper extends Component {
 							))}
 						</MarkerClusterGroup>
 					)}
-					<Control position='bottomright'>
-						<button onClick={this.mapToggle}>SWITCH MAP Stylie</button>
+					<Control position='bottomright' className='nightView'>
+						<Fab
+							variant='extended'
+							size='small'
+							color='primary'
+							onClick={this.mapToggle}
+						>
+							<Brightness3Icon />
+							Night Map
+						</Fab>
 					</Control>
-					<Control position='bottomright'>
-						<button onClick={this.resetMap}>SWITCH to EXPLORE</button>
+					<Control position='topleft' className='worldView'>
+						<Fab
+							variant='extended'
+							size='small'
+							color='primary'
+							onClick={this.resetMap}
+						>
+							<PublicIcon />
+							Trip View
+						</Fab>
 					</Control>
 				</Map>
 			</>

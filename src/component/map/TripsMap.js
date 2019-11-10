@@ -7,6 +7,9 @@ import Control from 'react-leaflet-control';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import Fab from '@material-ui/core/Fab';
+import PublicIcon from '@material-ui/icons/Public';
+import Brightness3Icon from '@material-ui/icons/Brightness3';
 //import SearchManager from '../../modules/SearchManager';
 
 const createClusterCustomIcon = function(cluster) {
@@ -233,9 +236,27 @@ class TripMapper extends Component {
 						))}
 					</MarkerClusterGroup>
 
-					<Control position='bottomright'>
-						<button onClick={this.mapToggle}>SWITCH MAP Stylie</button>
-						<button onClick={this.resetView}>World View</button>
+					<Control position='bottomright' className='nightView'>
+						<Fab
+							variant='extended'
+							size='small'
+							color='primary'
+							onClick={this.mapToggle}
+						>
+							<Brightness3Icon />
+							Night Map
+						</Fab>
+					</Control>
+					<Control position='topleft' className='worldView'>
+						<Fab
+							variant='extended'
+							size='small'
+							color='primary'
+							onClick={this.resetView}
+						>
+							<PublicIcon />
+							World View
+						</Fab>
 					</Control>
 				</Map>
 			</>
