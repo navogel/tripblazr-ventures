@@ -91,8 +91,8 @@ class TripCard extends Component {
 									</h3>
 									<p>Destination: {this.props.trip.city}</p>
 									{this.props.name && <p>Created By: {this.props.name}</p>}
-									{this.props.publicView && this.props.trip.user.name && (
-										<p>Created By: {this.props.trip.user.name}</p>
+									{this.props.publicView && this.props.trip.user.userName && (
+										<p>Created By: {this.props.trip.user.userName}</p>
 									)}
 								</CardContent>
 							</Link>

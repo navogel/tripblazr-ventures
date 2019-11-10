@@ -215,7 +215,7 @@ class TripList extends Component {
 										getTrips={this.getTrips}
 										clickedCardItem={this.clickedCardItem}
 										hovered={this.state.hovered}
-										name={trip.user.name}
+										name={trip.user.userName}
 										handleClickOpen={this.handleClickOpen}
 										// {...this.props}
 									/>

@@ -7,6 +7,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import LockIcon from '@material-ui/icons/Lock';
 import { Spring } from 'react-spring/renderprops';
+import Button from '@material-ui/core/Button';
 
 class Login extends Component {
 	// Set initial state
@@ -57,32 +58,35 @@ class Login extends Component {
 	render() {
 		return (
 			<>
-				{this.state.hideReg && (
-					<>
-						<Spring
-							from={{ opacity: 0 }}
-							to={{ opacity: 1 }}
-							//config={{ duration: 500 }}
-						>
-							{props => (
-								<div style={props}>
-									<div className='loginWrapper'>
+				<div className='loginWrapper'>
+					<div className='logoWrapper'>
+						<img
+							src='/images/TBpin.png'
+							alt='Smiley face'
+							height='auto'
+							//width='350px'
+							height='100px'
+							z-index='-2'
+						/>
+						<p className='appTitle'>TRIPBLAZR</p>
+					</div>
+
+					{this.state.hideReg && (
+						<>
+							<Spring
+								from={{ opacity: 0 }}
+								to={{ opacity: 1 }}
+								//config={{ duration: 500 }}
+							>
+								{props => (
+									<div style={props}>
 										<form
 											onSubmit={this.handleLogin}
 											id='loginForm'
 											className='loginForm'
 										>
-											{/* <div className='formField'>
-								<input
-									placeholder='Username'
-									onChange={this.handleFieldChange}
-									type='userName'
-									id='userName'
-									required=''
-									autoFocus=''
-								/>
-							</div> */}
 											<TextField
+												fullWidth
 												margin='dense'
 												variant='outlined'
 												//placeholder='Username'
@@ -102,10 +106,11 @@ class Login extends Component {
 											/>
 
 											<TextField
+												fullWidth
 												margin='dense'
 												variant='outlined'
 												type='password'
-												placeholder='Password'
+												//placeholder='Password'
 												onChange={this.handleFieldChange}
 												id='password'
 												//required=''
@@ -120,67 +125,69 @@ class Login extends Component {
 												}}
 											/>
 
-											{/* <TextField
-								id='price'
-								label='Cost'
-								className={classes.textField}
-								value={this.state.price}
-								onChange={this.handleFieldChange}
-								margin='dense'
-								variant='outlined'
-								placeholder='Estimate your costs'
-								InputProps={{
-									startAdornment: (
-										<InputAdornment position='start'>$</InputAdornment>
-									)
-								}}
-							/> */}
-
-											{/* <div className='formField'>
-								<input
-									prefix={
-										<icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />
-									}
-									type='password'
-									placeholder='Password'
-									onChange={this.handleFieldChange}
-									id='password'
-									required=''
-								/>
-							</div> */}
 											<div className='formField'>
 												{/* <Checkbox>Remember me</Checkbox> */}
-												<button type='submit' className='login-form-button'>
-													Log in
-												</button>
-												<p className='regLink' onClick={this.showLogin} href=''>
+												<Button
+													type='submit'
+													className='loginBtn'
+													variant='contained'
+													color='primary'
+													size='small'
+												>
+													Login
+												</Button>
+
+												<Button
+													color='primary'
+													//className='regLink'
+													onClick={this.showLogin}
+												>
+													Register
+												</Button>
+												{/* <p className='regLink' onClick={this.showLogin} href=''>
 													Or register now!
-												</p>
+												</p> */}
 											</div>
 										</form>
 									</div>
+								)}
+							</Spring>
+						</>
+					)}
+
+					{!this.state.hideReg && (
+						<Spring
+							from={{ opacity: 0 }}
+							to={{ opacity: 1 }}
+							//config={{ duration: 500 }}
+						>
+							{props => (
+								<div style={props}>
+									<Register {...this.props} hideReg={this.hideReg} />
 								</div>
 							)}
 						</Spring>
-					</>
-				)}
-
-				{!this.state.hideReg && (
-					<Spring
-						from={{ opacity: 0 }}
-						to={{ opacity: 1 }}
-						//config={{ duration: 500 }}
-					>
-						{props => (
-							<div style={props}>
-								<Register {...this.props} hideReg={this.hideReg} />{' '}
-							</div>
-						)}
-					</Spring>
-				)}
+					)}
+				</div>
 			</>
 		);
 	}
 }
 
 export default withRouter(Login);
+
+{
+	/* <Spring
+							from={{ opacity: 0 }}
+							to={{ opacity: 1 }}
+							//config={{ duration: 500 }}
+						>
+							{props => (
+								<div style={props}> */
+}
+
+{
+	/* </div>
+							)}
+						</Spring> */
+}

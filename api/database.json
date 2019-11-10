@@ -227,21 +227,21 @@
   "users": [
     {
       "id": 1,
-      "name": "steve",
+      
       "userName": "steve",
       "password": "pass",
       "email": "steve@steve.com"
     },
     {
       "id": 2,
-      "name": "sam",
+      
       "userName": "sam",
       "password": "pass",
       "email": "sam@sam.com"
     },
     {
       "id": 3,
-      "name": "sue",
+     
       "userName": "sue",
       "password": "pass",
       "email": "sue@sue.com"
@@ -249,7 +249,7 @@
     {
       "userName": "what",
       "password": "pass",
-      "name": "what",
+     
       "id": 4,
       "email": "what@what.com"
     }

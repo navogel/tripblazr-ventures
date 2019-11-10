@@ -460,6 +460,8 @@ body {
 
 .appTitle {
 	font-family: 'Monoton', sans-serif;
+	margin: 0em;
+	font-size: 76px;
 }
 
 .loginWrapper {
@@ -476,4 +478,50 @@ body {
 	width: 300px;
 	justify-content: center;
 	align-items: center;
+}
+
+.logoWrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 55px;
+}
+
+.logoWrapper > p {
+	margin-left: 0.3em;
+	color: rgb(59, 58, 58);
+}
+.loginForm > .formField {
+	padding-top: 0.5em;
+	flex-direction: column;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	width: 100%;
+}
+
+.MuiButton-contained:hover {
+	color: white;
+}
+
+.MuiFab-root:hover {
+	color: white;
+}
+
+.regField {
+	display: flex;
+}
+
+.regField > .MuiFormControl-root {
+	margin: 0.5em;
+}
+
+.regBtns {
+	flex-direction: column;
+	display: flex;
+	align-items: stretch;
+	margin: 0.5em;
+	margin-top: 0.2em;
+	margin-bottom: 0em;
 }
