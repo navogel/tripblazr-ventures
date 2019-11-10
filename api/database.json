@@ -6353,6 +6353,62 @@
       "url": "",
       "star": false,
       "id": 550
+    },
+    {
+      "tripId": 15,
+      "summary": "Protest",
+      "lat": 32.765796,
+      "lng": -117.22507,
+      "address": "First Aid, 500 Sea World Dr, San Diego, California 92109, United States",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Sea World",
+      "url": "",
+      "star": false,
+      "id": 551
+    },
+    {
+      "tripId": 15,
+      "summary": "",
+      "lat": 33.9482,
+      "lng": -118.0676,
+      "address": " California, United States of America",
+      "price": 3,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Santa Fe Springs",
+      "url": "",
+      "star": false,
+      "id": 552
+    },
+    {
+      "tripId": 15,
+      "summary": "",
+      "lat": 34.06926,
+      "lng": -118.31018,
+      "address": "262 South Manhattan Place, Los Angeles, California 90004, United States",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 3,
+      "name": "a place",
+      "url": "",
+      "star": false,
+      "id": 553
+    },
+    {
+      "tripId": 15,
+      "summary": "",
+      "lat": 34.1013978,
+      "lng": -118.1125528,
+      "address": "845 Padilla Street, San Gabriel, California 91776, United States",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 4,
+      "name": "a place",
+      "url": "",
+      "star": false,
+      "id": 554
     }
   ]
 }

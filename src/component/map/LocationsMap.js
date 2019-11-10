@@ -247,6 +247,16 @@ export default class Mapper extends Component {
 		//console.log('fb obj', obj);
 	};
 
+	resetMap = () => {
+		const markers = [];
+
+		this.props.locations.forEach(obj => {
+			let coord = [obj.lat, obj.lng];
+			markers.push(coord);
+		});
+		this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
+	};
+
 	componentDidUpdate(prevProps) {
 		// Typical usage (don't forget to compare props):
 		if (this.props.tripDetails !== prevProps.tripDetails) {
@@ -263,7 +273,18 @@ export default class Mapper extends Component {
 				// 	L.marker(tripCoords, { icon: myIcon4 })
 				// 		.bindTooltip(this.props.tripDetails.name, { className: 'toolTip' })
 				// 		.addTo(this.leafletMap.leafletElement);
+			} else {
+				const markers = [];
+
+				this.props.locations.forEach(obj => {
+					let coord = [obj.lat, obj.lng];
+					markers.push(coord);
+				});
+				this.leafletMap.leafletElement.fitBounds(markers, {
+					padding: [20, 20]
+				});
 			}
+
 			const map = this.leafletMap.leafletElement;
 			const geocoder = L.Control.Geocoder.mapbox(Token);
 			let marker;
@@ -324,29 +345,31 @@ export default class Mapper extends Component {
 		}
 
 		const position = [this.state.lat, this.state.lng];
-		//create an array to hold location coords, with state passed fomr tip.js
-		const markers = [];
-		//create array to hold tripDetails coords
+		// //create an array to hold location coords, with state passed fomr tip.js
+		// const markers = [];
+		// //create array to hold tripDetails coords
 		const tripCoords = [this.props.tripDetails.lat, this.props.tripDetails.lng];
 		//take trips array of object and create an array of coordinates.
-		this.props.locations.forEach(obj => {
-			let coord = [obj.lat, obj.lng];
-			markers.push(coord);
-		});
+		// this.props.locations.forEach(obj => {
+		// 	let coord = [obj.lat, obj.lng];
+		// 	markers.push(coord);
+		// });
 
-		//if leaflet has loaded, pass marker array for bounds
+		// //if leaflet has loaded, pass marker array for bounds
+		// if (
+		// 	this.leafletMap &&
+		// 	this.leafletMap.leafletElement &&
+		// 	this.state.tripView &&
+		// 	this.props.clickedCoords.length === 0 &&
+		// 	this.props.droppedPin === false &&
+		// 	markers.length > 0 &&
+		// 	this.state.mapLoaded === false
+		// ) {
+		// 	//console.log('fit bounds render');
+		// 	this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
+		// } else
+
 		if (
-			this.leafletMap &&
-			this.leafletMap.leafletElement &&
-			this.state.tripView &&
-			this.props.clickedCoords.length === 0 &&
-			this.props.droppedPin === false &&
-			markers.length > 0 &&
-			this.state.mapLoaded === false
-		) {
-			//console.log('fit bounds render');
-			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
-		} else if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
 			this.state.tripView &&
@@ -363,7 +386,7 @@ export default class Mapper extends Component {
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
 			this.state.tripView &&
-			markers.length === 0 &&
+			this.props.locations.length === 0 &&
 			this.props.tripDetails.length > 0 &&
 			this.state.mapLoaded === false
 		) {
@@ -500,7 +523,7 @@ export default class Mapper extends Component {
 						<button onClick={this.mapToggle}>SWITCH MAP Stylie</button>
 					</Control>
 					<Control position='bottomright'>
-						<button onClick={this.searchToggle}>SWITCH to EXPLORE</button>
+						<button onClick={this.resetMap}>SWITCH to EXPLORE</button>
 					</Control>
 				</Map>
 			</>
