@@ -321,7 +321,7 @@ class TripList extends Component {
 							</IconButton>
 							<b>
 								To create a new trip, type in a location to drop a pin. Make
-								sure you have selected "trips I own" below!
+								sure you have selected "Trips I Own" below!
 							</b>
 						</span>
 					}
