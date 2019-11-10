@@ -128,6 +128,16 @@
       "title": "travel advice",
       "type": "note",
       "id": 20
+    },
+    {
+      "locationId": 559,
+      "date": "2019-11-10T06:39:15.404Z",
+      "note": "arriving at 8am",
+      "userId": 2,
+      "editTimeStamp": "",
+      "title": "",
+      "type": "note",
+      "id": 21
     }
   ],
   "locationTypes": [
@@ -186,7 +196,7 @@
       "lng": -86.58756,
       "lat": 36.13986,
       "likes": 0,
-      "city": "place"
+      "city": "Nashville TN, USA"
     },
     {
       "name": "Backpacking 2020",
@@ -244,7 +254,7 @@
       "loadingState": true
     },
     {
-      "name": "pryamid fun",
+      "name": "Pyramid Times",
       "city": "Cairo, Cairo Governorate, Egypt",
       "summary": "",
       "lat": 30.05611,
@@ -257,7 +267,7 @@
       "id": 16
     },
     {
-      "name": "st pete",
+      "name": "St Pete",
       "city": "Saint Petersburg, Saint Petersburg, Russia",
       "summary": "",
       "lat": 59.95,
@@ -306,7 +316,7 @@
       "address": " 219 Ann St, Key West, Florida 33040, United States of America",
       "price": 100,
       "likes": 0,
-      "locationTypeId": 4,
+      "locationTypeId": 3,
       "name": "Ann Street Cottage",
       "url": "",
       "star": true,
@@ -612,7 +622,7 @@
       "lat": 24.54658,
       "lng": -81.79742300000001,
       "address": " South St & Whitehead St, Key West, Florida 33040, United States of America",
-      "price": 0,
+      "price": null,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Southernmost point buoy",
