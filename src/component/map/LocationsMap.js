@@ -381,7 +381,7 @@ export default class Mapper extends Component {
 			//if not first load, and link has been clicked, zoom to marker
 			//console.log('clicked place from list render');
 
-			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 13);
+			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 15);
 		} else if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&

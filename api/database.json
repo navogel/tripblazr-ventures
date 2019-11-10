@@ -272,7 +272,8 @@
       "lng": -86.58756,
       "lat": 36.13986,
       "likes": 0,
-      "city": "place"
+      "city": "place",
+      "loadingState": true
     },
     {
       "id": 2,
@@ -458,6 +459,19 @@
       "published": false,
       "userId": 1,
       "id": 17
+    },
+    {
+      "name": "NINTENDO!",
+      "city": "Tokyo, Tokyo Prefecture, Japan",
+      "summary": "",
+      "lat": 35.68,
+      "lng": 139.77,
+      "communication": "",
+      "money": "",
+      "likes": "",
+      "published": false,
+      "userId": 1,
+      "id": 18
     }
   ],
   "locations": [
@@ -6049,20 +6063,6 @@
     {
       "tripId": 15,
       "summary": "",
-      "lat": 34.045226,
-      "lng": -118.23856,
-      "address": " 333 S Alameda St, Los Angeles, California 90013, United States of America",
-      "price": 5,
-      "likes": 0,
-      "locationTypeId": 3,
-      "name": "Shojin",
-      "url": "",
-      "star": false,
-      "id": 527
-    },
-    {
-      "tripId": 15,
-      "summary": "",
       "lat": 33.942912,
       "lng": -118.406829,
       "address": " 1 World Way, Los Angeles, California 90045, United States of America",
@@ -6369,46 +6369,32 @@
       "id": 551
     },
     {
-      "tripId": 15,
+      "tripId": 18,
       "summary": "",
-      "lat": 33.9482,
-      "lng": -118.0676,
-      "address": " California, United States of America",
-      "price": 3,
+      "lat": 35.68642222219043,
+      "lng": 139.7698138888677,
+      "address": "Japan, 東京都東京都千代田区大手町2丁目7番4",
+      "price": null,
       "likes": 0,
       "locationTypeId": 2,
-      "name": "Santa Fe Springs",
+      "name": "yup",
       "url": "",
       "star": false,
-      "id": 552
+      "id": 555
     },
     {
-      "tripId": 15,
+      "tripId": 18,
       "summary": "",
-      "lat": 34.06926,
-      "lng": -118.31018,
-      "address": "262 South Manhattan Place, Los Angeles, California 90004, United States",
-      "price": null,
+      "lat": 35.68245,
+      "lng": 139.786553,
+      "address": " 日本橋蛎殻町2-1-1, Tokyo, Tokyo Prefecture, Japan",
+      "price": 230,
       "likes": 0,
-      "locationTypeId": 3,
-      "name": "a place",
+      "locationTypeId": 1,
+      "name": "Royal Park Hotel",
       "url": "",
       "star": false,
-      "id": 553
-    },
-    {
-      "tripId": 15,
-      "summary": "",
-      "lat": 34.1013978,
-      "lng": -118.1125528,
-      "address": "845 Padilla Street, San Gabriel, California 91776, United States",
-      "price": null,
-      "likes": 0,
-      "locationTypeId": 4,
-      "name": "a place",
-      "url": "",
-      "star": false,
-      "id": 554
+      "id": 556
     }
   ]
 }
