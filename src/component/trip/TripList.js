@@ -185,9 +185,10 @@ class TripList extends Component {
 								</IconButton>
 								<h1>Your Trips</h1>
 								<Fab
-									color='primary'
+									color='secondary'
 									size='small'
 									onClick={this.handleClickOpen}
+									className='addTripBtn'
 								>
 									<AddIcon />
 								</Fab>

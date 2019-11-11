@@ -68,6 +68,11 @@ class Login extends Component {
 							z-index='-2'
 						/>
 						<p className='appTitle'>TRIPBLAZR</p>
+						<p>
+							WARNING: This app is for demo purposes only. All user data you
+							create will deleted in 24 hours. Please do NOT use confidential
+							passwords!
+						</p>
 					</div>
 
 					{this.state.hideReg && (

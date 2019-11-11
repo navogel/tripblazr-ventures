@@ -956,6 +956,20 @@
       "url": "",
       "star": false,
       "id": 567
+    },
+    {
+      "tripId": 15,
+      "summary": "",
+      "lat": 33.6796,
+      "lng": -116.1763,
+      "address": " California, United States of America",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Coachella",
+      "url": "",
+      "star": false,
+      "id": 568
     }
   ]
 }

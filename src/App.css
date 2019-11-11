@@ -572,3 +572,7 @@ body {
 .nightView > button {
 	color: white;
 }
+
+.addTripBtn {
+	color: black !important;
+}
