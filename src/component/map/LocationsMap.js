@@ -257,7 +257,7 @@ export default class Mapper extends Component {
 			let coord = [obj.lat, obj.lng];
 			markers.push(coord);
 		});
-		if (markers.length > 1) {
+		if (markers.length > 0) {
 			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
 		} else {
 			const tripCoords = [
@@ -414,7 +414,7 @@ export default class Mapper extends Component {
 					center={position}
 					doubleClickZoom={true}
 					Zoom={this.state.zoom}
-					maxZoom={16}
+					maxZoom={20}
 					className='mapComponent'
 					ref={m => {
 						this.leafletMap = m;
