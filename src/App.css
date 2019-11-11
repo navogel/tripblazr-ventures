@@ -81,7 +81,7 @@ body {
 	flex-direction: column;
 	flex-basis: 30%;
 	flex: 0.7;
-	min-width: 370px;
+	min-width: 340px;
 }
 
 .listHeader {

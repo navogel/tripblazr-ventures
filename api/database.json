@@ -804,20 +804,6 @@
       "id": 552
     },
     {
-      "tripId": 15,
-      "summary": "",
-      "lat": 34.1013978,
-      "lng": -118.1125528,
-      "address": "845 Padilla Street, San Gabriel, California 91776, United States",
-      "price": null,
-      "likes": 0,
-      "locationTypeId": 4,
-      "name": "a place",
-      "url": "",
-      "star": false,
-      "id": 554
-    },
-    {
       "tripId": 18,
       "summary": "",
       "lat": 35.68245,
