@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, Marker, Tooltip } from 'react-leaflet';
+import { Map, TileLayer, Marker, Tooltip, ZoomControl } from 'react-leaflet';
 import Token from '../../Token';
 import L from 'leaflet';
 import TripGeoSearch from './TripGeoSearch';
@@ -183,6 +183,7 @@ class TripMapper extends Component {
 		return (
 			<>
 				<Map
+					zoomControl={false}
 					center={position}
 					doubleClickZoom={true}
 					Zoom={this.state.zoom}
@@ -247,7 +248,7 @@ class TripMapper extends Component {
 							Night Map
 						</Fab>
 					</Control>
-					<Control position='topleft' className='worldView'>
+					<Control position='topleft'>
 						<Fab
 							variant='extended'
 							size='small'
@@ -258,6 +259,7 @@ class TripMapper extends Component {
 							World View
 						</Fab>
 					</Control>
+					<ZoomControl position='bottomleft' />
 				</Map>
 			</>
 		);
