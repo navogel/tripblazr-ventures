@@ -80,26 +80,6 @@
       "id": 16
     },
     {
-      "locationId": 501,
-      "date": "2019-11-08T18:23:20.038Z",
-      "note": "Parking is available on the street!!!",
-      "userId": 2,
-      "editTimeStamp": "2019-11-08T22:04:59.241Z",
-      "title": "parking info",
-      "type": "note",
-      "id": 17
-    },
-    {
-      "locationId": 501,
-      "date": "2019-11-08T18:24:42.851Z",
-      "note": "gvcSJk8QOQg",
-      "userId": 2,
-      "editTimeStamp": "2019-11-08T22:04:40.040Z",
-      "title": "cool video",
-      "type": "YT",
-      "id": 18
-    },
-    {
       "locationId": 542,
       "date": "2019-11-08T21:04:09.142Z",
       "note": "This place was super nice.  Highly recommend.",
@@ -297,7 +277,7 @@
       "communication": "",
       "money": "",
       "likes": 12,
-      "published": true,
+      "published": false,
       "userId": 1,
       "id": 13,
       "loadingState": true
@@ -400,20 +380,6 @@
     {
       "tripId": 13,
       "summary": "",
-      "lat": 24.556488,
-      "lng": -81.806832,
-      "address": " 111 Front St, Key West, Florida 33040, United States of America",
-      "price": 20,
-      "likes": 0,
-      "locationTypeId": 2,
-      "name": "Harry Truman's Little White House",
-      "url": "",
-      "star": true,
-      "id": 501
-    },
-    {
-      "tripId": 13,
-      "summary": "",
       "lat": 24.558917,
       "lng": -81.80397,
       "address": " 219 Ann St, Key West, Florida 33040, United States of America",
@@ -436,7 +402,7 @@
       "locationTypeId": 3,
       "name": "Date & Thyme Organic Cafe",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 503
     },
     {
@@ -452,20 +418,6 @@
       "url": "",
       "star": true,
       "id": 504
-    },
-    {
-      "tripId": 13,
-      "summary": "Its a beach",
-      "lat": 24.546925,
-      "lng": -81.795697,
-      "address": " Duval St, Key West, Florida 33040, United States of America",
-      "price": 2,
-      "likes": 0,
-      "locationTypeId": 2,
-      "name": "South Beach",
-      "url": "",
-      "star": false,
-      "id": 507
     },
     {
       "tripId": 12,
@@ -856,7 +808,7 @@
       "locationTypeId": 4,
       "name": "Key West Airport",
       "url": "",
-      "star": false,
+      "star": true,
       "id": 559
     },
     {
@@ -970,6 +922,34 @@
       "url": "",
       "star": false,
       "id": 568
+    },
+    {
+      "tripId": 13,
+      "summary": "",
+      "lat": 24.562254022077955,
+      "lng": -81.79376730209079,
+      "address": "Ricketts Circle, Key West, Florida 33040, United States",
+      "price": 5,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Pier Walk",
+      "url": "",
+      "star": true,
+      "id": 569
+    },
+    {
+      "tripId": 13,
+      "summary": "",
+      "lat": 24.54756075,
+      "lng": -81.80993050000001,
+      "address": "Fort Zachary Taylor, Fort Zachary Taylor Historic State Park, Key West, Florida 33040, United States",
+      "price": null,
+      "likes": 0,
+      "locationTypeId": 2,
+      "name": "Fort Zachary Taylor State Park",
+      "url": "",
+      "star": false,
+      "id": 570
     }
   ]
 }
