@@ -1,10 +1,10 @@
 /* @import url('~leaflet.markercluster/dist/styles.min.css'); */
 body {
-	background-color: grey;
+    background-color: grey;
 }
 
 .App {
-	text-align: center;
+    text-align: center;
 }
 
 /* .darkMode {
@@ -18,22 +18,22 @@ body {
 } */
 
 .App-logo {
-	height: 40vmin;
+    height: 40vmin;
 }
 
 .App-header {
-	background-color: #282c34;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-	color: #09d3ac;
+    color: #09d3ac;
 }
 
 /* .mapWrapper {
@@ -43,114 +43,114 @@ body {
 } */
 
 .map {
-	height: 100%;
-	width: fit-content;
-	margin: 1em;
+    height: 100%;
+    width: fit-content;
+    margin: 1em;
 }
 
 .tripWrapper {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
 }
 
 .mapWrapper {
-	flex: 1 1;
-	order: 2;
-	display: flex;
-	flex-basis: 70%;
-	flex: 2;
+    flex: 1 1;
+    order: 2;
+    display: flex;
+    flex-basis: 70%;
+    flex: 2;
 }
 
 .mapComponent {
-	flex: 1;
+    flex: 1;
 }
 
 /* TripList */
 
 .listWrapper {
-	height: 100%;
-	overflow: auto;
+    height: 100%;
+    overflow: auto;
 }
 
 .leftColumn {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	flex-basis: 30%;
-	flex: 0.7;
-	min-width: 340px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    flex: 0.7;
+    min-width: 340px;
 }
 
 .listHeader {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	flex-wrap: wrap;
-	box-shadow: -2px 2px 5px;
-	position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: -2px 2px 5px;
+    position: relative;
 }
 
 .listHeaderName {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	flex-wrap: wrap;
-	padding-top: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 1em;
 }
 
 .leftColumn .listHeader {
-	justify-content: space-around;
-	padding: 0em;
+    justify-content: space-around;
+    padding: 0em;
 }
 
 *::-webkit-scrollbar {
-	width: 10px;
-	background-color: #b4b4b4;
+    width: 10px;
+    background-color: #b4b4b4;
 }
 *::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-	background-color: #646464;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #646464;
 }
 .control-panel {
-	position: absolute;
-	top: 0;
-	right: 0;
-	max-width: 320px;
-	background: #fff;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-	padding: 12px 24px;
-	margin: 20px;
-	font-size: 13px;
-	line-height: 2;
-	color: #6b6b76;
-	text-transform: uppercase;
-	outline: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 320px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 12px 24px;
+    margin: 20px;
+    font-size: 13px;
+    line-height: 2;
+    color: #6b6b76;
+    text-transform: uppercase;
+    outline: none;
 }
 
 .marker-cluster-custom {
-	background: #9370db;
-	border: 2px solid #ededed;
-	border-radius: 50%;
-	color: #ededed;
-	height: 30px !important;
-	line-height: 27px;
-	text-align: center;
-	width: 30px !important;
+    background: #9370db;
+    border: 2px solid #ededed;
+    border-radius: 50%;
+    color: #ededed;
+    height: 30px !important;
+    line-height: 27px;
+    text-align: center;
+    width: 30px !important;
 }
 
 .leaflet-marker-icon:focus {
-	outline: 0;
+    outline: 0;
 }
 
 *:focus {
-	outline: 0;
+    outline: 0;
 }
 
 /* .specMarker {
@@ -167,86 +167,86 @@ body {
 } */
 
 .slidecontainer {
-	background: white;
-	float: right;
-	padding: 0.5em;
+    background: white;
+    float: right;
+    padding: 0.5em;
 }
 
 .slidecontainer p {
-	margin: 0.2em;
+    margin: 0.2em;
 }
 
 .MuiSnackbarContent-root {
-	background: #ffd54f !important;
-	color: rgb(46, 45, 45) !important;
+    background: #ffd54f !important;
+    color: rgb(46, 45, 45) !important;
 }
 
 .MuiSnackbarContent-root span b {
-	position: relative;
-	top: 2px;
+    position: relative;
+    top: 2px;
 }
 
 .drawerWrapper {
-	width: 600px;
-	height: 100vh;
+    width: 600px;
+    height: 100vh;
 }
 
 .MuiDrawer-paperAnchorRight {
-	justify-content: center;
+    justify-content: center;
 }
 
 .absoluteCloseFab {
-	position: fixed;
-	right: 40px;
-	top: 30px;
+    position: fixed;
+    right: 40px;
+    top: 30px;
 }
 
 .formSubmitEdit {
-	position: fixed;
-	right: 46px;
-	bottom: 40px;
+    position: fixed;
+    right: 46px;
+    bottom: 40px;
 }
 
 .tripHeader {
-	width: 100%;
+    width: 100%;
 }
 
 .tripShareBtn {
-	position: absolute !important;
-	right: -1px;
-	top: -4px;
+    position: absolute !important;
+    right: -1px;
+    top: -4px;
 }
 
 .backtoTripsBtn {
-	position: absolute !important;
-	left: -1px;
-	top: -4px;
+    position: absolute !important;
+    left: -1px;
+    top: -4px;
 }
 
 .tripButtons {
-	width: 100%;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	margin-bottom: 0;
-	border-bottom: 2px solid;
-	background-color: #575858;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 0;
+    border-bottom: 2px solid;
+    background-color: #575858;
 }
 
 .tripButtons > .MuiIconButton-root {
-	color: white !important;
+    color: white !important;
 }
 
 .tripHeader h1,
 .tripHeader h4 {
-	margin: 0.5em;
+    margin: 0.5em;
 }
 .tripHeader {
-	padding: 1em;
+    padding: 1em;
 }
 
 .tripHeader > h1 {
-	margin-top: 1em;
+    margin-top: 1em;
 }
 
 /* location Details drawer */
@@ -261,318 +261,325 @@ body {
 } */
 
 .locCard {
-	padding: 1em 3em;
-	margin: 3em;
-	border: rgb(206, 204, 204) solid 1px;
-	border-radius: 6px;
-	display: flex;
-	flex-direction: column;
-	padding-top: 2.5em;
+    padding: 1em 3em;
+    margin: 3em;
+    border: rgb(206, 204, 204) solid 1px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.5em;
 }
 
 .locCard > h3 {
-	margin: 0.5em 0em;
+    margin: 0.5em 0em;
 }
 
 .urlLink {
-	height: 2.5em;
-	overflow: auto;
-	white-space: nowrap;
-	overflow-y: hidden;
+    height: 2.5em;
+    overflow: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
 }
 
 .locCard > .MuiButton-root {
-	display: flex;
-	align-self: flex-end;
+    display: flex;
+    align-self: flex-end;
 }
 
 .locAdd {
-	padding: 1em 3em;
-	margin: 3em;
-	border: rgb(206, 204, 204) solid 1px;
-	border-radius: 6px;
-	display: flex;
-	flex-direction: column;
-	/* padding-top: 2.5em; */
+    padding: 1em 3em;
+    margin: 3em;
+    border: rgb(206, 204, 204) solid 1px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 2.5em; */
 }
 
 .locAdd > .MuiButton-root {
-	display: flex;
-	align-self: flex-end;
+    display: flex;
+    align-self: flex-end;
 }
 
 .locVideo {
-	padding: 1em 3em;
-	margin: 3em;
-	border: rgb(206, 204, 204) solid 1px;
-	border-radius: 6px;
-	display: flex;
-	flex-direction: column;
+    padding: 1em 3em;
+    margin: 3em;
+    border: rgb(206, 204, 204) solid 1px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
 }
 
 .video-responsive {
-	overflow: hidden;
-	padding-bottom: 56.25%;
-	position: relative;
-	height: 0;
-	margin-top: 1em;
-	border-radius: 5px;
-	margin-bottom: 1em;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    margin-top: 1em;
+    border-radius: 5px;
+    margin-bottom: 1em;
 }
 .video-responsive iframe {
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .locNoteCard {
-	padding: 1em 2em;
-	margin: 2em 0em;
-	border: rgb(206, 204, 204) solid 1px;
-	border-radius: 6px;
-	display: flex;
-	flex-direction: column;
+    padding: 1em 2em;
+    margin: 2em 0em;
+    border: rgb(206, 204, 204) solid 1px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
 }
 
 .mainContainer {
-	margin: 3em;
+    margin: 3em;
 }
 
 .msgHeader {
-	display: flex;
-	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .msgHeader > p {
-	margin: 0.5em;
+    margin: 0.5em;
 }
 
 .cardButtonRow {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .cardButtonRow p {
-	margin-top: 0px;
-	margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .sectionHeader {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .noteSubmit {
-	display: flex;
-	align-self: center;
-	margin-top: 1em;
-	justify-content: center;
+    display: flex;
+    align-self: center;
+    margin-top: 1em;
+    justify-content: center;
 }
 
 .editStamp {
-	margin-right: auto;
+    margin-right: auto;
 }
 
 .urlNoteLink {
-	/* height: 2.5em; */
-	overflow: auto;
-	white-space: nowrap;
-	overflow-y: hidden;
+    /* height: 2.5em; */
+    overflow: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
 }
 
 .editNoteWrapper {
-	padding: 3em;
-	margin: 3em;
+    padding: 3em;
+    margin: 3em;
 }
 
 .noteEditSubmit {
-	display: flex;
-	align-self: center;
-	margin-top: 3em;
-	justify-content: flex-end;
+    display: flex;
+    align-self: center;
+    margin-top: 3em;
+    justify-content: flex-end;
 }
 
 .lodging {
-	color: rgb(76, 146, 250) !important;
+    color: rgb(76, 146, 250) !important;
 }
 
 .activity {
-	color: rgb(240, 191, 31) !important;
+    color: rgb(240, 191, 31) !important;
 }
 
 .food {
-	color: rgb(219, 87, 168) !important;
+    color: rgb(219, 87, 168) !important;
 }
 
 .transportation {
-	color: rgb(58, 189, 40) !important;
+    color: rgb(58, 189, 40) !important;
 }
 
 .warning {
-	color: rgb(187, 53, 53);
+    color: rgb(187, 53, 53);
 }
 
 /* tripDetails Mdodal */
 
 .tripDetailsWrapper {
-	width: 550px !important;
-	padding: 3em;
+    width: 550px !important;
+    padding: 3em;
 }
 
 .shareList {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .shareList > p {
-	text-align: center;
+    text-align: center;
 }
 
 .tripShare {
-	padding: 0em 2em;
-	margin: 0.5em 3em;
-	border: rgb(206, 204, 204) solid 1px;
-	border-radius: 6px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+    padding: 0em 2em;
+    margin: 0.5em 3em;
+    border: rgb(206, 204, 204) solid 1px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .tripShareInput {
-	padding: 1em 3em;
-	width: 100%;
-	/* margin: 0em 3em; */
-	align-items: center;
-	border-radius: 6px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	padding-top: 0em;
+    padding: 1em 3em;
+    width: 100%;
+    /* margin: 0em 3em; */
+    align-items: center;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 0em;
 }
 
 .tripShareInput > .MuiFormControl-root {
-	margin-left: 0em !important;
-	flex-grow: 1;
+    margin-left: 0em !important;
+    flex-grow: 1;
 }
 
 .tripShareInput > .MuiButtonBase-root {
-	margin-top: 0.2em;
-	margin-left: 1em;
+    margin-top: 0.2em;
+    margin-left: 1em;
 }
 
 .formWrapperTrip {
-	flex-direction: column;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 2.5em;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5em;
 }
 
 .MuiGrid-root > div {
-	z-index: 900;
+    z-index: 900;
 }
 
 .shareToggle {
-	padding: 1em;
+    padding: 1em;
 }
 
 /* login classes */
 
 .appTitle {
-	font-family: 'Monoton', sans-serif;
-	margin: 0em;
-	font-size: 76px;
+    font-family: 'Monoton', sans-serif;
+    margin: 0em;
+    font-size: 12vw;
+}
+
+@media screen and (min-width: 850px) {
+    .appTitle {
+        font-size: 100px;
+    }
 }
 
 .loginWrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .loginForm {
-	display: flex;
-	flex-direction: column;
-	width: 300px;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
 }
 
 .logoWrapper {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-bottom: 55px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 55px;
+    align-items: center;
 }
 
 .logoWrapper > p {
-	margin-left: 0.3em;
-	color: rgb(59, 58, 58);
+    margin-left: 0.3em;
+    color: rgb(59, 58, 58);
 }
 .loginForm > .formField {
-	padding-top: 0.5em;
-	flex-direction: column;
-	display: flex;
-	justify-content: space-between;
-	align-items: stretch;
-	width: 100%;
+    padding-top: 0.5em;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
 }
 
 .MuiButton-contained:hover {
-	color: white;
+    color: white;
 }
 
 .MuiFab-root:hover {
-	color: white;
+    color: white;
 }
 
 .MuiFab-root {
-	color: white !important;
+    color: white !important;
 }
 
 .regField {
-	display: flex;
+    display: flex;
 }
 
 .regField > .MuiFormControl-root {
-	margin: 0.5em;
+    margin: 0.5em;
 }
 
 .regBtns {
-	flex-direction: column;
-	display: flex;
-	align-items: stretch;
-	margin: 0.5em;
-	margin-top: 0.2em;
-	margin-bottom: 0em;
+    flex-direction: column;
+    display: flex;
+    align-items: stretch;
+    margin: 0.5em;
+    margin-top: 0.2em;
+    margin-bottom: 0em;
 }
 
 /* map buttons */
 
 .worldView {
-	position: relative;
-	left: 45px;
-	top: -74px;
+    position: relative;
+    left: 45px;
+    top: -74px;
 }
 
 .worldView > button > span > svg,
 .nightView > button > span > svg {
-	margin-right: 0.3em;
+    margin-right: 0.3em;
 }
 
 .worldView > button,
 .nightView > button {
-	color: white;
+    color: white;
 }
 
 .addTripBtn {
-	color: black !important;
+    color: black !important;
 }
