@@ -1,10 +1,14 @@
+//this component was not used in final demo
+//it was created with mapbox gl js, for comparison with leaflet.
+//saving this to use as an example for other students.
+
 import React, { Component } from 'react';
 import { ZoomControl } from 'react-mapbox-gl';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import Token from '../../Token';
 import { Marker } from 'react-mapbox-gl';
 import { Cluster } from 'react-mapbox-gl';
-import Pin from './pin';
+import Pin from './Example-gl-js-Pin';
 import { Popup } from 'react-mapbox-gl';
 // import Geocoder from 'react-map-gl-geocoder';
 
