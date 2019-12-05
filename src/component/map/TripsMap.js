@@ -10,7 +10,7 @@ import { withRouter } from 'react-router-dom';
 import Fab from '@material-ui/core/Fab';
 import PublicIcon from '@material-ui/icons/Public';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
-//import SearchManager from '../../modules/SearchManager';
+
 
 const createClusterCustomIcon = function(cluster) {
 	return L.divIcon({
@@ -20,15 +20,7 @@ const createClusterCustomIcon = function(cluster) {
 	});
 };
 
-// const myIcon4 = L.icon({
-// 	iconUrl: '/images/markers/icon4.png',
-// 	iconSize: [25, 41],
-// 	iconAnchor: [12, 41],
-// 	tooltipAnchor: [15, -30],
-// 	shadowUrl: '/images/markers/shadow.png',
-// 	shadowSize: [30, 41],
-// 	shadowAnchor: [9, 41]
-// });
+
 
 class TripMapper extends Component {
 	state = {
@@ -46,6 +38,8 @@ class TripMapper extends Component {
 		this.setState({ geocoded: true });
 		this.props.addMarker(obj);
 	};
+
+	//scroll to function
 
 	markerFocus = obj => {
 		if (this.state.mapLoaded === false) {
@@ -69,51 +63,9 @@ class TripMapper extends Component {
 		}
 	};
 
-	//attempt to get map center bounds for FB search _lastCenter doesnt seem to be accurate
+	
 
-	getCenterCoords = e => {
-		console.log(this.leafletMap.leafletElement);
-	};
-
-	//drop marker on click and record coords and address
-	componentDidMount() {
-		//commenting marker dropping for TripList view so geocoding search is the only way to add trips
-		// 	const map = this.leafletMap.leafletElement;
-		// 	const geocoder = L.Control.Geocoder.mapbox(Token);
-		// 	let marker;
-		// 	map.on('click', e => {
-		// 		geocoder.reverse(
-		// 			e.latlng,
-		// 			map.options.crs.scale(map.getZoom()),
-		// 			results => {
-		// 				var r = results[0];
-		// 				//console.log('reverse geocode results', r);
-		// 				this.setState({
-		// 					lat: r.center.lat,
-		// 					lng: r.center.lng
-		// 				});
-		// 				this.props.addMarker(r);
-		// 				//console.log(this.state.lat, this.state.lng);
-		// 				if (r) {
-		// 					if (marker) {
-		// 						map.removeLayer(marker);
-		// 						marker = L.marker(r.center, { icon: myIcon4 })
-		// 							.bindTooltip(r.name, { className: 'toolTip' })
-		// 							.addTo(map)
-		// 							.on('click', e => this.storeGeocode(e, r));
-		// 					} else {
-		// 						marker = L.marker(r.center, { icon: myIcon4 })
-		// 							.bindTooltip(r.name, { className: 'toolTip' })
-		// 							.addTo(map)
-		// 							.on('click', e => this.storeGeocode(e, r));
-		// 						// .openPopup();
-		// 					}
-		// 				}
-		// 			}
-		// 		);
-		// 	});
-	}
-
+	
 	resetView = e => {
 		this.leafletMap.leafletElement.setView([40, 34], 2);
 		this.props.clearClickedCoords();
@@ -129,10 +81,9 @@ class TripMapper extends Component {
 		const lng = e.latlng.lng;
 		console.log(lat, lng);
 	};
-	//mapbox://styles/jerodis/ck24x2b5a12ro1cnzdopvyw08 light
-	//mapbox://styles/jerodis/ck24wv71g15vb1cp90thseofp dark
+	
 	render() {
-		//console.log('map trips', this.props.trips);
+		
 		let Atoken;
 		if (this.state.light === true) {
 			Atoken = `https://api.mapbox.com/styles/v1/jerodis/ck24x2b5a12ro1cnzdopvyw08/tiles/256/{z}/{x}/{y}@2x?access_token=${Token.MB}`;
@@ -141,33 +92,21 @@ class TripMapper extends Component {
 		}
 
 		const position = [this.state.lat, this.state.lng];
-		//create an array to hold location coords, with state passed fomr tip.js
+		
 		const markers = [];
-		//take trips array of object and create an array of coordinates.
+		
 		this.props.trips.forEach(obj => {
 			let coord = [obj.lat, obj.lng];
 			markers.push(coord);
 		});
-		//if leaflet has loaded, pass marker array for bounds
-		// if (
-		// 	this.leafletMap &&
-		// 	this.leafletMap.leafletElement &&
-		// 	this.props.clickedCoords.length === 0 &&
-		// 	markers.length > 4
-		// ) {
-		// 	this.leafletMap.leafletElement.fitBounds(markers, {
-		// 		padding: [5, 5]
-		// 	});
-		//console.log('fit to bounds');
-		// } else
+		
 
 		if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
 			this.props.clickedCoords.length > 0
 		) {
-			console.log('clicked coords zoom', this.props.clickedCoords);
-			//console.log('marker coords', markers);
+			
 			//if not first load, and link has been clicked, zoom to marker
 			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 10);
 		} else if (
