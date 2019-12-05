@@ -136,18 +136,7 @@ class Trip extends Component {
 		});
 	};
 
-	//filter by starred
-	// filterByStar = () => {
-	// 	let newLocations = [];
-	// 	this.state.locations.forEach(location => {
-	// 		if (location.star === true) {
-	// 			newLocations.push(location);
-	// 		}
-	// 	});
-	// 	this.setState({ locations: newLocations });
-	// };
-
-	//or
+	//filter results by starred
 
 	filterByStar = () => {
 		TripManager.getStarTrip(this.props.tripId).then(locations => {
@@ -228,19 +217,9 @@ class Trip extends Component {
 		this.refs.mapper.resetScroll();
 	};
 
-	// getDataLite = () => {
-	// 	TripManager.getTrip(this.props.tripId).then(locations => {
-	// 		this.setState({
-	// 			locations: locations,
-	// 			clickedCoords: []
-	// 		});
-	// 	});
-	// 	this.setState({
-	// 		geoMarker: {}
-	// 	});
-	// };
+	
 
-	//alternative to getDataLite(reserve last search)
+	//get partial data based on filters, but not reset map
 
 	getDataLite = () => {
 		if (this.state.lastFilter === 'star') {
@@ -281,19 +260,13 @@ class Trip extends Component {
 		});
 	};
 
-	// //Get data and remove all maping states -> clean tripview of all locations
-
-	// mapRefresh = () => {
-	// 	this.getData();
-	// 	this.setState({
-	// 		geoMarker: {},
-	// 		clickedCoords: [],
-	// 		hovered: ''
-	// 	});
-	// };
+	
 
 	componentDidMount() {
 		//console.log('props from tripcard', this.props);
+
+		//get trip details, then check for trip ownership, shared trip, public trip
+		//to determine access level
 
 		TripManager.getTrip(this.props.tripId)
 			.then(locations => {
@@ -310,23 +283,28 @@ class Trip extends Component {
 					return element.friendEmail === email;
 				};
 				TripManager.getTripDetails(this.props.tripId).then(details => {
+					//no detail go back to mytrips
 					if (details.length === 0) {
 						this.props.history.push(`/mytrips`);
+					//details and ownership match active user display trip
 					} else if (details[0].userId === this.props.activeUser) {
 						this.setState({
 							myTrip: true,
 							tripDetails: details[0]
 						});
+					//if no trip ownership check for shared email, if match, shared trip
 					} else if (details[0].sharedTrips.some(emailCheck)) {
 						this.setState({
 							tripDetails: details[0],
 							sharedTrip: true
 						});
+					//check for public trip
 					} else if (details[0].published === true) {
 						this.setState({
 							tripDetails: details[0],
 							publicTrip: true
 						});
+					//if none of the above, return to mytrips
 					} else {
 						this.props.history.push(`/mytrips`);
 					}
@@ -344,7 +322,7 @@ class Trip extends Component {
 		if (this.state.myTrip || this.state.sharedTrip) this.handleClickOpen();
 	};
 
-	//toggle the hidden tripname view
+	//toggle the tripname view (more room for scrolling cards)
 
 	toggleMenu = () => {
 		if (this.state.menuOpen === true) {
@@ -355,6 +333,9 @@ class Trip extends Component {
 	};
 
 	render() {
+
+		//console log for displaying trip ownership details - save for future testing
+
 		// console.log(
 		// 	'my trip?',
 		// 	this.state.myTrip,
@@ -365,6 +346,8 @@ class Trip extends Component {
 		// 	'trip deets',
 		// 	this.state.tripDetails
 		// );
+
+		//variable and function for displaying values of trip locations
 		let tripCost = 0;
 
 		this.state.locations.forEach(location => {
