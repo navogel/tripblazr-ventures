@@ -1,7 +1,7 @@
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import React, { Component } from 'react';
-import Trip from './trip/Trip';
-import TripList from './trip/TripList';
+import Trip from './TripView/TripView';
+import TripList from './WorldView/WoldView';
 
 class ApplicationViews extends Component {
 	state = {

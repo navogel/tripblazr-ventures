@@ -950,20 +950,6 @@
       "url": "",
       "star": false,
       "id": 570
-    },
-    {
-      "tripId": 17,
-      "summary": "",
-      "lat": 59.9551165,
-      "lng": 30.3009001,
-      "address": "Russia, Ленинградская область, Санкт-Петербу́рг, округ Введенский, 197198, Улица Лизы Чайкиной 11",
-      "price": null,
-      "likes": 0,
-      "locationTypeId": 2,
-      "name": "a place",
-      "url": "",
-      "star": false,
-      "id": 571
     }
   ]
 }

@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import '../trip/tripForm.css';
+import '../WorldViewComponents/tripForm.css';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -51,8 +51,7 @@ class TripDetails extends Component {
 		TripManager.deleteTripShare(id).then(() => this.getShares());
 	};
 
-	/*  Local method for validation, set loadingStatus, create animal object, invoke the AnimalManager post method, and redirect to the full animal list
-	 */
+	
 	constructNewTripShare = evt => {
 		evt.preventDefault();
 		if (this.state.friendEmail === '') {
@@ -66,7 +65,7 @@ class TripDetails extends Component {
 				loadingStatus: true
 			};
 
-			// Create the animal and redirect user to animal list
+			
 
 			TripManager.postTripShare(share).then(() => {
 				//console.log('addform props', this.props);

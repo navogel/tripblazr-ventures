@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Mapper from '../map/LocationsMap';
+import Mapper from './LocationsMap';
 import TripManager from '../../modules/TripManager';
 import { withRouter } from 'react-router-dom';
-import LocationCard from './LocationCard';
+import LocationCard from '../TripViewComponents/LocationCard';
 import animateScrollTo from 'animated-scroll-to';
 import Dialog from '@material-ui/core/Dialog';
 import Divider from '@material-ui/core/Divider';
@@ -10,9 +10,9 @@ import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import ErrorIcon from '@material-ui/icons/Error';
-import LocationForm from '../trip/LocationForm';
-import TripDrawer from './TripDrawer';
-import LocDrawer from '../LocationDetails/LocationDetailsDrawer';
+import LocationForm from '../TripViewComponents/LocationForm';
+import TripDrawer from '../TripViewComponents/LocationEditDrawer';
+import LocDrawer from '../LocationComponents/LocationDetailsDrawer';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
 import HotelIcon from '@material-ui/icons/Hotel';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
@@ -22,7 +22,7 @@ import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import HeightIcon from '@material-ui/icons/Height';
 import StarIcon from '@material-ui/icons/Star';
 import Tooltip from '@material-ui/core/Tooltip';
-import TripDetails from '../TripDetails/TripDetails';
+import TripDetails from '../TripViewComponents/TripSharing';
 import ShareIcon from '@material-ui/icons/Share';
 
 class Trip extends Component {
