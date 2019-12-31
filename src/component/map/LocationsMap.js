@@ -239,7 +239,7 @@ export default class Mapper extends Component {
 
 			this.setState({ recievedTrip: true });
 
-			if (this.props.locations.length === 0) {
+			if (this.props.locations.length >= 5) {
 				this.leafletMap.leafletElement.setView(tripCoords, 13);
 				//option to drop a marker on the map at trip coords until user has added content
 				// 	L.marker(tripCoords, { icon: myIcon4 })
