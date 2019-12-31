@@ -31,7 +31,7 @@ class TripMapper extends Component {
 
     //function for storing click events on geosearch and click to add markers
     storeGeocode = obj => {
-        console.log('yaya got dem O-B-Js', obj);
+        //console.log('yaya got dem O-B-Js', obj);
         this.setState({ geocoded: true });
         this.props.addMarker(obj);
     };
