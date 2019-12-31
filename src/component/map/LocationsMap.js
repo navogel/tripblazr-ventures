@@ -227,7 +227,7 @@ export default class Mapper extends Component {
 		}
 	};
 
-	//moved functions from componentdidmount to update when trip info is received from parent
+	//moved functions from componentdidmount so map updates when trip info is received from parent
 
 	componentDidUpdate(prevProps) {
 		// Typical usage (don't forget to compare props):
@@ -239,7 +239,7 @@ export default class Mapper extends Component {
 
 			this.setState({ recievedTrip: true });
 
-			if (this.props.locations.length >= 5) {
+			if (this.props.locations.length <= 5) {
 				this.leafletMap.leafletElement.setView(tripCoords, 13);
 				//option to drop a marker on the map at trip coords until user has added content
 				// 	L.marker(tripCoords, { icon: myIcon4 })
