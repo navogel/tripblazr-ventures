@@ -217,7 +217,7 @@ export default class Mapper extends Component {
 			markers.push(coord);
 		});
 		if (markers.length > 0) {
-			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
+			this.leafletMap.leafletElement.fitBounds(markers, { padding: [60, 60] });
 		} else {
 			const tripCoords = [
 				this.props.tripDetails.lat,
