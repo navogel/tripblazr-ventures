@@ -119,17 +119,16 @@ class MobileTripMapper extends Component {
             );
 
             //fitbound logic to fitbounds on mobile on first load.
-
-            // } else if (
-            //     this.leafletMap &&
-            //     this.leafletMap.leafletElement &&
-            //     this.state.geocoded === false &&
-            //     this.state.mapLoaded === false &&
-            //     markers.length > 1
-            // ) {
-            //     this.leafletMap.leafletElement.fitBounds(markers, {
-            //         padding: [20, 20]
-            //     });
+        } else if (
+            this.leafletMap &&
+            this.leafletMap.leafletElement &&
+            this.state.geocoded === false &&
+            this.state.mapLoaded === false &&
+            markers.length > 0
+        ) {
+            this.leafletMap.leafletElement.fitBounds(markers, {
+                padding: [20, 20]
+            });
             //console.log('world View', this.state.mapLoaded);
         } else if (
             this.leafletMap &&
@@ -137,7 +136,7 @@ class MobileTripMapper extends Component {
             this.state.geocoded === false &&
             this.state.mapLoaded === false
         ) {
-            this.leafletMap.leafletElement.setView([30, 34], 2);
+            this.leafletMap.leafletElement.setView([-50, 20], 1);
             //console.log('world View', this.state.mapLoaded);
         }
 
