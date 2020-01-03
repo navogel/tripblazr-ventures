@@ -74,7 +74,6 @@ body {
 
 .mobileMapWrapper {
     flex: 1 1;
-
     display: flex;
     flex-basis: 70%;
 }
@@ -91,10 +90,14 @@ body {
 }
 
 .mobileListWrapper {
-    display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0);
+    /* position: fixed;
+    height: 200px;
+    bottom: -52px;
+    z-index: 9999; */
 }
 
 .leftColumn {
@@ -521,6 +524,11 @@ body {
 
 .shareToggle {
     padding: 1em;
+    z-index: 6999;
+}
+
+.MuiSnackbar-root {
+    z-index: 9999 !important;
 }
 
 /* login classes */

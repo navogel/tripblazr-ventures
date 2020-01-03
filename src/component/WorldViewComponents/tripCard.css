@@ -33,7 +33,6 @@ a {
 }
 
 .mobileTripCard {
-    width: 90%;
     margin: 1em;
     display: inline-block;
     justify-content: space-between;
