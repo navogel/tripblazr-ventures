@@ -2,6 +2,8 @@ import { Route, Redirect, withRouter } from 'react-router-dom';
 import React, { Component } from 'react';
 import Trip from './TripView/TripView';
 import TripList from './WorldView/WoldView';
+import MobileTripList from './WorldView/MobileWorldView';
+import {isMobile} from 'react-device-detect';
 
 class ApplicationViews extends Component {
 	state = {
@@ -14,7 +16,9 @@ class ApplicationViews extends Component {
 
 	render() {
 		//console.log('app view render props', this.props);
+		console.log(isMobile);
 		return (
+			
 			<React.Fragment>
 				
 
@@ -22,7 +26,20 @@ class ApplicationViews extends Component {
 					exact
 					path='/mytrips'
 					render={props => {
-						if (this.props.user) {
+						if (this.props.user && isMobile) {
+							console.log('mobile trip')
+							return (
+								<MobileTripList
+									{...props}
+									activeUser={this.props.activeUser}
+									clearUser={this.props.clearUser}
+									email={this.props.email}
+									// setOwner={this.setOwner}
+									// removeOwner={this.removeOwner}
+								/>
+							);
+						} else if (this.props.user) {
+							console.log('reg trip')
 							return (
 								<TripList
 									{...props}

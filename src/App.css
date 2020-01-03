@@ -56,12 +56,27 @@ body {
     height: 100vh;
 }
 
+.mobileTripWrapper {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    height: 100vh;
+}
+
 .mapWrapper {
     flex: 1 1;
     order: 2;
     display: flex;
     flex-basis: 70%;
     flex: 2;
+}
+
+.mobileMapWrapper {
+    flex: 1 1;
+
+    display: flex;
+    flex-basis: 70%;
 }
 
 .mapComponent {
@@ -73,6 +88,13 @@ body {
 .listWrapper {
     height: 100%;
     overflow: auto;
+}
+
+.mobileListWrapper {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .leftColumn {
@@ -94,6 +116,17 @@ body {
     position: relative;
 }
 
+.mobileListHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: -2px 2px 5px;
+    position: relative;
+    width: 100vw;
+}
+
 .listHeaderName {
     width: 100%;
     display: flex;
@@ -102,6 +135,15 @@ body {
     align-items: center;
     flex-wrap: wrap;
     padding-top: 1em;
+}
+
+.mobileListHeaderName {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .leftColumn .listHeader {
