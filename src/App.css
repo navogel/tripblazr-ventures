@@ -94,7 +94,7 @@ body {
     overflow-y: hidden;
     white-space: nowrap;
     background-color: rgba(0, 0, 0, 0);
-    /* position: fixed;
+    /* position: absolute;
     height: 200px;
     bottom: -52px;
     z-index: 9999; */

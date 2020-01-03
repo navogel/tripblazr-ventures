@@ -215,7 +215,7 @@ class MobileTripMapper extends Component {
                             Night Map
                         </Fab>
                     </Control>
-                    <Control position='topleft'>
+                    <Control position='bottomleft'>
                         <Fab
                             variant='extended'
                             size='small'
