@@ -217,7 +217,7 @@ export default class MobileMapper extends Component {
 			markers.push(coord);
 		});
 		if (markers.length > 0) {
-			this.leafletMap.leafletElement.fitBounds(markers, { padding: [60, 60] });
+			this.leafletMap.leafletElement.fitBounds(markers, { padding: [40, 40] });
 		} else {
 			const tripCoords = [
 				this.props.tripDetails.lat,
