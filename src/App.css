@@ -59,7 +59,7 @@ body {
 .mobileTripWrapper {
     display: flex;
     flex-direction: column;
-
+    overflow: hidden;
     justify-content: center;
     height: 100vh;
 }
@@ -75,7 +75,6 @@ body {
 .mobileMapWrapper {
     flex: 1 1;
     display: flex;
-    flex-basis: 70%;
 }
 
 .mapComponent {
@@ -90,14 +89,21 @@ body {
 }
 
 .mobileListWrapper {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     background-color: rgba(0, 0, 0, 0);
+
     /* position: absolute;
     height: 200px;
     bottom: -52px;
     z-index: 9999; */
+}
+
+.scroll::-webkit-scrollbar {
+    display: none;
 }
 
 .leftColumn {

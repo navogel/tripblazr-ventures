@@ -374,6 +374,19 @@
       "published": false,
       "userId": 5,
       "id": 20
+    },
+    {
+      "name": "NYC BayBee!",
+      "city": "New York City, New York, United States of America",
+      "summary": "",
+      "lat": 40.7648,
+      "lng": -73.9808,
+      "communication": "",
+      "money": "",
+      "likes": 0,
+      "published": false,
+      "userId": 4,
+      "id": 21
     }
   ],
   "locations": [
@@ -477,11 +490,11 @@
     },
     {
       "tripId": 14,
-      "summary": "Temple of the Sun",
+      "summary": "Temple of the Sun34343",
       "lat": 13.7439725,
       "lng": 100.4888835,
       "address": " Wat Arun Rajwararam, Bangkok, Bangkok Metropolitan Region 10600, Thailand",
-      "price": 0,
+      "price": 23453,
       "likes": 0,
       "locationTypeId": 2,
       "name": "Wat Arun Prang",
