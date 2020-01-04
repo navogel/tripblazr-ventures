@@ -185,7 +185,7 @@ a {
 
 .price {
     color: white;
-    margin-right: auto;
+    margin-right: 0.3em;
     padding-left: 0.5em;
     font-size: 1.2em;
     margin-top: 0em;
