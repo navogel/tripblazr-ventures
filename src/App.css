@@ -240,6 +240,7 @@ body {
 .drawerWrapper {
     width: 600px;
     height: 100vh;
+    max-width: 100vw;
 }
 
 .MuiDrawer-paperAnchorRight {
