@@ -415,6 +415,7 @@ export default class MobileMapper extends Component {
 								iconCreateFunction={createClusterCustomIcon}
 								maxClusterRadius={50}
 								zoomToBounds={{ padding: [50, 50] }}
+								removeOutsideVisibleBounds={false}
 							>
 								{this.state.searchResults.map(location => (
 									<Marker
@@ -442,6 +443,7 @@ export default class MobileMapper extends Component {
 							iconCreateFunction={createClusterCustomIcon}
 							maxClusterRadius={50}
 							zoomToBounds={{ padding: [20, 20] }}
+							removeOutsideVisibleBounds={false}
 						>
 							{this.props.locations.map(location => (
 								<Marker
