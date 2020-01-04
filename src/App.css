@@ -113,6 +113,7 @@ body {
     flex-basis: 30%;
     flex: 0.7;
     min-width: 340px;
+    max-width: 350px;
 }
 
 .listHeader {
@@ -261,6 +262,19 @@ body {
 
 .tripHeader {
     width: 100%;
+}
+
+.mobileTripHeader {
+    width: 100%;
+}
+
+.mobileTripHeader h2 {
+    margin-top: 1.3em;
+    margin-bottom: 0;
+}
+
+.mobileTripHeader p {
+    margin-top: 0;
 }
 
 .tripShareBtn {

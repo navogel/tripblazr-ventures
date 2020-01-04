@@ -395,10 +395,10 @@ class MobileTrip extends Component {
 											<TransitEnterexitIcon />
 										</IconButton>
 									</Tooltip>
-									<div className='tripHeader'>
-										<h1>{this.state.tripDetails.name}</h1>
-										<h4>{this.state.tripDetails.city}</h4>
-										<h4>Estimated Trip Price: ${tripCost}</h4>
+									<div className='mobileTripHeader'>
+										<h2>{this.state.tripDetails.name}</h2>
+										<p><b>{this.state.tripDetails.city}</b></p>
+										<p><b>Estimated Trip Price: ${tripCost}</b></p>
 									</div>
 								</>
 							)}
