@@ -46,9 +46,17 @@ class MobileLocationCard extends Component {
 
     render() {
         //console.log('hovered props', this.props.hovered);
+
+        let hoverCard;
+        if (this.props.hovered === this.props.location.id) {
+            hoverCard = 'mobileTripCardHover';
+        } else {
+            hoverCard = 'mobileTripCard' + this.props.location.locationTypeId;
+        }
+
         return (
             <>
-                <Card className='mobileTripCard' elevation={4}>
+                <Card className={hoverCard} elevation={4}>
                     <div className={'scroll' + this.props.location.id}></div>
                     <CardActionArea
                         onClick={() =>

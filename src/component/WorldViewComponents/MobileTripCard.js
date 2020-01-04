@@ -47,9 +47,15 @@ class MobileTripCard extends Component {
     };
     render() {
         //console.log('tripcard props', this.props.trip);
+        let hoverCard;
+        if (this.props.hovered === this.props.trip.id) {
+            hoverCard = 'mobileTripCardHover';
+        } else {
+            hoverCard = 'mobileTripCard';
+        }
         return (
             <>
-                <Card className='mobileTripCard' elevation={4}>
+                <Card className={hoverCard} elevation={4}>
                     <div className={'scroll' + this.props.trip.id}></div>
                     {this.state.edit ? (
                         <CardActionArea className='cardActionArea'>

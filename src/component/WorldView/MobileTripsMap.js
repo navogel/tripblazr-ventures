@@ -223,10 +223,10 @@ class MobileTripMapper extends Component {
                             onClick={this.resetView}
                         >
                             <PublicIcon />
-                            World View
+                            View all trips
                         </Fab>
                     </Control>
-                    <ZoomControl position='bottomleft' />
+                    <ZoomControl position='topleft' />
                 </Map>
             </>
         );

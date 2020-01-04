@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Mapper from './LocationsMap';
+import MobileMapper from './MobileLocationsMap';
 import TripManager from '../../modules/TripManager';
 import { withRouter } from 'react-router-dom';
 import MobileLocationCard from '../TripViewComponents/MobileLocationCard';
@@ -177,7 +177,7 @@ class MobileTrip extends Component {
 		//console.log(scrollEl);
 		animateScrollTo(scrollEl, {
 			elementToScroll: document.querySelector('.mobileListWrapper'),
-			verticalOffset: -10,
+			horizontalOffset: -20,
 			maxDuration: 3000,
 			minDuration: 250,
 			speed: 500,
@@ -450,7 +450,7 @@ class MobileTrip extends Component {
 					
 					{this.state.tripDetails && (
 						<div className='mobileMapWrapper'>
-							<Mapper
+							<MobileMapper
 								ref='mapper'
 								className='mapper'
 								locations={this.state.locations}

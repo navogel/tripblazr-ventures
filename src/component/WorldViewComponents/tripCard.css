@@ -32,7 +32,12 @@ a {
     transition: 1s;
 }
 
-.mobileTripCard {
+.mobileTripCard,
+.mobileTripCard1,
+.mobileTripCard2,
+.mobileTripCard3,
+.mobileTripCard4,
+.mobileTripCardHover {
     margin: 0.5em;
     max-width: 90%;
     display: flex;
@@ -54,6 +59,10 @@ a {
 }
 
 .tripCardHover .cardActionArea {
+    background-color: #bbdefb !important;
+}
+
+.mobileTripCardHover .cardActionArea {
     background-color: #bbdefb !important;
 }
 
