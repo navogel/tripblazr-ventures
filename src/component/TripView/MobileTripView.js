@@ -262,7 +262,7 @@ class MobileTrip extends Component {
 	
 
 	componentDidMount() {
-		console.log('MOBILE VIEWS BABY', this.props);
+		//console.log('MOBILE VIEWS BABY', this.props);
 
 		//get trip details, then check for trip ownership, shared trip, public trip
 		//to determine access level

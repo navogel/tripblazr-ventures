@@ -7,7 +7,6 @@ import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
 // import './tripForm.css';
 
