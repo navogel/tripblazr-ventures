@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, Marker, Tooltip, ZoomControl } from 'react-leaflet';
+import { Map, TileLayer, Marker, ZoomControl } from 'react-leaflet';
 import Token from '../../Token';
 import L from 'leaflet';
 import TripGeoSearch from './TripGeoSearch';

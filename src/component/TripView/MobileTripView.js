@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 import MobileLocationCard from '../TripViewComponents/MobileLocationCard';
 import animateScrollTo from 'animated-scroll-to';
 import Dialog from '@material-ui/core/Dialog';
-import Divider from '@material-ui/core/Divider';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';

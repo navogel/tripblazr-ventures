@@ -15,7 +15,7 @@ class ApplicationViews extends Component {
 
     render() {
         //console.log('app view render props', this.props);
-        console.log(isMobile);
+        // console.log(isMobile);
         return (
             <React.Fragment>
                 <Route

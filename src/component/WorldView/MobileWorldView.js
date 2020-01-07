@@ -6,7 +6,6 @@ import TripForm from '../WorldViewComponents/TripForm';
 import Dialog from '@material-ui/core/Dialog';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import Divider from '@material-ui/core/Divider';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
