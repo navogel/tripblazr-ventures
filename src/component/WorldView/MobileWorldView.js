@@ -173,7 +173,6 @@ class MobileTripList extends Component {
     };
 
     render() {
-        console.log('Im mobile');
         //console.log('shared trippin', this.state.sharedMapTrips);
         return (
             <>

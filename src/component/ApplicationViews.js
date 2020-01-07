@@ -23,7 +23,6 @@ class ApplicationViews extends Component {
                     path='/mytrips'
                     render={props => {
                         if (this.props.user && isMobile) {
-                            console.log('mobile trip');
                             return (
                                 <MobileTripList
                                     {...props}
