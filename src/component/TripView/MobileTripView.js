@@ -236,7 +236,7 @@ class MobileTrip extends Component {
 		) {
 			TripManager.getTripByType(this.props.tripId, this.state.lastFilter).then(
 				locations => {
-					console.log('refresh lite by type', this.state.lastFilter);
+					//console.log('refresh lite by type', this.state.lastFilter);
 					this.setState({
 						locations: locations,
 						clickedCoords: [],

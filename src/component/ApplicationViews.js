@@ -18,7 +18,7 @@ class ApplicationViews extends Component {
         // console.log(isMobile);
         return (
             <React.Fragment>
-                {/* <Route
+                <Route
                     exact
                     path='/'
                     render={props => {
@@ -28,7 +28,7 @@ class ApplicationViews extends Component {
                             return <Redirect to='/login' />;
                         }
                     }}
-                /> */}
+                />
 
                 <Route
                     exact
