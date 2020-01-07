@@ -6,6 +6,13 @@
       "tripId": 13,
       "loadingStatus": true,
       "id": 1
+    },
+    {
+      "friendEmail": "swoo@woo.com",
+      "userId": 1,
+      "tripId": 1,
+      "loadingStatus": true,
+      "id": 3
     }
   ],
   "locationNotes": [
