@@ -18,6 +18,18 @@ class ApplicationViews extends Component {
         // console.log(isMobile);
         return (
             <React.Fragment>
+                {/* <Route
+                    exact
+                    path='/'
+                    render={props => {
+                        if (this.props.user) {
+                            return <Redirect to='/mytrips' />;
+                        } else {
+                            return <Redirect to='/login' />;
+                        }
+                    }}
+                /> */}
+
                 <Route
                     exact
                     path='/mytrips'
