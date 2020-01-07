@@ -35,7 +35,6 @@ class ApplicationViews extends Component {
                                 />
                             );
                         } else if (this.props.user) {
-                            console.log('reg trip');
                             return (
                                 <TripList
                                     {...props}
