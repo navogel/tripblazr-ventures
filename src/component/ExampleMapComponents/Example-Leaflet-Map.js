@@ -1,3 +1,7 @@
+//this component was not used in final demo
+//it was designed as an example of leaflet without reactleaflet.
+//saving it to use as an example for other students
+
 import React, { Component } from 'react';
 import L from 'leaflet';
 import Token from '../../Token';

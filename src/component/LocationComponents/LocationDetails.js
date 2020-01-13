@@ -171,7 +171,7 @@ class LocationDetail extends Component {
 								<div className='locAdd'>
 									<FormControl>
 										<InputLabel>
-											Add this location + Notes to your Trip!
+											Add this location to a Trip!
 										</InputLabel>
 										<NativeSelect
 											value={this.state.tripId}

@@ -8,17 +8,20 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/styles';
 import 'leaflet-control-geocoder/dist/Control.Geocoder.js';
 import theme from './theme';
+import TripManager from './modules/TripManager';
 
 ReactDOM.render(
-	<ThemeProvider theme={theme}>
-		<Router>
-			<CssBaseline />
-			<App />
-		</Router>
-	</ThemeProvider>,
+    <ThemeProvider theme={theme}>
+        <Router>
+            <CssBaseline />
+            <App />
+        </Router>
+    </ThemeProvider>,
 
-	document.getElementById('root')
+    document.getElementById('root')
 );
+
+TripManager.getAllTrips(1);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

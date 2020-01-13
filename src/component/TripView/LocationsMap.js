@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, Marker, Tooltip } from 'react-leaflet';
+import { Map, TileLayer, Marker, Tooltip, ZoomControl } from 'react-leaflet';
 import Token from '../../Token';
 import L from 'leaflet';
 import GeoSearch from './GeoSearch';
@@ -10,6 +10,8 @@ import Fab from '@material-ui/core/Fab';
 import PublicIcon from '@material-ui/icons/Public';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
 
+//clustering function for map pins
+
 const createClusterCustomIcon = function(cluster) {
 	return L.divIcon({
 		html: `<span>${cluster.getChildCount()}</span>`,
@@ -17,6 +19,8 @@ const createClusterCustomIcon = function(cluster) {
 		iconSize: L.point(40, 40, true)
 	});
 };
+
+//map icons objects
 
 const myIcon1 = L.icon({
 	iconUrl: '/images/markers/icon1.png',
@@ -46,7 +50,7 @@ const myIcon3 = L.icon({
 	shadowUrl: '/images/markers/shadow.png',
 	shadowSize: [30, 41],
 	shadowAnchor: [9, 41]
-	// className: 'toolTip'
+	
 });
 
 const myIcon4 = L.icon({
@@ -85,6 +89,7 @@ export default class Mapper extends Component {
 	};
 
 	//function for storing click events on geosearch and click to add markers
+
 	storeGeocode = (e, obj) => {
 		//console.log('yaya got dem O-B-Js', obj);
 		this.props.addGeoSearchMarker(obj);
@@ -100,6 +105,8 @@ export default class Mapper extends Component {
 		}
 		this.props.scrollTo(obj.id);
 	};
+
+	//reset state to allow for map movement without reseting view
 
 	resetScroll = () => {
 		this.setState({ mapLoaded: false });
@@ -119,13 +126,9 @@ export default class Mapper extends Component {
 		}
 	};
 
-	//attempt to get map center bounds for FB search _lastCenter doesnt seem to be accurate
+	
 
-	getCenterCoords = e => {
-		console.log(this.leafletMap.leafletElement);
-	};
-
-	//toggle FB search and geocode search
+	//toggle FB search and geocode search - unused in final Demo
 	searchToggle = () => {
 		if (this.state.tripView === true) {
 			this.setState({
@@ -138,7 +141,7 @@ export default class Mapper extends Component {
 		}
 	};
 
-	//fetch FB places
+	//fetch FB places - unused in final Demo
 
 	fetchFbData = () => {
 		if (this.state.lat === '') {
@@ -183,52 +186,8 @@ export default class Mapper extends Component {
 		this.setState({ searchRange: e.target.value });
 	};
 
-	//drop marker on click and record coords and address
-	componentDidMount() {
-		//console.log('trip public? at didmount', this.props.publicTrip);
-		// const map = this.leafletMap.leafletElement;
-		// const geocoder = L.Control.Geocoder.mapbox(Token);
-		// let marker;
-		// if (this.props.publicTrip === false) {
-		// 	map.on('click', e => {
-		// 		this.props.dropPin();
-		// 		geocoder.reverse(
-		// 			e.latlng,
-		// 			map.options.crs.scale(map.getZoom()),
-		// 			results => {
-		// 				var r = results[0];
-		// 				//	console.log('reverse geocode results', r);
-		// 				if (r) {
-		// 					this.setState({
-		// 						lat: r.center.lat,
-		// 						lng: r.center.lng
-		// 					});
-		// 					if (marker) {
-		// 						map.removeLayer(marker);
-		// 						marker = L.marker(r.center, { icon: myIcon4 })
-		// 							.bindTooltip(r.name, { className: 'toolTip' })
-		// 							.addTo(map)
-		// 							.on('click', e => {
-		// 								this.storeGeocode(e, r);
-		// 								map.removeLayer(marker);
-		// 							});
-		// 						// .openPopup();
-		// 					} else {
-		// 						marker = L.marker(r.center, { icon: myIcon4 })
-		// 							.bindTooltip(r.name.split(',')[0], { className: 'toolTip' })
-		// 							.addTo(map)
-		// 							.on('click', e => {
-		// 								this.storeGeocode(e, r);
-		// 								map.removeLayer(marker);
-		// 							});
-		// 						// .openPopup();
-		// 					}
-		// 				}
-		// 			}
-		// 		);
-		// 	});
-		// }
-	}
+	
+	//stinky code - refactor to switch
 
 	configMyIcon = id => {
 		if (id === 1) {
@@ -240,15 +199,15 @@ export default class Mapper extends Component {
 		} else return myIcon5;
 	};
 
+	//code to console log coords on every map click - saving for future testing
+
 	// getCoord = e => {
 	// 	const lat = e.latlng.lat;
 	// 	const lng = e.latlng.lng;
 	// 	console.log(lat, lng);
 	// };
 
-	saveObj = obj => {
-		//console.log('fb obj', obj);
-	};
+	//reset map to fitbounds of current pins, else use trip coords to center map.
 
 	resetMap = () => {
 		const markers = [];
@@ -257,8 +216,8 @@ export default class Mapper extends Component {
 			let coord = [obj.lat, obj.lng];
 			markers.push(coord);
 		});
-		if (markers.length > 1) {
-			this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
+		if (markers.length > 0) {
+			this.leafletMap.leafletElement.fitBounds(markers, { padding: [60, 60] });
 		} else {
 			const tripCoords = [
 				this.props.tripDetails.lat,
@@ -267,6 +226,8 @@ export default class Mapper extends Component {
 			this.leafletMap.leafletElement.setView(tripCoords, 13);
 		}
 	};
+
+	//moved functions from componentdidmount so map updates when trip info is received from parent
 
 	componentDidUpdate(prevProps) {
 		// Typical usage (don't forget to compare props):
@@ -278,7 +239,7 @@ export default class Mapper extends Component {
 
 			this.setState({ recievedTrip: true });
 
-			if (this.props.locations.length === 0) {
+			if (this.props.locations.length <= 5) {
 				this.leafletMap.leafletElement.setView(tripCoords, 13);
 				//option to drop a marker on the map at trip coords until user has added content
 				// 	L.marker(tripCoords, { icon: myIcon4 })
@@ -295,6 +256,8 @@ export default class Mapper extends Component {
 					padding: [20, 20]
 				});
 			}
+
+			//function to allow a pin to be dropped anywhere on the map on click
 
 			const map = this.leafletMap.leafletElement;
 			const geocoder = L.Control.Geocoder.mapbox(Token);
@@ -338,14 +301,11 @@ export default class Mapper extends Component {
 					}
 				);
 			});
-			// }
+			
 		}
 	}
 
-	//pass filter function through a local function in order to reset mapLoading state
-
-	//mapbox://styles/jerodis/ck24x2b5a12ro1cnzdopvyw08 light
-	//mapbox://styles/jerodis/ck24wv71g15vb1cp90thseofp dark
+	
 	render() {
 		//console.log('trip deets from trip at render', this.props.ownerView);
 		let Atoken;
@@ -356,30 +316,9 @@ export default class Mapper extends Component {
 		}
 
 		const position = [this.state.lat, this.state.lng];
-		// //create an array to hold location coords, with state passed fomr tip.js
-		// const markers = [];
-		// //create array to hold tripDetails coords
+		
 		const tripCoords = [this.props.tripDetails.lat, this.props.tripDetails.lng];
-		//take trips array of object and create an array of coordinates.
-		// this.props.locations.forEach(obj => {
-		// 	let coord = [obj.lat, obj.lng];
-		// 	markers.push(coord);
-		// });
-
-		// //if leaflet has loaded, pass marker array for bounds
-		// if (
-		// 	this.leafletMap &&
-		// 	this.leafletMap.leafletElement &&
-		// 	this.state.tripView &&
-		// 	this.props.clickedCoords.length === 0 &&
-		// 	this.props.droppedPin === false &&
-		// 	markers.length > 0 &&
-		// 	this.state.mapLoaded === false
-		// ) {
-		// 	//console.log('fit bounds render');
-		// 	this.leafletMap.leafletElement.fitBounds(markers, { padding: [20, 20] });
-		// } else
-
+		
 		if (
 			this.leafletMap &&
 			this.leafletMap.leafletElement &&
@@ -387,10 +326,7 @@ export default class Mapper extends Component {
 			this.props.droppedPin === false &&
 			this.props.clickedCoords.length > 0
 		) {
-			//console.log('cicked coords', this.props.clickedCoords);
-			//console.log('marker coords', markers);
-			//if not first load, and link has been clicked, zoom to marker
-			//console.log('clicked place from list render');
+			
 
 			this.leafletMap.leafletElement.setView(this.props.clickedCoords, 15);
 		} else if (
@@ -401,20 +337,19 @@ export default class Mapper extends Component {
 			this.props.tripDetails.length > 0 &&
 			this.state.mapLoaded === false
 		) {
-			//console.log('no locations', tripCoords);
+			
 			this.leafletMap.leafletElement.setView(tripCoords, 13);
 		}
 
 		return (
 			<>
-				{/* {this.leafletMap && this.leafletMap.leafletElement && (
-					<button onClick={this.getCenterCoords}>click for map obj</button>
-				)} */}
+				
 				<Map
+					zoomControl={false}
 					center={position}
 					doubleClickZoom={true}
 					Zoom={this.state.zoom}
-					maxZoom={16}
+					maxZoom={20}
 					className='mapComponent'
 					ref={m => {
 						this.leafletMap = m;
@@ -541,7 +476,7 @@ export default class Mapper extends Component {
 							Night Map
 						</Fab>
 					</Control>
-					<Control position='topleft' className='worldView'>
+					<Control position='topleft'>
 						<Fab
 							variant='extended'
 							size='small'
@@ -552,6 +487,7 @@ export default class Mapper extends Component {
 							Trip View
 						</Fab>
 					</Control>
+					<ZoomControl position='bottomleft' />
 				</Map>
 			</>
 		);

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import TripManager from '../../modules/TripManager';
-import TripMapper from '../map/TripsMap';
-import TripCard from './TripCard';
-import TripForm from './TripForm';
+import TripMapper from './TripsMap';
+import TripCard from '../WorldViewComponents/TripCard';
+import TripForm from '../WorldViewComponents/TripForm';
 import Dialog from '@material-ui/core/Dialog';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
@@ -13,7 +13,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import animateScrollTo from 'animated-scroll-to';
 import ErrorIcon from '@material-ui/icons/Error';
 import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
-import TripMenu from './TripMenu';
+import TripMenu from '../WorldViewComponents/TripsTypeDropdownMenu';
 
 class TripList extends Component {
 	state = {
@@ -185,9 +185,10 @@ class TripList extends Component {
 								</IconButton>
 								<h1>Your Trips</h1>
 								<Fab
-									color='primary'
+									color='secondary'
 									size='small'
 									onClick={this.handleClickOpen}
+									className='addTripBtn'
 								>
 									<AddIcon />
 								</Fab>

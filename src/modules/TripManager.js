@@ -1,5 +1,5 @@
 // This is the page that will call the API calls for the authentication
-const remoteURL = 'http://localhost:8088';
+const remoteURL = 'https://tripblazr.herokuapp.com';
 
 export default {
 	getAllTrips(id) {

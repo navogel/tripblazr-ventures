@@ -68,7 +68,13 @@ class Login extends Component {
 							z-index='-2'
 						/>
 						<p className='appTitle'>TRIPBLAZR</p>
+						
 					</div>
+					<p>
+							WARNING: This app is for demo purposes only. <br /> Any user data
+							you create will deleted in 24 hours. If you create a new account
+							please do NOT use confidential passwords!
+					</p>
 
 					{this.state.hideReg && (
 						<>
@@ -88,7 +94,7 @@ class Login extends Component {
 												fullWidth
 												margin='dense'
 												variant='outlined'
-												//placeholder='Username'
+												placeholder='Test User: "user"'
 												onChange={this.handleFieldChange}
 												type='userName'
 												id='userName'
@@ -109,7 +115,7 @@ class Login extends Component {
 												margin='dense'
 												variant='outlined'
 												type='password'
-												//placeholder='Password'
+												placeholder='Test Password: "pass"'
 												onChange={this.handleFieldChange}
 												id='password'
 												//required=''

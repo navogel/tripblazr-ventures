@@ -1,0 +1,73 @@
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 3em 5em;
+    flex-grow: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .formWrapper {
+        padding: 1em 1em;
+    }
+
+    .editNoteWrapper {
+        padding: 0.5em 0.5em;
+    }
+
+    .tripDetailsWrapper {
+        width: 100%;
+        padding: 0.5em 0.5em;
+    }
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.LocationInputWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nameCity {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tripDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tripNotes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formSubmit {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 0.5em;
+    margin-bottom: 0em;
+    color: white;
+}
+
+.MuiFab-extended.MuiFab-sizeSmall {
+    padding-right: 18px !important;
+    padding-left: 8px !important;
+}
+
+.modalTitle {
+    margin-top: 2em !important;
+    margin-bottom: 2em !important;
+    text-align: center;
+}
