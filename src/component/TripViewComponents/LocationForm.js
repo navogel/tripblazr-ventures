@@ -65,8 +65,6 @@ class LocationForm extends Component {
         this.setState({ [name]: event.target.value });
     };
 
-    /*  Local method for validation, set loadingStatus, create animal object, invoke the AnimalManager post method, and redirect to the full animal list
-     */
     constructNewLocation = evt => {
         evt.preventDefault();
         if (this.state.name === '' || this.state.locationTypeId === '') {
